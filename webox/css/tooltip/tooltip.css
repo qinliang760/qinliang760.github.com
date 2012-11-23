@@ -1,0 +1,24 @@
+#titleTip{
+position:absolute;
+width:140px;
+z-index:9999;
+background:#fbffbf;
+padding:5px;
+color:#5f5f5f;
+line-height:normal;
+}
+.helpPicTip {
+background:url("../../images/tooltip/help.gif") no-repeat scroll 0 0 transparent;
+cursor:pointer;
+display:inline-block;
+height:15px;
+margin:0 0 0 5px;
+vertical-align:middle;
+width:13px;
+}
+.helpTxtTip {
+cursor:pointer;
+display:inline-block;
+margin:0 0 0 5px;
+vertical-align:middle;
+}

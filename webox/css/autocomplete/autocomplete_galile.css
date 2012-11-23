@@ -1,0 +1,55 @@
+.ac_results {
+	padding: 2px 0;
+	border: 1px solid #8d8d8d;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+}
+
+.ac_results li {
+	color:#005aa5;
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 24px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background: white url('indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+	
+}
+
+.ac_over2 {
+	background-color: #b6e0fd;
+	border-bottom:1px solid #0077c7;
+	border-top:1px solid #0077c7;
+}
+.autoDl .category {
+	padding-left:20px;
+	background:url(../../images/galile/icon_list.gif) no-repeat 0 center;
+	color:#000;
+}
+.autoDl .subCategory a{
+	display:block;
+}

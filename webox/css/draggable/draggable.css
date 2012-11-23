@@ -1,0 +1,175 @@
+
+
+#all_open
+{
+	display: none;
+}
+
+#controls
+{
+	float: right;
+}
+
+.cum_portlet_close
+{
+	float: right;
+	background:url(../../images/draggable/close.gif) no-repeat 0 0;
+	width:16px;
+	height:16px;
+	overflow:hidden;
+	margin-top:2px;
+}
+.cum_topper_txt{
+background:url(../../images/draggable/portlet_t_icon.gif) no-repeat 0 0;
+padding-left:25px;
+}
+#cum_portlet_columns
+{
+	width:100%;
+	margin-top:15px;
+}
+#cum_portlet_columns td
+{
+	padding: 0 5px;
+	vertical-align: top;
+	width: 50%;
+}
+
+.portlet
+{
+	cursor: move;
+	margin: 0 0 10px;
+	width: 100%;
+}
+
+.portlet_topper
+{	
+	padding: 6px 10px;
+	background:transparent url(../../images/draggable/portlet_t_bg.gif) no-repeat 0 0;
+}
+.portlet_topper_r
+{	
+	padding: 0 5px 0 0;
+	background:transparent url(../../images/draggable/portlet_t_r.gif) no-repeat top right;
+}
+
+.portlet_topper a
+{
+	color: #443;
+	font-weight: bold;
+}
+
+.portlet_content
+{
+	border:1px solid #c3d1ff;
+}
+.portlet_content table
+{
+	width:100%;
+	padding:10px;
+}
+#cum_portlet_columns .portlet_content table td
+{
+	width:25%;
+	line-height:27px;
+}
+
+.portlet_content p
+{
+	line-height: 150%;
+	text-align: justify;
+}
+
+.portlet_bottom
+{
+	background: #ccc;
+	font-size: 1px;
+	line-height: 1px;
+	overflow: hidden;
+	height: 5px;
+}
+
+.sort_placeholder
+{
+	background: #bba;
+}
+/* cus */
+/*portletTable transformTable*/
+#cum_portlet_columns .transformTable td{
+width:50%;
+font-size:18px;
+padding:10px;
+}
+#cum_portlet_columns .transformTable td.transTableL{
+text-align:right;
+font-weight:bold;
+padding-right:55px;
+}
+
+#cum_portlet_columns .transformTable tr.trBg td,#cum_portlet_columns .portletTable tr.trBg td,#cum_portlet_columns .portletTable tr.trBg th{
+font-size:12px;
+padding:0 9px;
+*padding:0 7px 5px;
+height:27px;
+*height:10px;
+overflow:hidden;
+vertical-align:top;
+*line-height:normal;
+}
+#cum_portlet_columns .portletTable tr.trBg th{
+padding-bottom:0;
+}
+#cum_portlet_columns .portletTable tr.trBg td.trBoBg{
+vertical-align:bottom;
+
+}
+
+.porletPad{
+padding:5px;
+}
+/*9.28*/
+.portletDiv .hotList{
+height:146px;
+overflow:hidden;
+padding:10px;
+}
+.portlet_content p.hotListTitle{
+padding:5px 10px;
+background-color:#EDEDED;
+line-height:normal;
+}
+.portletDiv .hotList li span,.portletDiv .hotList li a,.hotListTitle strong{
+float:left;
+}
+.portletDiv .hotList li a{
+font-weight:bold;
+}
+.portletDiv .hotList li{
+float:left;
+width:100%;
+_width:99%;
+line-height:30px;
+}
+.portletDiv .hotList li .hotListId,.hotListId{
+width:5%;
+}
+.portletDiv .hotList li .hotListPut,.hotListPut{
+width:40%;
+padding-left:15px;
+_padding-left:10px;
+}
+.portletDiv .hotList li .hotSelfPut,.hotSelfPut{
+width:58%;
+padding-left:22px;
+_padding-left:10px;
+}
+.portletDiv .hotList li .hotListAd,.hotListAd{
+width:35%;
+}
+.portletDiv .hotList li .hotSelfAd,.hotSelfAd{
+width:15%;
+}
+.portletDiv .hotList li .hotListClick,.hotListClick{
+width:15%;
+text-align:right;
+}

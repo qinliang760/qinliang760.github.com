@@ -1,0 +1,262 @@
+
+/* CSS 基础样式-- */
+
+body {
+	color:#000;
+	font-size:75%;
+	line-height:20px;
+	height:100%;
+}
+
+a {
+	text-decoration:none;
+	outline:none;
+}
+a:link {
+	color:#006ba6;
+}
+a:visited {
+	color:#006ba6;
+}
+a:hover {
+	color:#f29600;
+	text-decoration:none;
+}
+a:active {
+	color:#f29600;
+}
+
+/*-----clearFix清除浮动样式 start-----*/
+.clearFix:after{
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	content: ".";
+}
+.clearFix{ display: inline-block; }
+/* Hides from IE 4-6 \*/
+* html .clearFix{ height: 1%; }
+.clearFix{ display: block; } 
+/* End hide from IE 4-6 */
+/*-----clearFix清除浮动样式 end-----*/
+
+/*font 文字相关样式 start*/
+.font_blue{
+color:#0083DE;
+}
+.font_red{
+color:#CC0000;
+}
+.font_gray{
+color:#666;
+}
+.font_white{
+color:#fff;	
+}
+.font_bold{
+font-weight:bold;
+}
+.font_bold14{
+font-size:14px;
+font-weight:bold;
+}
+.font_big{
+font-size:14px;
+}
+.font_size24{
+font-size:24px;
+}
+.font_size12{
+font-size:12px;
+}
+.font_size14{
+font-size:14px;
+}
+.font_darkred{
+color:#b34223;
+}
+.font_darkgreen{
+color:#009f01;
+}
+/*font 文字相关样式 end*/
+
+/*table 表格相关样式 start*/
+.trBg{
+background-color:#ededed;
+}
+.trBg a{
+color:#0083de;
+}
+.alignCenter{
+text-align:center;
+}
+.alignLeft{
+text-align:left;
+}
+.alignRight{
+text-align:right;
+}
+.height280{
+height:220px;
+overflow:hidden;
+}
+.noBorder{
+border:none;
+}
+/*table 表格相关样式 end*/
+
+/*pad mag width相关*/
+.padL150{
+padding-left:150px;
+}
+.padTop{
+padding-top:10px;
+display:inline-block;
+}
+.padL35{
+padding-left:35px;
+}
+.padTop10{
+padding-top:10px;
+}
+.padTop8{
+padding-top:8px;
+}
+.padTop20{
+padding-top:20px;
+}
+.padLeft{
+padding-left:10px;
+}
+.padRight{
+padding-right:10px;
+}
+.marginLeft{
+margin-left:10px;
+}
+.padBot{
+padding-bottom:5px;
+}
+.marTop5{
+margin-top:5px;
+}
+.marBot{
+margin-bottom:2px;
+}
+.marBack{
+margin:5px 0;
+}
+
+a.blockStyle{
+display:block;
+width:100%;
+}
+.verBtm{
+vertical-align:bottom;
+}
+.verMid{
+vertical-align:middle;
+}
+.widthFull{
+width:100%;
+}
+/*float*/
+.floatL{
+float:left;
+}
+.floatR{
+float:right;
+}
+
+/*other*/
+.tipInfo{
+color:#666;
+padding-left:5px;
+display:inline-block;
+vertical-align:top;
+*vertical-align:middle;
+}
+.checkAdjust input{
+width:4%;
+margin:0 2px 0 4px;
+}
+.checkAdjust label{
+display:inline-block;
+width:43%;
+*width:41%;
+}
+.checkAdjustBrowser input{
+width:4%;
+margin:0 2px 0 4px;
+}
+.checkAdjustBrowser label{
+display:inline-block;
+width:43%;
+*width:41%;
+}
+
+/*select width style start*/
+select,select.form_input{
+border:1px solid #B5B8C8;
+font-size:12px;
+height:20px;
+line-height:20px;
+}
+.selectW100{
+width:100px;
+}
+.selectTitle{
+padding:3px 15px;
+font-size:12px;
+margin-bottom:8px;
+background:url(http://puijs.mediav.com/images/adviva/arrow.gif) no-repeat scroll 3px -37px;
+}
+/*select width style end*/
+.removeStyle{
+border:1px solid #CEDAFF;
+display:inline-block;
+height:11px;
+line-height:9px;
+padding:0 2px;
+}
+/*logout*/
+#logout{
+background:none;
+}
+.logoutBox{
+width:520px;
+margin:0 auto;
+padding:10px;
+border:1px solid #CC0000;
+background-color:#FFEEFF;
+margin-top:30px;
+font-weight:bold;
+
+}
+.logoutBox p{
+padding-left:30px;
+height:24px;
+line-height:24px;
+background:url(http://puijs.mediav.com/images/adviva/limit.png) no-repeat scroll 0 0;
+}
+.logoutBox a{
+margin-left:30px;
+}
+/*loadStyle*/
+.loadStyle{
+display:none;
+padding-left:18px;
+background:url(http://puijs.mediav.com/images/adviva/click_load.gif) no-repeat scroll 0 0;
+}
+.loadList{
+display:none;
+padding-left:18px;
+width:45px;
+margin:65px auto 0;
+background:url(http://puijs.mediav.com/images/adviva/click_load.gif) no-repeat scroll 0 0;
+}
+.listDiscStyle{
+list-style:disc inside none;
+padding-left:60px;
+}

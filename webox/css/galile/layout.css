@@ -1,0 +1,316 @@
+
+/* CSS 整体架构 */
+
+#wrap{
+	min-width:960px;
+	_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<960?"960px":"");
+	margin:30px 0 0;
+	background-color:#fff;
+}
+
+/*-----header start-----*/
+#header{
+padding:0 20px 5px;
+border-bottom:3px solid #1b72cc;
+}
+#header .logo{
+float:left;
+}
+#header .topBar{
+float:right;
+}
+#header .topBar li{
+padding-bottom:10px;
+}
+#header .topBar li a,#header .topBar li span{
+padding-left:20px;
+}
+
+.gNav li{
+float:left;
+}
+.gNav li .line{
+padding:0 10px;
+}
+.gNav li a{
+color:#000;
+font-weight:bold;
+}
+.gNav li a.active{
+color:#fff;
+}
+.gNav li a.btnStyle{
+	color:#000;
+	padding-right:2px;
+	background:url(http://ju.mediav.com/images/nav_bg_r.gif) no-repeat -999px -999px;
+	display:inline-block;
+	*cursor:pointer;/*for ie*/
+	*display:inline;/*for ie if block*/
+}
+
+.gNav li a.btnStyle:hover{
+	color:#000;
+	background-position:bottom right;
+}
+.gNav li a.active,.gNav li a.active:hover{
+	color:#fff;
+	background-position:top right;
+}
+.gNav li a.btnStyle .btnInsideStyle{
+	background:url(http://ju.mediav.com/images/nav_bg.gif) no-repeat -999px -999px;
+	line-height:20px;
+	height:20px;
+	display:inline-block;
+	padding:0 7px 0 10px;
+	*cursor:pointer;/*for ie*/
+}
+.gNav li a.btnStyle:hover .btnInsideStyle{
+	background-position:0 100%;
+}
+.gNav li a.active .btnInsideStyle,.gNav li a.active:hover .btnInsideStyle{
+	background-position:0 0;
+}
+.gNav li a.btnStyle .moreSelect{
+background:url("http://ju.mediav.com/images/more_select.gif") no-repeat scroll 0 0 transparent;
+display:block;
+height:18px;
+left:45px;
+position:absolute;
+top:0;
+width:18px;
+}
+
+/*-----header end-----*/
+
+/*-----container start-----*/
+#container{
+padding:10px 10px 0 212px;
+background-color:#f3f9ff;
+min-height:200px;
+}
+#container .sideBar{
+background-color:#fff;
+width:192px;
+float:left;
+display:inline;
+border:1px solid #d5d5d5;
+border-bottom:3px solid #1b72cc;
+border-top:3px solid #1b72cc;
+margin-left:-202px;
+padding-bottom:30px;
+}
+#container .sideBar .sideBarSearch{
+padding:3px;
+border-bottom:1px solid #1b72cc;
+}
+#container .sideBar .sideBarSearch input{
+width:160px;
+float:left;
+border:1px solid #d6d6d6;
+line-height:20px;
+height:20px;
+}
+#container .sideBar .sideBarSearch a{
+float:left;
+background:url(http://ju.mediav.com/images/icon_search.gif) no-repeat 0 0;
+width:13px;
+height:13px;
+margin:5px 0 0 7px;
+}
+#container .sideBar .sideBarTitle{
+margin:5px;
+background:url(http://ju.mediav.com/images/arrow.gif) no-repeat right -11px;
+cursor:pointer;
+}
+#container .sideBar .sideBarHide{
+margin:5px;
+background:url(http://ju.mediav.com/images/arrow.gif) no-repeat right 5px;
+cursor:pointer;
+}
+#container .sideBar .sideBarList{
+padding:5px;
+}
+#container .sideBar .sideBarList li{
+background:url(http://ju.mediav.com/images/icon_list.gif) no-repeat 0 4px;
+padding-left:18px;
+}
+#container .sideBar .sideBarList li ul.sideBarSubList li{
+background:none;
+padding-left:0;
+}
+#container .main{
+float:left;
+padding-bottom:10px;
+background-color:#fff;
+width:100%;
+border:1px solid #d5d5d5;
+}
+#container .main .mainTop{
+padding:10px;
+}
+#container .main .mainTop .topTitle{
+float:left;
+}
+#container .main .mainTop .topTitle .breadcrumbs{
+padding-bottom:6px;
+}
+#container .main .mainTop .mainTitle{
+font-size:16px;
+font-weight:bold;
+}
+#container .main .mainTop .dateSelect{
+position:relative;
+float:right;
+width:185px;
+cursor:pointer;
+padding:5px;
+border:1px solid #d6d6d6;
+background:url(http://ju.mediav.com/images/arrow_down.gif) no-repeat 177px 10px;
+}
+.dateTxt{
+width:177px;
+cursor:pointer;
+}
+#container .main .reportArea{
+border-top:3px solid #1b72cc;
+margin:5px 0 30px;
+}
+#container .main .reportArea .reportHandle{
+height:29px;
+line-height:29px;
+background-color:#f8f8f8;
+border-bottom:1px solid #d6d6d6;
+}
+.btnArea{
+padding:10px;
+}
+
+.exportStyle{
+float:right;
+padding-left:15px;
+padding-right:10px;
+background:url(http://ju.mediav.com/images/icon_export.gif) no-repeat 0 center;
+
+}
+.chart{
+text-align:center;
+width:100%;
+border-bottom:1px solid #D6D6D6;
+}
+/*-----container end-----*/
+
+/*-----footer start-----*/
+#footer{
+background:#f3f9ff;
+text-align:center;
+padding:30px;
+}
+
+/*-----footer end-----*/
+/*icon btn*/
+.btnStyle{
+	padding-right:3px;
+	background:url(http://ju.mediav.com/images/btn_bg_r.gif) no-repeat top right;
+	display:inline-block;
+	*cursor:pointer;/*for ie*/
+}
+.btnStyle .btnInsideStyle{
+	background:url(http://ju.mediav.com/images/btn_bg.gif) no-repeat 0 0;
+	line-height:24px;
+	height:24px;
+	display:inline-block;
+	padding:0 5px 0 8px;
+	*cursor:pointer;/*for ie*/
+}
+.btnStyle .btnInsideStyle .IconStyle{
+	padding-left:20px;
+	display:inline-block;
+	background-image:url(http://ju.mediav.com/images/icon_add.gif);
+	background-repeat:no-repeat;
+}
+.btnStyle .btnInsideStyle .addIcon{
+	background-position:0 center;
+}
+
+/*icon btn*/
+
+/*COMBOX*/
+.downStyle{
+line-height:20px;
+display:inline-block;
+*display:inline;
+zoom:1;
+cursor:pointer;
+border:1px solid #d5d5d5;
+padding-right:17px;
+background:#fff url(http://ju.mediav.com/images/arrow_down_s.gif) no-repeat 160px center;
+
+}
+.downStyle .downInsideStyle{
+display:inline-block;
+*display:inline;
+zoom:1;
+padding:0 7px 0;
+}
+
+.selectBox {
+line-height:20px;
+float:left;
+display:inline;
+margin-left:10px;
+position:relative;
+padding-right:5px;
+padding-top:3px;
+}
+
+.selectBox a.downStyle span {
+color:#000;
+}
+
+.selectBoxOptions {
+	display:none;
+	background:#FFFFFF;
+	border:1px solid #ccc;
+	z-index:1000;
+	position: absolute;
+	top:24px;
+	left:0px;
+	height:auto;
+	overflow:auto;
+	line-height:20px;
+	width:181px!important;
+}
+.selectBoxOptions li{
+_float:left;
+_width:181px;
+}
+.selectBoxOptions a{
+	color:#000;
+	display:block;
+	padding:2px 0 2px 5px;
+	background:#fff;	
+	overflow:hidden;
+	white-space:nowrap;
+}
+.selectBoxOptions a:hover{
+	background:#bbb
+}
+.selectBoxOptions a.selected{
+	background:#EDEDED
+}
+/*COMBOX*/
+/*button*/
+.btnPic{
+	height:24px;
+	cursor:pointer;
+	background:url(http://ju.mediav.com/images/btn_pic.gif) no-repeat 0 0;
+}
+.btnGrayLong{
+	width:120px;
+	background-position:0 -50px;
+}
+.btnGrayShort{
+	width:80px;
+	background-position:0 -75px;
+}
+/*button*/

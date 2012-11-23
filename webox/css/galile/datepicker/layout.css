@@ -1,0 +1,85 @@
+.datepicker_input {
+	border: 1px solid #999;
+	padding: 4px;
+	border-bottom-color: #ddd;
+	border-right-color: #ddd;
+	width: 80px;
+}
+.datepicker_div {
+	position: relative;
+}
+/**
+.datepicker_field {
+	width: 290px;
+	height: 26px;
+	background: url(http://puijs.mediav.com/images/jslibs/datepicker/datepicker-field.png);
+	overflow: hidden;
+	position: relative;
+}
+.datepicker_field a 	{
+	display: block;
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	top: 0;
+	right: 0;
+	text-decoration: none;
+	text-indent: -3000px;
+}
+.datepicker_field span	{
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	position: absolute;
+	top: 0;
+	height: 26px;
+	line-height: 26px;
+	left: 5px;
+	width: 250px;
+	text-align: center;
+}*/
+.datepicker_calendar {
+	position: absolute;
+	top: 35px;
+	left: -117px;
+	height: 0px;
+	overflow: hidden;
+	width: 378px;
+	background: #ffffff;
+	z-index:999;
+
+}
+.datepicker_calendar .datepicker {
+	position: absolute;
+	bottom: 0;
+	top: auto;
+/*	border:1px solid #999999;*/
+	width:374px!important;
+}
+.datepicker_calendar .datepickerContainer,
+.datepicker_calendar .datepickerBorderT,
+.datepicker_calendar .datepickerBorderB,
+.datepicker_calendar .datepickerBorderL,
+.datepicker_calendar .datepickerBorderR,
+.datepicker_calendar .datepickerBorderTL,
+.datepicker_calendar .datepickerBorderTR,
+.datepicker_calendar .datepickerBorderBL,
+.datepicker_calendar .datepickerBorderBR {
+	background: transparent !important;
+}
+.datepicker_calendar .datepicker a:hover{
+	/*color: #000;*/
+}
+.datepicker_calendar_button {
+	position: absolute;	
+	border-top: solid 1px white;
+	clear:both;
+	bottom: 10px;
+	width: 374px;
+	text-align: center;
+	height:24px;
+}
+.datepickerSubmit {
+/*	margin-right: 10px;*/	
+font-weight:normal!important;
+}

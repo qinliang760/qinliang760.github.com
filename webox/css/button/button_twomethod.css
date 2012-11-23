@@ -1,0 +1,71 @@
+/*auto button
+*无icon<a><span></span></a>
+*有icon<p><a><span></span></a></p>或<a><span><span></span></span></a>比较好ie6不支持非a标签的hover
+*高度自适应的就是根据字的大小控制背景图的高度，需要用到em来控制line-height和padding，只适合上下渐变的背景图
+*/
+/*第一种方法：利用display:inline-block*/
+/*无icon*/
+.btnStyle{
+	padding-right:3px;
+	background:url(../../images/button/btn_right.gif) no-repeat top right;
+	display:inline-block;
+	*cursor:pointer;/*for ie*/
+	*display:inline;/*for ie if block*/
+}
+.btnStyle .btnInsideStyle{
+	background:url(../../images/button/btn_bg.gif) no-repeat 0 0;
+	line-height:22px;
+	height:22px;
+	display:inline-block;
+	padding:0 5px 0 8px;
+	*cursor:pointer;/*for ie*/
+}
+.btnStyle:hover{
+	background-position:bottom right;
+}
+.btnStyle:hover .btnInsideStyle{
+	background-position:0 100%;
+}
+
+/*无效按钮*/
+a.btnDisabled{
+color:#ccc;
+}
+a.btnDisabled:hover{
+color:#ccc;
+background-position:top right;
+}
+a.btnDisabled:hover .btnInsideStyle{
+	background-position:0 0;
+}
+/*有icon 在ul li中对于ie需要float支持*/
+.btnStyle .btnInsideStyle .IconStyle{
+	padding-left:20px;
+	display:inline-block;
+	background-image:url(../../images/button/icon_btn.png);
+	background-repeat:no-repeat;
+}
+.btnStyle .btnInsideStyle .addIcon{
+	background-position:0 0;
+}
+
+/*第二种方法：floatMethod 不用写Hack*/
+.floatBtn{
+	float:left;
+	padding-right:3px;
+	cursor:pointer;
+	background:url(../../images/button/btn_right.gif) no-repeat top right;
+}
+.floatBtn .floatInsideBtn{
+	float:left;
+	padding:0 5px 0 8px;
+	line-height:22px;
+	height:22px;	
+	background:url(../../images/button/btn_bg.gif) no-repeat 0 0;
+}
+.floatBtn .floatInsideBtn .floatIconStyle{
+	display:block;
+	padding-left:20px;
+	background-image:url(../../images/button/icon_btn.png);
+	background-repeat:no-repeat;
+}

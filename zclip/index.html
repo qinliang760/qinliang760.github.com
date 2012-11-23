@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<textarea class="textArea">1111111111111</textarea>
+<input type="button" class="btn" value="复制"/>
+<input type="button" class="btn2" value="test"/>
+<div id="content">
+</div>
+
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery.zclip.js"></script>
+<script>
+$(function(){
+	$(".btn").zclip({
+		copy:function(){return $('.textArea').val()},
+		afterCopy:function(){alert("已复制到剪贴板")}	
+	})
+	$(".btn2").click(function(){
+		var textarea=$('.textArea').val();debugger;
+		//textarea.replace("/\\\n/g","<br/>");
+		textarea=textarea.replace(/\n/g,"<br/>");
+			comment=comment.replace(/\n/g,"<br/>");
+			comment=comment.replace(/\</g,"&lt;");
+			comment=comment.replace(/\>/g,"&gt;");		
+		$("#content").html(textarea);
+	})
+})
+</script>
+</body>
+</html>

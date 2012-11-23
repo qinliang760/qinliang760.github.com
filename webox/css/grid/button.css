@@ -1,0 +1,333 @@
+
+
+/*按钮样式 start */
+.prevBtn{
+height:22px;
+width:22px;
+overflow:hidden;
+display:inline-block;
+background:url(../../images/grid/prev.gif) no-repeat 0 0;
+}
+.prevBtn:hover{
+background-position:0 -22px;
+}
+.prevBtn:active{
+background-position:0 0;
+}
+/*prev不可用的样式
+.prevBtnDis,.prevBtnDis:hover,.prevBtnDis:active{
+background-position:0 100%;
+}
+*/
+
+.nextBtn{
+height:22px;
+width:22px;
+overflow:hidden;
+display:inline-block;
+background:url(../../images/grid/next.gif) no-repeat 0 0;
+}
+.nextBtn:hover{
+background-position:0 -22px;
+}
+.nextBtn:active{
+background-position:0 0;
+}
+/*next不可用的样式
+.nextBtnDis,.nextBtnDis:hover,.nextBtnDis:active{
+background-position:0 100%;
+}
+*/
+
+
+.btnStyle{
+display:inline-block;
+*display:inline;
+zoom:1;
+cursor:pointer;
+padding-right:3px;
+background:url(../../images/grid/btn_right.gif) no-repeat top right;
+}
+.btnStyle .btnInsideStyle{
+display:inline-block;
+*display:inline;
+zoom:1;
+color:#000;
+background:url(../../images/grid/btn_bg.gif) no-repeat 0 0;
+padding:0 4px 0 7px;
+border:none;
+height:22px;
+overflow:hidden;
+cursor:pointer;
+line-height:22px;
+}
+
+.btnHover{
+background-position:bottom right;
+}
+
+.btnStyle .btnInsideHover{
+background-position:0 100%;
+}
+/*按钮样式 end */
+
+/*表格关注样式 start*/
+.whiteIcon{
+display:block;
+background:url(../../images/grid/five_icon.gif) no-repeat 0 0;
+width:12px;
+height:12px;
+overflow:hidden;
+cursor:pointer;
+}		
+.redIcon{
+background-position:0 -12px;
+}
+/*表格关注样式 end*/
+
+
+/*按钮提交 重置*/
+.submitArea{
+padding-left:115px;
+}
+.submitAreaCenter{
+width:172px;
+margin:0 auto;
+}
+.submitOneCenter{
+width:79px;
+margin:0 auto;
+}
+.submitThirdCenter{
+width:258px;
+margin:0 auto;
+}
+.submitStyle,.resetStyle{
+float:left;
+width:79px;
+display:inline;
+margin-right:7px;
+}
+.fieldStyle{
+border:1px solid #ddd;
+padding:5px 35px 5px 20px;
+}
+
+/*带Icon的按钮 start*/
+.btnIconArea{
+margin-right:4px;
+}
+.btnIconStyle{
+display:inline-block;
+*display:inline;
+zoom:1;
+cursor:pointer;
+background:url(http://puijs.mediav.com/images/adviva/mvc/grid/btn_bg.gif) no-repeat 0 0;
+padding-right:10px;
+padding-left:0;
+}
+.btnIconStyle .IconStyle{
+display:inline-block;
+*display:inline;
+zoom:1;
+background:url(http://puijs.mediav.com/images/adviva/mvc/grid/icon_btn.png);
+background-repeat:no-repeat;
+border:none;
+height:22px;
+padding-left:20px;
+overflow:hidden;
+cursor:pointer;
+line-height:22px;
+color:#000!important;
+}
+.btnIconStyle .addIcon{
+background-position:0 0;
+}
+.btnIconStyle .editIcon{
+background-position:0 -22px;
+}
+.btnIconStyle .delIcon{
+background-position:0 -44px;
+}
+.btnIconStyle .okIcon{
+background-position:0 -66px;
+}
+.btnIconStyle .backIcon{
+background-position:0 -106px;
+}
+.btnIconStyle .intoIcon{
+background-position:0 -132px;
+}
+.btnIconStyle .exportIcon{
+background-position:0 -154px;
+}
+.btnIconStyle .stopIcon{
+background-position:0 -176px;
+}
+.btnIconStyle .activeIcon{
+background-position:0 -198px;
+}
+.btnIconStyle .setIcon{
+background-position:0 -220px;
+}
+.btnIconStyle .setIcon{
+background-position:0 -220px;
+}
+.btnIconStyle .limitIcon{
+background-position:0 -242px;
+}
+.btnIconStyle .closeIcon{
+background-position:0 -264px;
+}
+.btnIconStyle .openIcon{
+background-position:0 -286px;
+}
+.btnIconStyle .viewIcon{
+background-position:0 -308px;
+}
+.btnIconStyle .rateIcon{
+background-position:0 -330px;
+}
+.btnIconStyle .shareIcon{
+background-position:0 -352px;
+}
+.btnIconStyle .upIcon{
+background-position:0 -374px;
+}
+.btnIconStyle .downIcon{
+background-position:0 -396px;
+}
+.btnIconStyle .thirdIcon{
+background-position:0 -418px;
+}
+.btnIconStyle .csvIcon{
+background-position:0 -437px;
+}
+
+.okIconOnly{
+padding-left:25px;
+background:url(http://puijs.mediav.com/images/adviva/mvc/grid/icon.gif) no-repeat 5px -68px;
+}
+.btnIconStyle .cancelIcon{
+background-position:5px -88px;
+}
+/*带Icon的按钮 end*/
+
+/*icon start*/
+.icon_bg{
+display:inline-block;
+background-repeat:no-repeat;
+background-image:url(http://puijs.mediav.com/images/adviva/icon.png);
+width:16px;
+height:16px;
+overflow:hidden;
+vertical-align:middle;
+cursor:pointer;
+}
+.icon_view{
+background-position:0 0;
+}
+.icon_code{
+background-position:0 -16px;
+}
+.icon_creative{
+background-position:0 -32px;
+}
+.icon_pic{
+background-position:0 -48px;
+}
+.icon_click{
+background-position:0 -64px;
+}
+.icon_cv{
+background-position:0 -80px;
+}
+.icon_config{
+background-position:0 -96px;
+}
+.icon_preview{
+background-position:0 -112px;
+}
+.icon_plan{
+background-position:0 -128px;
+}
+.icon_limit{
+background-position:0 -144px;
+}
+/*icon end*/
+
+/*时间选择箭头*/
+.dateSelect .dateArrow{
+background-position:right bottom;
+} 
+
+/*下拉框样式 start*/
+
+.downStyle{
+line-height:23px;
+padding-right:17px;
+display:inline-block;
+*display:inline;
+zoom:1;
+cursor:pointer;
+background:url(http://puijs.mediav.com/images/adviva/mvc/grid/btn_down.gif) no-repeat top right;
+}
+.downStyle .downInsideStyle{
+display:inline-block;
+*display:inline;
+zoom:1;
+padding:0 7px 0;
+background:url(http://puijs.mediav.com/images/adviva/mvc/grid/down_bg.gif) no-repeat 0 0;
+}
+.downHover{
+background-position:bottom right;
+}
+.downStyle .downInsideHover{
+background-position:0 100%;
+}
+
+
+.selectBox {
+position:relative;
+padding-right:5px;
+}
+
+.selectBox a.selectValue span {
+color:#000;
+width:100px;
+}
+
+.selectBoxOptions {
+	display:none;
+	background:#FFFFFF;
+	border:1px solid #ccc;
+	z-index:1000;
+	position: absolute;
+	top:20px;
+	left:1px;
+	height:auto;
+	overflow:auto;
+
+}
+
+.selectBoxOptions a{
+	color:#000;
+	display:block;
+	padding:2px 0 2px 5px;
+	background:#fff;	
+	overflow:hidden;
+	white-space:nowrap;
+}
+.selectBoxOptions a:hover{
+	background:#bbb
+}
+.selectBoxOptions a.selected{
+	background:#EDEDED
+}
+
+/*下拉框样式 end*/
+.shareBox{
+border:1px solid #B5B8C8;
+overflow:auto;
+height:60px;
+}

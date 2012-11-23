@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/grid/grid.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a class="active" href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a href="tree.html">Tree</a></li>
+<li><a href="validate.html">Validate</a></li>
+</ul>
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a href="boxy_galile.html">Boxy</a></li>
+<li><a href="jeditable.html">jeditable</a></li>
+<li><a href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a href="calendar_galile.html">calendar</a></li>
+<li><a href="clone.html">jClone</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>Grid组件说明</h2>
+<p>Grid是一个基于jquery的表格插件</p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<!--demo start-->
+<figure class="logo"><a href="https://adviva.mediav.com/advertiser/advertiser.php" target="_blank"><img src="images/grid/grid.jpg" alt="Mediav"/></a></figure>
+<!--demo end-->
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<pre class="comFrame"><!--source start--><code>
+&lt;link rel="stylesheet" href="<a href="css/grid/grid.css">css/grid/grid.css</a>" /&gt;
+&lt;link rel="stylesheet" href="<a href="css/grid/button.css">css/grid/button.css</a>" /&gt;
+&lt;script src="<a href="js/grid/string.js">js/grid/string.js</a>"&gt;&lt;/script&gt;
+&lt;script src="<a href="js/grid/grid.js">js/grid/grid.js</a>"&gt;&lt;/script&gt;<br/>
+<a href="images/grid/grid.rar">图片下载</a>
+</code>
+</pre><!--source end-->
+</article>
+<article class="article">
+<h2>使用方法</h2>
+<pre class="comFrame">
+<code>
+因为依赖dom，因此必须写在 $(document).ready() 函数内。 
+(function($){
+	$(document).ready(function(){
+
+		//列表处理
+		(function(){
+			//列的信息，根据名称可以看出意思。有一个特殊，talign属性代表标题的对齐方式
+			var cm = [
+				{title: 'ID', name: 'ID', width: 20, sortable: true, align: 'right', talign: 'right'},
+				{title: '名称', name: 'name', width: 30, sortable: true, align: 'left', talign: 'right'},
+				{title: '订单数', name: 'company', width: 100, sortable: true, align: 'left', talign: 'right'},
+				{title: '行业', name: 'industryid', width: 50, sortable: true, align: 'left', talign: 'right'},
+				{title: '信誉', name: 'company', width: 50, sortable: true, align: 'left', talign: 'right'}			
+			];
+
+			//实例化一个  mediav.Grid 类
+			//参数1：表格渲染的目标容器ID
+			//参数2：一些控制参数。
+			//       cm表格列模型。
+			//       handlePage分页处理函数，传出参数页码。
+			//       handleStar星标处理函数，点击添加关注。
+			var mvgrid = new mediav.Grid("adverList", {
+				"cm": cm,
+				"handlePage": function(page){retrieveAdver(page);},
+				"handleStar": function(id, checked){markStar(id, checked);}
+			});
+			
+			//处理分页逻辑
+			function retrieveAdver(page)
+			{
+				var page = page || 1;
+				$.getJSON("do.php?method=retrieve_adver&page=" + page, function(data){					
+					mvgrid.setData(data); //参考交换用的JSON数据格式				
+				});
+			}
+			retrieveAdver();
+
+
+			//此示例程序段主要是使用 mvgrid.getSelected() 来获取已经选中的记录ID
+			$("#menuDel").click(function(){
+				var ids = mvgrid.getSelected();
+				if ("" == ids)
+				{
+					Boxy.alert("请先选择要删除的广告主！", function(){}, {title: '未选择广告主'});
+					return false;
+				}
+				alert(ids);
+				return;
+
+				Boxy.confirm("确定要删除已选中的广告主吗？", function() { alert('Confirmed!'); }, {title: '删除确认'});
+				return false;
+			});
+
+
+		})();
+			
+	});
+
+
+ })(jQuery);
+</code>
+</pre>
+</article>
+<article class="article">
+<h2>交换的json数据格式</h2>
+<pre class="comFrame"><!--source start-->
+<code>
+{
+	"result":[
+		{"ID":"40","name":"\u60a0\u54c1\u7f51","company":"","industryid":"0"},
+		{"ID":"39","name":"\u56fd\u7f8e\u7535\u5668","company":"\u56fd\u7f8e\u7535\u5668","industryid":"6"}
+	],
+	"paginal":{"total":56,"pages":3,"size":20,"current":2},
+	"status":"ok"
+}
+</code>
+</pre><!--source end-->
+</article>
+
+<article class="article">
+<h2>完整参数</h2>
+<pre class="comFrame"><!--source start-->
+<code>
+cm
+列参数。不可省略。
+showCheckbox
+是否显示复选框。默认为true
+showStar
+是否显示星标。默认为true
+fixedTitle
+是否冻结表头（第一行）。默认为true
+handlePage
+分页处理函数。省略表示无分页功能。参数1：页码
+handleStar
+切换星标处理函数。可省略。参数1：记录ID；参数2：是否选中。回显数据时，由"star"标识
+{"ID":123, "star": "1", ...}
+
+</code>
+</pre><!--source end-->
+</article>
+
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<!--<script src="js/grid/string.js"></script>
+<script src="js/grid/grid.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/galile/datepicker/datepicker.css">
+<link rel="stylesheet" href="css/galile/datepicker/layout.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a href="tree.html">Tree</a></li>
+<li><a href="validate.html">Validate</a></li>
+</ul>
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a href="boxy_galile.html">Boxy</a></li>
+<li><a href="jeditable.html">jeditable</a></li>
+<li><a href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a class="active" href="calendar_galile.html">calendar</a></li>
+<li><a href="clone.html">jClone</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>Calendar组件说明</h2>
+<p>这是一个基于jquery的日历组件,可以定制显示的月份数目，可以用来选择连续的时间段，控制可选择的时间段.<br/>
+官网参考:<a href="http://www.eyecon.ro/datepicker/" target="_blank">http://www.eyecon.ro/datepicker/</a></p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<!--demo start-->
+<div class="clearFix">
+	<h3 class="demoTitle">时间选择器&darr;</h3>
+	<div id="div1" class="datepicker_div">
+		<div id="field1" class="datepicker_field">
+			<span></span>
+			<a href="#">点击选择时间范围</a>
+			<input type="hidden" name="frm_date" id="frm_date" />
+		</div>
+		<div id="calendar1" class="datepicker_calendar" style="left:0px"></div>
+	</div>
+	<p><p>
+	<h3 class="demoTitle">时间选择框&darr;</h3>
+	<div>
+	<input type="text" id="inputDate" name="inputDate" class="datepicker_input" value="2010-09-08" readonly></input>
+	</div>
+</div>
+<!--demo end-->
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<pre class="comFrame"><!--source start--><code>
+&lt;link rel="stylesheet" href="<a href="css/datepicker/datepicker.css">css/datepicker/datepicker.css</a>" /&gt;
+&lt;link rel="stylesheet" href="<a href="css/datepicker/layout.css">css/datepicker/layout.css</a>" /&gt;
+&lt;script src="<a href="js/datepicker/datepicker.js">js/datepicker/datepicker.js</a>"&gt;&lt;/script&gt;
+</code>
+</pre><!--source end-->
+</article>
+<article class="article">
+<h2>HTML</h2>
+<xmp class="comFrame">
+<!--html start-->
+<div class="clearFix">
+	<div id="div1" class="datepicker_div">
+		<div id="field1" class="datepicker_field">
+			<span></span>
+			<a href="#">选择时间范围</a>
+			<input type="hidden" name="frm_date" id="frm_date" />
+		</div>
+		<div id="calendar1" class="datepicker_calendar" style="left:0px"></div>
+	</div>
+	<p><p>
+	<div>
+	<input type="text" id="inputDate" name="inputDate" class="datepicker_input" value="2010-09-08" readonly></input>
+	</div>
+</div>
+<!--html end-->
+
+</xmp>
+</article>
+<article class="article">
+<h2>JS</h2>
+<pre class="comFrame">
+<code>
+$(function(){
+	$('#calendar1').DatePicker({
+		flat: true,
+		format: 'Y-m-d',
+		date: [new Date(), new Date()],
+		calendars: 2,
+		mode: 'range',
+		starts: 1,
+		onChange: function(formated) {
+			$('#field1 span').get(0).innerHTML = formated.join(' ~ ');
+			$('#frm_date').attr('value',formated);
+		}
+	});
+	var state = false;
+	$('#field1').bind('click', function(){
+		$('#calendar1').stop().animate({height: state ? 0 : $('#calendar1 div.datepicker').get(0).offsetHeight}, 500);
+		state = !state;
+		return false;
+	});
+	$('#calendar1 div.datepicker').css('position', 'absolute');  
+
+	$('.datepicker_input').DatePicker({
+		format:'Y-m-d',
+		date: $('#inputDate').val(),
+		current: $('#inputDate').val(),
+		starts: 1,
+		position: 'bottom',
+		onBeforeShow: function(){
+			$('#inputDate').DatePickerSetDate($('#inputDate').val(), true);
+		},
+		onChange: function(formated, dates){
+			$('#inputDate').val(formated);
+			$('#inputDate').DatePickerHide();
+		}
+	});	 
+}) 
+
+</code>
+</pre>
+</article>
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/datepicker/datepicker.js"></script>
+<script>
+$(function(){
+	$('#calendar1').DatePicker({
+		flat: true,
+		format: 'Y-m-d',
+		date: [new Date(), new Date()],
+		calendars: 2,
+		mode: 'range',
+		starts: 1,
+		onChange: function(formated) {
+			$('#field1 span').get(0).innerHTML = formated.join(' ~ ');
+			$('#frm_date').attr('value',formated);
+		}
+	});
+	var state = false;
+	$('#field1').bind('click', function(){
+		$('#calendar1').stop().animate({height: state ? 0 : $('#calendar1 div.datepicker').get(0).offsetHeight}, 500);
+		state = !state;
+		return false;
+	});
+	$('#calendar1 div.datepicker').css('position', 'absolute');  
+
+	$('.datepicker_input').DatePicker({
+		format:'Y-m-d',
+		date: $('#inputDate').val(),
+		current: $('#inputDate').val(),
+		starts: 1,
+		position: 'bottom',
+		onBeforeShow: function(){
+			$('#inputDate').DatePickerSetDate($('#inputDate').val(), true);
+		},
+		onChange: function(formated, dates){
+			$('#inputDate').val(formated);
+			$('#inputDate').DatePickerHide();
+		}
+	});	 
+}) 
+
+</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/form/validate.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a href="tree.html">Tree</a></li>
+<li><a class="active" href="validate.html">Validate</a></li>
+</ul>
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a href="boxy_galile.html">Boxy</a></li>
+<li><a href="jeditable.html">jeditable</a></li>
+<li><a href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a href="calendar_galile.html">calendar</a></li>
+
+<li><a href="clone.html">jClone</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>Validation组件说明</h2>
+<p>Validation是一个JQUERY校验组件，表单提交后在客户端进行验证，只有验证通过后才能进行下一步操作<br/>
+官网参考:<a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/" target="_blank">http://bassistance.de/jquery-plugins/jquery-plugin-validation/</a></p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<div class="clearFix"><!--demo start-->
+<form action="" method="post" name="frmMain" id="frmMain" style="padding:5px 35px;">
+		<h3 class="font_bold">网站主基本信息</h3>
+		<input name="hdnID" id="hdnID" type="hidden" value="" />
+		<ul class="form_item">
+			<li>
+				<label class="form_item_title" for="txtNameCn"><span class="font_red">*</span>中文名称: </label> 
+				<label class="form_item_input"><input id="txtNameCn" name="txtNameCn" type="text" size="20" class="form_input" value="" /></label> 
+			</li>
+			<li>
+				<label class="form_item_title" for="txtNameEn">英文名称: </label> 
+				<label class="form_item_input"><input id="txtNameEn" name="txtNameEn" class="form_input" type="text" size="20" value="" /></label>
+			</li> 
+			<li>
+				<label class="form_item_title" for="txtSiteurl"><span class="font_red">*</span>网址: </label> 
+				<label class="form_item_input"><input id="txtSiteurl" name="txtSiteurl" class="form_input" type="text" size="20" value="http://" /></label>
+			</li>				 
+		</ul>
+		<h3 class="font_bold">网站主其它信息</h3>
+		<ul class="form_item">		
+			<li>
+				<label class="form_item_title" for="txtEmail">Email: </label> 
+				<label class="form_item_input"><input id="txtEmail" name="txtEmail" class="form_input" type="text" size="20" value="" /></label>
+			</li>
+		</ul>
+		<ul class="form_item_area">
+			<li>
+				<label class="form_item_title" for="txaMemo">备注: </label> 
+				<label class="form_item_input"><textarea id="txaMemo" name="txaMemo" class="form_area"></textarea></label>
+			</li>
+		</ul> 
+
+	<p class="submitArea clearFix">
+		<input class="submitStyle btnYellowStyle" id="submit" type="submit" value="提交"/>
+		<input class="resetStyle btnYellowStyle" type="reset" value="返回"/> 				
+	</p>			
+	</form>
+
+</div><!--demo end-->
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<pre class="comFrame"><!--source start--><code>
+&lt;link rel="stylesheet" href="<a href="css/form/validate.css">css/form/validate.css</a>" /&gt;
+&lt;script src="<a href="js/form/jquery.form.js">js/form/jquery.form.js</a>"&gt;&lt;/script&gt;
+&lt;script src="<a href="js/form/jquery.validate.js">js/form/jquery.validate.js</a>"&gt;&lt;/script&gt;
+</code>
+</pre><!--source end-->
+</article>
+<article class="article">
+<h2>HTML</h2>
+<xmp class="comFrame">
+<!--html start-->
+<div class="clearFix">
+<form action="" method="post" name="frmMain" id="frmMain" style="padding:5px 35px;">
+		<h3 class="font_bold">网站主基本信息</h3>
+		<input name="hdnID" id="hdnID" type="hidden" value="" />
+		<ul class="form_item">
+			<li>
+				<label class="form_item_title" for="txtNameCn"><span class="font_red">*</span>中文名称: </label> 
+				<label class="form_item_input"><input id="txtNameCn" name="txtNameCn" type="text" size="20" class="form_input" value="" /></label> 
+			</li>
+			<li>
+				<label class="form_item_title" for="txtNameEn">英文名称: </label> 
+				<label class="form_item_input"><input id="txtNameEn" name="txtNameEn" class="form_input" type="text" size="20" value="" /></label>
+			</li> 
+			<li>
+				<label class="form_item_title" for="txtSiteurl"><span class="font_red">*</span>网址: </label> 
+				<label class="form_item_input"><input id="txtSiteurl" name="txtSiteurl" class="form_input" type="text" size="20" value="http://" /></label>
+			</li>				 
+		</ul>
+		<h3 class="font_bold">网站主其它信息</h3>
+		<ul class="form_item">		
+			<li>
+				<label class="form_item_title" for="txtEmail">Email: </label> 
+				<label class="form_item_input"><input id="txtEmail" name="txtEmail" class="form_input" type="text" size="20" value="" /></label>
+			</li>
+		</ul>
+		<ul class="form_item_area">
+			<li>
+				<label class="form_item_title" for="txaMemo">备注: </label> 
+				<label class="form_item_input"><textarea id="txaMemo" name="txaMemo" class="form_area"></textarea></label>
+			</li>
+		</ul> 
+
+	<p class="submitArea clearFix">
+		<input class="submitStyle btnYellowStyle" id="submit" type="submit" value="提交"/>
+		<input class="resetStyle btnYellowStyle" type="reset" value="返回"/> 				
+	</p>			
+	</form>
+
+</div>
+<!--html end-->
+
+</xmp>
+</article>
+<article class="article">
+<h2>JS</h2>
+<pre class="comFrame">
+<code>
+$(function(){
+	$("#frmMain").validate({
+		rules: {
+			txtNameCn: "required",
+			txtSiteurl: "url",
+			txtEmail: "email",
+			txtPv: "digits",
+			txtUv: "digits"
+		},
+		messages: {
+			txtNameCn: "中文名称不能为空！",
+			txtSiteurl: "网址格式不正确！",
+			txtEmail: "邮件格式不正确！",
+			txtPv: "流量只能为整数！",
+			txtUv: "用户量只能为整数！"
+		},
+		submitHandler:function(){
+			alert('submit');
+			return false;
+		}
+	});	
+}); 
+
+</code>
+</pre>
+</article>
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/form/jquery.form.js"></script>
+<script src="js/form/jquery.validate.js"></script>
+<script>
+$(function(){
+	$("#frmMain").validate({
+		rules: {
+			txtNameCn: "required",
+			txtSiteurl: "url",
+			txtEmail: "email",
+			txtPv: "digits",
+			txtUv: "digits"
+		},
+		messages: {
+			txtNameCn: "中文名称不能为空！",
+			txtSiteurl: "网址格式不正确！",
+			txtEmail: "邮件格式不正确！",
+			txtPv: "流量只能为整数！",
+			txtUv: "用户量只能为整数！"
+		},
+		submitHandler:function(){
+			alert('submit');
+			return false;
+		}
+	});	
+}); 
+
+</script>
+</body>
+</html>

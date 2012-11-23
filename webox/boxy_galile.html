@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/galile/form.css"/>
+<link rel="stylesheet" href="css/boxy/boxy_galile.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a href="tree.html">Tree</a></li>
+<li><a href="validate.html">Validate</a></li>
+</ul>
+
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a class="active" href="boxy_galile.html">Boxy</a></li>
+<li><a href="jeditable.html">jeditable</a></li>
+<li><a href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a href="calendar_galile.html">calendar</a></li>
+<li><a href="clone.html">jClone</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>Boxy组件说明</h2>
+<p>Boxy是一个基于jquery的弹窗插件,可以用于对话框,错误弹窗等页面弹窗,插件API较为丰富,可扩展性高.<br/>
+官网参考:<a href="http://onehackoranother.com/projects/jquery/boxy/" target="_blank">http://onehackoranother.com/projects/jquery/boxy/</a>
+</p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<!--demo start-->
+<h3 class="demoTitle">大浮层&darr;</h3>
+<input type="button" value="alert" id="alertTest"/><br/><br/>
+<input type="button" value="confirm" id="confirmTest"/><br/><br/>
+<input type="button" value="表单填写" id="inputTest"/><br/><br/>
+<input type="button" value="兴趣定向" id="interestTest"/><br/><br/>
+<ul class="interestShow clearFix">
+
+</ul>
+<h3 class="demoTitle">按钮浮层&darr;(无需boxy.js)</h3>
+表格按钮：
+<div class="floatDiv">
+<a href="#" class="iconStyle goBtn" rel="iconSelect"></a>
+<ul class="iconList">
+<li class="iconStyle goBtn">开启</li>
+<li class="iconStyle stopBtn">暂停</li>
+<li class="iconStyle delBtn">删除</li>
+</ul>
+</div>
+<h3 class="demoTitle">小浮层&darr;(无需boxy.js)</h3>
+
+提示：
+
+<a href="#" class="blockStyle opAlert">确定修改</a>
+确认：
+
+<a href="#" class="blockStyle opConfirm">删除</a>
+
+
+<!--demo end-->
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<!--source start-->
+<pre class="comFrame"><code>
+&lt;link rel="stylesheet" href="<a href="css/galile/form.css">css/galile/form.css</a>" /&gt;
+&lt;link rel="stylesheet" href="<a href="css/boxy/boxy_galile.css">css/boxy/boxy_galile.css</a>" /&gt;
+&lt;script src="<a href="js/galileo/jquery.boxy.js">js/galileo/boxy.js</a>"&gt;&lt;/script&gt;
+</code>
+</pre>
+<!--source end-->
+</article>
+<article class="article">
+<h2>HTML</h2>
+<xmp class="comFrame">
+<!--html 兴趣定向 start-->
+<input type="button" value="兴趣定向" id="interestTest"/>
+<ul class="interestShow clearFix">
+
+</ul>
+
+<div id="interestSelect" style="display:none;">
+	<div class="interestBox">
+		<h3 class="padBom10">从以下分类中选择</h3>
+		<div class="clearFix">		
+		<ul class="interestCategory">
+		<li>大类一</li>
+		<li>大类二</li>
+		<li>大类三</li>
+		</ul>
+		<p class="arrowStyle"></p>
+		<ul class="subCategory">
+		</ul>
+		</div>
+
+		<h3 class="padBom10 padTop10">你已选择的定向类别</h3>
+		<ul class="interestChoose marBom10 clearFix">
+
+		</ul>
+
+		<input type="button" value="确定提交" class="formBtn"/>
+
+	</div>
+</div>
+
+
+
+<!--html 兴趣定向 end-->
+
+<!--html 按钮浮层 start-->
+<div class="floatDiv">
+<a href="#" class="iconStyle goBtn" rel="iconSelect"></a>
+<ul class="iconList">
+<li class="iconStyle goBtn">开启</li>
+<li class="iconStyle stopBtn">暂停</li>
+<li class="iconStyle delBtn">删除</li>
+</ul>
+</div>
+<!--html 按钮浮层 end-->
+
+<!--html 小浮层 start-->
+
+提示：
+
+<a href="#" class="blockStyle opAlert">确定修改</a>
+确认：
+
+<a href="#" class="blockStyle opConfirm">删除</a>
+<!--html 小浮层 end-->
+
+</xmp>
+</article>
+<article class="article">
+<h2>JS</h2>
+<xmp class="comFrame">
+
+	/*兴趣定向选择*/
+	$(".interestCategory li").live("click",function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		$.ajax({
+			type:"POST",
+			url:"php/citySelect/data_interest.php?category="+$(this).text(),
+			success:function(data){
+				var str="";
+				var formatData=eval(data);
+				for(i=0;i<formatData.length;i++){
+					str+='<li id='+formatData[i].id+'>'+formatData[i].name+'</li>';
+				}
+				$(".subCategory:visible").empty().append(str);
+			}
+		})	
+	})
+	$(".subCategory li").live("click",function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		for(i=0;i<$(".interestChoose li").length;i++){
+			if($(".interestChoose li").eq(i).text()==$(this).text()+"x"){
+				alert("不能选择相同的类别！");
+				return false;
+			}
+		}	
+		$(".interestChoose:visible").append('<li>'+$(this).text()+'<a href="#">x</a><input type="hidden" value="'+$(this).attr("id")+'" name="interestArr[]"></li>');	
+	})
+	$(".interestChoose > li a").live("click",function(){
+		$(this).parent().remove();
+		return false;
+	})
+	$(".interestShow > li a").live("click",function(){
+		$(this).parent().remove();
+		$(".interestChoose:hidden").html($(".interestShow").html());		
+		return false;
+	})		
+	$(".submitInterest").live("click",function(){	
+		$(".interestShow").html($(".interestChoose:visible").html());
+		$(".interestChoose:hidden").html($(".interestShow").html());
+		$(this).parents(".boxy-wrapper").remove();
+		$(".boxy-modal-blackout").remove();
+	})
+
+	//按钮浮层
+	$("a[rel='iconSelect']").click(function(){
+		$(this).next().toggle();
+		return false;	
+	})
+	$(".iconList > li").click(function(){
+		var curentClass=$(this).attr("class");
+		$(this).parent().prev().attr("class",curentClass).end().hide();		
+	})
+	
+	//小浮层alert
+	$(".opAlert").click(function(){
+		$(this).wrap('<div class="floatDiv"></div>').parent().append('<p class="floatSmall"><span class="tipInfo okTip">密码修改完成</span><br/><input type="button" class="btnPic btnBlueSmall" value="确定"/></p>').find(".floatSmall").show();
+		return false;
+	})
+	$(".floatSmall > .btnPic").live("click",function(){
+		$(this).parent().unwrap().remove();
+	})
+	//小浮层confirm
+	$(".opConfirm").click(function(){
+		$(this).wrap('<div class="floatDiv"></div>').parent().append('<p class="floatSmall"><span class="tipInfo">确定删除？</span><br/><input type="button" class="btnPic btnBlueSmall" rel="1" value="确定"/> <input type="button" class="btnPic btnBlueSmall" rel="0" value="取消"/></p>').find(".floatSmall").show();
+		return false;
+	})
+	$(".floatSmall > .btnPic[rel=1],.floatSmall > .btnPic[rel=0]").live("click",function(){
+		var backValue=$(this).attr("rel");
+		alert(backValue);
+		$(this).parent().unwrap().remove();
+	})	
+
+</xmp>
+</article>
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<div id="interestSelect" style="display:none;">
+	<div class="interestBox">
+		<h3 class="padBom10">从以下分类中选择</h3>
+		<div class="clearFix">		
+		<ul class="interestCategory">
+		<li>大类一</li>
+		<li>大类二</li>
+		<li>大类三</li>
+		</ul>
+		<p class="arrowStyle"></p>
+		<ul class="subCategory">
+		</ul>
+		</div
+		><h3 class="padBom10 padTop10">你已选择的定向类别</h3>
+		<ul class="interestChoose marBom10 clearFix">
+
+		</ul>
+		<input type="button" value="确定提交" class="formBtn submitInterest"/>
+
+
+	</div>
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/boxy/jquery.boxy.js"></script>
+<script>
+$(function(){
+	Boxy.DEFAULTS.title = '内容标题';
+	$("#alertTest").click(function(){
+	Boxy.alert("可以用于对话框,错误弹窗等页面弹窗,插件API较为丰富,可扩展性高可以用于对话框,错误弹窗等页面弹窗,插件API较为丰富,可扩展性高可以用于对话框,错误弹窗等页面弹窗,插件API较为丰富,可扩展性高可以用于对话框,错误弹窗等页面弹窗,插件API较为丰富,可扩展性高可以用于对话框,错误弹窗等页面弹窗,插件API较为丰富,可扩展性高可以用于对话框,错误弹窗等页面弹窗,插件API较为丰富,可扩展性高可以用性高!");
+	})
+	$("#confirmTest").click(function(){
+	Boxy.confirm("Please confirm?",function(){alert("ok")});
+	})
+	$("#inputTest").click(function(){
+		new Boxy('<form name="" action="" method="" class="gForm boxyForm"><ul class="formItem"><li class="clearFix"><label class="field">广告单元名称</label><input type="text" class="formInput" name="adName" value=""/></li><li class="clearFix"><label class="field">广告单元名称</label><input type="text" class="formInput" name="adName" value=""/></li><li class="clearFix"><label class="field">广告单元名称</label><input type="text" class="formInput" name="adName" value=""/></li></ul><p class="boxyBtn"><input type="submit" class="formBtn" value="确定"></p></form>',
+		{
+			modal:true
+		})
+	})
+
+	$("#interestTest").click(function(){
+		new Boxy($("#interestSelect").html(),
+			{modal:true
+			}
+		)
+	})
+	
+	/*兴趣定向选择*/
+	$(".interestCategory li").live("click",function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		$.ajax({
+			type:"POST",
+			url:"php/citySelect/data_interest.php?category="+$(this).text(),
+			success:function(data){
+				var str="";
+				var formatData=eval(data);
+				for(i=0;i<formatData.length;i++){
+					str+='<li id='+formatData[i].id+'>'+formatData[i].name+'</li>';
+				}
+				$(".subCategory:visible").empty().append(str);
+			}
+		})	
+	})
+	$(".subCategory li").live("click",function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		for(i=0;i<$(".interestChoose li").length;i++){
+			if($(".interestChoose li").eq(i).text()==$(this).text()+"x"){
+				alert("不能选择相同的类别！");
+				return false;
+			}
+		}	
+		$(".interestChoose:visible").append('<li>'+$(this).text()+'<a href="#">x</a><input type="hidden" value="'+$(this).attr("id")+'" name="interestArr[]"></li>');	
+	})
+	$(".interestChoose > li a").live("click",function(){
+		$(this).parent().remove();
+		return false;
+	})
+	$(".interestShow > li a").live("click",function(){
+		$(this).parent().remove();
+		$(".interestChoose:hidden").html($(".interestShow").html());		
+		return false;
+	})		
+	$(".submitInterest").live("click",function(){	
+		$(".interestShow").html($(".interestChoose:visible").html());
+		$(".interestChoose:hidden").html($(".interestShow").html());
+		$(this).parents(".boxy-wrapper").remove();
+		$(".boxy-modal-blackout").remove();
+	})
+	//按钮浮层
+	$("a[rel='iconSelect']").click(function(){
+		$(this).next().toggle();
+		return false;	
+	})
+	$(".iconList > li").click(function(){
+		var curentClass=$(this).attr("class");
+		$(this).parent().prev().attr("class",curentClass).end().hide();		
+	})
+	
+	//小浮层alert
+	$(".opAlert").click(function(){
+		$(this).wrap('<div class="floatDiv"></div>').parent().append('<p class="floatSmall"><span class="tipInfo okTip">密码修改完成</span><br/><input type="button" class="btnPic btnBlueSmall" value="确定"/></p>').find(".floatSmall").show();
+		return false;
+	})
+	$(".floatSmall > .btnPic").live("click",function(){
+		$(this).parent().unwrap().remove();
+	})
+	//小浮层confirm
+	$(".opConfirm").click(function(){
+		$(this).wrap('<div class="floatDiv"></div>').parent().append('<p class="floatSmall"><span class="tipInfo">确定删除？</span><br/><input type="button" class="btnPic btnBlueSmall" rel="1" value="确定"/> <input type="button" class="btnPic btnBlueSmall" rel="0" value="取消"/></p>').find(".floatSmall").show();
+		return false;
+	})
+	$(".floatSmall > .btnPic[rel=1],.floatSmall > .btnPic[rel=0]").live("click",function(){
+		var backValue=$(this).attr("rel");
+		alert(backValue);
+		$(this).parent().unwrap().remove();
+	})	
+
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+.formArea{
+	padding:10px;
+}
+.formArea .opCon li{
+	float:left;
+	padding-right:20px;
+	margin-right:10px;
+	color:#8d8d8d;
+	font-weight:bold;
+}
+.formArea .opCon li.active{
+	color:#000;
+	background:url(http://ju.mediav.com/images/icon.png) no-repeat right -8px;
+	*background-position:right -10px;
+	
+}
+.formArea .opProgress{
+	width:423px;
+	margin-top:5px;
+}
+.formArea .opProgress span{
+	float:left;
+	border:1px solid #1B72CC;
+	height:5px;
+	overflow:hidden;
+	width:138px;
+	margin-right:1px;
+}
+.formArea .opProgress span.finish{
+	background-color:#2791FE;	
+}
+.gForm{
+	padding:30px 0;
+}
+.gForm .formTitle{
+	padding-bottom:5px;
+	border-bottom:2px solid #d5d5d5;
+	margin-bottom:15px;
+	font-weight:bold;
+}
+.gForm .formTitle .planTip{
+	padding-left:10px;
+	color:#666;
+	font-weight:normal;	
+}
+.gForm .formItem li{
+	padding:5px 0;
+}
+.gForm .formItem li label{
+	float:left;
+	line-height:20px;
+	padding-right:10px;
+	text-align:right;
+}
+.gForm .formItem li label.field{
+	width:140px;
+}
+.gForm .formItem li .formInput{
+	float:left;
+	border:1px solid #8d8d8d;
+	font-size:12px;
+	height:20px;
+	line-height:20px;
+	width:160px;
+}
+.gForm .formItem li .shortInput{
+	width:50px;	
+}
+.gForm .formItem li .formCheck{
+	float:left;
+	height:20px;
+	line-height:20px;
+	margin-right:5px;
+}
+.gForm .formItem li .formRadio{
+	float:left;
+	height:20px;
+	line-height:20px;
+	margin-right:5px;
+}
+.radioArea{
+	float:left;
+}
+
+.gForm .btnArea{
+	padding-top:5px;
+	border-top:2px solid #d5d5d5;
+}
+.gForm .btnArea .leftArea{
+	float:left;
+}
+.gForm .btnArea .exit{
+	float:right;
+}
+.tipSpan{
+	display:inline-block;
+	padding:0 2px;
+	margin-left:5px;
+	border:1px solid #efb508;
+	background-color:#ffe8a1;
+}
+.tipDiv{
+	float:left;
+	padding-left:100px;
+}
+.tipPv{
+	border:1px solid #efb508;
+	background-color:#ffe8a1;
+	padding:0 5px;	
+}
+/*form button*/
+/*.formBtn{
+	padding-right:3px;
+	background:url(http://ju.mediav.com/images/btn_blue_r.gif) no-repeat top right;
+	display:inline-block;
+	*cursor:pointer;
+	color:#fff!important;
+}
+.formBtn .btnInsideStyle{
+	background:url(http://ju.mediav.com/images/btn_blue_bg.gif) no-repeat 0 0;
+	line-height:24px;
+	height:24px;
+	display:inline-block;
+	padding:0 15px 0 18px;
+	*cursor:pointer;
+}*/
+.formBtn{
+	background:url("http://ju.mediav.com/images/galile/btn.gif") no-repeat scroll 0 0 transparent;
+	color:#FFF;
+	border:none;
+	cursor:pointer;
+	display:inline-block;
+	font-weight:bold;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	width:120px;
+}
+/*form upload*/
+.gForm .formItem li.uploadList .formInput{
+	width:100px;
+	float:none;
+}
+.gForm .formItem li.uploadList .upPic{
+	display:inline-block;
+	padding-left:20px;
+	background:url(http://ju.mediav.com/images/icon.png) no-repeat 0 0;
+}
+.gForm .formItem li.uploadList .uploadOk{
+	background-position:0 -8px;
+}
+.gForm .formItem li.uploadList .uploadError{
+	background-position:0 -40px;
+	color:#f00;
+}
+/*form upload*/
+/*button*/
+.btnPic{
+	height:24px;
+	cursor:pointer;
+	border:none;
+	background:url(http://ju.mediav.com/images/btn_pic.gif) no-repeat 0 0;
+	color:#fff;
+}
+.btnBlueLong{
+	width:120px;
+	background-position:0 0;
+}
+.btnBlueShort{
+	width:80px;
+	background-position:0 -25px;
+}
+.btnBlueSmall{
+	width:40px;
+	background-position:0 -50px;
+}
+.btnGrayLong{
+	width:120px;
+	background-position:0 -75px;
+}
+.btnGrayShort{
+	width:80px;
+	background-position:0 -100px;
+}
+.btnGraySmall{
+	width:40px;
+	background-position:0 -125px;
+}
+/*button*/

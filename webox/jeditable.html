@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/galile/grid.css">
+<link rel="stylesheet" href="css/galile/form.css">
+<link rel="stylesheet" href="css/galile/button.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a href="tree.html">Tree</a></li>
+<li><a href="validate.html">Validate</a></li>
+</ul>
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a href="boxy_galile.html">Boxy</a></li>
+<li><a class="active" href="jeditable.html">jeditable</a></li>
+<li><a href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a href="calendar_galile.html">calendar</a></li>
+<li><a href="clone.html">jClone</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>jeditable组件说明</h2>
+<p>jeditable是一个基于jquery的表格即时编辑插件
+</p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<!--demo start-->
+<div id="reportList">表格建设中...</div>
+
+<!--demo end-->
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<!--source start-->
+<pre class="comFrame"><code>
+&lt;link rel="stylesheet" href="<a href="css/galile/grid.css">css/galile/grid.css</a>" /&gt;
+&lt;script src="<a href="js/grid/string.js">js/grid/string.js</a>"&gt;&lt;/script&gt;
+&lt;script src="<a href="js/grid/jquery.blockUI.js">js/grid/jquery.blockUI.js</a>"&gt;&lt;/script&gt;
+&lt;script src="<a href="js/grid/jquery.namespace.js">js/grid/jquery.namespace.js</a>"&gt;&lt;/script&gt;
+&lt;script src="<a href="js/grid/grid_galile.js">js/grid/grid_galile.js</a>"&gt;&lt;/script&gt;
+&lt;script src="<a href="js/jeditable/jquery.jeditable.js">js/jeditable/jquery.jeditable.js</a>"&gt;&lt;/script&gt;
+</code>
+</pre>
+<!--source end-->
+</article>
+<article class="article">
+<h2>HTML</h2>
+<xmp class="comFrame">
+<!--html start-->
+<div id="reportList"></div>
+<!--html end-->
+
+</xmp>
+</article>
+<article class="article">
+<h2>JS</h2>
+<xmp class="comFrame">
+
+$(function(){
+	var cm = [
+		  		{title: '操作', name: 'ID', width: 50, align: 'center', talign: 'center'},
+		  		{title: '广告单元', name: 'name', width: '30%', align: 'left', talign: 'left',editable:true},
+		  		{title: '广告活动', name: 'company', width: '30%', align: 'left', talign: 'left'},
+		  		{title: 'CPC/CMP 出价', name: 'industryid', width: '15%', align: 'right', talign: 'right'},
+		  		{title: '预算', name: 'memo', width: 50, align: 'right', talign: 'right'},
+		  		{title: '状态', name: 'ower_userid', width: 50, align: 'left', talign: 'left'},		
+		  		{title: '点击数', name: 'report', width: 50, align: 'right', talign: 'right'}		
+		  	];
+
+	  	//实例化一个  mediav.Grid 类
+	  	//参数1：表格渲染的目标容器ID
+	  	//参数2：一些控制参数。
+	  	//cm表格列模型。
+	  	//handlePage分页处理函数，传出参数页码。
+	  	var mvgrid = new mediav.Grid("reportList", {
+	  		"cm": cm,
+	  		"handlePage": function(page){retrieveAdver(page);},
+			"showCheckbox": false,
+			"showStar": false,
+			"fixedTitle": false			
+	  	});
+		  			
+	  	//处理分页逻辑
+	  	function retrieveAdver(page){
+	  		var page = page || 1;
+	  		
+			var sortOrder=$('.mvgrid .grid th').filter(".desc,.asc").attr('class');
+			sortOrder=(sortOrder=="sort asc")?"asc":"desc";
+			var index=$('.mvgrid .grid th').filter(".desc,.asc").attr('title');
+			var sortName=index?cm[index-2].name:" ";
+			var sortType=index?cm[index-2].sorttype:" ";
+			
+	  		var filter = $('#mainCon > #gridTop > #gridList > .active > span > a').attr('title');
+	  		var query;
+	  		(encodeURIComponent('请输入名称或ID号') != encodeURIComponent($("#searchInput").val())) ? query = encodeURIComponent($("#searchInput").val()) : '';
+	  		
+	  		var url = "php/grid/do.php?method=retrieve_adver&page=" + page;
+	  		(filter == 'all') ? '' : url += '&filter='+filter;
+	  		(query) ? url += '&query='+query : '';
+	  		
+	  		(sortOrder) ? url += '&sortOrder='+sortOrder+'&sortName='+sortName+'&sortType='+sortType : '';
+	  		
+	  		$("#reportList").block();
+	  		$.getJSON(url, function(data){					
+	  			mvgrid.setData(data); //参考交换用的JSON数据格式	
+	  			$("#reportList").unblock();
+				
+				//即时编辑表格插件的配置 start
+				 $('.edit').editable('php/grid/do.php', { 
+					 width     :120,
+					 height    :18,
+					 cancel    : '取消',
+					 submit    : '确定',
+					 indicator : '<img src="css/loader.gif">'
+			
+				 });
+				 //即时编辑表格插件的配置 end				
+	  		});
+	  		window.scroll(0, 0);
+	  	}		   
+		retrieveAdver();
+})
+</xmp>
+</article>
+<article class="article">
+<h2>静态数据源</h2>
+<xmp class="comFrame">
+
+
+header("Content-type: text/html; charset=utf-8");
+
+if($_POST['trId']){
+	$field=$_POST['rel'];
+	$trId=$_POST['trId'];
+	$val=$_POST['value'];
+	echo $val;
+}else{
+$arr=array("result"=>array(
+	array(
+		"ID"=>"1",
+		"name"=>"qin"
+	),
+	array(
+		"ID"=>"2",
+		"name"=>"<a href='#'>qin</a>"
+	)),"paginal"=>array(
+		"total"=>340,
+		"pages"=>7,
+		"size"=>50,
+		"current"=>"1"
+	)
+);
+
+
+echo json_encode($arr);
+}
+
+
+</xmp>
+</article>
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/grid/string.js"></script>
+<script src="js/grid/jquery.blockUI.js"></script>
+<script src="js/grid/jquery.namespace.js"></script>
+<script src="js/galileo/grid_galile.js"></script>
+<script src="js/jeditable/jquery.jeditable.js"></script>
+<script>
+
+$(function(){
+	var cm = [
+		  		{title: '操作', name: 'ID', width: 50, align: 'center', talign: 'center'},
+		  		{title: '广告单元', name: 'name', width: '30%', align: 'left', talign: 'left',editable:true},
+		  		{title: '广告活动', name: 'company', width: '30%', align: 'left', talign: 'left'},
+		  		{title: 'CPC/CMP 出价', name: 'industryid', width: '15%', align: 'right', talign: 'right'},
+		  		{title: '预算', name: 'memo', width: 50, align: 'right', talign: 'right'},
+		  		{title: '状态', name: 'ower_userid', width: 50, align: 'left', talign: 'left'},		
+		  		{title: '点击数', name: 'report', width: 50, align: 'right', talign: 'right'}		
+		  	];
+
+	  	//实例化一个  mediav.Grid 类
+	  	//参数1：表格渲染的目标容器ID
+	  	//参数2：一些控制参数。
+	  	//cm表格列模型。
+	  	//handlePage分页处理函数，传出参数页码。
+	  	var mvgrid = new mediav.Grid("reportList", {
+	  		"cm": cm,
+	  		"handlePage": function(page){retrieveAdver(page);},
+			"showCheckbox": false,
+			"showStar": false,
+			"fixedTitle": false			
+	  	});
+		  			
+	  	//处理分页逻辑
+	  	function retrieveAdver(page){
+	  		var page = page || 1;
+	  		
+			var sortOrder=$('.mvgrid .grid th').filter(".desc,.asc").attr('class');
+			sortOrder=(sortOrder=="sort asc")?"asc":"desc";
+			var index=$('.mvgrid .grid th').filter(".desc,.asc").attr('title');
+			var sortName=index?cm[index-2].name:" ";
+			var sortType=index?cm[index-2].sorttype:" ";
+			
+	  		var filter = $('#mainCon > #gridTop > #gridList > .active > span > a').attr('title');
+	  		var query;
+	  		(encodeURIComponent('请输入名称或ID号') != encodeURIComponent($("#searchInput").val())) ? query = encodeURIComponent($("#searchInput").val()) : '';
+	  		
+	  		var url = "php/grid/do.php?method=retrieve_adver&page=" + page;
+	  		(filter == 'all') ? '' : url += '&filter='+filter;
+	  		(query) ? url += '&query='+query : '';
+	  		
+	  		(sortOrder) ? url += '&sortOrder='+sortOrder+'&sortName='+sortName+'&sortType='+sortType : '';
+	  		
+	  		$("#reportList").block();
+	  		$.getJSON(url, function(data){					
+	  			mvgrid.setData(data); //参考交换用的JSON数据格式	
+	  			$("#reportList").unblock();
+				 $('.edit').editable('php/grid/do.php', { 
+					 width     :120,
+					 height    :18,
+					 cancel    : '取消',
+					 submit    : '确定',
+					 indicator : '<img src="css/loader.gif">'
+			
+				 });				
+	  		});
+	  		window.scroll(0, 0);
+	  	}		   
+		retrieveAdver();
+})
+</script>
+</body>
+</html>

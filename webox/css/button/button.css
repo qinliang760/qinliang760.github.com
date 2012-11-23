@@ -1,0 +1,45 @@
+
+/*无icon*/
+.btnStyle{
+	padding-right:3px;
+	background:url(../../images/button/btn_right.gif) no-repeat top right;
+	display:inline-block;
+	*cursor:pointer;/*for ie*/
+	*display:inline;/*for ie if block*/
+}
+.btnStyle .btnInsideStyle{
+	background:url(../../images/button/btn_bg.gif) no-repeat 0 0;
+	line-height:22px;
+	height:22px;
+	display:inline-block;
+	padding:0 5px 0 8px;
+	*cursor:pointer;/*for ie*/
+}
+.btnStyle:hover{
+	background-position:bottom right;
+}
+.btnStyle:hover .btnInsideStyle{
+	background-position:0 100%;
+}
+
+/*无效按钮*/
+a.btnDisabled{
+color:#ccc;
+}
+a.btnDisabled:hover{
+color:#ccc;
+background-position:top right;
+}
+a.btnDisabled:hover .btnInsideStyle{
+	background-position:0 0;
+}
+/*有icon 在ul li中对于ie需要float支持*/
+.btnStyle .btnInsideStyle .IconStyle{
+	padding-left:20px;
+	display:inline-block;
+	background-image:url(../../images/button/icon_btn.png);
+	background-repeat:no-repeat;
+}
+.btnStyle .btnInsideStyle .addIcon{
+	background-position:0 0;
+}

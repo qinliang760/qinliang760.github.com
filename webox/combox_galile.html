@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/galile/form.css"/>
+<link rel="stylesheet" href="css/galile/jquery.jCombox.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a href="tree.html">Tree</a></li>
+<li><a href="validate.html">Validate</a></li>
+</ul>
+
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a href="boxy_galile.html">Boxy</a></li>
+<li><a href="jeditable.html">jeditable</a></li>
+<li><a href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a href="calendar_galile.html">calendar</a></li>
+<li><a href="clone.html">jClone</a></li>
+<li><a class="active" href="combox_galileo.html">jCombox</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>jCombox组件说明</h2>
+<p>jCombox是一个基于jquery的下拉插件.</p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<!--demo start-->
+<div class="jCombox">
+	<a href="#" class="jComboxLink">选择投放的尺寸及流量</a>
+    <div class="jComboxCon">
+        <ul class="jComboxList">
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>                        
+        </ul>
+    </div>
+</div>
+<!--demo end-->
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<!--source start-->
+<pre class="comFrame"><code>
+&lt;link rel="stylesheet" href="<a href="css/galile/jquery.jCombox.css">css/galile/jquery.jCombox.css</a>" /&gt;
+&lt;script src="<a href="js/galileo/jquery.jCombox.js">js/galileo/jquery.jCombox.js</a>"&gt;&lt;/script&gt;
+</code>
+</pre>
+<!--source end-->
+</article>
+<article class="article">
+<h2>HTML</h2>
+<xmp class="comFrame">
+<div class="jCombox">
+	<a href="#" class="jComboxLink">选择投放的尺寸及流量</a>
+    <div class="jComboxCon">
+        <ul class="jComboxList">
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>
+            <li><input id="1" type="checkbox" name=""/><span>70.00%</span><span>300*250</span></li>                        
+        </ul>
+    </div>
+</div>
+</xmp>
+</article>
+<article class="article">
+<h2>JS</h2>
+<xmp class="comFrame">
+
+$(function(){
+	$(".jComboxLink").jCombox();
+})
+
+</xmp>
+</article>
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<div id="interestSelect" style="display:none;">
+	<div class="interestBox">
+		<h3 class="padBom10">从以下分类中选择</h3>
+		<div class="clearFix">		
+		<ul class="interestCategory">
+		<li>大类一</li>
+		<li>大类二</li>
+		<li>大类三</li>
+		</ul>
+		<p class="arrowStyle"></p>
+		<ul class="subCategory">
+		</ul>
+		</div
+		><h3 class="padBom10 padTop10">你已选择的定向类别</h3>
+		<ul class="interestChoose marBom10 clearFix">
+
+		</ul>
+		<input type="button" value="确定提交" class="formBtn submitInterest"/>
+
+
+	</div>
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/galileo/jquery.jCombox.js"></script>
+<script>
+$(function(){
+	$(".jComboxLink").jCombox();
+})
+</script>
+
+</body>
+</html>

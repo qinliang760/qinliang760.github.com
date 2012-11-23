@@ -1,0 +1,111 @@
+
+.mvgridth th, .mvgrid th{
+background-color:#f8f8f8;
+border-bottom:solid 1px #d5d5d5;
+height: 25px;
+overflow: hidden;
+padding:0 5px;
+font-weight:normal;
+}
+.mvgridth th.sort{
+padding-left:15px;
+}
+.mvgrid th.sort{
+padding-left:15px;
+cursor:pointer;
+background:#f8f8f8 url(http://puijs.mediav.com/images/adviva/arrow_sort.gif) no-repeat 4px -41px;
+}
+.mvgrid th.asc{
+background-color:#d5d5d5;
+background-position:4px -17px;
+}
+.mvgrid th.desc{
+background-color:#d5d5d5;
+background-position:4px 4px;
+}
+.mvgrid table.grid td{
+border-right:solid 1px #d5d5d5;
+border-bottom:solid 1px #d5d5d5;
+/*border-right:solid 1px #ccc;*/
+padding: 3px 5px;
+word-wrap:break-word;
+}
+.mvgrid table.grid td.noBorderLeft{
+border-left:none;
+}
+.mvgrid table.grid td.noBorderRight{
+border-right:none;
+}
+
+.mvgrid table.grid {
+/*border-collapse:collapse;*/
+border-spacing:0;
+border-top:solid 1px #1677DC;
+}
+table.grid {
+border-top:solid 1px #d5d5d5;
+}
+
+/*.mvgrid tr.odd{
+background-color:#F5F5F5;
+
+}*/
+
+.mvgrid tr.hover{
+background-color:#f0f0f0;
+
+}
+.mvgrid tr.trParentSign{
+background-color:#e8f1fa;
+}
+.mvgrid tr.trChildSign{
+/*text-indent:2em;*/
+}
+.mvgrid tr.select,.mvgrid td.select{
+background-color:#FFFFCC;
+
+}
+
+
+.mvgrid table.pagebar{
+background-color:#f8f8f8;
+border-bottom:solid 3px #1677dc;
+}
+.pageArea{
+float:right;
+padding:6px 3px;
+}
+.pageArea a{
+float:left;
+margin:0 2px;
+display:inline;
+}
+.pageArea a.prevBtnDis,.pageArea a.nextBtnDis{/*disabled*/
+color:#666;
+cursor:default;
+}
+.pageArea a.prevBtnDis:hover,.pageArea a.nextBtnDis:hover{/*disabled*/
+text-decoration:none;
+}
+.pageArea .pagebarStat,.pageArea .pagebarTotal,.pageArea .pagebarSize{
+float:left;
+padding:0 3px;
+text-align:center;
+}
+.pageArea .pagebarSize{
+padding:0 10px;
+}
+.pageArea .pagebarSize select{
+width:45px;
+}
+
+.mvgrid table.dataShow{
+border-top:1px solid #D5D5D5;
+margin-bottom:10px;
+}
+.mvgrid table.dataShow td.last{
+border-right:none;
+}
+table.grid tbody td.edit{
+background:url('http://ju.mediav.com/images/icon.png') no-repeat scroll -999px -999px transparent
+}

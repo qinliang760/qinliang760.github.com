@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/tree/zTreeStyle.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a class="active" href="tree.html">Tree</a></li>
+<li><a href="validate.html">Validate</a></li>
+</ul>
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a href="boxy_galile.html">Boxy</a></li>
+<li><a href="jeditable.html">jeditable</a></li>
+<li><a href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a href="calendar_galile.html">calendar</a></li>
+<li><a href="clone.html">jClone</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>Tree组件说明</h2>
+<p>zTree是利用Jquery的核心代码实现的一套能完成大部分常用工作的Tree，支持 JSON 数据，支持一次性静态生成 和 Ajax异步加载 两种方式 。
+<br/>
+官网参考:<a href="http://code.google.com/p/jquerytree/" target="_blank">http://code.google.com/p/jquerytree/</a>
+</p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<!--demo start-->
+<ul id="source" class="tree treeAd"></ul>
+<!--demo end-->
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<pre class="comFrame"><!--source start--><code>
+&lt;link rel="stylesheet" href="<a href="css/tree/zTreeStyle.css">css/tree/zTreeStyle.css</a>" /&gt;
+&lt;script src="<a href="js/tree/jquery-ztree-2.1.js">js/tree/jquery-ztree-2.1.js</a>"&gt;&lt;/script&gt;<br/>
+<a href="images/zTree/zTree.rar">图片下载</a>
+</code>
+</pre><!--source end-->
+</article>
+<article class="article">
+<h2>HTML</h2>
+<xmp class="comFrame">
+<!--html start-->
+<ul id="source" class="tree treeAd"></ul>
+<!--html end-->
+
+</xmp>
+</article>
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/tree/jquery-ztree-2.1.js"></script>
+<script>
+var zTree1;
+var setting;
+
+setting = {
+	callback: {
+		click:	zTreeOnClick
+	}
+};
+
+var zNodes =[
+  			{ name:"手机", ename:"Mobile", open:true,
+  				nodes: [
+  					{ name:"诺基亚", ename:"Nokia",
+  						nodes: [
+  								{ name:"C6(音乐版)", ename:"C6(Music)"},
+  								{ name:"X6(导航版)", ename:"X6(GPS)"},
+  								{ name:"5230(世博版)", ename:"5230(SB)"},
+  								{ name:"N97mini", ename:"N97mini"}
+  							]},
+  					{ name:"三星", ename:"Samsung",
+  						nodes: [
+  								{ name:"I9000(联通版)", ename:"I9000(Unicom)"},
+  								{ name:"I9000(移动版)", ename:"I9000(China Mobile)"},
+  								{ name:"Galaxy Naos", ename:"Galaxy Naos"},
+  								{ name:"Fascinate", ename:"Fascinate"}
+  							]},
+  					{ name:"索爱", ename:"Sony Ericsson",
+  						nodes: [
+  								{ name:"U1i(Satio)", ename:"U1i(Satio)"},
+  								{ name:"U5i(Vivaz)", ename:"U5i(Vivaz)"},
+  								{ name:"X10i", ename:"X10i"},
+  								{ name:"Aino mini", ename:"Aino mini"}
+  							]},
+  					{ name:"多普达", ename:"Dopod"}
+  				]},
+  			{ name:"电脑", ename:"Computer", open:true,
+  				nodes: [
+  					{ name:"硬件", ename:"Hardware",
+  						nodes: [
+  								{ name:"主板", ename:"Motherboard"},
+  								{ name:"显卡", ename:"Graphics"},
+  								{ name:"CPU", ename:"CPU"},
+  								{ name:"内存", ename:"Memory"},
+  								{ name:"硬盘", ename:"Hard disk"},
+  								{ name:"音箱", ename:"Speaker"},
+  								{ name:"机箱", ename:"Chassis"},
+  								{ name:"电源", ename:"Power supply"}
+  							]},
+  					{ name:"整机", ename:"Software",
+  						nodes: [
+  								{ name:"联想", ename:"Lenovo"},
+  								{ name:"戴尔", ename:"Dell"},
+  								{ name:"方正", ename:"Founder"},
+  								{ name:"宏基", ename:"Acer"},
+  								{ name:"惠普", ename:"Hewlett-Packard"}
+  							]},
+  					{ name:"网络设备", ename:"Network",
+  						nodes: [
+  								{ name:"网卡", ename:"NIC"},
+  								{ name:"交换机", ename:"Switch"},
+  								{ name:"路由器", ename:"Router"}
+  							]}
+  				]},
+  			{ name:"家电", ename:"Home Appliances", open:true,
+  				nodes: [
+  					{ name:"冰箱", ename:"Refrigerator"},
+  					{ name:"电视", ename:"TV",
+  						nodes: [
+  								{ name:"液晶", ename:"Liquid crystal"},
+  								{ name:"等离子", ename:"Plasma"},
+  								{ name:"3D", ename:"Three-dimensional"}
+  							]},
+  					{ name:"空调", ename:"Air conditioning"}
+  				]}						
+  		];
+
+var preSelectedNode1;
+
+function zTreeOnClick(event, treeId, treeNode) {
+	if (treeId=="source") {
+		if (preSelectedNode1 == treeNode) {
+			zTree1.cancleSelectedNode();
+			preSelectedNode1 = null;
+		} else {
+			preSelectedNode1 = treeNode;
+		}
+	}
+}
+
+function reloadTree() {
+	zTree1 = $("#source").zTree(setting, zNodes);
+
+}
+reloadTree();
+
+</script>
+</body>
+</html>

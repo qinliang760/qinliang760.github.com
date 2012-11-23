@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/accordion/accordion.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a class="active" href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a href="tree.html">Tree</a></li>
+<li><a href="validate.html">Validate</a></li>
+</ul>
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a href="boxy_galile.html">Boxy</a></li>
+<li><a href="jeditable.html">jeditable</a></li>
+<li><a href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a href="calendar_galile.html">calendar</a></li>
+<li><a href="clone.html">jClone</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>Accordion组件说明</h2>
+<p>Accordion是一个基于jquery的折叠组件,可以控制内容的展开显示和收缩隐藏,通过标题的点击展开和收缩内容,实现了简单的折叠功能.</p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<!--demo start-->
+<h3 class="demoTitle">普通accordion&darr;</h3>
+<h3 class="accordionArea clearFix"><span class="accordionTitle font_bold">Title1</span><span class="clickStatus">点击收缩</span></h3><div class="accordionCon">隐藏内容</div>
+
+<h3 class="demoTitle">菜单accordion&darr;</h3>
+<dl class="accordionNav">
+<dt class="active">菜单一</dt>
+<dd>我是菜单一的内容</dd>
+<dt>菜单二</dt>
+<dd>我是菜单二的内容</dd>
+<dt>菜单三</dt>
+<dd>我是菜单三的内容</dd>
+</dl>
+<!--demo end-->
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<!--source start-->
+<pre class="comFrame"><code>
+&lt;link rel="stylesheet" href="<a href="css/accordion/accordion.css">css/accordion/accordion.css</a>" /&gt;
+&lt;script src="<a href="js/accordion/jquery.accordion.js">js/accordion/jquery.accordion.js</a>"&gt;&lt;/script&gt;<br/>
+<a href="images/accordion/accordion.rar">图片下载</a>
+</code>
+</pre>
+<!--source end-->
+</article>
+<article class="article">
+<h2>HTML</h2>
+<xmp class="comFrame">
+/*普通accordion*/
+<h3 class="accordionArea clearFix"><span class="font_bold">Title1</span><span class="clickStatus">点击收缩</span></h3>
+<div class="accordionCon">隐藏内容</div>
+
+/*菜单accordion*/
+<dl class="accordionNav">
+<dt class="active">菜单一</dt>
+<dd>我是菜单一的内容</dd>
+<dt>菜单二</dt>
+<dd>我是菜单二的内容</dd>
+<dt>菜单三</dt>
+<dd>我是菜单三的内容</dd>
+</dl>
+
+</xmp>
+</article>
+<article class="article">
+<h2>JS</h2>
+<xmp class="comFrame">
+/*普通accordion*/
+$(".accordionArea").accordion();
+
+/*菜单accordion*/
+$(".accordionNav dt").accordion({nav:true});
+
+</xmp>
+</article>
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/accordion/jquery.accordion.js"></script>
+<script>
+$(function(){
+	$(".accordionArea").accordion();
+	$(".accordionNav dt").accordion({nav:true});
+})
+</script>
+</body>
+</html>

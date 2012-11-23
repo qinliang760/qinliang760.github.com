@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/jquery.lightBox.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<img src="images/1.jpg" alt=""/>
+<a id="popLink" href="#">点击弹出</a>
+<a id="popLink2" href="#">点击弹出2</a>
+<div id="popBox">
+	<h2>我是一个弹出窗</h2>
+	<div>
+		我是内容
+	</div>
+</div>
+<div id="popBox2">
+	<h2>我是一个弹出窗</h2>
+	<div>
+		我是内容
+	</div>
+</div>
+
+<script src="js/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.lightBox.js" language="javascript"></script>		
+<script>
+$(function(){
+	$("#popLink").click(function(){
+		$("#popBox").lightBox({model:true});	
+		el.setClose();
+		return false;		
+	})
+	$("#popLink2").click(function(){
+		$("#popBox2").lightBox();	
+		return false;		
+	})	
+
+
+})
+</script>
+</body>
+</html>

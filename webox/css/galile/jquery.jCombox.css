@@ -1,0 +1,38 @@
+/*jquery combox*/
+.jCombox{
+	position:relative;
+}
+.jCombox .jComboxLink{
+    background: url("http://ju.mediav.com/images/arrow_icon.gif") no-repeat scroll right -139px #FFFFFF;
+    border: 1px solid #D5D5D5;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 17px 0 5px;
+}
+.jCombox .jComboxLink,.jCombox .jComboxLink:hover{
+	color:#000;
+}
+.jCombox .jComboxCon{
+	position:absolute;
+	background-color:#fff;
+	width:164px;/*+17*/
+    border: 1px solid #D5D5D5;
+	padding:5px;
+	top:21px;	
+}
+.jCombox .jComboxCon .jComboxList{
+	height:200px;
+	overflow-y:scroll;
+}
+.jCombox .jComboxCon .jComboxList li{
+	padding:5px 0;
+}
+.jCombox .jComboxCon span{
+	display:inline-block;
+	width:70px;
+	padding-left:10px;
+}
+.jCombox .jComboxCon input{
+	margin-left:2px;
+}

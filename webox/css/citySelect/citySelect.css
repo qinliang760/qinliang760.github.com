@@ -1,0 +1,81 @@
+.ac_results {
+	padding: 2px 0;
+	border: 1px solid #8d8d8d;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+}
+
+.ac_results li {
+	color:#005aa5;
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 24px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background: white url('indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+	
+}
+
+.ac_over {
+	background-color: #b6e0fd;
+	border-bottom:1px solid #0077c7;
+	border-top:1px solid #0077c7;
+}
+/*citySelect*/
+.citySelect{
+	min-heigth:28px;
+	height:auto;
+	width:500px;
+	border:1px solid #8d8d8d;
+}
+.citySelect li{
+	float:left;
+	border:1px solid #0077c7;
+	background-color:#b6e0fd;
+	padding:1px 30px 1px 5px;
+	position:relative;
+	margin:3px;
+}
+.citySelect li a{
+	position:absolute;
+	display:inline-block;
+	width:18px;
+	top:0;
+	text-align:center;
+	right:0;
+	background-color:#a0d7fc;
+	padding:1px 0;
+}
+.citySelect .inputList{
+	border:none;
+	background:none;
+	padding:1px 0;
+}
+.citySelect #cityInput{
+	width:120px;
+	border:0;
+}

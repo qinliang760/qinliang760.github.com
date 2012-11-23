@@ -1,0 +1,87 @@
+.form_input, .form_area, .form_date_input { 
+	width: 288px;
+	height: 18px;
+	line-height: 18px;
+	border: 1px solid #B5B8C8;
+	font-size:12px;
+}
+/*select.form_input{
+height:20px;
+line-height:20px;
+}*/
+select.form_input optgroup{
+font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;
+}
+.form_item_relative {position: relative;}
+.form_item {clear:both;}
+.form_item li { 
+	padding: 4px 0;
+	*padding:1px 0;
+	overflow: hidden; 
+	zoom:1;
+	
+}
+.form_item_title, .form_area_title { 
+	float: left;
+	width: 110px;
+	text-align: right;
+	padding-right: 5px; 
+	line-height:18px;
+}
+.form_item_input, .form_area_input { 
+	float: left;
+}
+.form_item input.error, .form_item_area textarea.error { 
+	border: 1px solid #CC0000;
+	background-color:#FFEEFF; 
+}
+.form_item label.error, .form_item_area label.error, .form_item div.error{
+	color: #CC0000;
+	padding-left:10px;
+}
+
+.form_item div.error{
+	display: none;
+}
+
+.form_item_area_relative {position: relative;}
+.form_item_area {clear:both;}
+.form_item_area li { 
+	list-style-type: none;
+	margin: 5px 0px 5px 0px;
+	height: 60px;
+	overflow: hidden;
+}
+.form_area {
+	height: 40px;
+}
+
+.form_area_input { 
+	height: 55px; 
+}
+/*yellow btn*/
+.btnYellowStyle{
+display:block;
+width:79px;
+height:27px;
+line-height:27px;
+background:url(../../images/form/login_btn.gif) no-repeat 0 0;
+color:#fff;
+margin-top:7px;
+margin-bottom:7px;
+text-align:center;
+cursor:pointer;
+font-weight:bold;
+border:0;
+}
+.btnYellowStyle:hover{
+color:#fff;
+background-position:0 100%;
+}
+.submitStyle,.resetStyle{
+float:left;
+}
+.submitStyle{
+margin-right:10px;
+}
+/*yellow btn*/

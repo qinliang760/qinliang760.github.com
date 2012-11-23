@@ -1,0 +1,12 @@
+input.form_input,input.disabled_input,input.tip_input{
+	border:1px solid #B5B8C8;
+	font-size:12px;
+	height:18px;
+	line-height:18px;
+	width:288px;
+}
+
+input.focus{
+	border: 1px solid #FFCC66;
+	background-color:#FFFFCC; 
+}

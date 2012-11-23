@@ -1,0 +1,35 @@
+<?php
+$arr=array(
+	array(
+		"category"=>"大类一",
+		"childs"=>array(
+			array(
+			"href"=>"http://www.baidu.com",
+			"subCategory"=>"小类一"
+			),
+			array(
+			"href"=>"http://www.baidu.com",
+			"subCategory"=>"小类一"
+			),
+			array(
+			"href"=>"http://www.baidu.com",
+			"subCategory"=>"小类一"
+			)
+		)
+	),
+	array(
+		"category"=>"大类二",
+		"childs"=>array(
+			array(
+			"href"=>"http://www.baidu.com",
+			"subCategory"=>"小类二"
+			),
+			array(
+			"href"=>"http://www.baidu.com",
+			"subCategory"=>"小类二"
+			)
+		)
+	)
+);
+echo json_encode($arr);
+?>

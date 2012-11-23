@@ -1,0 +1,167 @@
+.boxy-wrapper { position: absolute; }
+.boxy-wrapper.fixed { position: fixed; }
+
+/* Modal */
+
+.boxy-modal-blackout { position: absolute; background-color: #afafaf; left: 0; top: 0; }
+
+/* Border */
+
+.boxy-wrapper { empty-cells: show;border:1px solid #a1a1a1;width:500px; }
+.boxy-wrapper .top-left,
+.boxy-wrapper .top-right,
+.boxy-wrapper .bottom-right,
+.boxy-wrapper .bottom-left { padding: 0 }
+
+/* Title bar */
+
+.boxy-wrapper .title-bar { background-color: #1b72cc; padding-left: 10px; position: relative;margin:1px;line-height:26px;height:26px; }
+.boxy-wrapper .title-bar.dragging { cursor: move; }
+.boxy-wrapper .title-bar h2 { font-size:14px;color: white; margin: 0; padding: 0; font-weight: bold; }
+.boxy-wrapper .title-bar .close { font-size:14px;color: white; position: absolute; top: 6px; right: 6px; line-height: 1; font-weight: bold;}
+
+/* Content Region */
+
+.boxy-inner { background-color: white; padding: 0 }
+.boxy-content { padding: 0; }
+
+/* Question Boxes */
+
+.boxy-wrapper .question { padding:29px 60px 0 60px; min-height: 80px; }
+.boxy-wrapper .answers { text-align: center;padding:26px 0; }
+
+/*qinliang add start*/
+.boxy-wrapper .answers input{ 
+background:transparent url(../../images/galile/btn_pic.gif) no-repeat scroll 0 -25px;
+cursor:pointer;
+height:24px;
+line-height:24px;
+width:80px;
+border:0;
+color:#fff;
+margin-right:16px;
+ }
+.boxyForm ul{
+padding:23px 0 0 0;
+}
+.boxyForm .boxyBtn{
+padding:26px 0 26px 150px;
+}
+
+.interestBox{
+padding:10px;
+}
+.interestBox .interestCategory,.interestBox .subCategory{
+float:left;
+width:138px;
+border:1px solid #919191;
+min-height:200px;
+}
+.interestBox .interestCategory li,.interestBox .subCategory li{
+line-height:24px;
+cursor:default;
+}
+.interestBox .interestCategory li.active,.interestBox .subCategory li.active{
+background-color:#b6e0fd;
+border-bottom:1px solid #0077c7;
+border-top:1px solid #0077c7;
+}
+.interestBox .arrowStyle{
+background:url(../../images/galile/arrow_right.gif) no-repeat 0 0;
+width:46px;
+height:33px;
+float:left;
+margin:80px 20px 0 20px;
+display:inline;
+}
+.interestChoose{
+border:1px solid #919191;
+min-height:80px;
+height:auto;
+}
+.interestShow{
+border:1px solid #919191;
+min-height:24px;
+height:auto;
+}
+.interestChoose li,.interestShow li{
+background-color:#B6E0FD;
+border:1px solid #0077C7;
+float:left;
+margin:3px;
+padding:1px 30px 1px 5px;
+position:relative;
+}
+.interestChoose li a,.interestShow li a{
+background-color:#A0D7FC;
+display:inline-block;
+padding:1px 0;
+position:absolute;
+right:0;
+text-align:center;
+top:0;
+width:18px;
+}
+/*small div start*/
+.floatDiv{
+	position:relative;
+}
+.iconStyle{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	background:url(../../images/galile/icon.png) no-repeat 0 0;
+}
+.iconList{
+	width:45px;
+	margin:0;
+	padding:5px 2px 5px 0;
+	display:none;
+	position:absolute;
+	left:0;
+	top:22px;
+	border:1px solid #a0a0a0;
+	background-color:#fff;
+}
+.iconList li{
+	cursor:pointer;
+	height:22px;
+	padding-left:20px;
+	width:45px;	
+	
+}
+.goBtn{
+	background-position:0 -9px;
+}
+.stopBtn{
+	background-position:0 -41px;
+}
+.delBtn{
+	background-position:0 -74px;
+}
+
+.blockStyle{
+display:block;
+}
+.floatSmall{
+width:160px;
+height:60px;
+text-align:center;
+border:1px solid #a0a0a0;
+background-color:#fff;
+position:absolute;
+z-index:999;
+display:none;
+
+}
+.tipInfo{
+display:inline-block;
+margin:5px 0;
+}
+.okTip{
+padding-left:20px;
+background:url(../../images/galile/icon.png) no-repeat 0 -9px;
+}
+/*small div end*/
+/*qinliang add end*/

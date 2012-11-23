@@ -1,0 +1,66 @@
+/*下拉框样式 start*/
+
+.downStyle{
+line-height:23px;
+padding-right:17px;
+display:inline-block;
+*display:inline;
+zoom:1;
+cursor:pointer;
+background:url(../../images/combox/btn_down.gif) no-repeat top right;
+}
+.downStyle .downInsideStyle{
+display:inline-block;
+*display:inline;
+zoom:1;
+padding:0 7px 0;
+background:url(../../images/combox/down_bg.gif) no-repeat 0 0;
+}
+/*交互*/
+.downStyle:hover{
+background-position:bottom right;
+}
+.downStyle:hover .downInsideStyle{
+background-position:0 100%;
+}
+
+.selectBox {
+position:relative;
+padding-right:5px;
+}
+
+.selectBox a.downStyle span {
+color:#000;
+}
+
+.selectBoxOptions {
+	display:none;
+	background:#FFFFFF;
+	border:1px solid #ccc;
+	z-index:1000;
+	position: absolute;
+	top:20px;
+	left:1px;
+	height:auto;
+	overflow:auto;
+
+}
+
+.selectBoxOptions a{
+	color:#000;
+	display:block;
+	padding:2px 0 2px 5px;
+	background:#fff;	
+	overflow:hidden;
+	white-space:nowrap;
+}
+.selectBoxOptions a:hover{
+	background:#bbb
+}
+.selectBoxOptions a.selected{
+	background:#EDEDED
+}
+
+
+
+/*下拉框样式 end*/

@@ -1,0 +1,45 @@
+/*Accordion*/
+.accordionArea{
+cursor:pointer;
+background-color:#cedaff;
+padding:4px 10px;
+margin-top:5px;
+}
+.accordionArea span.accordionTitle{
+float:left;
+padding-left:10px;
+background:transparent url(../../images/accordion/arrow.gif) no-repeat 2px 0;
+}
+.accordionArea span.active{
+background-position:0 100%;
+}
+.accordionArea span.clickStatus{
+float:right;
+padding-right:10px;
+}
+.accordionCon{
+border:1px solid #cedaff;
+height:100px;
+padding:5px;
+}
+
+/*accordionNav*/
+.accordionNav{
+width:300px;
+}
+.accordionNav dt{
+margin-top:2px;
+cursor:pointer;
+padding:5px;
+padding-left:10px;
+background:#CEDAFF url(../../images/accordion/arrow.gif) no-repeat 2px -37px;
+}
+.accordionNav dt.active{
+background-position:2px 4px;
+}
+.accordionNav dd{
+border:1px solid #cedaff;
+height:100px;
+padding:5px;
+display:none;
+}

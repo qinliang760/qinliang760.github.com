@@ -1,0 +1,40 @@
+*,html,body{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+img{
+	border:none;
+}
+.f-cb:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.f-cb{
+	display:inline-block;/* for IE/Mac */
+}
+* html .f-cb{/* triggers hasLayout */
+	height:1%;
+}
+.f-cb{
+	display:block;/* resets display for IE/Win */
+}
+#topBox { width:981px; height:88px; background:url(../images/nav.jpg) no-repeat 0 0; margin:0 auto; position:relative;font-size:12px; }
+#topBox .topArea { height:33px; line-height:33px; }
+#topBox .nav { width:702px; float:right; position:relative; }
+#topBox .nav .navLi { float:left; width:107px; margin-right:10px; display:inline; }
+#topBox .nav .nav1 { width:100px; }
+#topBox .nav .navLi a { display:block; height:53px; text-indent:-9999em; }
+#topBox .navBox { position:relative; }
+.blueSpan { display:none; width:110px; height:58px; background:url(../images/nav.png?v=2) no-repeat -260px 0; position:absolute; left:285px; }
+#topBox .subNav { position:absolute; right:-6px; display:none; top:87px; z-index:9; }
+#topBox .subNav a { text-indent:0; color:#fff; text-decoration:none; padding-left:34px; height:25px; line-height:25px; display:block; }
+#topBox .subNav .subNavLi { float:left; width:130px; height:174px; display:inline; margin-left:-11px; padding-top:7px; background:url(../images/nav.png) no-repeat 0 0; position:relative; text-align:left; }
+#topBox .subNav .subNav1 { margin-left:0; background:none; }
+#topBox .subNav .active { background-position:-130px 0; }
+.arrowM { display:none; width:14px; height:16px; top:12px; left:12px; position:absolute; background:url(../images/nav.png) no-repeat -370px 0; }

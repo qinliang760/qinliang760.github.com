@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+ul{
+list-style:none;
+}
+.tabList{
+float:left;
+width:15%;
+padding-top:20px;
+}
+.tabList li{
+text-align:right;
+line-height:20px;
+}
+.tabList li a{
+display:block;
+padding:0 10px;
+font-weight:bold;
+}
+.tabList li a:hover{
+background-color:#cedaff;
+color:#fff;
+}
+.tabList li.active a{
+background-color:#cedaff;
+color:#fff;
+}
+.tabValue{
+float:left;
+width:80%;
+height:200px;
+padding:5px;
+border:3px solid #cedaff;
+}
+

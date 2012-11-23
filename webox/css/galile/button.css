@@ -1,0 +1,192 @@
+
+.iconStyle{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	background:url(http://ju.mediav.com/images/icon.png) no-repeat 0 0;
+}
+.icon_correct{
+	background-position:0 -9px;
+}
+.icon_error{
+	background-position:0 -41px;
+}
+.icon_stop{
+	background-position:0 -74px;
+}
+.icon_edit{
+	background-position:0 -107px;
+}
+
+/*sign button*/
+
+/*.signBtn{
+	background:url("http://ju.mediav.com/images/sign.gif") no-repeat scroll 0 0 transparent;
+	color:#FFF;
+	border:none;
+	cursor:pointer;
+	display:inline-block;
+	font-weight:bold;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	width:120px;
+}*/
+
+
+/*.iconList{
+	width:20px;
+	margin:0;
+	padding:0;
+	display:none;
+}
+.iconList li{
+	cursor:pointer;
+	height:30px;
+	
+}
+.goBtn{
+	coler:red;
+	background-position:0 -9px;
+}
+.stopBtn{
+	background-position:0 -41px;
+}
+.delBtn{
+	background-position:0 -74px;
+}
+*/
+
+/*icon btn*/
+
+.btnStyle{
+	padding-right:3px;
+	background:url(http://ju.mediav.com/images/btn_bg_r.gif) no-repeat top right;
+	display:inline-block;
+	*cursor:pointer;/*for ie*/
+	*display:inline;/*for ie*/
+}
+a.btnStyle{
+display:inline-block;
+}
+.btnStyle .btnInsideStyle{
+	background:url(http://ju.mediav.com/images/btn_bg.gif) no-repeat 0 0;
+	line-height:24px;
+	height:24px;
+	display:inline-block;
+	padding:0 5px 0 8px;
+	*cursor:pointer;/*for ie*/
+}
+.btnStyle .btnInsideStyle .IconStyle{
+	padding-left:20px;
+	display:inline-block;
+	background-image:url(http://ju.mediav.com/images/arrow_icon.gif);
+	background-repeat:no-repeat;
+}
+.btnStyle .btnInsideStyle .addIcon{
+	background-position:0 -69px;
+}
+.btnStyle .btnInsideStyle .disabledIcon{
+	background-position:0 -217px;
+	color:#ccc;
+}
+.btnStyle .btnInsideStyle .IconStyle:hover,a.btnStyle:hover{
+text-decoration:none;
+}
+/*icon btn*/
+
+/*COMBOX*/
+.downStyle{
+line-height:20px;
+display:inline-block;
+*display:inline;
+zoom:1;
+cursor:pointer;
+border:1px solid #d5d5d5;
+padding-right:17px;
+background:#fff url(http://ju.mediav.com/images/arrow_icon.gif) no-repeat 160px -139px;
+
+}
+a.downStyle:hover{
+text-decoration:none;
+}
+.downStyle .downInsideStyle{
+display:inline-block;
+*display:inline;
+zoom:1;
+padding:0 7px 0;
+}
+
+.selectBox {
+line-height:20px;
+float:left;
+display:inline;
+margin-left:10px;
+position:relative;
+padding-right:5px;
+padding-top:3px;
+z-index:2;
+}
+
+.selectBox a.downStyle span {
+color:#000;
+}
+
+.selectBoxOptions {
+	display:none;
+	background:#FFFFFF;
+	border:1px solid #ccc;
+	z-index:1000;
+	position: absolute;
+	top:24px;
+	left:0px;
+	height:auto;
+	overflow:auto;
+	line-height:20px;
+	width:181px!important;
+}
+.selectBoxOptions li{
+_float:left;
+_width:181px;
+}
+.selectBoxOptions a{
+	color:#000;
+	display:block;
+	padding:2px 0 2px 5px;
+	background:#fff;	
+	overflow:hidden;
+	white-space:nowrap;
+}
+.selectBoxOptions a:hover{
+	background:#bbb
+}
+.selectBoxOptions a.selected{
+	background:#EDEDED
+}
+.reportSelect{
+	margin:-10px 0 10px 0;
+	font-size:14px;
+	font-weight:bold;
+}
+.reportSelect .downStyle{
+	background-position:195px -134px;
+	line-height:30px;
+}
+.reportSelect .selectBoxOptions{
+	top:34px;
+	width:211px!important;
+}
+/*COMBOX*/
+.gNav li.downReport{
+	float:right;
+}
+.gNav li a.exportStyle{
+	color: #006BA6;
+}
+.reportSubSelect span{
+	float:left;
+}
+.reportSubSelect span select{
+	margin:0 15px 0 5px;
+}

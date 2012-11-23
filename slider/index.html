@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*,html,body{
+	margin:0;
+	padding:0;
+}
+.sliderBox{
+	width:398px;
+	height:248px;
+	font-size:12px;
+	overflow:hidden;
+	border:1px solid #ccc;
+	margin:0 auto;	
+}
+ul{
+	list-style:none;
+}
+img{
+	border:none;
+}
+.clearFix:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.clearFix{
+	display:inline-block;/* for IE/Mac */
+}
+* html .clearFix{/* triggers hasLayout */
+	height:1%;
+}
+.clearFix{
+	display:block;/* resets display for IE/Win */
+}
+
+#sliderTab{
+	float:left;
+	width:69px;
+	height:248px;
+	overflow:hidden;
+}
+#sliderTab li{
+	float:left;
+	width:68px;
+	height:41px;
+	line-height:41px;
+	text-align:center;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;	
+}
+#sliderTab li a{
+	display:block;
+	text-decoration:none;
+	color:#000;
+}
+
+#sliderTab li.active a{
+	background-color:#F60;
+	color:#fff;
+}
+#slider{
+	float:left;
+	width:329px;
+	height:248px;
+	overflow:hidden;	
+}
+#slider li{
+	display:none;
+	text-align:center;
+}
+#slider li a{
+	width:329px;
+	height:248px;
+	text-align:center;
+	display:table-cell;
+	vertical-align:middle;
+	*display:block;
+	*font-size:217px;	
+}
+#slider li a img{
+	vertical-align:middle;
+}
+
+</style>
+</head>
+
+<body>
+	<div class="sliderBox clearFix">	
+		<ul id="sliderTab" class="clearFix">
+			<li><a href="#">蓝球鞋</a></li>
+			<li><a href="#">文化鞋</a></li>
+			<li><a href="#">商务鞋</a></li>
+			<li><a href="#">雪地鞋</a></li>
+			<li><a href="#">板鞋</a></li>
+			<li><a href="#">祼鞋</a></li>            
+		</ul>
+		<ul id="slider">
+			<li><a href="#"><img src="images/1.jpg" alt=""/></a></li>
+			<li><a href="#"><img src="images/2.jpg" alt=""/></a></li>
+			<li><a href="#"><img src="images/3.jpg" alt=""/></a></li>
+			<li><a href="#"><img src="images/4.jpg" alt=""/></a></li>
+			<li><a href="#"><img src="images/5.jpg" alt=""/></a></li>
+			<li><a href="#"><img src="images/6.jpg" alt=""/></a></li>            
+		</ul>
+	</div>
+<script src="jquery-1.4.2.min.js"></script>
+<script src="jquery.slider.js"></script>
+<script>
+$(function(){
+	$("#sliderTab").slider();	
+})
+</script>
+</body>
+</html>
