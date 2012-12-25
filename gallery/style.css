@@ -1,0 +1,162 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+caption, th {
+	text-align: left;
+}
+fieldset, img, a img, iframe {
+	border: 0;
+}
+li {
+	list-style: none;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+	content: "";
+}
+abbr, acronym {
+	border: 0;
+	font-variant: normal;
+}
+sup {
+	vertical-align: text-top;
+}
+sub {
+	vertical-align: text-bottom;
+}
+input, textarea, select {
+	font-family: inherit;
+	font-size: inherit;
+	*font-size: 100%;
+	font-weight: inherit;
+}
+del, ins {
+	text-decoration: none;
+}
+body {
+	font: 12px/1.5 "Consolas","Courier New",Courier,mono,serif;
+	color: #000;
+	/*background-color: #fff;*/
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #055499;
+}
+a:hover {
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6, em, strong {
+	font-weight: bold;
+}
+h1 {
+	font-size: 2em
+}
+h2 {
+	font-size: 1.5em;
+}
+h3 {
+	font-size: 1.15em;
+}
+h4, h5, h6 {
+	font-size: 1em;
+}
+body {
+	text-align: center;
+}
+.g-docx {
+	margin: 0 auto;
+	text-align: left;
+}
+.g-bd:after {
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	content: ".";
+}
+.g-bd {
+	zoom: 1;
+}
+.f-ib, .f-ibt {
+	display: -moz-inline-box;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-indent: 0;
+	text-align: left;
+}
+.f-ib, a.f-ib, a.f-ib:hover {
+	overflow: hidden;
+	line-height: 0;
+	font-size: 0;
+	text-indent: -9999px;
+	*text-indent: 0;
+	text-decoration: none;
+}
+.f-ibt {
+	line-height: normal;
+	font-size: 12px;
+}
+.f-cb:after {
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	content: ".";
+}
+.f-cb {
+	zoom: 1;
+}
+.f-dn {
+	display: none;
+}
+.f-fl {
+	float: left;
+}
+.f-fr {
+	float: right;
+}
+.f-pr {
+	position: relative;
+}
+.f-oh {
+	overflow: hidden;
+}
+.f-oh .f-mp {
+	margin-bottom: -30000px;
+	padding-bottom: 30000px;
+}
+.f-tc {
+	text-align: center;
+}
+.f-tr {
+	text-align: right;
+}
+.f-vm * {
+	vertical-align: middle;
+}
+.f-wn {
+	white-space: nowrap;
+}
+.f-wb {
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.f-ti {
+	overflow: hidden;
+	text-indent: -30000px;
+}
