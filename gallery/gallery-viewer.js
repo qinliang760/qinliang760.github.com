@@ -114,8 +114,8 @@ var GalleryViewer = {
             }
         } catch(e) { }
 
-        GalleryViewer.thumbnailLinkNodes = tempNodeList;
-        GalleryViewer.thumbnailImageNodes = tempImageList;
+        GalleryViewer.thumbnailLinkNodes = tempNodeList;//id
+        GalleryViewer.thumbnailImageNodes = tempImageList;//id下的span
 
         GalleryViewer.initialized = true;
     },
@@ -583,7 +583,6 @@ var GalleryViewer = {
 
         var minThumbnailIndex = Math.floor(offsetTop / GalleryViewer.THUMBNAIL_HEIGHT);
         var maxThumbnailIndex = Math.ceil((offsetTop + GalleryViewer.THUMBNAIL_HOLDER_HEIGHT) / GalleryViewer.THUMBNAIL_HEIGHT) - 1;
-
         //make sure index doesn't go above max range
         if (maxThumbnailIndex >= indices.length) maxThumbnailIndex = indices.length - 1;
 

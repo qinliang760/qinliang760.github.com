@@ -27,14 +27,25 @@
 			function stop() {
 				document.monFlash.SetVariable("player:jsStop", "");
 			}
+		document.getElementById("myFlash").SetVariable("player:jsVolume", "50");
+
+// Pour modifier l'url du FLV (il faut faire un play ensuite)
+document.getElementById("myFlash").SetVariable("player:jsUrl", "http://my.flv");
+
+// Pour modifier l'image de départ
+document.getElementById("myFlash").SetVariable("player:jsStartImage", "foo.jpg");
+
+// Pour se déplacer dans la vidéo, en seconde
+document.getElementById("myFlash").SetVariable("player:jsSetPosition", "234"); 	
 		</script>
 	</head>
 	<body>
-    <object id="monFlash" type="application/x-shockwave-flash" data="player_flv_maxi.swf" width="320" height="240">
+    <object id="monFlash" type="application/x-shockwave-flash" data="player_flv_maxi.swf" width="520" height="240">
             <param name="movie" value="player_flv_maxi.swf" />
             <param name="allowFullScreen" value="true" />
-            <param name="FlashVars" value="flv=http://v.nie.netease.com/sc2/Heart_of_the_Swarm_CG_CN.flv&amp;width=320&amp;height=240&showvolume=1&srt=1&showfullscreen=1&showtime=1&buffershowbg=0&bgcolor1=transparent" />
+            <param name="FlashVars" value="flv=http://v.nie.netease.com/sc2/Heart_of_the_Swarm_CG_CN.flv&width=520&height=240&showvolume=1" />
         </object>
+        <a href="#" onclick="play();return false;">play</a>
         
 <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse:collapse;" bordercolor="#000">
   <tr>
