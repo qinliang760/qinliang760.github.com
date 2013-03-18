@@ -6,6 +6,7 @@
 
 <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
 <link href="css/site.css" rel="stylesheet" type="text/css"/>
+<link href="css/ui.css" rel="stylesheet" type="text/css"/>
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <![endif]-->
@@ -34,9 +35,42 @@
     </div>
     
     <div class="content-area">
-    		<div class="alice-module"><a href="#" id="modules-box">box</a></div>
-            <div class="alice-module"><a href="#" id="modules-button">button</a></div>
-            <div class="alice-module"><a href="#" id="modules-button-dropdown">button-dropdown</a></div>
+    		<div class="alice-module"><h2><a href="#" id="modules-box">box</a></h2>
+                <div class="ui-box">
+                    <div class="ui-box-head">
+                        <div class="ui-box-head-border">
+                            <h3 class="ui-box-head-title">区块标题</h3>
+                            <span class="ui-box-head-text">其他文字</span>
+                            <a class="ui-box-head-more" href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="ui-box-container">
+                        <div class="ui-box-content">ui-box-content 有默认内边距</div>
+                    </div>
+                </div>            
+            </div>
+            <div class="alice-module"><h2><a href="#" id="modules-button">button</a></h2>
+                <a href="#" class="ui-button ui-button-lorange">橙色大按钮</a>
+                <a href="#" class="ui-button ui-button-morange">橙色中按钮</a>
+                <a href="#" class="ui-button ui-button-sorange">橙色小按钮</a>
+            
+            </div>
+            <div class="alice-module"><h2><a href="#" id="modules-button-dropdown">button-dropdown</a></h2>
+                <div class="ui-button-dropdown">
+                    <a class="ui-button ui-button-lorange ui-dbutton ui-dbutton-orange">
+                        <span class="ui-dbutton-self">下拉菜单</span>
+                        <i title="下三角形" class="ui-dbutton-arrow iconfont">É</i>
+                    </a>
+                    <ul class="ui-button-dropdown-large">
+                        <li class="ui-button-dropdown-item">
+                            <a href="#">设置代扣</a>
+                        </li>
+                        <li class="ui-button-dropdown-item">
+                            <a href="#">标为已缴</a>
+                        </li>   
+                    </ul>
+                </div>            
+            </div>
             <div class="alice-module"><a href="#" id="modules-form">form</a></div>
             <div class="alice-module"><a href="#" id="modules-list">list</a></div>
             <div class="alice-module"><a href="#" id="modules-nav">nav</a></div>
@@ -46,10 +80,18 @@
             <div class="alice-module"><a href="#" id="modules-table">table</a></div>
             <div class="alice-module"><a href="#" id="modules-tipbox">tipbox</a></div>
             <div class="alice-module"><a href="#" id="modules-tiptext">tiptext</a></div>
-            <div class="alice-module"><a href="#" id="modules-select">select</a></div>
+            <div class="alice-module" style="height:3000px"><a href="#" id="modules-select">select</a></div>
             <div class="alice-module"><a href="#" id="modules-step">step</a></div>
             
     </div>
 </div>
+<script src="js/jquery-1.7.2.min.js" language="javascript"></script>
+<script>
+$(function(){
+	$(".side-area li").click(function(){
+		$(this).addClass("side-highlight").siblings().removeClass("side-highlight");	
+	})
+})
+</script>
 </body>
 </html>
