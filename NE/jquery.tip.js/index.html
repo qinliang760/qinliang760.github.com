@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>tip</title>
+<!--<link rel="stylesheet" href="css/jquery.lightBox.css" type="text/css" media="all"/>-->
+<style>
+	#tip{
+position:relative;	
+	}
+
+	.tipBox{
+		background-color:#666;
+		width:200px;
+		height:100px;
+		position:absolute;
+		top:30px;
+	}
+</style>
+</head>
+
+<body>
+<div id="tip">弹出一个tip</div>
+
+<script src="js/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.cookie.js" language="javascript"></script>
+<script src="js/jquery.tip.js" language="javascript"></script>		
+<script>
+$(function(){
+	$("#tip").tip({showOnce:true});
+
+})
+</script>
+</body>
+</html>

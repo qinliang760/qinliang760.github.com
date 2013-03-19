@@ -1,0 +1,53 @@
+*,html,body{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+img{
+	border:none;
+}
+.f-cb:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.f-cb{
+	display:inline-block;/* for IE/Mac */
+}
+* html .f-cb{/* triggers hasLayout */
+	height:1%;
+}
+.f-cb{
+	display:block;/* resets display for IE/Win */
+}
+body{
+	font-size:12px;	
+}
+#popBox,#popBox2{
+	width:200px;
+	height:200px;
+	background-color:#4d4d4d;
+	position:absolute;
+	z-index:999;
+	display:none;
+}
+#popBox2{
+	left:30px!important;
+}
+#boxModel{
+	background-color:#ccc;
+	display:none;
+	position:absolute;
+	z-index:99;
+	left:0;
+	top:0;
+}
+.closeBtn{
+	position:absolute;
+	top:5px;
+	right:5px;
+}

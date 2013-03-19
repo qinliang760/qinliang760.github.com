@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<!--<link rel="stylesheet" href="css/jquery.lightBox.css" type="text/css" media="all"/>-->
+</head>
+
+<body>
+
+<div id="payBanner">
+
+</div>
+<div id="payBannerImg">
+
+</div>
+
+
+<script src="js/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/swfobject.js" language="javascript"></script>
+<script src="js/jquery.loadMedia.js" language="javascript"></script>		
+<script>
+$(function(){
+	$.sc2.loadMedia({type:"flash",options:{
+		width:"724",
+		height:"400",
+		id:"payBanner",
+		flashPlayer:"images/video-player.swf",
+		flashvars:{flvPath:"images/chinaJoy.flv"}
+			
+	}})
+	
+	$.sc2.loadMedia({type:"image",options:{
+		width:"500",
+		height:"500",
+		id:"payBannerImg",
+		imgSrc:"images/1.jpg"
+			
+	}})	
+
+})
+</script>
+</body>
+</html>

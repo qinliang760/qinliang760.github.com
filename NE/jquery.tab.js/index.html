@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/jquery.tabs.css" type="text/css" media="all"/>
+
+</head>
+
+<body>
+<div class="ui-tab ui-demo">
+	<ul class="ui-tab-items">
+		<li class="ui-tab-item ui-tab-item-current"><a href="#">标签</a></li>
+		<li class="ui-tab-item"><a href="#">标签</a></li>
+		<li class="ui-tab-item"><a href="#">标签</a></li>
+		<li class="ui-tab-item"><a href="#">标签</a></li>
+	</ul>
+
+	<div class="ui-tab-panels">
+		<div class="ui-tab-panel ui-tab-panel-current">标签内容一</div>
+		<div class="ui-tab-panel">标签内容二</div>
+		<div class="ui-tab-panel">标签内容三</div>
+		<div class="ui-tab-panel">标签内容四</div>
+	</div>	
+</div>
+
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.tabs.js" language="javascript"></script>		
+<script>
+$(function(){
+	$.sc2.tabs({tabs:".ui-tab-items .ui-tab-item",panels:".ui-tab-panels .ui-tab-panel",effect:"fade"});
+})
+</script>
+</body>
+</html>

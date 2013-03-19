@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<!--<link rel="stylesheet" href="css/jquery.lightBox.css" type="text/css" media="all"/>-->
+<style>
+#wrap{
+	width:1000px;
+	height:2000px;
+	position:relative;
+	margin:0 auto;
+	border:1px solid #000;
+}
+#payBanner{
+	border:1px solid #f00;
+	width:200px;
+	height:200px;
+	position:absolute;
+	right:-200px;
+	top:600px;
+	display:none;
+}
+</style>
+</head>
+
+<body>
+<div id="wrap">
+<div id="payBanner">
+
+</div>
+
+</div>
+
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.fixed.js" language="javascript"></script>		
+<script>
+$(function(){
+	$("#payBanner").fixed();
+})
+</script>
+</body>
+</html>
