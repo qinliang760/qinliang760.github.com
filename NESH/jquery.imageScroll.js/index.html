@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/jquery.imageScroll.css" type="text/css" media="all"/>
+
+</head>
+
+<body>
+<div class="ui-imgshow">
+	<ul class="ui-imgshow-buttons">
+		<li class="ui-imgshow-button">1</li>
+		<li class="ui-imgshow-button">2</li>
+		<li class="ui-imgshow-button">3</li>
+		<li class="ui-imgshow-button">4</li>
+	</ul>
+
+	<div class="ui-imgshow-imgs f-cb" id="imgL">
+		<div class="ui-imgshow-img1 ui-imgshow-img-current">1</div>
+		<div class="ui-imgshow-img2">2</div>
+		<div class="ui-imgshow-img3">3</div>
+		<div class="ui-imgshow-img4">4</div>
+	</div>
+</div>
+
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.imageScroll.js" language="javascript"></script>		
+<script>
+$(function(){
+	$(".ui-imgshow").imageScroll({numClass:"ui-imgshow-button",imgWrapId:"imgL"});
+})
+</script>
+</body>
+</html>

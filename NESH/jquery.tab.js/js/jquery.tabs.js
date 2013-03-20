@@ -14,7 +14,9 @@
 		defaults: {
 			tabs: "",
 			panels: "",
-			effect: "normal" //
+			effect: "normal", //
+			event:"click",
+			triggerClass:"ui-tab-item-current"
 		}
 	};
 
@@ -22,7 +24,9 @@
 		var self = this,
 			tabs = $(defaults.tabs),
 			panels = $(defaults.panels),
-			effect = defaults.effect;
+			effect = defaults.effect,
+			triggerClass=defaults.triggerClass,
+			event=defaults.event;
 
 		$.extend(this, {
 			effect: function(effect, index) {
@@ -31,15 +35,16 @@
 						panels.eq(index).show().siblings().hide();
 						break;
 					case "fade":
-						panels.eq(index).siblings().fadeOut().stop(true,true).end().fadeIn();
+						panels.eq(index).siblings().hide().stop(true,true).end().fadeIn();
 						break;
 				}
 
 			},
 			setup: function() {
-				tabs.click(function() {
-					var index = tabs.index($(this));
-					$(this).addClass("ui-tab-item-current").siblings().removeClass("ui-tab-item-current");
+				tabs.bind(event,function() {
+					var t=$(this);
+					var index = tabs.index(t);
+					t.addClass(triggerClass).siblings().removeClass(triggerClass);
 					self.effect(effect, index);
 				});
 

@@ -14,7 +14,7 @@
 
 	function Tooltip(root, defaults) {
 		var self = this,
-		obj = root;
+			obj = root;
 		$.extend(this, {
 			setTip: function(leftV, topV) {
 
@@ -31,13 +31,13 @@
 					var tooltip = "<div id='titleTip' style='width:" + defaults.tipWidth + "px'>" + this.showTitle + "</div>";
 					$("body").append(tooltip);
 					var ex = e.pageX,
-					ey = e.pageY,
-					tooltipW = $("#titleTip").width(),
-					tooltipH = $("#titleTip").height(),
-					wW = $(window).width(),
-					wH = $(window).height(),
-					leftV,
-					topV;
+						ey = e.pageY,
+						tooltipW = $("#titleTip").width(),
+						tooltipH = $("#titleTip").height(),
+						wW = $(window).width(),
+						wH = $(window).height(),
+						leftV,
+						topV;
 					if (ex + tooltipW > wW) {
 						leftV = ex - (ex + tooltipW - wW);
 					} else {
@@ -50,6 +50,7 @@
 					}
 					self.setTip(leftV, topV);
 				},
+
 				function() {
 					$("#titleTip").remove();
 				})
@@ -67,4 +68,3 @@
 	}
 
 })(jQuery);
-

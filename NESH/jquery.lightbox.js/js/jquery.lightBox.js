@@ -12,6 +12,11 @@
 (function($) {
 	var lightBox = {
 		defaults: {
+			model:".ui-box-model",
+			box:".ui-box",
+			close:".ui-box-close",
+			confirm:".ui-box-confirm",
+			cancel:".ui-box-cancel",
 			model: false,
 			hasClose: true,
 			confirmTxt:"确定",
@@ -23,6 +28,13 @@
 		boxObj = root;
 
 		$.extend(this, {
+			getSelect:function(){
+				return {
+					model:defaults.model.substring(1),
+					box:defaults.box.substring(1),
+					close
+				}
+			},
 			setModel: function() {
 				var modelHtml = "<div id='boxModel'></div>",
 				wW = $(window).width(),

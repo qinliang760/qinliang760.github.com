@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/jquery.accordion.css" type="text/css" media="all"/>
+
+</head>
+
+<body>
+<div class="ui-demo">
+	<dl class="ui-accordion">
+		<dt class="ui-accordion-trigger ui-accordion-trigger-current">标题A</dt>
+		<dd class="ui-accordion-panel ui-accordion-panel-current">标题A内容</dd>
+		<dt class="ui-accordion-trigger">标题B</dt>
+		<dd class="ui-accordion-panel">标题B内容</dd>
+		<dt class="ui-accordion-trigger">标题C</dt>
+		<dd class="ui-accordion-panel">标题C内容</dd>
+		<dt class="ui-accordion-trigger ui-accordion-trigger-last">标题D</dt>
+		<dd class="ui-accordion-panel ui-accordion-panel-last">标题D内容</dd>
+	</dl>
+</div>
+
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.accordion.js" language="javascript"></script>		
+<script>
+$(function(){
+	$.sc2.accordion();
+})
+</script>
+</body>
+</html>
