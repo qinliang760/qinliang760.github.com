@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<a id="popLink" href="#">点击弹出</a>
+<a id="popLink" href="#">生成窗体</a>
 <a id="popLink2" href="#">点击弹出2</a>
 <div id="popBox">
 	<h2>我是一个弹出窗11111</h2>
@@ -22,16 +22,30 @@
 	</div>
 </div>
 
+<div class="ui-box" style="display:none">
+	<h2 class="ui-box-title">窗口标题</h2>
+	<div class="ui-box-panel">
+		窗口内容
+	</div>
+	<div class="ui-box-button">
+		<input class="ui-box-confirm" type="button" value="确定"/>
+		<input class="ui-box-cancel" type="button" value="取消"/>
+	</div>
+	<div class="ui-box-close">&times;</div>	
+</div>
+<div class="ui-box-model">
+</div>	
+
 <script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
 <script src="js/jquery.lightBox.js" language="javascript"></script>		
 <script>
 $(function(){
 	$("#popLink").click(function(){
-		$("#popBox2").lightBox({model:false});	
+		$("#popBox2").lightBox();	
 		return false;		
 	})
 	$("#popLink2").click(function(){	
-		$.sc2.lightBox($("#popBox").html(),{model:true});
+		$.sc2.lightBox($("#popBox").html());
 		return false;		
 	})	
 })

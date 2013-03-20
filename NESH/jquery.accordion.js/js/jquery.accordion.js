@@ -60,14 +60,14 @@
 
 	}
 
-	$.fn.accordion = function(defaults) {
+/*	$.fn.accordion = function(defaults) {
 		defaults = $.extend({},
 		accordion.defaults, defaults);
 		return this.each(function() {
 			el = new Accordion($(this), defaults);
 		});
 
-	};
+	};*/
 	$.sc2 = {
 		accordion: function(defaults) {
 			defaults = $.extend({},

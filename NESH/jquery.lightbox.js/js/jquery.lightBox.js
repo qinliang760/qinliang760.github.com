@@ -17,7 +17,7 @@
 			close:".ui-box-close",
 			confirm:".ui-box-confirm",
 			cancel:".ui-box-cancel",
-			model: false,
+			//model: false,
 			hasClose: true,
 			confirmTxt:"确定",
 			confirmUrl:""	
@@ -28,30 +28,37 @@
 		boxObj = root;
 
 		$.extend(this, {
-			getSelect:function(){
+			getStr:function(){
+					var model=defaults.model.substring(1),
+					 box=defaults.box.substring(1),
+					 close=defaults.close.substring(1),
+					 confirm=defaults.confirm.substring(1);
 				return {
-					model:defaults.model.substring(1),
-					box:defaults.box.substring(1),
-					close
-				}
+					model:model,
+					box:box,
+					close:close,
+					confirm:confirm
+				};
 			},
 			setModel: function() {
-				var modelHtml = "<div id='boxModel'></div>",
+				var modelHtml = '<div class='+this.getStr().model+'></div>',
 				wW = $(window).width(),
-				bH = $("body").height();
+				bH = $(document).height();
 				$("body").append(modelHtml);
-				var boxModel = $("#boxModel");
+				var boxModel = $(defaults.model);
 				boxModel.width(wW).height(bH).css("opacity", 0.5).show();
 			},
 			setPosition: function() {
+
 				if(typeof boxObj == "string"){
-					if($("body").find("#popBox").length!=0){
-					    $("#popBox").remove();
+					if($(defaults.box).length!==0){
+					    $(defaults.box).remove();
 					 }
-					var str="<div id='popBox'>"+boxObj+"</div>";
+					var str='<div class='+this.getStr().box+'>'+boxObj+'</div>';
 					$("body").append(str);
-					boxObj=$("#popBox");
+					boxObj=$(defaults.box);
 				}
+				
 				var wW = $(window).width(),
 				wH = $(window).height(),
 				wScrollTop = $(window).scrollTop(),				
@@ -67,24 +74,24 @@
 
 			},
 			setClose: function() {
-				var closeObj = "<a class='closeBtn' href='javascript:;'>关闭</a>";
+				var closeObj = "<a class='"+this.getStr().close+"' href='javascript:;'>&times;</a>";
 				boxObj.append(closeObj);
-				boxObj.find(".closeBtn").live("click", function() {
+				boxObj.find(defaults.close).live("click", function() {
 					boxObj.hide();
 					if (defaults.model) {
-						$("#boxModel").remove();
+						$(defaults.model).remove();
 					}
 					return false;
 				})
 			},
 			setConfirm:function(){
-				var confirmObj="<a class='confirmBtn' href='javascript:;'>"+defaults.confirmTxt+"</a>",
+				var confirmObj="<a class='"+this.getStr().confirm+"' href='javascript:;'>"+defaults.confirmTxt+"</a>",
 				    confirmUrl=defaults.confirmUrl;
 				boxObj.append(confirmObj);	
-				boxObj.find(".confirmBtn").live("click", function() {
+				boxObj.find(defaults.confirm).live("click", function() {
 					boxObj.hide();
 					if (defaults.model) {
-						$("#boxModel").remove();
+						$(defaults.model).remove();
 					}
 					if(defaults.confirmUrl!==""){
 						location.href=defaults.confirmUrl;

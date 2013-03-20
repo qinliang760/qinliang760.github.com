@@ -58,14 +58,14 @@
 
 	}
 
-	$.fn.tabs = function(defaults) {
+/*	$.fn.tabs = function(defaults) {
 		defaults = $.extend({},
 		tabs.defaults, defaults);
 		return this.each(function() {
 			el = new Tabs($(this), defaults);
 		});
 
-	};
+	};*/
 	$.sc2 = {
 		tabs: function(defaults) {
 			defaults = $.extend({},

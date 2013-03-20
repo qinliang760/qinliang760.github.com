@@ -37,7 +37,7 @@ body{
 #popBox2{
 	left:30px!important;
 }
-#boxModel{
+.ui-box-model{
 	background-color:#ccc;
 	display:none;
 	position:absolute;
@@ -49,4 +49,44 @@ body{
 	position:absolute;
 	top:5px;
 	right:5px;
+}
+
+.ui-box{
+	background: #fff;
+	position: absolute;
+	z-index: 1000;
+	border: 1px solid #aaa;
+	padding: 20px;
+}
+.ui-box-title{
+	border-bottom: 1px solid #ddd;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	padding-left: 10px;
+}
+.ui-box-panel{
+	padding:10px;
+}
+.ui-box-button{
+	background: #F7F7F7;
+	border-top: 1px solid #ccc;
+	padding: 10px;
+}
+.ui-box-confirm,.ui-box-cancel{
+	background: #F3F3F3;
+	border-radius: 2px;
+	height: 31px;
+	line-height: 31px;
+	margin-left: 15px;
+	padding: 0 22px;
+	cursor: pointer;
+	color: #000;
+	border: 1px solid #ccc;
+}
+.ui-box-close{
+	position: absolute;
+	top: 5px;
+	right:5px;
+	text-decoration: none;
 }
