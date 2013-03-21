@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#fixedElement{
+	color:#fff;
+	background:#0088cc;
+	height:40px;
+	line-height:40px;
+	width:300px;
+}
+</style>
+</head>
+
+<body>
+<div style="width:300px;height:300px;border:1px solid #000;">
+撑高度的元素
+</div>
+<div id='fixedElement'>跟随滚动的测试元素</div>
+<div style="width:300px;height:1000px;border:1px solid #000;">
+撑高度的元素
+</div>
+
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script>
+/*!
+ * Base On jQuery JavaScript Library v1.4.2
+ * http://jquery.com/
+ * Libs:Jay fixed
+ * Copyright 2012, QinLiang
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * Date: 2012.10.22
+ */
+
+(function($) {
+	var fixed = {
+		defaults: {
+			marginTop:20
+		}
+	};
+	function Fixed(root, defaults) {
+		var self = this,
+		element = root;
+		var originStyles={
+			position:null,
+			top:null	
+		}
+		var ie6=$.browser.msie && $.browser.version==6;
+		var marginTop=defaults.marginTop || 0;		
+		var originTop=element.offset().top;
+		
+		$.extend(this, {
+			setup:function(){
+
+
+				// 修正过高的 marginTop
+				marginTop = marginTop <= originTop ? marginTop : originTop;
+				// 保存原有的样式
+				for (var style in originStyles) {
+					if (originStyles.hasOwnProperty(style)) {
+						originStyles[style] = element.css(style);
+					}
+				}
+				
+				$(window).scroll(function(){
+					self.scrollFn();
+				})	
+			
+			},
+			scrollFn:function(){
+				var w=$(window);
+				var distance = originTop - w.scrollTop();
+				// 当距离小于等于预设的值时
+				// 将元素设为 fix 状态
+				if (distance <= marginTop) {
+					if(!ie6){
+						element.css({
+							position: "fixed",
+							top: marginTop
+						});								
+					}else{
+						element.css({
+							position: "absolute",
+							top: marginTop+w.scrollTop()
+						});								
+						
+					}
+	
+				} else if (distance > marginTop) {
+					// 恢复原有的样式
+					element.css(originStyles);
+				}					
+			},
+			init: function() {
+				this.setup();
+				this.scrollFn();
+								
+			}
+		})
+		self.init();
+
+	}
+
+	$.fn.fixed = function(defaults) {
+		defaults = $.extend({},
+		fixed.defaults, defaults);
+		return this.each(function() {
+			el = new Fixed($(this), defaults);
+		})
+
+	}
+
+})(jQuery);
+
+
+$(function(){
+	$("#fixedElement").fixed();	
+})
+
+</script>
+</body>
+</html>
