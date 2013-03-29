@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<!-- <link rel="stylesheet" href="css/jquery.tabs.css" type="text/css" media="all"/> -->
+<style>
+.ui-marquee{
+	height: 100px;
+	overflow: hidden;
+}
+.ui-marquee-panel{
+	position:relative;
+}
+</style>
+</head>
+
+<body>
+<div class="ui-marquee ui-demo">
+	<ul class="ui-marquee-panel">
+		<li>111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</li>
+		<li>22222222222222222222222222222222222222222222</li>
+		<li>33333333333333333333333333333333333333333333</li>
+		<li>44444444444444444444444444444444444444444444</li>
+		<li>5555555555555555555555555555</li>
+	</ul>
+
+</div>
+
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="YLMarquee-1.1.js" language="javascript"></script>		
+<script>
+$(function(){
+	$(".ui-marquee").YlMarquee({
+		step:1,
+		height:10,
+		vertical:true
+	});
+})
+</script>
+</body>
+</html>
