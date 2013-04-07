@@ -1,0 +1,16 @@
+transition
+
+-webkit-transition:/*for Safari Chrome*/
+-moz-transition:/*for Firefox*/
+-ms-transition:/*for IE*/
+-o-transition:/*for Opera*/
+transition:/*for Firefox or Opera high version*/
+
+
+opacity:0;
+filter:alpha(opacity=0);
+-ms-filter:"progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+
+
+FYI
+http://www.w3cplus.com/resources/css3-tutorial-and-case
