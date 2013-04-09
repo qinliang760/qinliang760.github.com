@@ -93,15 +93,25 @@ var Clock = function(prt){
 	this.month=d.getMonth()+1;
 	this.day=d.getDate();
 
-	var startTime=new Date();//当前时间
-	var endTime=new Date(2013,03,09,20,40,00);//直播开始时间
-	var ms=endTime.getTime()-startTime.getTime();
-	if(ms<0){return}
-	var remain=new Date(ms),
-		remainH=remain.getHours()-8,
-		remainM=remain.getMinutes(),
-		remainS=remain.getSeconds();
+	var startTime=arguments[1];
+	var endTime=arguments[2];
+	var currentDate=new Date();//当前日期
+	var liveTime=new Date(startTime[0],startTime[1],startTime[2],startTime[3],startTime[4],startTime[5]);//直播开始时间
+	var ms=liveTime.getTime()-currentDate.getTime();
+	
 
+		var remainD=Math.floor(ms/(24*3600*1000));
+		var hLeave=ms%(24*3600*1000);
+		var remainH=Math.floor(hLeave/(3600*1000));
+
+		var mLeave=hLeave%(3600*1000); 
+		var remainM=Math.floor(mLeave/(60*1000));
+
+		var sLeave=mLeave%(60*1000); 
+		var remainS=Math.round(sLeave/1000);
+
+
+	if(ms<0 || remainD>=1){return}
 	this.hour = new ClkUnit(remainH, 0, 23);
 	this.munite = new ClkUnit(remainM, 0, 59);
 	this.second = new ClkUnit(remainS, 0, 59);
