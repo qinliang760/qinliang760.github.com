@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-body { font-family:"微软雅黑" Arial, Tahoma, Sans-Serif; font-size:12px; line-height:18px; color:#67a1d5; background:#000 url(../../images/minisite/live/bg.jpg) no-repeat 50% 0;}
+body { font-family:"微软雅黑" Arial, Tahoma, Sans-Serif; font-size:12px; line-height:18px; color:#67a1d5; background:#fff url(../../images/minisite/live/bg.jpg) no-repeat 50% 0;}
 
 .m-footer{padding:50px 0 30px 55px; width:auto}
 .g-btm{display:block!important}
@@ -179,14 +179,14 @@ body { font-family:"微软雅黑" Arial, Tahoma, Sans-Serif; font-size:12px; lin
 	-ms-transform-style:preserve-3d;
 	-o-transform-style:preserve-3d;
 	transform-style:preserve-3d;}
-.unit { float:left; margin:16px; position:relative; height:129px; width:128px; overflow:visible; }
+.unit { float:left; margin:16px 0; position:relative; height:129px; width:110px; overflow:visible; }
 .top, .btm {
 	height:64px;
-	width:128px;
+	width:110px;
 	overflow:hidden;
 	position:absolute;
 }
-.unit span { font:96px/128px Microsoft YaHei,Tahoma, Geneva, sans-serif; width:128px; text-align:center; position:absolute; color: #fff;}
+.unit span { font:70px/128px Microsoft YaHei,Tahoma, Geneva, sans-serif; width:110px; text-align:center; position:absolute; color: #fff;}
 .btm span { top:-64px; }
 .top { background:#000; border-bottom:1px solid #333; border-radius:10px 10px 0 0; top:0; 
 	-webkit-transform-origin:bottom;
@@ -201,3 +201,11 @@ body { font-family:"微软雅黑" Arial, Tahoma, Sans-Serif; font-size:12px; lin
 	-moz-transform-origin:top;
 	-o-transform-origin:top;
 	transform-origin:top;}
+
+.clockDot{
+	color: #000;
+	font-size: 66px;
+	float: left;
+	position: relative;
+	*line-height: 140px;
+}

@@ -36,6 +36,8 @@ var ClkUnit = function(val, minVal, maxVal){
 	this.topfnt = document.createElement("div");this.topfnt.txt = document.createElement("span");this.topfnt.className = clkTopCls;
 	this.btmbak = document.createElement("div");this.btmbak.txt = document.createElement("span");this.btmbak.className = clkBtmCls;
 	this.btmfnt = document.createElement("div");this.btmfnt.txt = document.createElement("span");this.btmfnt.className = clkBtmCls;
+
+
 	this.pane.appendChild(this.topbak); this.topbak.appendChild(this.topbak.txt);
 	this.pane.appendChild(this.topfnt); this.topfnt.appendChild(this.topfnt.txt);
 	this.pane.appendChild(this.btmbak); this.btmbak.appendChild(this.btmbak.txt);
@@ -120,8 +122,13 @@ var Clock = function(prt){
 	/*this.hour = new ClkUnit(d.getHours(), 0, 23);
 	this.munite = new ClkUnit(d.getMinutes(), 0, 59);
 	this.second = new ClkUnit(d.getSeconds(), 0, 59);*/
+	this.dot=document.createElement("p");this.dot.innerHTML = ":";this.dot.className = "clockDot";
+	this.dot2=document.createElement("p");this.dot2.innerHTML = ":";this.dot2.className = "clockDot";
+
 	this.pane.appendChild(this.hour.pane);
+	this.pane.appendChild(this.dot);
 	this.pane.appendChild(this.munite.pane);
+	this.pane.appendChild(this.dot2);
 	this.pane.appendChild(this.second.pane);
 	prt.appendChild(this.pane);
 	var clock = this;
