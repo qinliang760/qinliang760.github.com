@@ -1,0 +1,840 @@
+/*
+YUI 3.5.1 (build 22)
+Copyright 2012 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html {
+	color:#000;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	margin:0;
+	padding:0
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0
+}
+fieldset, img {
+	border:0
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style:normal;
+	font-weight:normal
+}
+ol, ul {
+	list-style:none
+}
+caption, th {
+	text-align:left
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal
+}
+q:before, q:after {
+	content:''
+}
+abbr, acronym {
+	border:0;
+	font-variant:normal
+}
+sup {
+	vertical-align:text-top
+}
+sub {
+	vertical-align:text-bottom
+}
+input, textarea, select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit
+}
+input, textarea, select {
+*font-size:100%
+}
+legend {
+	color:#000
+}
+
+/*add by ql*/
+input{
+	background:none;
+	border:none;
+}
+
+
+/*base*/
+
+body {
+	font-family:"Microsoft YaHei",Arial, Helvetica, sans-serif;
+	color:#fff;
+	font-size:12px;
+	background-color:#02151f;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+
+a {
+	text-decoration:none;
+	outline:none;
+}
+a:link {
+	color:#61abec;
+}
+a:visited {
+	color:#61abec;
+}
+a:hover {
+	color:#fff;
+	text-decoration:underline;
+}
+a:active {
+	color:#fff;
+}
+
+/*-----clearFix-----*/
+.clearFix:after{
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	content: ".";
+}
+.clearFix{ display: inline-block; }
+/* Hides from IE 4-6 \*/
+* html .clearFix{ height: 1%; }
+.clearFix{ display: block; } 
+/* End hide from IE 4-6 */
+
+a.font_blue,.font_blue{
+	color:#1c4491;
+}
+.font_green{
+	color:#3a6645;
+}
+.font_red{
+	color:#932126;
+}
+.alignCenter{
+	text-align:center;	
+}
+.pad10{
+	padding:10px;
+}
+.padTB{
+	padding:10px 0;
+}
+.padLR{
+	padding:0 10px;
+}
+.marTB{
+	margin:10px 0;
+}
+.marLR{
+	margin:0 10px;
+}
+
+
+
+
+
+/*layout*/
+#home{
+	background:url(/images/bwc_ticket/top_b.jpg) no-repeat center 0;
+}
+#homeCon{
+	width:1000px;
+	margin:0 auto;
+	height:926px;
+}
+.login{
+	padding-top:25px;
+}
+.login li{
+	padding:0 15px;
+	float:right;
+	border-left:1px solid #61abec;
+	
+}
+.login li.loginLink{
+	border-left:none;
+}
+#homeCon #orderBtn{
+	display:block;
+	width:352px;
+	height:93px; 
+	margin:485px auto 0;
+	background:url(/images/bwc_ticket/btn.png) no-repeat 0 0;
+}
+#homeCon .ticketTxt{
+	width:857px;
+	margin:0 auto;
+}
+#homeCon .ticketTxt h2{
+	padding:19px 21px 2px;
+}
+#homeCon .ticketTxt li{
+	color:#A8A8A8;
+	position:relative;
+	padding-left:20px;
+	line-height:23px;
+}
+#homeCon .ticketTxt li span{
+	color:#fff;
+	position:absolute;
+	left:0;
+	_left:-20px;
+}
+#homeCon .getTicket{
+	float:left;
+	width:417px;
+}
+#homeCon .introTicket{
+	float:right;
+	width:408px;
+	padding-top:38px;
+}
+#homeCon .selectBtn{
+	width:492px;
+	margin:34px auto 0;
+}
+#homeCon .selectBtn li{
+	width:240px;
+	float:left;
+}
+#homeCon .selectBtn a{
+	display:block;
+	font-size:20px;
+	color:#fff;
+	text-align:center;
+}
+#homeCon .selectBtn a:hover{
+	text-decoration:none;
+}
+/*header*/
+#header{
+	background:url(/images/bwc_ticket/top_s.jpg) no-repeat center 0;	
+	height:440px;
+	overflow:hidden;
+}
+#header div{
+	position:relative;
+	width:1000px;
+	margin:0 auto;
+}
+#header .returnBtn{
+	display:none;
+	width:199px;
+	height:54px;
+	position:absolute;
+	bottom:20px;
+	right:16px;
+	background:url(/images/bwc_ticket/btn.png) no-repeat 0 -93px;
+	
+}
+#header .logo_sc2{
+	display:block;
+	width:264px;
+	height:189px;
+	left:38px;
+	top:150px;
+	text-indent:-9999em;
+	position:absolute;
+	
+}
+#header .logo_wow{
+	display:block;
+	width:203px;
+	height:189px;
+	left:654px;
+	top:117px;
+	text-indent:-9999em;
+	position:absolute;	
+}
+#header .logo_bwc{
+	display:block;
+	width:264px;
+	height:189px;
+	left:333px;
+	top:174px;
+	text-indent:-9999em;
+	position:absolute;	
+}
+#container{
+	background-color:#c3c3c3;
+	padding-bottom:50px;
+	min-height:265px;
+	border-bottom:4px solid #ddd;
+}
+#container .orderCon{
+	width:1000px;
+	margin:0 auto;
+	padding:20px 0 0;
+	color:#393939;
+	font-size:14px;	
+}
+#container .orderCon .orderForm{
+	float:left;
+	width:580px;
+}
+#container .orderCon .orderForm h2{
+	font-size:16px;
+	padding:0 0 10px 25px;
+	margin-bottom:10px;
+	background:url(/images/bwc_ticket/border_b.gif) no-repeat 0 bottom;
+}
+#container .orderCon .orderForm .orderList li{
+	float:left;
+	padding:4px 0;
+	_height:28px;
+	_overflow:hidden;	
+}
+#container .orderCon .orderForm .orderList li label{
+	width:78px;
+	padding-right:15px;
+	text-align:right;
+	line-height:28px;
+	float:left;
+}
+#container .orderCon .orderForm .orderList li input{
+	width:310px;
+	height:28px;
+	line-height:28px;
+	float:left;
+	color:#fff;
+	padding-left:2px;
+	/*background-color:#797979;*/
+	background-color:#666;
+}
+#container .orderCon .orderForm .orderList li select{
+	width:310px;
+	float:left;
+	background-color:#666;
+	color:#fff;
+	border:none;
+	height:28px;	
+}
+#container .orderCon .orderForm .orderList li.firstName{
+	width:242px;
+}
+#container .orderCon .orderForm .orderList li.secondName{
+	width:290px;
+}
+#container .orderCon .orderForm .orderList li.firstName input{
+	width:81px;
+}
+#container .orderCon .orderForm .orderList li.secondName label{
+	width:63px;
+	padding-right:10px;
+}
+#container .orderCon .orderForm .orderList li.secondName input{
+	width:88px;
+}
+#container .orderCon .orderForm .orderList li span{
+	float:left;
+	line-height:28px;
+	height:28px;
+	padding-left:18px;
+	font-size:12px;
+	color:#797979;
+}
+#container .orderCon .orderForm .orderList li span.error,span.error{
+	color:#932126;
+	background:url(/images/bwc_ticket/error.gif) no-repeat 2px center;
+}
+#container .orderCon .orderForm .orderList li span.success,span.success{
+	background:url(/images/bwc_ticket/right.gif) no-repeat 2px center;
+}
+#orderTwo{
+	margin:10px 0 10px 93px;
+	vertical-align:middle;
+}
+#assureCheck{
+	margin:10px 0 10px 240px;
+	vertical-align:middle;	
+}
+
+
+.protocolTxt{
+	width:830px;
+
+	height:120px;
+	border:1px solid #878787;
+	background-color:#fff;
+	overflow-y:scroll;
+	font-size:12px;
+}
+.protocolTxt ul{
+	padding:10px;	
+}
+.ptAgree{
+	width:415px;
+	padding:20px 0 0 85px;
+}
+.ptAgree p{
+	float:left;
+	height:58px;
+	line-height:58px;
+}
+.ptAgree .confirmBtn{
+	background:url(/images/bwc_ticket/btn.gif) no-repeat 0 -58px;
+	width:216px;
+	height:58px;
+	cursor:pointer;
+	font-size:18px;
+	line-height:58px;
+	text-align:center;
+	color:#fff;
+}
+#container .orderCon .orderTip{
+	float:right;
+	width:375px;
+	overflow:hidden;
+	background:url(/images/bwc_ticket/border_left.gif) no-repeat 0 0;
+	padding:0 0 0 30px;	
+}
+#container .orderCon .orderTip h2{
+	font-size:18px;
+	color:#3a6645;
+	font-weight:bold;
+}
+#container .orderCon .orderTip h2 span{
+	display:inline-block;
+	width:62px;
+	height:32px;
+	font-size:12px;
+	color:#fff;
+	text-align:center;
+	line-height:32px;
+	background:url(/images/bwc_ticket/icon.gif) no-repeat 0 0;
+	
+}
+#container .orderCon .orderTip li{
+	position:relative;
+	padding-left:30px;
+	line-height:30px;
+}
+#container .orderCon .orderTip li span{
+	display:inline-block;
+	width:16px;
+	height:16px;
+	line-height:16px;
+	color:#fff;
+	text-align:center;
+	position:absolute;
+	left:0;
+	_left:-30px;
+	top:8px;
+	background-color:#3a6645;
+}
+.protocol p{
+	font-size:18px;
+	color:#393939;
+	margin-top:20px;
+	padding:10px 0 0 94px;
+	background:url(/images/bwc_ticket/border_b.gif) no-repeat 0 top;
+	width:406px;
+}
+.protocol p span{
+	font-size:26px;
+}
+.protocol p strong{
+	font-size:26px;
+	color:#1c4491;
+}
+
+/*ordering*/
+#container .orderInfo{
+	width:614px;
+}
+#container .orderInfo h2{
+	font-size:18px;
+	color:#393939;
+	background:url(/images/bwc_ticket/border_b.gif) no-repeat 0 bottom;
+	padding:0 0 10px 20px;
+	margin-bottom:10px;
+}
+#container .orderInfo h2 strong{
+	font-size:30px;
+	color:#1c4491;
+}
+#container .orderInfo h3{
+	font-size:16px;
+	padding:0 0 20px 20px;
+}
+.orderBox .top{
+	width:614px;
+	height:16px;
+	background:url(/images/bwc_ticket/pay_tb.gif) no-repeat 0 -43px;	
+}
+.orderBox ul{
+	width:512px;
+	padding:20px 80px;
+	background:url(/images/bwc_ticket/t_m.gif) repeat-y 0 0;			
+}
+.orderBox ul li{
+	float:left;
+	line-height:33px;
+	width:444px;
+}
+.orderBox ul li.firstName{
+	width:250px;
+}
+.orderBox ul li.secondName{
+	width:258px;
+}
+.orderBox ul li.firstName strong{
+	vertical-align:top;
+	width:150px;
+}
+.orderBox ul li.secondName strong{
+	vertical-align:top;	
+	width:150px;
+}
+.orderBox ul li span{
+	display:inline-block;
+	width:80px;
+	padding-right:20px;
+	text-align:right;
+}
+.orderBox ul li strong{
+	display:inline-block;
+	color:#1c4491;
+}
+
+.orderBox .bottom{
+	width:614px;
+	height:20px;
+	background:url(/images/bwc_ticket/pay_tb.gif) no-repeat 0 -59px;		
+}
+.resultOp div{
+	width:343px;
+	float:left;
+	padding:20px 10px 40px 20px;
+	background:url(/images/bwc_ticket/border_short.gif) no-repeat right 0;
+}
+.resultOp div h4.opTxt{
+	color:#393939;
+	font-size:14px;
+	padding-bottom:10px;
+}
+.resultOp div p{
+	color:#797979;
+	font-size:12px;
+}
+.resultOp p.payBtn{
+	float:right;
+	padding:26px 19px 0 0;	
+}
+/*orderList*/
+.orderTable{
+	width:614px;
+	margin:0 auto;
+	border-left:1px solid #7a7a7a;
+	border-bottom:1px solid #7a7a7a;	
+}
+.orderTable th{
+	background-color:#7a7a7a;
+	height:44px;
+	color:#fff;
+	line-height:44px;
+	text-align:center;
+}
+.orderTable tr td{
+	line-height:83px;
+	text-align:center;
+	background-color:#fff;
+	border-right:1px solid #7a7a7a;	
+}
+.orderTable td a{
+	color:#1c4491;
+}
+.orderTable td a:hover{
+	text-decoration:underline;
+}
+
+/*popBox*/
+#boxModel{
+	background-color:#333;
+	position:absolute;
+	z-index:99;
+	left:0;
+	top:0;
+	display:none;
+}
+#popBox{
+	width:723px;
+	position:absolute;
+	z-index:999;
+	color:#393939;
+	font-size:14px;	
+	display:none;
+}
+#popBox .top{
+	background:url(/images/bwc_ticket/box_tb.png) no-repeat 0 0;
+	height:25px;
+}
+#popBox .bottom{
+	background:url(/images/bwc_ticket/box_tb.png) no-repeat 0 -25px;
+	height:75px;
+}
+#popBox .orderBox{
+	background:url(/images/bwc_ticket/box_m.png) repeat-y 0 0;	
+}
+#popBox .orderBox h2{
+	width:520px;
+	padding-top:15px;
+	margin:0 auto;
+}
+#popBox .orderBox h2 strong{
+	font-size:16px;
+	color:#064094;
+	font-weight:bold;
+}
+#popBox .orderBox h2 span,.importantIcon{
+ 	background: url("/images/bwc_ticket/icon.gif") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    width: 62px;
+}
+#popBox .orderBox ul{
+	background:none;
+	padding-left:115px;
+}
+#popBox .orderBox p{
+	width:280px;
+	margin:0 auto;
+}
+#popBox p a{
+	display:inline-block;
+	background-image:url(/images/bwc_ticket/btn.gif);
+	background-repeat:no-repeat;
+	height:39px;
+	font-size:14px;
+	color:#fff;
+	line-height:39px;
+	text-align:center;
+}
+#popBox p a:hover{
+	text-decoration:none;
+}
+/*#popBox p a.edit{
+	width:137px;
+	background-position:0 -116px;
+}*/
+#popBox p a.submit{
+	width:140px;
+	background-position:0 -155px;
+}
+#popBox p a.edit{
+	width:140px;
+	background-position:0 -194px;
+}
+#popBox .boxClose{
+	position:absolute;
+	display:block;
+	width:33px;
+	height:34px;
+	right:21px;
+	top:21px;
+	cursor:pointer;
+	background:url(/images/bwc_ticket/icon.gif) no-repeat 0 -60px;
+}
+#popBox .submitOk{
+	width:300px;
+	margin:0 auto;
+	padding: 50px 0 0 0;
+}
+#popBox .submitOk p{
+	width:300px;
+	text-align:center;
+	padding-top:30px;
+}
+/*pay*/
+#payBox{
+	width:722px;
+	margin:0 auto;
+	padding-top:60px;
+}
+#payBox .top{
+	background:url(/images/bwc_ticket/pay_tb.gif) no-repeat 0 0;
+	height:20px;
+}
+#payBox .bottom{
+	background:url(/images/bwc_ticket/pay_b.gif) no-repeat 0 0;
+	height:75px;
+}
+#payBox .orderBox{
+	padding-top:80px;
+	background:url(/images/bwc_ticket/pay_m.gif) repeat-y 0 0;
+}
+#payBox h2,#popBox .submitOk h2{
+	font-size:18px;
+	font-weight:bold;
+	color:#1c4491;
+	position:relative;
+	padding-top:35px;
+	width:100px;
+	margin:0 auto;
+}
+#payBox h2 span,#popBox .submitOk h2 span{
+	display:block;
+	position:absolute;
+	width:28px;
+	height:28px;
+	overflow:hidden;
+	top:0;
+	left:22px;
+	background:url(/images/bwc_ticket/icon.gif) no-repeat 0 -32px;
+	
+}
+#popBox .submitOk h2{
+	width:168px;
+	text-align:center;
+}
+#popBox .submitOk h2 span{
+	left:61px;
+}
+#payBox .payTxt{
+	font-size:14px;
+	color:#393939;
+	width:445px;
+	padding:20px 0;
+	margin:0 auto;
+}
+#payBox .payBtn{
+	width:440px;
+	margin:0 auto;
+}
+.payBtn a{
+	display:inline-block;
+	width:216px;
+	height:58px;
+	text-align:center;
+	color:#fff;
+	line-height:58px;
+	font-size:16px;	
+	background-image:url(/images/bwc_ticket/btn.gif);	
+	background-repeat:no-repeat;
+}
+#payBox .select{
+	background-position:0 0;
+}
+#payBox .bwc{
+	background-position:0 -58px;	
+}
+#footer{
+	background:url(/images/bwc_ticket/bottom.jpg) no-repeat center 0;
+	height:154px;
+}
+#footer ul{
+	width:950px;
+	margin:0 auto;
+	padding-top:45px;  
+}
+#footer li{
+	float:left;
+	padding:0 10px;
+}
+#footer li.ne{
+	padding-top:17px;
+}
+#footer li.csTitle{
+	color:#02afff;
+	font-size:14px;
+	padding-left:20px;
+	background:url(/images/bwc_ticket/sc.png) no-repeat 0 0;
+	margin:16px 0 0 42px;
+}
+#footer li.csTxt{
+	color:#2a4d5e;
+	padding-top:18px;
+}
+#my_name{
+	color:#ccc;
+	padding-right:10px;
+}
+#footer .bx{
+	width:76px;
+	height:40px;
+	display:block;
+	overflow:hidden;
+	background:url(/images/bwc_ticket/logo_bl.png) no-repeat 0 0;
+}
+#footer .ne a{
+	width:72px;
+	height:22px;
+	display:block;
+	overflow:hidden;
+	background:url(/images/bwc_ticket/logo_ne.png) no-repeat 0 0;
+}
+#footer .fy{
+	width:44px;
+	height:40px;
+	display:block;
+	overflow:hidden;
+	background:url(/images/bwc_ticket/logo_gm.png) no-repeat 0 0;
+}
+/*home link*/
+#homeCon .logoArea{
+	position:relative;
+}
+#homeCon .logoArea a{
+	text-indent:-9999em;
+	position:absolute;	
+	display:block;	
+}
+#homeCon .logoArea .logo_sc2{
+	width:264px;
+	height:189px;
+	left:114px;
+	top:69px;
+}
+#homeCon .logoArea .logo_wow{
+	width:203px;
+	height:189px;
+	left:667px;
+	top:48px;
+}
+#homeCon .logoArea .logo_bwc{
+	width:264px;
+	height:189px;
+	left:387px;
+	top:123px;
+}
+
+/*error result*/
+.errorResult{
+	width:520px;
+	padding-top:70px;
+	margin:0 auto;
+}
+.errorResult p.errorTxt{
+	color:#1c4491;
+	font-size:18px;
+	float:left;	
+	width:232px;
+	height:123px;
+	padding:40px 30px 0 0;
+	text-align:center;
+	background:url(/images/bwc_ticket/border_short.gif) no-repeat right 0;	
+}
+.errorResult p.returnHome{
+	float:left;
+	padding:32px 0 0 20px;	
+}
+.errorResult p.returnHome a{
+	display:inline-block;
+	width:216px;
+	height:58px;
+	text-align:center;
+	color:#fff;
+	line-height:58px;
+	font-size:16px;	
+	background:url(/images/bwc_ticket/btn.gif) no-repeat 0 -58px;
+}

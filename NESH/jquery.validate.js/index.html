@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/jquery.validate.css" type="text/css" media="all"/>
+
+</head>
+
+<body>
+	<div id="container">
+	<form class="orderCon">
+			<div class="clearFix">
+				<div class="orderForm">
+					<h2>请填写票面信息：</h2>
+					<ul class="orderList clearFix">
+						<li class="firstName clearFix"><label>姓</label><input type="text" name="last_name" maxlength="20"/></li>
+						<li class="secondName clearFix"><label>名</label><input type="text" name="first_name" maxlength="20"/></li>
+						<li class="firstName clearFix"><label>姓拼音</label><input type="text" name="spell_lastname" maxlength="20"/></li>
+						<li class="secondName clearFix"><label>名拼音</label><input type="text" name="spell_firstname" maxlength="20"/></li>
+						<li class="clearFix"><label>证件类型</label><select name="idcard_type"><option value="1">身份证</option><option value="0">护照</option></select></li>
+						<li class="clearFix"><label>证件号码</label><input type="text" name="identity_card"/></li>
+						<li class="clearFix"><label>手机号码</label><input type="text" name="mobile" maxlength="11"/></li>
+						<li class="clearFix"><label>有效邮箱</label><input type="text" name="email" maxlength="40"/></li>
+					</ul>
+					<p><input type="checkbox" id="orderTwo"/><label for="orderTwo">我要预约第二张票</label></p>
+					<div class="protocol">								
+						<div class="ptAgree clearFix">
+							<!--<p><input type="checkbox" id="agreeCheck" name="agreeCheck"/><label for="agreeCheck">我同意相关用户协议</label></p>-->
+							<input type="submit" class="confirmBtn" value="提交预约"/>
+						</div>
+					</div>					
+				</div>
+				<div class="orderTip">
+					<h2>预约须知：<span>必读</span></h2>
+					<ul>
+						<li><span>1</span>本页信息请仔细如实填写，信息一经提交，不可更改，活动门票一旦出售，不得退换，因此，在提交前请反复核对。</li>
+						<li><span>2</span>每张身份证/护照仅能购票一张，每一个网易通行证最多只能购买两张本次活动门票。</li>
+						<li><span>3</span>购票成功的玩家将在活动前的某一特定时间，通过邮件和手机短信收到虚拟票，上面有唯一的识别码。</li>
+						<li><span>4</span>活动当天，玩家需持有预约门票时<strong class="font_red">所填写的身份证/护照</strong>，并出示虚拟票邮件的打印件或手机短信，在入口处兑换胸牌入场。</li>
+						<li><span>5</span>消费者应当严格遵守本次活动场地的规则/政策。</li>
+						<li><span>6</span>您特此授予暴雪娱乐股份有限公司及其关联公司、子公司和被许可方一项无限制的、不可撤销的、世界范围的许可和权利，摄像、录制、发行和使用在BWC现场录制的您的形象、肖像、行动和陈述于任何媒体或上下文中，无需进一步授权或补偿。</li>
+						<li><span>7</span>一旦提交预约信息，代表您特此同意隐私政策（详情见<a class="font_blue" href="http://www.battlenet.com.cn/zh/legal-cn/privacy" target="_blank">http://www.battlenet.com.cn/zh/legal-cn/privacy</a>）。</li>
+						<li><span>8</span>请注意本次活动门票仅对12岁年龄以上的人群开放。</li>																														
+					</ul>
+				</div>
+			</div>
+
+	</form><!--orderCon-->
+</div>
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.validate.js" language="javascript"></script>		
+<script>
+$(function(){
+function checkidcard(certid){
+var reg_15 = /^\d{15}$/;
+	var reg_18 = /^\d{17}([0-9]{1}|x|X)$/;
+	if(certid=="111111111111111111"){
+		return false;
+	}
+	var monthPerDays = new Array("31", "28", "31", "30", "31", "30", "31",
+			"31", "30", "31", "30", "31");
+	var area = {
+		11 : "北京",
+		12 : "天津",
+		13 : "河北",
+		14 : "山西",
+		15 : "内蒙古",
+		21 : "辽宁",
+		22 : "吉林",
+		23 : "黑龙江",
+		31 : "上海",
+		32 : "江苏",
+		33 : "浙江",
+		34 : "安徽",
+		35 : "福建",
+		36 : "江西",
+		37 : "山东",
+		41 : "河南",
+		42 : "湖北",
+		43 : "湖南",
+		44 : "广东",
+		45 : "广西",
+		46 : "海南",
+		50 : "重庆",
+		51 : "四川",
+		52 : "贵州",
+		53 : "云南",
+		54 : "西藏",
+		61 : "陕西",
+		62 : "甘肃",
+		63 : "青海",
+		64 : "宁夏",
+		65 : "新疆",
+		71 : "台湾",
+		81 : "香港",
+		82 : "澳门",
+		91 : "国外"
+	}
+
+	certid = certid.toLowerCase();
+	if (certid == "") {
+		return false;
+	}
+	if (area[parseInt(certid.substr(0, 2))] == null) {
+		return false;
+	}
+	var ret = certid.length == 15 ? reg_15.test(certid) : reg_18.test(certid);
+	if (!ret) {
+		return false;
+	}
+	birthDate = certid.length == 15 ? "19" + certid.substr(6, 6) : certid.substr(6, 8);
+	year = birthDate.substr(0, 4);
+	if (birthDate.substr(4, 1) == '0')
+		month = birthDate.substr(5, 1);
+	else
+		month = birthDate.substr(4, 2);
+	if (birthDate.substr(6, 1) == '0')
+		day = birthDate.substr(7, 1);
+	else
+		day = birthDate.substr(6, 2);
+	dd = parseInt(day);
+	mm = parseInt(month);
+	yy = parseInt(year);
+	days = new Date();
+	gdate = days.getDate();
+	gmonth = days.getMonth();
+	gyear18 = days.getFullYear() - 18;
+	if (mm > 12 || mm < 1 || dd > 31 || dd < 1) {
+		return false;
+	}
+	if (year % 100 != 0) {
+		if (year % 4 == 0)
+			monthPerDays[1] = 29;
+	} else {
+		if (year % 400 == 0)
+			monthPerDays[1] = 29;
+	}
+	if (monthPerDays[mm - 1] < dd) {
+		return false;
+	}
+	if (certid.length == 18) {
+		var arTemp = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8,
+				4, 2);
+		var num = 0;
+		var proof;
+		for ( var i = 0; i < 17; i = i + 1) {
+			num = num + certid.substr(i, 1) * arTemp[i];
+		}
+		num = num % 11;
+		switch (num) {
+		case 0:
+			proof = '1';
+			break;
+		case 1:
+			proof = '0';
+			break;
+		case 2:
+			proof = 'x';
+			break;
+		case 3:
+			proof = '9';
+			break;
+		case 4:
+			proof = '8';
+			break;
+		case 5:
+			proof = '7';
+			break;
+		case 6:
+			proof = '6';
+			break;
+		case 7:
+			proof = '5';
+			break;
+		case 8:
+			proof = '4';
+			break;
+		case 9:
+			proof = '3';
+			break;
+		case 10:
+			proof = '2';
+			break;
+		}
+		if (certid.substr(17, 1) != proof) {
+			return false;
+		}
+	}
+	mm = mm - 1;
+	var prevTS18 = new Date(gyear18, gmonth, gdate, 0, 0, 0);
+	var ageTs = new Date(yy, mm, dd, 0, 0, 0)
+	return true;
+}
+
+
+//数字和字符验证
+jQuery.validator.addMethod("passport", function(value, element) {
+	var chrnum = /^([a-zA-Z0-9]+)$/;
+	return this.optional(element) || (chrnum.test(value));
+}, "请输入正确的护照号码"); 
+
+//字符验证
+$.validator.addMethod("chars", function(value, element) {
+		value=value.replace(/[ ]/g,"");  
+        var length = value.length;  
+        for(var i = 0; i < value.length; i++){  
+            if(value.charCodeAt(i) > 127){  
+                length++;  
+            }  
+        }  
+
+        return this.optional(element) || /^[A-Za-z]+$/g.test(value);  
+}, "填写错误");  
+
+//身份证验证
+$.validator.addMethod("isIdCardNo", function(value, element) {       
+     return this.optional(element) || checkidcard(value);       
+}, "请输入正确的身份证号码");
+	
+
+		
+		
+	$("select[name='idcard_type']").change(function(){
+		var card1=$("select[name='idcard_type']").val();
+		if(card1=="1"){
+			$("input[name='identity_card']").attr("maxlength","18");
+			$("input[name='identity_card']").rules("add", {"required":true,"isIdCardNo":true,"passport":false,"maxlength":18});
+		}else{
+			$("input[name='identity_card']").attr("maxlength","30");
+			$("input[name='identity_card']").rules("add", {"required":true,"isIdCardNo":false,"passport":true,"maxlength":30});
+		}		
+	})
+	$("select[name='idcard_type2']").live("change",function(){
+		var card2=$("select[name='idcard_type2']").val();
+		if(card2=="1"){
+			$("input[name='identity_card']").attr("maxlength","18");
+			$("input[name='identity_card2']").rules("add", {"required":true,"isIdCardNo":true,"passport":false,"maxlength":18});
+		}else{
+			$("input[name='identity_card']").attr("maxlength","30");
+			$("input[name='identity_card2']").rules("add", {"required":true,"isIdCardNo":false,"passport":true,"maxlength":30});
+		}		
+	})	
+	function validateF(){
+			$(".orderCon").validate({
+				errorElement:"span",
+				success: function(label) {
+					label.addClass("success");
+				},		
+				rules: {
+					last_name: {"required":true,"maxlength":20},
+					first_name: {"required":true,"maxlength":20},
+					spell_lastname: {"required":true,"maxlength":20,"chars":true},
+					spell_firstname: {"required":true,"maxlength":20,"chars":true},
+					//identity_card: {"required":true,"isIdCardNo":true},
+					mobile: {"required":true,"digits":true,"minlength":11,"maxlength":11},
+					email: {"required":true,"email":true,"maxlength":40},
+					last_name2:  {"required":true,"maxlength":20},
+					first_name2:  {"required":true,"maxlength":20},
+					spell_lastname2: {"required":true,"maxlength":20,"chars":true},
+					spell_firstname2: {"required":true,"maxlength":20,"chars":true},
+					//identity_card2: {"required":true,"isIdCardNo":true},
+					mobile2: {"required":true,"digits":true,"minlength":11,"maxlength":11},
+					email2: {"required":true,"email":true,"maxlength":40}
+				},
+				messages: {
+					last_name:  {"required":"不能为空","maxlength":"填写错误"},
+					first_name: {"required":"不能为空","maxlength":"填写错误"},
+					spell_lastname: {"required":"不能为空","maxlength":"填写错误"},
+					spell_firstname:{"required":"不能为空","maxlength":"填写错误"},
+					identity_card: {"required":"不能为空","minlength":"您的证件号码填写错误","maxlength":"您的证件号码填写错误"},
+					mobile: {"required":"不能为空","digits":"填写错误","minlength":"您输入的手机号有错","maxlength":"您输入的手机号有错"},
+					email: {"required":"不能为空","email":"填写错误","maxlength":"您输入的邮箱有错"},
+					last_name2: {"required":"不能为空","maxlength":"填写错误"},
+					first_name2: {"required":"不能为空","maxlength":"填写错误"},
+					spell_lastname2:{"required":"不能为空","maxlength":"填写错误"},
+					spell_firstname2:{"required":"不能为空","maxlength":"填写错误"},
+					identity_card2: {"required":"不能为空","minlength":"您的证件号码填写错误","maxlength":"您的证件号码填写错误"},
+					mobile2: {"required":"不能为空","digits":"填写错误","minlength":"您输入的手机号有错","maxlength":"您输入的手机号有错"},
+					email2: {"required":"不能为空","email":"填写错误","maxlength":"您输入的邮箱有错"}
+				},
+				submitHandler:function(){
+					/*if(!$("#agreeCheck").attr("checked")){
+						alert("请勾选我同意相关用户协议");
+						return false;	
+					}*/
+					
+		
+					
+					
+					//一张和二张的判断	
+					var str=$("form.orderCon").serialize();
+					str=str.replace(/\+/g," ");
+					str=decodeURIComponent(str,true);
+					var state=$("#orderTwo").attr("checked");
+					//(typeof state=="undefined")?state=false:state=true;	
+					
+					if(state){
+					
+						//身份证重复判断
+						var card1=$("input[name='identity_card']").val();
+						var card2=$("input[name='identity_card2']").val();
+						if(card1.toUpperCase()==card2.toUpperCase()){
+							alert("证件号码不能相同！");
+							return;
+						}
+						
+						//两张与一张票显示
+						var fieldArr=str.split("&last_name2");
+						var ulArr1=fieldArr[0].split("&");
+						var ulArr2=("last_name2"+fieldArr[1]).split("&");
+						$("#popBox ul").eq(0).find("strong").each(function(k,v){
+								var field=ulArr1[k].split("=")[1];						
+								$(this).html($.trim(field));
+						})	
+						$("#popBox ul").eq(1).find("strong").each(function(k,v){
+								var field=ulArr2[k].split("=")[1];
+								$(this).html($.trim(field));				
+						})
+					
+															
+					}else{
+						var fieldArr=str.split("&");
+						$("#popBox ul").eq(0).find("strong").each(function(k,v){
+								var field=fieldArr[k].split("=")[1];
+								$(this).html($.trim(field));
+						})
+						
+										
+					}
+					
+		
+					$(".cardT").each(function(){
+						if($(this).text()=="1"){
+							$(this).text("身份证");
+						}else{
+							$(this).text("护照");
+						}				
+					})
+					
+					
+					$("#popBox").qlBox();
+					$(".submitOk h2").find("span").remove();
+					$(".submitOk").siblings().show().end().hide();					
+					state?$("#popBox ul").eq(1).show():$("#popBox ul").eq(1).hide();
+					return false;
+				}
+			});	
+	}
+	validateF();
+	var card1=$("select[name='idcard_type']").val();
+	if(card1=="1"){
+		$("input[name='identity_card']").attr("maxlength","18");
+		$("input[name='identity_card']").rules("add", {"required":true,"isIdCardNo":true,"passport":false,"maxlength":18});
+	}else{
+		$("input[name='identity_card']").attr("maxlength","30");
+		$("input[name='identity_card']").rules("add", {"required":true,"isIdCardNo":false,"passport":true,"maxlength":30});
+	}	
+
+	
+	//提交
+	$("#popBox .submit").click(function(){
+		var str=$("form.orderCon").serialize();
+		//str=decodeURIComponent(str,true);
+		var timer;
+		var t=$(this);
+		$(".submitOk .time").html(5)
+		$.ajax({
+			url:"{{_bwc_ticket_app_path}}/save_appointment?"+str,	
+			type:"POST",
+			success:function(data){
+				var data=eval("("+data+")");
+				if(data.error){
+					alert(data.msg);
+					return false;
+				}else {
+					if(!data.success){
+						alert(data.msg);
+						return false;
+					}
+				}
+				t.parent().next().find("h2").append("<span></span>");
+				t.parent().next().show().siblings().hide();
+				var n=5;
+				var outFun=function(){
+					n--;
+					$(".submitOk .time").html(n);
+					if(n==0){
+						$("#popBox").hide();
+						$("#boxModel").remove();
+						clearInterval(timer);
+						location.href="{{_bwc_ticket_app_path}}/my_appointment";
+					}	
+				}
+				
+				timer=setInterval(outFun,1000);
+				$(".boxClose").click(function(){
+					clearInterval(timer);
+					validateF();	
+				})
+			},
+			error:function(){
+				alert('error')
+			}
+				
+		})
+		return false;	
+	})
+	//order modify
+	$("#popBox .edit").click(function(){
+		$("#popBox").hide();
+		$("#boxModel").hide();
+		return false;	
+	})
+	
+
+	
+	
+
+})
+</script>
+</body>
+</html>
