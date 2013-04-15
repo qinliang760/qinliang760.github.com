@@ -1,0 +1,85 @@
+*,html,body{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+img{
+	border:none;
+}
+.f-cb:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.f-cb{
+	display:inline-block;/* for IE/Mac */
+}
+* html .f-cb{/* triggers hasLayout */
+	height:1%;
+}
+.f-cb{
+	display:block;/* resets display for IE/Win */
+}
+.ui-demo{
+	width: 500px;
+	margin: 50px auto!important;
+}
+
+.ui-tab{
+	padding: 0;
+	margin: 0;
+}
+.ui-tab-items{
+	border-bottom:1px solid #e5e5e5;
+	font-size: 14px;
+}
+
+.ui-tab-items .ui-tab-item{
+	position: relative;
+	top: 1px;
+	vertical-align: top;
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+	*margin-right: 4px;
+}
+.ui-tab-items .ui-tab-item a{
+	border-radius: 3px 3px 0 0;
+	background: #fff;
+	line-height: 32px;
+	height: 32px;
+	padding: 0 10px;
+	border:1px solid #e5e5e5;
+	border-bottom: 0;
+	color: #4d4d4d;
+	text-decoration: none;
+	display: inline-block;
+	*display: inline;
+	*zoom:1;
+}
+.ui-tab-items .ui-tab-item a:hover{
+	background: #f6f6f6;
+	text-decoration: none;
+}
+.ui-tab-items .ui-tab-item-current a{
+	font-weight: 700;
+	height: 33px;
+}
+.ui-tab-items .ui-tab-item-current a:hover{
+	background: #fff;
+}
+.ui-tab-panels{
+	border:1px solid #e5e5e5;
+	border-top: 0;
+	padding: 10px;
+}
+.ui-tab-panels .ui-tab-panel{
+	display: none;
+}
+.ui-tab-panels .ui-tab-panel-current{
+	display: block;
+}
