@@ -1,7 +1,7 @@
 /*!
  * Base On jQuery JavaScript Library v1.4.2
  * http://jquery.com/
- * Libs:Jay timer
+ * Libs:Jay scroll
  * Copyright 2012, QinLiang
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
@@ -10,59 +10,23 @@
  */
 
 (function($) {
-	var timer = {
+	var scroll = {
 		defaults: {
 			dateShow:false,
-			panels:".ui-timer" 
+			panels:".ui-scroll" 
 		}
 	};
 
-	function Timer(defaults) {
+	function Scroll(defaults) {
 		var self = this,
 			panels = $(defaults.panels),
 			dateShow=defaults.dateShow;
 
 
 		$.extend(this, {
-			getDate:function(){
-				var date=new Date();
-				var year=date.getFullYear(),
-					month=date.getMonth()+1,
-					day=date.getDate;
-				return {
-					date:date,
-					year:year,
-					month:month,
-					day:day
-				}
 
-			},
-			getTimer:function(){
-				var date=this.getDate().date;
-				var hour=date.getHours(),
-					minutes=date.getMinutes(),
-					second=date.getTime() % 60000;
-				second=(second-(second%1000))/1000;
-				
-				if(minutes<10){
-					minutes="0"+minutes;
-				}
-				if(second<10){
-					second="0"+second;
-				}
-				var clock=hour+":"+minutes+":"+second;
-				return {
-					clock:clock,
-					hour:hour,
-					minutes:minutes,
-					second:second
-				}
-			},
 			setup: function() {
-				var getTime=this.getTimer();
-				var time=getTime.clock;
-				panels.html(time);
-				setInterval(function(){self.setup()},1000);
+
 
 			},
 			init: function() {
@@ -75,10 +39,10 @@
 	}
 
 	$.sc2 = {
-		timer: function(defaults) {
+		scroll: function(defaults) {
 			defaults = $.extend({},
-			timer.defaults, defaults);
-			new Timer(defaults);
+			scroll.defaults, defaults);
+			new Scroll(defaults);
 		}
 	};
 })(jQuery);

@@ -31,7 +31,10 @@
 					return;	
 				}else{
 					element.each(function(){
-						var arrtPlace=$(this).attr("placeholder");					
+						var arrtPlace=$(this).attr("placeholder");
+						if(typeof arrtPlace=="undefined"){
+							arrtPlace="";
+						}					
 						$(this).val(arrtPlace);
 						$(this).focus(function(){
 							var t=this;

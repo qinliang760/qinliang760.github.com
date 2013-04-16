@@ -52,6 +52,8 @@
 <script src="js/jquery.validate.js" language="javascript"></script>		
 <script>
 $(function(){
+
+//身份证验证规则	
 function checkidcard(certid){
 var reg_15 = /^\d{15}$/;
 	var reg_18 = /^\d{17}([0-9]{1}|x|X)$/;
@@ -219,6 +221,24 @@ $.validator.addMethod("isIdCardNo", function(value, element) {
 }, "请输入正确的身份证号码");
 	
 
+//中文汉字验证
+jQuery.validator.addMethod("chinese", function(value, element) {
+	var chrnum = /^[\u4e00-\u9fa5]+$/gi;
+	return this.optional(element) || (chrnum.test(value));
+}, "请输入中文"); 
+
+//提示信息验证placeholder
+jQuery.validator.addMethod("tip", function(value, element) {
+	var chrnum = $(element).attr("placeholder");
+		value=$.trim(value);
+	return this.optional(element) || chrnum!==value;
+}, "11111"); 
+//对于动态添加验证
+/*1.在初始化的rules里先加好
+				otherSch:{
+					"required": true
+				},
+2.事件触发后,$("#otherSch").rules("add",{"required": true});*/				
 		
 		
 	$("select[name='idcard_type']").change(function(){

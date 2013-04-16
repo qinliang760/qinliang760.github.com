@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>QL</title>
+
+</head>
+
+<body>
+<script>
+var Animal={
+	name:"a",
+	sex:1
+};
+var pig={
+	high:170
+};
+var pig2={};
+pig2.prototype=pig;
+
+pig2.high=110;
+//alert(pig.high);
+
+function pig3 (name) {
+	this.name="abc";
+}
+function pig4(name){
+	pig3.call(this);
+}
+var a=new pig4();
+var b=new pig3();
+a.name="bbb";
+alert(a.name);
+</script>
+</body>
+</html>
