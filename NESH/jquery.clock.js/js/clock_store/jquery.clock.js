@@ -113,7 +113,7 @@ var Clock = function(prt){
 		var remainS=Math.round(sLeave/1000);
 
 
-	if(ms<0 || remainH>=1){return}
+	if(ms<0 || remainH>=1){return}//如果时间相差小于1小时
 	this.hour = new ClkUnit(remainH, 0, 23);
 	this.munite = new ClkUnit(remainM, 0, 59);
 	this.second = new ClkUnit(remainS, 0, 59);
