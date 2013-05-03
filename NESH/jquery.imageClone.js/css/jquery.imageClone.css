@@ -1,0 +1,47 @@
+*,html,body{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+img{
+	border:none;
+}
+.f-cb:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.f-cb{
+	display:inline-block;/* for IE/Mac */
+}
+* html .f-cb{/* triggers hasLayout */
+	height:1%;
+}
+.f-cb{
+	display:block;/* resets display for IE/Win */
+}
+ul{
+	list-style: none;
+}
+
+.ui-img-big li{
+	float: left;
+	width: 500px;
+	display: none;
+}
+.ui-img-big li.ui-img-current{
+	display: block;
+}
+.ui-img-small li{
+	float: left;
+	width: 100px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.ui-img-small li.ui-img-current{
+	border: 2px solid #f00;
+}

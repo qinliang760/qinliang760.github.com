@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/jquery.imageClone.css" type="text/css" media="all"/>
+
+</head>
+
+<body>
+<div id="ui-imgclone">
+	<ul class="ui-img-big f-cb">
+		<li><img src="images/1.jpg"/></li>
+		<li><img src="images/2.jpg"/></li>
+		<li class="ui-img-current"><img src="images/3.jpg"/></li>
+		<li><img src="images/4.jpg"/></li>
+		<li><img src="images/5.jpg"/></li>		
+	</ul>
+
+	<ul class="ui-img-small f-cb">
+		<li><img src="images/1.jpg" width="100"/></li>
+		<li><img src="images/2.jpg" width="100"/></li>
+		<li class="ui-img-current"><img src="images/3.jpg" width="100"/></li>
+		<li><img src="images/4.jpg" width="100"/></li>
+		<li><img src="images/5.jpg" width="100"/></li>		
+	</ul>
+</div>
+
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.imageClone.js" language="javascript"></script>		
+<script>
+$(function(){
+	$.sc2.imageClone({imgWrap:"#ui-imgclone"});
+})
+</script>
+</body>
+</html>
