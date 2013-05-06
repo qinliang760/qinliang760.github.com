@@ -28,13 +28,18 @@ ul{
 	list-style: none;
 }
 
+
 .ui-img-big li{
 	float: left;
 	width: 500px;
 	display: none;
 }
-.ui-img-big li.ui-img-current{
+.ui-img-big li.active,.ui-img-small li.active{
 	display: block;
+}
+.ui-img-small{
+	width: 9999px;
+	overflow: hidden;
 }
 .ui-img-small li{
 	float: left;
@@ -42,6 +47,11 @@ ul{
 	cursor: pointer;
 	margin-right: 10px;
 }
-.ui-img-small li.ui-img-current{
+.ui-img-current{
+	width: 100px;
+	height: 50px;
 	border: 2px solid #f00;
+	left: 219px;
+	top: 0;
+	position: absolute;
 }

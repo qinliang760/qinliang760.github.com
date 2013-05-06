@@ -12,139 +12,143 @@
 (function($) {
 	var imageClone = {
 		defaults: {
-			showPic: 5,//默认可见图片数
-			btnActive:true,//按钮是否一直处于激活状态
-			auto:false,
-			prev:".prev",
-			next:".next",
-			imgWrap:"#ui-imgclone",
-			bigPanel:".ui-img-big",
-			smallPanel:".ui-img-small"
+			showPic: 5, //默认可见图片数
+			auto: true,
+			imgWrap: "#ui-imgclone",
+			bigPanel: ".ui-img-big",
+			smallPanel: ".ui-img-small",
+			afterClone: function() {}
 		}
 	};
+
 	function ImageClone(defaults) {
 		var self = this,
-		imgWrap=$(defaults.imgWrap),
-		prevBtn=imgWrap.find(defaults.prev),
-		nextBtn=imgWrap.find(defaults.next),
-		bigPanel=imgWrap.find(defaults.bigPanel),
-		smallPanel=imgWrap.find(defaults.smallPanel),
-		num=defaults.showPic,
-		animate=false,timer,index;
+			imgWrap = $(defaults.imgWrap),
+			bigPanel = imgWrap.find(defaults.bigPanel),
+			smallPanel = imgWrap.find(defaults.smallPanel),
+			num = defaults.showPic,
+			autoPlay = defaults.auto,
+			animate = false,
+			timer, index, cloneIndex = 0;
 
 		$.extend(this, {
-			imgInit:function(){
-				var smallList=smallPanel.children();//缩略图数组对象
-				var el=smallList.eq(0);//选定一个图片
-				var scrollW=el.width()+parseInt(el.css("margin-left"))+parseInt(el.css("margin-right"));//一次滚动的宽度				
-				var imgL=smallList.length;//图片的个数
-
+			imgInit: function() {
+				var smallList = smallPanel.children();
 				//存储缩略图初始化索引值
-				smallList.each(function(k,v){
-					$(v).data("index",k);
+				smallList.each(function(k, v) {
+					$(v).data("index", k);
+					$(v).attr("data-index", k);
 
 				})
 
-
-			
 			},
-			scrollAnimate:function(btn,range){
-				if(animate)return;	
-				animate=true;
-
-		
-				setTimeout(function(){
-					imgWrap.animate({"margin-left":scrollType+range},500,function(){animate=false;});
-				},100);					
+			getScrollW: function() {
+				var smallList = smallPanel.children(); //缩略图数组对象
+				var el = smallList.eq(0); //选定一个图片
+				var scrollW = el.width() + parseInt(el.css("margin-left")) + parseInt(el.css("margin-right")); //一次滚动的宽度	
+				return scrollW;
 			},
+			scrollShow: function(index) {
+				if (animate) return;
+				animate = true;
+				bigPanel.children().fadeOut("fast").stop(true, true).eq(index).fadeIn("fast", function() {
+					animate = false
+				});
 
-			scrollRun:function(){				
-				prevBtn.click(function(){
-					var options=self.getScroll();		   
-					if(options.prevRun){
-						self.scrollAnimate("prev",options.prevScrollRange);
-					}				   
-					return false;
-				})
-				nextBtn.click(function(){
-					var options=self.getScroll();				   
-					if(options.nextRun){
-						self.scrollAnimate("next",options.nextScrollRange);
-					}				   
-					return false;
-				})
+			},
+			scrollRun: function() {
+				var smallList = smallPanel.children();
+				smallList.click(function() {
 
-				smallList.click(function(){
-					var t=$(this);
-					index=smallList.index(t);
-					if(index>2){
+					var t = $(this);
+					index = smallPanel.children().index(t); //重新选择生成索引
+					var w = self.getScrollW();
 
-						
+
+					var middleIndex = Math.floor(num / 2);
+
+					var rangeIndex = middleIndex - index; //其它图片索引距中间索引差值
+
+					var imgL = smallList.length;
+
+
+
+					if (rangeIndex > 0) { //左侧小图点击
+						cloneIndex = imgL - rangeIndex - 1;
+						var cloneObj = smallPanel.find("li:gt(" + cloneIndex + ")").clone(true);
+						smallPanel.find("li:gt(" + cloneIndex + ")").remove();
+						cloneObj.fadeIn("fast").prependTo(smallPanel);
+					} else {
+						cloneIndex = Math.abs(rangeIndex);
+						self.scrollPlay(cloneIndex, false)
 					}
-
+					self.scrollShow(self.getMiddleIndex());
+					self.setActive();
+					defaults.afterClone();
 				})
 
 			},
-			auto:function(){
-				timer = setInterval(function(){var options=self.getScroll();self.scrollAnimate("next",options.nextScrollRange)}, 3000);
+			getMiddleIndex: function() {
+				return smallPanel.children().eq(2).attr("data-index");
 			},
-			stopAuto:function(){
+			setActive: function() {
+				smallPanel.children().eq(2).addClass("active").siblings().removeClass("active");
+			},
+			scrollPlay: function(cloneIndex, auto) {
+				if (auto) {
+					cloneIndex++;
+				}
+				var cloneObj = smallPanel.find("li:lt(" + cloneIndex + ")").clone(true);
+				smallPanel.find("li:lt(" + cloneIndex + ")").remove();
+				cloneObj.appendTo(smallPanel);
+			},
+			auto: function() {
+				timer = setInterval(function() {
+					self.scrollPlay(cloneIndex, true);
+					var index = self.getMiddleIndex();
+					self.scrollShow(index);
+					self.setActive();
+					defaults.afterClone();
+
+				}, 2000);
+			},
+			stopAuto: function() {
 				clearInterval(timer);
 			},
 			init: function() {
-				if(defaults.auto){
+				if (defaults.auto) {
 					self.auto()
-					prevBtn.hover(function() {
-						self.stopAuto();
-					},
-					function() {
+
+					bigPanel.hover(function() {
+						self.stopAuto()
+					}, function() {
+						cloneIndex = 0;
+						self.auto()
+					})
+
+					smallPanel.hover(function() {
+						self.stopAuto()
+					}, function() {
+						cloneIndex = 0;
 						self.auto();
 					})
-					nextBtn.hover(function() {
-						self.stopAuto();
-					},
-					function() {
-						self.auto();
-					})
-					imgWrap.hover(function() {
-						self.stopAuto();
-					},
-					function() {
-						self.auto();
-					})
-					numList.hover(function() {
-						self.stopAuto();
-					},
-					function() {
-						self.auto();
-					})				
-					
 				}
 				this.imgInit();
+				this.scrollRun();
 			}
 		})
 		self.init();
 
 	}
 
-	$.fn.imageClone = function(defaults) {
-		defaults = $.extend({},
-		imageScroll.defaults, defaults);
-		return this.each(function() {
-			el = new ImageClone($(this), defaults);
-		})
-
-	}
-
-	$.sc2={
+	$.sc2 = {
 		imageClone: function(defaults) {
 			defaults = $.extend({},
 			imageClone.defaults, defaults);
 			new ImageClone(defaults);
 
-		}		
+		}
 	}
 
 
 })(jQuery);
-
