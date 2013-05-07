@@ -1,0 +1,57 @@
+*,html,body{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+img{
+	border:none;
+}
+.f-cb:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.f-cb{
+	display:inline-block;/* for IE/Mac */
+}
+* html .f-cb{/* triggers hasLayout */
+	height:1%;
+}
+.f-cb{
+	display:block;/* resets display for IE/Win */
+}
+ul{
+	list-style: none;
+}
+
+
+.ui-img-big li{
+	float: left;
+	width: 500px;
+	display: none;
+}
+.ui-img-big li.active,.ui-img-small li.active{
+	display: block;
+}
+.ui-img-small{
+	width: 9999px;
+	overflow: hidden;
+}
+.ui-img-small li{
+	float: left;
+	width: 100px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.ui-img-current{
+	width: 100px;
+	height: 50px;
+	border: 2px solid #f00;
+	left: 219px;
+	top: 0;
+	position: absolute;
+}
