@@ -29,29 +29,27 @@ ul{
 }
 
 
-.ui-img-big li{
-	float: left;
-	width: 500px;
-	display: none;
+#ui-anchor{
+	border: 1px solid #000;
+	position: fixed;
+	top: 12px;
+	left: 12px;
+	
 }
-.ui-img-big li.active,.ui-img-small li.active{
+#ui-anchor a{
 	display: block;
+	width: 200px;
+	padding: 10px;
+	text-decoration: none;
+	border-bottom:1px solid #333; 
+	background: #999;
 }
-.ui-img-small{
-	width: 9999px;
-	overflow: hidden;
+#ui-anchor a:hover,#ui-anchor a.active{
+	color: orange;
 }
-.ui-img-small li{
-	float: left;
-	width: 100px;
-	cursor: pointer;
-	margin-right: 10px;
-}
-.ui-img-current{
-	width: 100px;
-	height: 50px;
-	border: 2px solid #f00;
-	left: 219px;
-	top: 0;
-	position: absolute;
+#section1,#section2,#section3,#section4,#section5{
+	height: 500px;
+	margin-left: 300px;
+	font-weight: bold;
+	font-size: 30px;
 }
