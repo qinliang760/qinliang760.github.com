@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US">
+
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>PageScroller: A Simple Page Scrolling Plugin Demo</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+	<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+	<script type="text/javascript" src="js/pagescroller.min.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		// instantiate page scroller plugin
+		
+		var navLabel = new Array('Introduction', 'How It Works', "What's Included?", 'Documentation', 'Download Plugin');
+		
+		$('#main').pageScroller({ navigation: navLabel });
+		
+		/*	AVAILABLE OPTIONS:
+		 *	currentSection 				starting position
+		 *	sectionClass				class of each section
+		 *	navigationClass 			navigation element class
+		 *	scrollOffset				offset target area from top of section
+		 *	animationSpeed	 			change duration of animation in miliseconds
+		 *	animationBefore 		 	callback: assign a function before animation
+		 *	animationComplete 	 		callback: assign a function after animation
+		 *	onChange					callback: assign a function for when section changes
+		*/		
+		
+		// assigns "next" API function to button
+		
+		$('.next').click(function(e){
+			e.preventDefault();
+			pageScroller.next();
+		});
+		
+		//assigns "prev" API function to button	
+			
+		$('.prev').click(function(e){
+			e.preventDefault();
+			pageScroller.prev();
+		});
+		
+		$('.jumpTo').click(function(e){
+			e.preventDefault();
+			pageScroller.goTo(4);
+		});
+					
+	});
+		
+	</script>
+	
+</head>
+
+<body>
+	
+	<div id="controls" class="light">
+		<a href="#" class="prev"><img src="./images/icon_arrow-up_light.png" alt="" width="28" height="31" /></a>
+		<a href="#" class="next"><img src="./images/icon_arrow-down_light.png" alt="" width="28" height="31" /></a>
+	</div>
+	
+	<div id="wrapper">
+		<div id="main">
+			<div class="section"><h1>Section 1</h1></div>
+			<div class="section"><h1>Section 2 - <a href="#" class="jumpTo">Jump To 4</a></h1></div>
+			<div class="section"><h1>Section 3</h1></div>
+			<div class="section"><h1>Section 4</h1></div>
+			<div class="section"><h1>Section 5</h1></div>
+		</div><!-- [END] #main -->
+	</div><!-- [END] #wrapper -->
+
+	
+</body><!-- [END] body -->
+</html><!-- [END] html -->
