@@ -1,0 +1,269 @@
+fridayJson({
+    "index":{
+        "title":"第十二期活动：极限Rush之人族2BB",
+        "time":"5月24日 晚20:00 – 22:00",
+        "href":"http://sc2.163.com/articles/1001/69312"
+    },
+    "video":[
+    	{
+    		"title":"第十一期：异虫“龙狗一波流”战术",
+    		"intro":"介绍如何用异龙和跳虫进行机动作战。",
+    		"con":"为玩家讲解异虫的“龙狗一波流”战术的操作流程、建造顺序。",
+    		"strategy":"<a href='http://sc2.163.com/gameguide/2437'>异虫内战奇招：跳虫异龙组合 用机动性击败对手</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday11.rar"
+    	},
+    	{
+    		"title":"第十期：星灵“速隐刀”战术",
+    		"intro":"介绍星灵速出黑暗圣堂武士的战术。",
+    		"con":"为新手玩家讲解星灵的“速隐刀”战术，前期快速造出黑暗圣堂武士，进行快攻。",
+    		"strategy":"<a href='http://sc2.163.com/gameguide/2419'>星灵速黑暗圣堂武士战术细节讲解</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday10.rar"
+    	},
+    	{
+    		"title":"第九期：人类“隐身女妖”战术",
+    		"intro":"介绍人类速出隐身女妖战机的战术。",
+    		"con":"为新手玩家讲解人类的“隐身女妖”战术，前期快速造出女妖战机，进行快攻。",
+    		"strategy":"<a href='http://sc2.163.com/gameguide/69586'>人类双星港女妖战术介绍</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday09.rar"
+    	},
+    	{
+    		"title":"第八期：异虫“蟑螂跳虫一波流”战术",
+    		"intro":"介绍异虫使用蟑螂为主力，辅以跳虫进行快攻的战术",
+    		"con":"为新手玩家讲解异虫的“蟑螂跳虫一波流”战术，前期快速出蟑螂，配合跳虫进行快攻。",
+    		"strategy":"异虫新手攻略：<a href='http://sc2.163.com/gameguide/50010'>天梯7蟑螂rush战术</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday08.rar"
+    	},
+    	{
+    		"title":"第七期：星灵“单矿不朽者一波流”战术",
+    		"intro":"介绍星灵速出不朽者的战术",
+    		"con":"为新手玩家讲解星灵的“单矿不朽者一波流”战术，早期速出不朽者，配合狂热者与追猎者进行进攻。",
+    		"strategy":"",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday07.rar"
+    	},
+    	{
+    		"title":"第六期：人类“枪兵坦克推进流”战术",
+    		"intro":"介绍人类枪兵配合坦克快速推进的战术",
+    		"con":"为新手玩家演示讲解人类的“枪兵坦克推进流”战术，景年与玩家互动练习，同时为玩家答疑解惑。",
+    		"strategy":"多人对战基础教学：<a href='http://sc2.163.com/gameguide/69331' target='_blank'>人类2兵营坦克速推</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday06.rar"
+    	},
+    	{
+    		"title":"第五期：异虫“爆虫一波流”战术",
+    		"intro":"介绍异虫的爆虫一波流战术",
+    		"con":"为新手玩家带来异虫的“爆虫一波流”战术讲解，同时为玩家互动解答新手问题。",
+    		"strategy":"<a href='http://sc2.163.com/gameguide/50009' target='_blank'>毒爆虫rush技巧：让异虫新手快速上手</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday05.rar"
+    	},
+    	{
+    		"title":"第四期：星灵4兵营战术",
+    		"intro":"介绍星灵的4兵营（4BG）战术",
+    		"con":"为新手玩家介绍星灵4兵营（4BG）战术的流程细节，为玩家互动解答新手问题。",
+    		"strategy":"<a href='http://sc2.163.com/gameguide/50008' target='_blank'>敌人的噩梦 星灵新手必备：四兵营战术</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday04.rar"
+    	},
+    	{
+    		"title":"第三期：人类4兵营战术",
+    		"intro":"介绍人类4（BB）兵营战术",
+    		"con":"为新手玩家介绍人类4兵营战术的具体步骤，同时为玩家答疑解惑。",
+    		"strategy":"<a href='http://sc2.163.com/gameguide/69305' target='_blank'>多人对战基础教学：人类4兵营战术</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday03.rar"
+    	},
+    	{
+    		"title":"第二期：“训练模式”进阶玩法",
+    		"intro":"训练模式第三关",
+    		"con":"少帮主与景年为大家带来《星际争霸II》的进阶介绍。通过“训练模式”中每个种族的第三关内容介绍，为新手玩家详细展示游戏的内容。",
+    		"strategy":"<a href='http://sc2.163.com/articles/1001/69404' target='_blank'>“零起点”学对战 《星际争霸II》2.0.4训练模式初探</a>",
+    		"down_href":"http://file.ws.126.net/game/sc2/friday/sc2friday02.rar"
+    	},
+    	{
+    		"title":"第一期：带你探索未知领域！",
+    		"intro":"初步介绍《星际争霸II》",
+    		"con":"为广大新手玩家介绍了全新的《星际争霸II》2.0.4版本客户端界面和一些基本功能，还通过2.0.4版本《星际争霸II》中的“训练模式”，为新手玩家们做了详细的入门讲解！",
+    		"strategy":"<a href='http://sc2.163.com/articles/1001/69404' target='_blank'>“零起点”学对战 《星际争霸II》2.0.4训练模式初探</a>",
+    		"down_href":""
+    	}   	    	    	    	    	
+    ],
+    "intorduction":{
+    	"con":"1. 讲解人类的 2兵营（BB）极限Rush战术，同时回答新手玩家提出的问题。",
+    	"replay_href":"http://sc2.163.com/articles/1001/69312",
+    	"time":"5月24日晚20:00 – 22:00"
+
+    },
+    "head":[
+    	{
+	    	"title":"2013.05.17第十一期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"ChoiNyu",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/1702690/1/ChoiNyu/"
+	    		},
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head1.jpg",
+	    			"name":"过桥粉干",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2874443/1/%E8%BF%87%E6%A1%A5%E7%B2%89%E5%B9%B2/"
+	    		}	    		
+	    	]
+
+    	},
+    	{
+	    	"title":"2013.05.10第十期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"我的电脑快爆了",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2535588/1/%E6%88%91%E7%9A%84%E7%94%B5%E8%84%91%E5%BF%AB%E7%88%86%E4%BA%86/"
+	    		},
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head1.jpg",
+	    			"name":"Bingo",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/50160/1/Bingo/"
+	    		}	    		
+	    	]
+
+    	},  
+    	{
+	    	"title":"2013.05.03第九期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"天王盖弟虎",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/890731/1/%E5%A4%A9%E7%8E%8B%E7%9B%96%E5%BC%9F%E8%99%8E/"
+	    		}  		
+	    	]
+
+    	}, 
+    	{
+	    	"title":"2013.04.26第八期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"帮主他二弟",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2869032/1/%E5%B8%AE%E4%B8%BB%E4%BB%96%E4%BA%8C%E5%BC%9F/"
+	    		},
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head1.jpg",
+	    			"name":"阿露缇",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2212576/1/%E9%98%BF%E9%9C%B2%E7%BC%87/"
+	    		}	    		
+	    	]
+
+    	}, 
+    	{
+	    	"title":"2013.04.19第七期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"叁岁就很牛",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/1702983/1/%E5%8F%81%E5%B2%81%E5%B0%B1%E5%BE%88%E7%89%9B/"
+	    		},
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head1.jpg",
+	    			"name":"Ricky",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/200226/1/Ricky/"
+	    		}	    		
+	    	]
+
+    	}, 
+    	{
+	    	"title":"2013.03.12第六期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"普通电脑",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2463759/1/%E6%99%AE%E9%80%9A%E7%94%B5%E8%84%91/"
+	    		}	    		
+	    	]
+
+    	}, 
+    	{
+	    	"title":"2013.03.29第五期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"若有红颜",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2617487/1/%E8%8B%A5%E6%9C%89%E7%BA%A2%E9%A2%9C/"
+	    		},
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head1.jpg",
+	    			"name":"打不过电脑",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/1691917/1/%E6%89%93%E4%B8%8D%E8%BF%87%E7%94%B5%E8%84%91/"
+	    		}	    		
+	    	]
+
+    	}, 
+    	{
+	    	"title":"2013.03.22第四期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"odFLY",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2556465/1/odFLY/"
+	    		},
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head1.jpg",
+	    			"name":"caomei",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2666021/1/caomei/"
+	    		}	    		
+	    	]
+
+    	}, 
+    	{
+	    	"title":"2013.03.15第三期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"NanNi",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/563103/1/NanNi/"
+	    		},
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head1.jpg",
+	    			"name":"SeraveeZERO",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/33246/1/SeraveeZERO/"
+	    		}	    		
+	    	]
+
+    	}, 
+    	{
+	    	"title":"2013.03.08第二期",
+	    	"con":[
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head3.jpg",
+	    			"name":"爱吃土豆丝",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/990438/1/%E7%88%B1%E5%90%83%E5%9C%9F%E8%B1%86%E4%B8%9D/"
+	    		},
+	    		{
+	    			"img":"http://nos.netease.com/sc2/1/style/images/minisite/friday/head1.jpg",
+	    			"name":"东北林业大学",
+	    			"href":"http://www.battlenet.com.cn/sc2/zh/profile/2502742/1/%E4%B8%9C%E5%8C%97%E6%9E%97%E4%B8%9A%E5%A4%A7%E5%AD%A6/"
+	    		}	    		
+	    	]
+
+    	}
+   	    	    	    	    	    	    	    	    		
+    ],
+    "aVideUrl":["http://flv.bn.netease.com/videolib3/1305/21/NqZQd5093/SD/NqZQd5093.flv",
+		              "http://flv.bn.netease.com/videolib3/1305/13/aQlIX5524/SD/aQlIX5524.flv",
+		              "http://flv.bn.netease.com/videolib3/1305/05/CUwGS7707/SD/CUwGS7707.flv",
+					  "http://flv.bn.netease.com/videolib3/1304/27/VWtbY2689/SD/VWtbY2689.flv",
+					  "http://flv.bn.netease.com/videolib3/1304/22/kzKWd7308/SD/kzKWd7308.flv",
+					  "http://flv.bn.netease.com/videolib3/1304/15/aVokt1963/SD/aVokt1963.flv",
+					  "http://flv.bn.netease.com/videolib3/1304/02/FltUp3826/SD/FltUp3826.flv",
+					  "http://flv.bn.netease.com/videolib3/1303/25/dASuN6847/dASuN6847.flv",
+					  "http://flv.bn.netease.com/videolib3/1303/15/NCtEe7577/SD/NCtEe7577.flv",
+					  "http://flv.bn.netease.com/videolib3/1303/13/qFmOd9299/SD/qFmOd9299.flv",
+					  "http://flv.bn.netease.com/videolib3/1303/04/yfNYa7035/SD/yfNYa7035.flv"
+	],
+	"aVideImg":["/style/images/minisite/friday/video11.jpg",
+                        "/style/images/minisite/friday/video10.jpg",
+		              	"/style/images/minisite/friday/video9.jpg",
+		              	"/style/images/minisite/friday/video8.jpg",
+		              	"/style/images/minisite/friday/video7.jpg",
+		              	"/style/images/minisite/friday/video6.jpg",
+		              	"/style/images/minisite/friday/video5.jpg",
+		              	"/style/images/minisite/friday/video4.jpg",
+		              	"/style/images/minisite/friday/video3.jpg",
+		              	"/style/images/minisite/friday/video2.jpg",
+						"/style/images/minisite/friday/video1.jpg"
+	]
+})

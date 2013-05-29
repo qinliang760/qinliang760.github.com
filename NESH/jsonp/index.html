@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSONP</title>
+
+<style>
+
+</style>
+</head>
+
+<body>
+				<div class="headDetail_con honour_con" id="moudel_head">
+				
+				<#-- 学员数据模块 -->
+				{@each head as items}
+					   <div class="data">{{items.title}}</div>
+					   <ul>
+			   					{@each items.con as item}
+			   					<li>
+									<a href="{{item.href}}" target="_blank">
+										<span style="background-image:url({{item.img}})"></span>
+										<p><i>{{item.name}}</i></p>
+									</a>
+								</li>
+								{@/each}
+	
+					   </ul>
+				  {@/each} 	
+								
+				</div>
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="juicer.js" language="javascript"></script>
+
+	
+<script>
+$(function(){
+		    jQuery.ajax({ 
+		        type: 'GET',
+		        async:false,
+		        url: 'http://nos.netease.com/sc2/1/json/friday.json' ,
+		        jsonp:"callback",
+		        jsonpCallback:"fridayJson",
+		        dataType: 'jsonp', 
+		        success: function(json) { 
+
+					
+					//学员更新
+					var headTpl=juicer($("#moudel_head").html());
+					$("#moudel_head").html(headTpl.render(json)).show();		
+
+
+			    }
+		    });
+})
+</script>
+</body>
+</html>
