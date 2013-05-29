@@ -35,6 +35,13 @@
 	
 <script>
 $(function(){
+			juicer.set({
+			    'tag::interpolateOpen': '{{',
+			    'tag::interpolateClose': '}}',
+			    'tag::noneencodeOpen': '{{{',
+			    'tag::noneencodeClose': '}}}'			    
+			});	
+	
 		    jQuery.ajax({ 
 		        type: 'GET',
 		        async:false,
