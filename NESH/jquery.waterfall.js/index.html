@@ -21,8 +21,8 @@
 	{@each photos.photo as pic}
     <div class="pin ks-waterfall" data-id="{{pic.id}}">
         <a href="#" class="image">
-            <img height="{{pic.height}}" style='height:{{pic.height}}px' alt="{{pic.title}}"
-            src="http://farm{{pic.farm}}.static.flickr.com/{{pic.server}}/{{pic.id}}_{{pic.secret}}_m.jpg" />
+            <img class="lazy" height="{{pic.height}}" style='height:{{pic.height}}px' src="loading.gif" alt="{{pic.title}}"
+            data-original="http://farm{{pic.farm}}.static.flickr.com/{{pic.server}}/{{pic.id}}_{{pic.secret}}_m.jpg" />
         </a>
         <p class="description">{{pic.title}}</p>
     </div>
@@ -49,14 +49,17 @@ $(function(){
                     'api_key': '5d93c2e473e39e9307e86d4a01381266',
                     'tags': 'rose',
                     'page': nextpage,
-                    'per_page': 20,
+                    'per_page': 100,
                     'format': 'json'
 		        }, 
 		        success: function(json) {
 					var tpl=juicer($("#tpl").html());
 					$("#waterfall").html(tpl.render(json)).show();
+					$("img.lazy").lazyload();
 		        }
 		    })
+
+
 })
 </script>
 </body>
