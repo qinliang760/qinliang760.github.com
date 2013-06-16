@@ -1,0 +1,2 @@
+360 degrees product view
+http://blog.stableflow.com/jquery-plugins/360-degrees-product-view/

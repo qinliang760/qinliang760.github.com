@@ -1,0 +1,3 @@
+        Ö§³ÖIE7,8
+	$("#imgBox img").css({rotate:"-90deg"});
+        $("#imgBox img").animate({rotate:"-90deg"});
