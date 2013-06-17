@@ -30,7 +30,8 @@
 <script>
    $(function(){
     $("#rotateBtn").click(function(){
-        $("#imgBox img").animate({rotate:"-90deg"});
+    	//$("#imgBox img").css("transform-origin","0% 0%");
+        $("#imgBox img").animate({rotate:"50deg"},function(){alert(1)});
     })
         
    })

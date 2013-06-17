@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+
+
+<title>无标题</title>
+
+</head>
+<body>
+<div id='imgBox' style='width:300px;margin:0 auto'>
+    <img src='js/cuizi.jpg' width='300' alt=""/>
+</div>
+
+
+<input type="button" value="旋转" id="rotateBtn"/>
+<script src="../../base/jquery-1.7.2.min.js"></script>
+<script src="../lib/jquery.transit.js"></script>
+<script>
+   $(function(){
+    $("#rotateBtn").click(function(){
+        $("#imgBox img").animate({rotate:"-90deg"});
+    })
+        
+   })
+</script>
+
+
+</body>
+
+</html>

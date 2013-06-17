@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+
+
+<title>无标题</title>
+<style type="text/css" media="screen">
+	#box{
+		width:32px;
+		height: 32px;
+		background: #505060;
+	}
+</style>
+</head>
+<body>
+<div id="box">
+</div>
+
+<input type="button" value="旋转" id="btn"/>
+<script src="../../base/jquery-1.7.2.min.js"></script>
+<script src="../lib/jquery.transit.js"></script>
+<script>
+   $(function(){
+   	$("#btn").click(function(){
+   		$("#box").transition({x:"40px"})
+   	})
+   		
+        
+   })
+</script>
+
+
+</body>
+
+</html>
