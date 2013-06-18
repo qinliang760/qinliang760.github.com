@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+
+
+<title>无标题</title>
+
+</head>
+<body>
+
+<video id="movie" width="320" height="240" preload autoplay loop>
+  <source src="talk.webm" type="video/webm; codecs=vp8,vorbis" />
+  <source src="talk.ogv" type="video/ogg; codecs=theora,vorbis" />
+  <source src="talk.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2"/>	
+<object type="application/x-shockwave-flash" data="player_flv_maxi.swf" width="320" height="240">
+    <param name="movie" value="player_flv_maxi.swf" />
+    <param name="FlashVars" value="flv=talk.mp4&amp;showplayer=never&amp;width=320&amp;height=240&amp;margin=0&amp;autoplay=1&amp;loop=1&amp;autoload=1&amp;buffermessage=""&amp;onclick=none />
+</object>
+</video>
+<script src="../base/jquery-1.7.2.min.js"></script>
+
+<script>
+$(function(){
+	//$("#movie").css("opacity",0);	
+})
+
+</script>
+
+
+</body>
+
+</html>
