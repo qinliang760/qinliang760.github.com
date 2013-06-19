@@ -1,0 +1,127 @@
+
+body {
+	background:#000 url(../images/bg.jpg) no-repeat 50% 0;
+}
+ @font-face { 
+ font-family: CloisterBlack; 
+ src:url(../font/CloisterBlack.eot); 
+ } 	
+ @font-face { 
+ font-family: CloisterBlack; 
+ src:url(../font/CloisterBlack.ttf); 
+ } 
+
+#wraper{
+	width: 1000px;
+	margin:0 auto;
+	min-height: 1000px;
+	background: url(../images/wrap.jpg) no-repeat 0 0;
+}
+#header{
+	height: 307px;
+	margin-bottom: 38px;
+	overflow: hidden;
+	position: relative;
+}
+#header h1{
+	width: 140px;
+	margin:132px auto 0;
+	overflow: hidden;
+	background: url(../images/logo_blizzard.png) no-repeat 0 0;
+}
+#header h1 a{
+	display: block;
+	height: 158px;
+}
+.share{
+	background: url(../images/share.jpg) no-repeat 0 -23px;
+	width: 148px;
+	height: 23px;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+.share li{
+	float: left;
+}
+.share li a{
+	display: block;
+}
+
+#container{
+	min-height: 513px;
+}
+
+#joiner{
+	text-align: center;
+
+}
+#joiner img{
+	vertical-align: middle;	
+}
+#joiner strong{
+	font-size: 38px;
+ 	font-family:"CloisterBlack";	
+	vertical-align: middle;		
+}
+
+#progress{
+	background: url(../images/bar.jpg) no-repeat 0 0;
+	width: 881px;
+	height: 29px;
+	margin: 55px auto 30px;
+	position: relative;
+}
+#progress .outbar{
+	width: 805px;
+	position: relative;	
+}
+#progress .progressbar{
+	position: absolute;
+	top: 7px;
+	left: 41px;
+	height: 16px;
+	width: 50%;
+	background: url(../images/bar.jpg) no-repeat 0 -29px;
+}
+
+#runer{
+	position: absolute;
+	right: -45px;
+	top: -89px;
+} 
+#join{
+	position: relative;
+	width: 287px;
+	margin: 0 auto;
+}
+#join .joinBtn{
+	display: block;
+	position: absolute;
+	z-index: 2;
+	background: url(../images/btn.png) no-repeat -13px 0;
+	width: 287px;
+	height: 80px;
+
+}
+#join .joinBtn:hover{
+	background-position: -13px -80px;
+}
+#join .hammer{
+	width: 82px;
+	height: 76px;
+	top: -11px;
+	left: 222px;
+	position: absolute;
+	z-index: 1;
+	background: url(../images/hammer.png) no-repeat 0 0;
+}
+.light{
+	background: url(../images/light.png) no-repeat 0 0;
+	position: absolute;
+	top: -8px;
+	right: -7px;
+	display: block;
+	width: 93px;
+	height: 30px;
+}

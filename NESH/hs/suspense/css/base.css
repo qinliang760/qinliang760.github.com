@@ -1,0 +1,42 @@
+
+body {
+	font-family:"Microsoft YaHei",Arial, Helvetica, sans-serif;
+	color:#fff;
+	font-size:12px;
+	background-color:#000;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+
+a {
+	color:#6d6d6d;	
+	text-decoration:none;
+	outline:none;
+}
+a:link {
+	color:#6d6d6d;
+}
+a:visited {
+	color:#6d6d6d;
+}
+a:hover {
+	/*color:#fff;*/
+	text-decoration:underline;
+}
+a:active {
+	color:#fff;
+}
+
+/*-----clearFix-----*/
+.clearFix:after{
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	content: ".";
+}
+.clearFix{ display: inline-block; }
+/* Hides from IE 4-6 \*/
+* html .clearFix{ height: 1%; }
+.clearFix{ display: block; } 
+/* End hide from IE 4-6 */
