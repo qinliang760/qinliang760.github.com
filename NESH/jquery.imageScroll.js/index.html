@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<div class="ui-imgshow">
+<!-- <div class="ui-imgshow">
 	<ul class="ui-imgshow-buttons">
 		<li class="ui-imgshow-button">1</li>
 		<li class="ui-imgshow-button">2</li>
@@ -22,13 +22,39 @@
 		<div class="ui-imgshow-img3">3</div>
 		<div class="ui-imgshow-img4">4</div>
 	</div>
-</div>
+</div> -->
+
+
+<div id="json">
+</div>	
 
 <script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
 <script src="js/jquery.imageScroll.js" language="javascript"></script>		
 <script>
 $(function(){
-	$(".ui-imgshow").imageScroll({numClass:"ui-imgshow-button",imgWrapId:"imgL"});
+	//$(".ui-imgshow").imageScroll({numClass:"ui-imgshow-button",imgWrapId:"imgL"});
+function callback(data){
+	debugger;
+}
+
+        $.ajax({
+             url:'http://qinliang760.github.io/NESH/jquery.imageScroll.js/js/test.json?callback=?',
+             //url:"js/test.json",
+             dataType:"json",
+             type:"get",
+             //jsonp:"jsonpcallback",
+             //type:"get",
+             //dataType:"json",
+             success:function(data){
+             	alert(data.name);
+                 $("#json").html(data.name);
+             },
+             error:function(data){
+             	//var a=eval("("+data+")");alert(a);
+             	alert(data.name);
+             	$("#json").html(data.name);
+             }
+        });	
 })
 </script>
 </body>
