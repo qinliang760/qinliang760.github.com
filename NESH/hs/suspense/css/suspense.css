@@ -125,3 +125,9 @@ body {
 	width: 93px;
 	height: 30px;
 }
+.fire{
+	position: absolute;
+	display: block;
+	left: 207px;
+	top: 12px;
+}
