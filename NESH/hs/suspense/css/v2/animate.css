@@ -1,0 +1,33 @@
+@-moz-keyframes barPulse{
+    from{-moz-box-shadow:2px 0 3px 0 #f2dda9;box-shadow:2px 0 3px 0 #f2dda9;}
+    50%{-moz-box-shadow: 2px 0 8px 0 #f7d204;box-shadow:2px 0 8px 0 #f7d204}
+    to{-moz-box-shadow: 2px 0 3px 0 #f2dda9;box-shadow:2px 0 3px 0 #f2dda9;}    
+}
+@-webkit-keyframes barPulse{
+    from{-webkit-box-shadow:2px 0 3px 0 #f2dda9;}
+    50%{-webkit-box-shadow: 2px 0 8px 0 #f7d204;}
+    to{-webkit-box-shadow: 2px 0 3px 0 #f2dda9;}
+}
+
+#progress .progressbar{
+    -moz-animation-name:barPulse;
+    -moz-animation-duration:2s;
+    -moz-animation-iteration-count:infinite;    
+    -webkit-animation-name:barPulse;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;       
+}
+
+.hammer{
+    transform-origin:100% 100%;
+    -webkit-transform-origin:100% 100%;
+    -moz-transform-origin:100% 100%;
+    -ms-transform-origin:100% 100%;
+}
+
+#joiner strong{
+    text-shadow:0 0 5px #3c0000,0 0 8px #3c0000,0 0 10px #3c0000,0 0 15px #3c0000;
+    -webkit-text-shadow:0 0 5px #3c0000,0 0 8px #3c0000,0 0 10px #3c0000,0 0 15px #3c0000;
+    -moz-text-shadow:0 0 5px #3c0000,0 0 8px #3c0000,0 0 10px #3c0000,0 0 15px #3c0000;
+    -ms-text-shadow:0 0 5px #3c0000,0 0 8px #3c0000,0 0 10px #3c0000,0 0 15px #3c0000;
+}

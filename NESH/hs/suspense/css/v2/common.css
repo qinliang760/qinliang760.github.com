@@ -1,0 +1,59 @@
+#footer {
+    margin: 0 auto;
+    padding: 15px 0 50px 40px;
+    width: 940px;
+}
+
+#footer .logo_bz {
+	float: left;
+	display: block;
+	background: url(/images/suspense/logo_blizzard.png) no-repeat 0 0;
+	width: 140px;
+	height: 80px;
+	overflow: hidden;
+}
+#footer .logo_ne {
+	float: left;
+	display: inline;
+	background: url(/images/suspense/logo_ne.png) no-repeat 0 0;
+	width: 113px;
+	height: 35px;
+	overflow: hidden;
+    margin:36px 0 0 25px;
+}
+#footer .logo3 {
+    background-position: -322px -1410px;
+    width: 40px;
+}
+#footer .cprt {
+    padding-top: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #20140d;
+}
+#footer a {
+    text-decoration: underline;
+}
+#footer .cprt .t1 {
+    padding-left: 17px;
+}
+#footer .cprt .t1 a {
+    padding-left: 17px;
+}
+#footer .info {
+    float: left;
+    height: 68px;
+    padding: 20px 0 0 30px;
+    position: relative;
+    width: 540px;
+}
+#footer .info p, #footer .info a {
+    color: #552c09 ;
+    text-align: left;
+    text-decoration: none;
+}
+#footer .info a:hover {
+    color: #FFFFFF;
+}
+#footer .tips {
+    color: #552c09;
+}
