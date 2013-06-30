@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery Parallax Plugin Demo</title>
+<link href="css/jquery.parallax.css" rel="stylesheet" type="text/css" />
+  <style type="text/css" media="screen, projection">
+    .parallax-viewport {
+      width: 100%;
+      max-width: 60em;
+      height: 20em;
+      background-color: #aebcc9;
+    }
+
+    </style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.event.frame.js"></script>
+<script type="text/javascript" src="js/jquery.parallax.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  jQuery(document).ready(function(){
+    jQuery('#parallax .parallax-layer')
+    .parallax({
+      mouseport: jQuery('#parallax')
+    });
+  });
+})
+</script>
+</head>
+
+<body>
+<div id="parallax" class="parallax-viewport">
+        
+        <!-- parallax layers -->
+        <div style="width: 860px; height: 273px; top: 62.0833%; margin-top: -169.488px; left: 39.7786%; margin-left: -342.096px;" class="parallax-layer">
+            <img style="position:absolute; left:300px; top:-12px;" alt="" src="http://stephband.info/jparallax/images/parallax_sketch/0_sun.png">
+        </div>
+        <div style="width: 920px; height: 274px; top: 62.0833%; margin-top: -170.108px; left: 39.7786%; margin-left: -365.964px;" class="parallax-layer">
+            <img alt="" src="http://stephband.info/jparallax/images/parallax_sketch/1_mountains.png">
+        </div>
+        <div style="width: 1100px; height: 284px; top: 62.0833%; margin-top: -176.317px; left: 39.7786%; margin-left: -437.565px;" class="parallax-layer">
+            <img style="position:absolute; top:40px; left:0;" alt="" src="http://stephband.info/jparallax/images/parallax_sketch/2_hill.png">
+        </div>
+        <div style="width: 1360px; height: 320px; top: 62.0833%; margin-top: -198.667px; left: 39.7786%; margin-left: -540.99px;" class="parallax-layer">
+            <img style="position:absolute; top:96px; left:0;" alt="" src="http://stephband.info/jparallax/images/parallax_sketch/3_wood.png">
+        </div>
+
+        <!-- Rounded corners -->
+        <img class="tl" src="http://stephband.info/http://stephband.info/jparallax/images/corner_white_tl.png">
+        <img class="tr" src="http://stephband.info/http://stephband.info/jparallax/images/corner_white_tr.png">
+        <img class="bl" src="http://stephband.info/http://stephband.info/jparallax/images/corner_white_bl.png">
+        <img class="br" src="http://stephband.info/http://stephband.info/jparallax/images/corner_white_br.png">
+    </div>
+</body>
+</html>

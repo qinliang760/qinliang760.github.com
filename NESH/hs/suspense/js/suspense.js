@@ -11,6 +11,7 @@ var Suspense={
         if(!hammer.is(":animated")){
             $(".hammer").animate({rotate:"90deg"},function(){
                 $(this).animate({rotate:"0deg"},function(){
+                    Suspense.fireEffect();                    
                     Suspense.joinHander();
                 });                
                 
@@ -19,14 +20,16 @@ var Suspense={
 
         return false;
     })
+
+
   },
   queryJoiner:function(){
-
       setInterval(function(){
             $.getJSON(
               "/total",
               { t: new Date().getTime() },
               function(res) {
+                  if(typeof res.total=="undefined")return;
                   var num=Suspense.formatNum(res.total);
                   $("#joiner strong").text(num);
               }
@@ -34,9 +37,10 @@ var Suspense={
       },10000);
 
   },
-  joinHander:function(){
-    //$("#progress .progressbar").animate({width:"+=1%"},300);
-    this.fireEffect();return;
+  joinHander:function(){        
+        var progress=$("#progress .progressbar");
+        progress.animate({width:"+=1%"},1000);
+        $("#runer").fadeOut(2000,function(){$(this).fadeIn()});
         var ck=$.cookie("__utbg");
         if(ck==null){
             $.getJSON(
@@ -44,23 +48,30 @@ var Suspense={
               { t: new Date().getTime() },
               function(res) {
                 if(res.msg == "dup") {
-                  alert("您已经参与过了！");
+                   $(".joinTip").fadeIn("fast",function(){setTimeout(function(){$(".joinTip").fadeOut();},2000)});
                 } else {
+                  if(typeof res.total=="undefined")return;
                   var num=Suspense.formatNum(res.total);
                   $("#joiner strong").text(num);
-                  $("#progress .progressbar").animate({width:"51%"},500);
+                  if(parseInt(progress.css("width"))>=805)return;
+
+                  if(!progress.is(":animated")){
+                      progress.animate({width:"+=1%"},1000);
+                  }
+
                 }
               }
             );
         }else{
-          alert("您已经参与过了！");
+          $(".joinTip").fadeIn("fast",function(){setTimeout(function(){$(".joinTip").fadeOut();},2000)});
+
         } 
       
 
   },
   gifShow:function(){
       var runObj=$("#runer img");
-      var runer=["panda.gif","air.gif"];
+      var runer=["panda.gif","panda.gif"];
       var randomNum=Math.floor(Math.random()*2);
       runObj.attr("src","/images/suspense/"+runer[randomNum]);
   },
@@ -92,13 +103,33 @@ var Suspense={
   },
   showPercent:function(){
       var progress=$("#progress .percentage"),
+          bar=$("#progress .progressbar"),
+          run=$("#runer"),
           hour=parseInt(progress.attr("rel")),
           percentage=this.getPercent(hour);
-      progress.text(percentage);
+      percentage=this.maxPer(percentage);
+      bar.css({"opacity":0}).animate({"width":percentage,"opacity":1},2000,function(){
+          run.animate({right:"-45px"},2000);
+          
+      });
+
+      bar.hover(function(){
+          progress.text(percentage);
+      },function(){
+          progress.text("");
+      })
+  },
+  maxPer:function(percentage){
+      if(parseInt(percentage)>parseInt("100%")){
+        return percentage="100%"
+      }else{
+        return percentage;
+      }
+      
   },
   fireEffect:function(){
       var fireWrap=$("#join");
-      var fire='<img class="fire" src="images/fire.png"/>';
+      var fire='<img class="fire" src="/images/suspense/fire.png"/>';
       var fireArr=[];
       var bezier_params=[];
       var speed=[1000,900,800,700,600]
@@ -134,3 +165,10 @@ var Suspense={
        return Math.random() * num; 
   }
 }
+
+    var jiathis_config={
+        data_track_clickback:true,
+        summary:"hs",
+        pic:"",
+        hideMore:false
+    }
