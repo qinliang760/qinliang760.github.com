@@ -12,15 +12,23 @@
 </head>
 <body>
 
-<video id="movie" width="320" height="240" preload autoplay loop>
-  <source src="talk.webm" type="video/webm; codecs=vp8,vorbis" />
-  <source src="talk.ogv" type="video/ogg; codecs=theora,vorbis" />
-  <source src="talk.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2"/>	
+<!-- <video id="movie" width="320" height="240" preload autoplay loop>
+	  <source src="talk.webm" type="video/webm; codecs=vp8,vorbis" />
+	  <source src="talk.ogv" type="video/ogg; codecs=theora,vorbis" />
+	  <source src="talk.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2"/> -->	
+<object type="application/x-shockwave-flash" data="player_flv_maxi.swf" width="960" height="520">
+    <param name="movie" value="player_flv_maxi.swf" />
+<param value="true" name="allowFullScreen"><param value="always" name="allowscriptaccess"><param name="wmode" value="opaque"><param name="allownetworking" value="all">    
+    <param name="FlashVars" value="flv=cg.flv&amp;width=960&amp;height=520&amp;margin=0&amp;autoplay=1&amp;loop=1&amp;autoload=1&amp;buffermessage=" />
+</object>
+<!-- </video>
+
 <object type="application/x-shockwave-flash" data="player_flv_maxi.swf" width="320" height="240">
     <param name="movie" value="player_flv_maxi.swf" />
-    <param name="FlashVars" value="flv=talk.mp4&amp;showplayer=never&amp;width=320&amp;height=240&amp;margin=0&amp;autoplay=1&amp;loop=1&amp;autoload=1&amp;buffermessage=&amp;onclick=none" />
+    <param name="FlashVars" value="flv=http://222.73.15.146/68cb7913dbc7b3e-1373213611-2061759886/data6/flv.bn.netease.com/videolib3/1307/07/gxsEG0503/SD/gxsEG0503.flv&amp;showplayer=never&amp;width=320&amp;height=240&amp;margin=0&amp;autoplay=1&amp;loop=1&amp;autoload=1&amp;buffermessage=&amp;onclick=none" />
 </object>
-</video>
+
+ -->
 <script src="../base/jquery-1.7.2.min.js"></script>
 
 <script>
