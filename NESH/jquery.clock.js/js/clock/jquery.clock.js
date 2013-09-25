@@ -128,8 +128,10 @@ var Clock = function(prt){
 	this.second = new ClkUnit(d.getSeconds(), 0, 59);*/
 	this.dot=document.createElement("p");this.dot.innerHTML = ":";this.dot.className = "clockDot";
 	this.dot2=document.createElement("p");this.dot2.innerHTML = ":";this.dot2.className = "clockDot";
+	this.dot3=document.createElement("p");this.dot3.innerHTML = ":";this.dot3.className = "clockDot";	
 
 	this.pane.appendChild(this.tian.pane);
+	this.pane.appendChild(this.dot3);
 	this.pane.appendChild(this.hour.pane);
 	this.pane.appendChild(this.dot);
 	this.pane.appendChild(this.munite.pane);
