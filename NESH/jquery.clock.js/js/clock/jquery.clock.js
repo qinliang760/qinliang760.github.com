@@ -98,11 +98,12 @@ var Clock = function(prt){
 	var startTime=arguments[1];
 	var endTime=arguments[2];
 	var currentDate=new Date();//当前日期
-	var liveTime=new Date(startTime[0],startTime[1],startTime[2],startTime[3],startTime[4],startTime[5]);//直播开始时间
+	var liveTime=new Date(startTime[0],startTime[1]-1,startTime[2],startTime[3],startTime[4],startTime[5]);//直播开始时间
 	var ms=liveTime.getTime()-currentDate.getTime();
 	
 
 		var remainD=Math.floor(ms/(24*3600*1000));
+
 		var hLeave=ms%(24*3600*1000);
 		var remainH=Math.floor(hLeave/(3600*1000));
 
@@ -113,7 +114,10 @@ var Clock = function(prt){
 		var remainS=Math.round(sLeave/1000);
 
 
-	if(ms<0 || remainD>=1){return}
+	//if(ms<0 || remainD>=1){return}
+
+	if(ms<0){return;}	
+	this.tian = new ClkUnit(remainD);
 	this.hour = new ClkUnit(remainH, 0, 23);
 	this.munite = new ClkUnit(remainM, 0, 59);
 	this.second = new ClkUnit(remainS, 0, 59);
@@ -125,15 +129,18 @@ var Clock = function(prt){
 	this.dot=document.createElement("p");this.dot.innerHTML = ":";this.dot.className = "clockDot";
 	this.dot2=document.createElement("p");this.dot2.innerHTML = ":";this.dot2.className = "clockDot";
 
+	this.pane.appendChild(this.tian.pane);
 	this.pane.appendChild(this.hour.pane);
 	this.pane.appendChild(this.dot);
 	this.pane.appendChild(this.munite.pane);
 	this.pane.appendChild(this.dot2);
 	this.pane.appendChild(this.second.pane);
 	prt.appendChild(this.pane);
+
 	var clock = this;
 	this.second.period = function() { clock.munite.turnDown(); }
 	this.munite.period = function() { clock.hour.turnDown(); }
+	this.hour.period = function() { clock.tian.turnDown(); }
 	this.timer = null;
 	
 	this.start = function(){ this.timer = setInterval(function(){clock.second.turnDown();},1000); }
