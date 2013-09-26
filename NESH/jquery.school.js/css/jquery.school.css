@@ -1,0 +1,96 @@
+*,html,body{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+img{
+	border:none;
+}
+.f-cb:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.f-cb{
+	display:inline-block;/* for IE/Mac */
+}
+* html .f-cb{/* triggers hasLayout */
+	height:1%;
+}
+.f-cb{
+	display:block;/* resets display for IE/Win */
+}
+body{
+	font-size:12px;	
+}
+
+
+
+#univlist{
+	width: 606px;
+	display: none;
+	position: absolute;
+	z-index: 9999;
+	background: #fff;
+}
+#university_province{
+	border: 1px solid #C3C3C3;	
+	padding: 2px;
+	margin-bottom: 5px;
+}
+#university_province li{
+	float: left;
+	width: 40px;
+}
+#university_province li a{
+	color: #005EAC;
+	display: block;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	text-decoration: none;
+
+}
+#university_province li a:hover{
+	text-decoration: underline;
+}
+#university_province li a.active{
+	background: #005EAC;
+	color: #fff;
+}
+
+#university_unis{
+	height: 200px;
+	border: 1px solid #C3C3C3;
+	overflow-y:auto; 
+	overflow-x:hidden;
+	padding: 10px;
+}
+#university_unis li{
+    background: url("http://a.xnimg.cn/img/school_list_dot.gif") no-repeat scroll 0 9px;	
+	float: left;
+	width: 160px;
+	padding:4px 12px;
+}
+#university_unis li a{
+	color: #005EAC;
+	text-decoration: none;
+}
+#university_unis li a:hover{
+	background: #005EAC;
+	color: #fff;
+}
+
+
+#boxModel {
+    background-color: #000000;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 9998;
+}
