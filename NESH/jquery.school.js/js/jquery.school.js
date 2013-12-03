@@ -14,7 +14,7 @@
 		defaults: {
 			province:"#university_province",
 			unis:"#university_unis",
-			schoolWrap:"#schoolInput"
+			schoolWrap:".selectI"
 		}
 	};
 
@@ -87,6 +87,8 @@
 			},
 			showSchoolBox:function(){
 				schoolWrap.click(function(){
+					var t=$(this);
+					self.currentInput=t;
 					$.sc2.lightBox($("#univlist"));
 				})
 			},
@@ -113,7 +115,7 @@
 					var t=$(this),
 						unisName=t.text();
 
-					schoolWrap.val(unisName);
+					self.currentInput.val(unisName);
 					$("#boxModel").remove();
 					boxObj.hide();
 					return false;
