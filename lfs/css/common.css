@@ -1,0 +1,29 @@
+body{
+	background: #fff;
+	color: #333;
+}
+#header{
+	/* height: 200px; */
+}
+.topWraper{
+	padding:10px 0 10px 20px;
+}
+.navWraper{
+	height: 40px;
+	background: #DF1D38;
+}
+#nav{
+	height: 40px;
+	line-height: 40px;
+	width: 1000px;
+	margin: 0 auto;
+}
+#nav li{
+	float: left;
+}
+
+#nav li a{
+	display: block;
+	color: #fff;
+	padding:0 10px;
+}
