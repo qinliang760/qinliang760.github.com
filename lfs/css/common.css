@@ -1,6 +1,6 @@
 body{
 	background: #fff;
-	color: #333;
+	color: #333;	
 }
 #header{
 	/* height: 200px; */
@@ -26,4 +26,55 @@ body{
 	display: block;
 	color: #fff;
 	padding:0 10px;
+}
+#wraper{
+	width: 1000px;
+	margin: 0 auto;
+}
+#wraper .siderbar{
+	width: 240px;
+	float: left;
+
+}
+.productMenu{
+	padding:10px 15px;
+	border:1px solid #E6E6E6;	
+}
+.productMenu h3{
+	font-weight: 700;
+}
+
+.siderbar .productMenu li{
+	float: left;
+	margin-right: 5px;
+}
+.siderbar .productMenu li a{
+	display: inline-block;
+	margin: 0 3px;
+}
+.siderbar .productBuy li a{
+	display: block;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+}
+
+#wraper .main{
+	width: 760px;
+	float: right;
+}
+
+#productList li{
+	float: left;
+}
+#productList a{
+	display: block;
+	text-align: center;
+}
+
+
+#footer{
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
 }

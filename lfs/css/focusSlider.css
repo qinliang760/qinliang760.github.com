@@ -1,0 +1,91 @@
+*,html,body{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+img{
+	border:none;
+}
+.f-cb:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.f-cb{
+	display:inline-block;/* for IE/Mac */
+}
+* html .f-cb{/* triggers hasLayout */
+	height:1%;
+}
+.f-cb{
+	display:block;/* resets display for IE/Win */
+}
+body{
+	font-size:12px;	
+}
+#focusBox .prev,#focusBox .next{
+	float:left;
+	background:url(../images/hori_large.png) no-repeat 0 0;
+	width:30px;
+	height:30px;
+	margin:100px 10px 0;
+}
+#focusBox .next{
+	background-position:0 -30px;
+}
+#focusPic{
+	float:left;
+	width:500px;
+	height:258px;
+	overflow:hidden;
+	position:relative;
+}
+#focusPic .picList{
+	position:absolute;	
+}
+#focusPic .picList li{
+	float:left;
+}
+#focusPic .numList{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+}
+#focusPic .numList li{
+	float:left;
+	margin:0 5px;
+}
+#focusPic .numList li a{
+	width:20px;
+	height:20px;
+	display:block;
+	text-align:center;
+	text-decoration:none;
+	border:1px solid #fff;
+	background-color:#ccc;
+}
+#focusPic .numList li a:hover,#focusPic .numList li.active a{
+	background-color:#f00;
+	color:#fff;
+}
+#focusBox .dotList{
+	padding-left:50px;
+}
+#focusBox .dotList li{
+	float:left;
+	text-indent:-9999em;
+}
+#focusBox .dotList li a{
+	background:url(../images/navigator.png) no-repeat 0 0;
+	width:8px;
+	height:8px;
+	display:block;
+	margin:10px 3px;
+}
+#focusBox .dotList li.active a{
+	background-position:0 -16px;
+}

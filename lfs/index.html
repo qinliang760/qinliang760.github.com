@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="css/base.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="css/common.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="css/focusSlider.css" type="text/css" media="all"/>
 </head>
 
 <body>
@@ -29,20 +30,83 @@
 
 </div>
 
-<div id="wraper">
+<div id="wraper" class="clearFix">
+	<div class="siderbar">
+		<div class="productMenu">
+			<h3>萝芙森礼盒装</h3>
+			<ul class="clearFix">
+				<li><a href="">夏威夷果</a><a href="">开心果</a><a href="">巴旦木</a><a href="">碧根果</a><a href="">山核桃仁</a><a href="">腰果</a><a href="">榛子</a><a href="">手剥山核桃</a><a href="">松子</a><a href="">新疆185纸皮核桃</a></li>								
+			</ul>		
+			<h3>坚果干果</h3>
+			<ul class="clearFix">
+				<li><a href="">夏威夷果</a><a href="">开心果</a><a href="">巴旦木</a><a href="">碧根果</a><a href="">山核桃仁</a><a href="">腰果</a><a href="">榛子</a><a href="">手剥山核桃</a><a href="">松子</a><a href="">新疆185纸皮核桃</a></li>								
+			</ul>
+			<h3>蜜饯零食</h3>
+			<ul class="clearFix">
+				<li><a href="">营养麦片巧克力</a><a href="">新疆和田玉枣</a><a href="">桂圆肉</a><a href="">芒果干</a><a href="">蔓越梅干</a><a href="">凤梨酥</a></li>			
+			</ul>			
+		</div>
+		<div class="productBuy">
+			<ul class="clearFix">
+				<li><a href="">天猫旗舰店</a><a href="">淘宝C店</a><a href="">1号店</a><a href="">1号商城</a><a href="">易迅网</a><a href="">亚马逊商城</a><a href="">为为网</a><a href="">山山商城</a></li>
+			</ul>
+			
+		</div>
+		
+	</div>
+
+	<div class="main">
+		<div id="slider">
+			<div id="focusBox" class="clearFix">
+
+					<div id="focusPic">
+						<ul class="picList clearFix">
+							<li><a href="#"><img src="images/1.jpg" alt=""/></a></li>
+							<li><a href="#"><img src="images/2.jpg" alt=""/></a></li>
+							<li><a href="#"><img src="images/3.jpg" alt=""/></a></li>
+							<li><a href="#"><img src="images/4.jpg" alt=""/></a></li>
+							<li><a href="#"><img src="images/5.jpg" alt=""/></a></li>			
+						</ul>
+						<ul class="numList clearFix">
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>			
+						</ul>
+					</div>
+
+
+			</div>
+		</div>
+
+		<ul id="productList" class="clearFix">
+			<li><a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i3/T1CgtwFqpdXXXXXXXX_!!0-item_pic.jpg_240x240.jpg"></a><a href="">开心果</a></li>
+			<li><a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i3/T1CgtwFqpdXXXXXXXX_!!0-item_pic.jpg_240x240.jpg"></a><a href="">开心果</a></li>
+			<li><a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i3/T1CgtwFqpdXXXXXXXX_!!0-item_pic.jpg_240x240.jpg"></a><a href="">开心果</a></li>
+			<li><a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i3/T1CgtwFqpdXXXXXXXX_!!0-item_pic.jpg_240x240.jpg"></a><a href="">开心果</a></li>
+			<li><a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i3/T1CgtwFqpdXXXXXXXX_!!0-item_pic.jpg_240x240.jpg"></a><a href="">开心果</a></li>
+			<li><a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i3/T1CgtwFqpdXXXXXXXX_!!0-item_pic.jpg_240x240.jpg"></a><a href="">开心果</a></li>
+			<li><a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i3/T1CgtwFqpdXXXXXXXX_!!0-item_pic.jpg_240x240.jpg"></a><a href="">开心果</a></li>
+			<li><a href=""><img src="http://img01.taobaocdn.com/bao/uploaded/i3/T1CgtwFqpdXXXXXXXX_!!0-item_pic.jpg_240x240.jpg"></a><a href="">开心果</a></li>
+
+
+		</ul>
+	</div>
 	
 </div>
 
 <div id="footer">
-	
+版权所有copy&copy;2014 萝芙森休闲食品 沪ICP备13003510号-1 
 </div>
 
 
 <script src="js/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.focusSlider.js" language="javascript"></script>
 <script src="js/common.js" language="javascript"></script>		
 <script>
 $(function(){
-
+	$("#focusBox").focusSlider({auto:false});
 })
 </script>
 </body>
