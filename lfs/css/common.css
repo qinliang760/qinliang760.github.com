@@ -12,12 +12,13 @@ body{
 }
 .navWraper{
 	height: 40px;
-	background: #DF1D38;
+/* 	background: #DF1D38; */
 }
 #nav{
 	height: 40px;
 	line-height: 40px;
 	width: 1000px;
+	background: #DF1D38;
 	margin: 0 auto;
 }
 #nav li{
@@ -122,4 +123,6 @@ h4{
 	text-align: center;
 	background: #DF1D38;
 	color: #fff;
+	width: 1000px;
+	margin: 0 auto;
 }
