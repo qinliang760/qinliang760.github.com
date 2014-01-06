@@ -39,8 +39,8 @@ body{
 }
 #focusPic{
 	float:left;
-	width:500px;
-	height:258px;
+	width:790px;
+	height:320px;
 	overflow:hidden;
 	position:relative;
 }
@@ -69,7 +69,7 @@ body{
 	background-color:#ccc;
 }
 #focusPic .numList li a:hover,#focusPic .numList li.active a{
-	background-color:#f00;
+	background-color:#DF1D38;
 	color:#fff;
 }
 #focusBox .dotList{

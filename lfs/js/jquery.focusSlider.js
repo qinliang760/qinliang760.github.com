@@ -132,19 +132,25 @@ var QL = QL || {};
 			self.stopAuto();
 		},
 		function() {
-			self.auto();
+			if(defaults.auto){
+				self.auto();
+			}
 		})
 		nextBtn.hover(function() {
 			self.stopAuto();
 		},
 		function() {
-			self.auto();
+			if(defaults.auto){
+				self.auto();
+			}
 		})
 		pic.hover(function() {
 			self.stopAuto();
 		},
 		function() {
-			self.auto();
+			if(defaults.auto){
+				self.auto();
+			}
 		})
 		this.picInit();
 		if(defaults.auto){
