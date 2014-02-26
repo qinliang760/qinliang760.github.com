@@ -12,7 +12,7 @@
 	<p class="demo"></p>
 </div>
 <script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
-<script src="js/jquery.bracket.js" language="javascript"></script>		
+<script src="js/jquery.bracket.bak.js" language="javascript"></script>		
 <script>
 $(function(){
 
@@ -37,8 +37,7 @@ var bigData = {
  
 
     $('#minimal .demo').bracket({
-      data: bigData 
-    })
+      init: bigData /* data to initialize the bracket with */ })
 
 })
 
