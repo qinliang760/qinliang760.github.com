@@ -134,7 +134,7 @@
         return true;
     }
 
-    function prepareWinners(winners, teams, isSingleElimination, skipConsolationRound) {debugger;
+    function prepareWinners(winners, teams, isSingleElimination, skipConsolationRound) {
         var rounds = Math.log(teams.length * 2) / Math.log(2);
         var matches = teams.length;
         var round;
@@ -1009,7 +1009,7 @@
             topCon.css('width', rounds * 140 + 40);
         else
             topCon.css('width', rounds * 140 + 10);
-        debugger;
+        
         w = mkBracket(wEl, !r || !r[0] ? null : r[0], mkMatch);
 
         if (!isSingleElimination) {
@@ -1017,7 +1017,7 @@
             f = mkBracket(fEl, !r || !r[2] ? null : r[2], mkMatch);
         }
 
-        prepareWinners(w, data.teams, isSingleElimination, opts.skipConsolationRound);debugger;
+        prepareWinners(w, data.teams, isSingleElimination, opts.skipConsolationRound);
 
         if (!isSingleElimination) {
             prepareLosers(w, l, data.teams.length);
