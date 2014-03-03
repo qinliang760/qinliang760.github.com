@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 			}			
 		},
 		usemin: {
-			html: ['html/js.tpl']
+			html: ['E:/myfile/git_new/qinliang760.github.com/grunt/project/html/js.tpl']
 		},
 		cssmin: {//all css dir and sub dir
 			minify: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
  	grunt.loadNpmTasks('grunt-contrib-uglify');
  	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  //grunt.registerTask('default', ['useminPrepare','concat', 'uglify', 'cssmin','usemin']);
-  grunt.registerTask('default', ['cssmin','uglify']);
+  grunt.registerTask('default', ['useminPrepare','concat', 'uglify', 'cssmin','usemin']);
+  //grunt.registerTask('default', ['cssmin','uglify']);
 }
 
