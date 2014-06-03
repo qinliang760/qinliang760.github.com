@@ -5,8 +5,8 @@ var Live = {
 
 	},
 	videoShow: function() {
-		var startTime=[2014, 01, 01, 00, 00, 00],
-			endTime=[2014, 01, 01, 01, 00, 00],
+		var startTime=[2015, 01, 01, 00, 00, 00],
+			endTime=[2015, 01, 01, 01, 00, 00],
 			wrap=document.getElementById("timerShow");
 
 		var clock = new Clock(wrap, startTime, endTime);
