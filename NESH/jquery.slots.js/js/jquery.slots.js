@@ -177,6 +177,10 @@
         _stopPos : [],
         _setStopPos : function(winArr){
             var self = this;
+        	if(!winArr.length){
+        		var itemLength = self.itemSize.length;
+        		winArr=self.randomNub(self.getArrData(0,self.itemSize[0]),itemLength);
+        	}            
             for(var i=0,len=self.items.length;i<len;i++){
                 if(winArr[i] > self.itemSize[i]-1){
                     self._stopPos[i] = 0;
