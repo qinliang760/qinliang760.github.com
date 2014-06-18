@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>slots</title>
+
+
+    <style type="text/css">
+    *,html,body{
+    	margin:0;
+    	padding: 0;
+    }
+        ul,li{
+            padding:0;
+            margin:0;
+            list-style-type: none;
+        }
+        .cont{
+            margin:50px;
+        }
+        .list-box{
+            width:330px;
+            height:330px;
+            overflow:hidden;
+        }
+        .list-box .slot-item{
+            background:url('slot.png');
+            width:100px;
+            height:240px;
+            float:left;
+            margin-right:5px;
+            background-position: 0 60px;
+        }
+        .item1{
+            height:600px;
+        }
+        .item2{
+            height:1200px;
+        }
+        .item1{
+            height:960px;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="cont">
+        <div class="list-box" id="test">
+            <div class="J_item slot-item item1"></div>
+            <div class="J_item slot-item item2"></div>
+            <div class="J_item slot-item item3"></div>
+        </div>
+    </div>
+    <button type="button" id="start">start</button>
+    <button type="button" id="stop">stop</button>
+
+
+
+<script src="js/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="js/jquery.namespace.js" language="javascript"></script>
+<script src="js/jquery.slots.js" language="javascript"></script>		
+<script>
+$(function(){
+	var solt = new JV.Slot('#test',120,[10,10,10],{
+                speed : 10
+          });
+
+          $('#start').click(function(){
+          	solt.start();
+          })
+
+          $('#stop').click(function(){
+				solt.stop([9,1,5], function(){
+                    console.log('ok');
+                });
+          })          
+
+
+})
+</script>
+</body>
+</html>
