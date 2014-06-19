@@ -6,6 +6,15 @@ baseurl: ""
 url: "http://qinliang760.github.io/blog/"
 encoding: utf-8
 
+tagline: Site Tagline
+author :
+  name : qinliang760
+  email : qinliang760@163.com
+  github : qinliang760
+  twitter : TheLover_Z
+  feedburner : feedname
+
+
 # Build settings
 markdown: kramdown
 permalink: pretty
