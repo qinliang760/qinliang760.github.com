@@ -45,6 +45,29 @@ jekyll -v
 通过http://127.0.0.1:4000，查看页面，参数可以让你在修改代码的时候不需要重启服务器。
 
 
+
+7.部署到github上时,要把项目放在gh-pages分支内，可考虑安装jekyll博客系统，则可以通过命令 rake post title="Hello World"直接发文章
+
+新建页面 rake page name="pages/about"
+
+git clone https://github.com/plusjade/jekyll-bootstrap.git
+
+
+8.部署到github上时,不需要提交_site，需要配置_config.yml文件
+encoding: utf-8
+baseurl: "/blog"
+production_url : http://qinliang760.github.io
+JB :
+  BASE_PATH : /blog
+
+markdown: kramdown
+permalink: pretty
+highlighter: rouge
+
+
+
+
+
 解决安装过程中的问题：
 
 （1）问题：cannot load such file -- yajl/2.0/yajl
