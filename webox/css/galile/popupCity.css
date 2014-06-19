@@ -1,0 +1,55 @@
+/*popupCity*/
+#popupCity{
+	width:500px;
+	padding-left:150px;
+}
+#popupCity .popupCityArea{
+	float:left;
+	width:50px;
+}
+#popupCity .popupCityList{
+	float:left;
+	width:400px;
+}
+#popupCity .popupCityList li{
+	float:left;
+}
+#popupCity .popupCityList li input{
+	margin-left:15px;
+}
+#popupCity .popupCityList li label{
+	padding:0 0 0 5px;
+}
+
+#PopupWrap{
+	position:absolute;
+	display:none;
+	text-align:left;
+	overflow:hidden;
+	margin-top:20px;	
+	background:#fff;
+}
+#PopupWrap .okBtn{
+	height:24px;
+	display:inline-block;
+	cursor:pointer;
+	border:none;
+	background:url(../../images/btn_pic.gif) no-repeat 0 -100px;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+	width:40px;	
+}
+#PopupWrap a{
+	margin:5px;
+}
+#popupCitys{
+	height:200px;
+	overflow:auto;
+	border:1px solid #ccc;
+	background-color:#fff;
+	padding:5px;
+}
+#popupCitys li label{
+	padding-left:5px;
+}

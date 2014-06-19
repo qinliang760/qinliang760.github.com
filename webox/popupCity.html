@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="qinliang" content="widgets"/>
+<title>widgets</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="css/common/reset.css"/>
+<link rel="stylesheet" href="css/common/basic.css"/>
+<link rel="stylesheet" href="css/common/layout.css"/>
+<link rel="stylesheet" href="css/galile/form.css"/>
+<link rel="stylesheet" href="css/galile/popupCity.css">
+</head>
+<body>
+<div id="wraper">
+<header id="header"><!--header-->
+<figure class="logo"><a href="index.html"><img src="images/logo.png" alt="Mediav"/></a></figure>
+</header><!--/header-->
+
+<section id="main" class="clearFix"><!--main-->
+<aside id="sidebar">
+<h1 class="font_bold24 padBom10">Widgets</h1>
+<ul class="sideList">
+<li><a href="accordion.html">Accordion</a></li>
+<li><a href="autocomplete.html">Autocomplete</a></li>
+<li><a href="boxy.html">Boxy</a></li>
+<li><a href="button.html">Button</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+
+<li><a href="combox.html">Combox</a></li>
+<li><a href="draggable.html">Draggable</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="input.html">Input</a></li>
+
+<li><a href="tabs.html">Tabs</a></li>
+<li><a href="tooltip.html">Tooltip</a></li>
+<li><a href="tree.html">Tree</a></li>
+<li><a href="validate.html">Validate</a></li>
+</ul>
+<h1 class="font_bold24 padBom10">Galileo</h1>
+<ul class="sideList">
+<li><a href="boxy_galile.html">Boxy</a></li>
+<li><a href="jeditable.html">jeditable</a></li>
+<li><a class="active" href="citySelect.html">citySelect</a></li>
+<li><a href="autocomplete_galile.html">autocomplete</a></li>
+<li><a href="calendar_galile.html">calendar</a></li>
+<li><a href="clone.html">jClone</a></li>
+</ul>
+</aside>
+<section id="doc"><!--doc-->
+<h1 class="font_bold24 padBom10">Overview</h1>
+<article class="article">
+<h2>citySelect组件说明</h2>
+<p>citySelect是一个基于jquery的省市选择组件</p>
+</article>
+<article class="article">
+<h2>Demo</h2>
+<div class="clearFix"><!--demo start-->
+<h3 class="demoTitle">省市选择&darr;</h3>
+    <ul id="popupCity">
+    	<li class="clearFix">
+        	<span class="popupCityArea">华北地区</span>
+        	<ul class="popupCityList clearFix">
+            	<li><input type="checkbox" name="" id="1" value="1"/><label for="1">北京</label></li>
+                <li><input type="checkbox" name="" id="2" value="2"/><label for="2">上海</label></li>
+                <li><input type="checkbox" name="" id="3" value="3"/><label for="3">广州</label></li>
+                <li><input type="checkbox" name="" id="4" value="4"/><label for="4">重庆</label></li>
+                <li><input type="checkbox" name="" id="5" value="5"/><label for="5">江西</label></li>
+                <li><input type="checkbox" name="" id="6" value="6"/><label for="6">湖北</label></li>
+                <li><input type="checkbox" name="" id="7" value="7"/><label for="7">湖南</label></li>
+        	</ul>
+        </li>
+    	<li class="clearFix">
+        	<span class="popupCityArea">华东地区</span>
+        	<ul class="popupCityList clearFix">
+            	<li><input type="checkbox" name="" id="8" value=""/><label for="">北京</label></li>
+        	</ul>
+        </li>        
+
+    </ul>
+
+</article>
+<article class="article">
+<h2>引用资源文件</h2>
+<pre class="comFrame"><!--source start--><code>
+&lt;link rel="stylesheet" href="<a href="css/popupCity/popupCity.css">css/popupCity/popupCity.css</a>" /&gt;
+
+&lt;script src="<a href="js/galileo/jquery.popupCity.js">js/galileo/jquery.popupCity.js</a>"&gt;&lt;/script&gt;
+</code>
+</pre><!--source end-->
+</article>
+<article class="article">
+<h2>HTML</h2>
+<xmp class="comFrame">
+<ul class="citySelect clearFix">
+<li class="inputList"><input id="cityInput" class="tip_input" type="text" value="请输入中文拼音匹配"/></li>
+</ul>
+
+</xmp>
+</article>
+<article class="article">
+<h2>JS</h2>
+<xmp class="comFrame">
+
+</xmp>
+</article>
+</section><!--/doc-->
+</section><!--/main-->
+
+<footer id="footer"><!--footer-->
+<p class="alignCenter">Copyright &copy;2011 Mediav 版权所有</p>
+</footer><!--/footer-->
+</div>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/galileo/jquery.popupCity.js"></script>
+<script type = "text/javascript">
+$(function(){
+     $("#popupCity .popupCityList > li input").PopupCity({
+		 popupDistance:"0", // 弹出框距离当前元素上距离
+		 popupWidth:"100" // 弹出框宽度
+	 });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+
+
+<style>
+	*,html,body{
+		margin: 0;
+		padding: 0;
+	}
+
+</style>
+</head>
+<body>
+<div id="wrap">
+
+</div>
+
+
+<script src="../zepto.min.js"></script>
+<script src="../underscore-min.js"></script>
+<script src="../backbone-min.js"></script>
+<script src="../iscroll.js"></script>
+<script src="../sea.js"></script>
+<script>
+$(function(){
+
+	var even = (function(){ return _.toArray(arguments).slice(1);})(1, 2, 3, 4);
+	console.log(even);
+
+	var size=_.size([1,2,3]);
+	console.log(size);
+
+})	
+
+</script>
+
+</body>
+</html>

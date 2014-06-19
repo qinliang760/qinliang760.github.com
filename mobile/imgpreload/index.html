@@ -1,0 +1,48 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>imgpreload</title>
+
+
+
+<style>
+	*,html,body{
+		margin: 0;
+		padding: 0;
+	}
+
+</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		我是头部
+	</div>
+	<div id="container">
+		<img id="loading" src="http://heroes.nos.netease.com/1/images/common/loading.gif" alt="">
+		<img id="loadimg" src="" alt="">
+	</div>
+
+	<div id="footer">
+		我是底部
+	</div>
+</div>
+
+
+<script src="../zepto.min.js"></script>
+<script src="jquery.imgpreload.js"></script>
+<script>
+$(function(){
+	$("#loadimg").attr("src","http://heroes.nos.netease.com/1/images/common/bg_nologo_2.jpg");
+	$("#loadimg").imgpreload(function(){
+		
+		$("#loading").hide();
+		//console.log(1);
+	})
+})	
+
+</script>
+
+</body>
+</html>

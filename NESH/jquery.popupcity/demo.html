@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.PopupCity 省市弹出选择插件</title>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.PopupCity.js"></script>
+<script type = "text/javascript">
+$(function(){
+     $("#fromWhere,#goWhere").PopupCity({
+		 popupDistance:"25", // 弹出框距离当前元素上距离
+		 popupWidth:"540" // 弹出框宽度
+	 });
+});
+</script>
+<link href="style/defalut.css" rel="stylesheet" type="text/css" />
+<link href="style/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top">jQuery.PopupCity 效果演示 Plugins Design By Marcho 2010.05.27</div>
+	<br />
+	<input name="src" type="text" class="v-mid select hand input_style" id="fromWhere" value="选择城市..." size="40" readonly="readonly" />&nbsp;
+	<input name="des" type="text" class="v-mid select hand input_style" id="goWhere" value="选择城市..." size="40" readonly="readonly"  />
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/jquery.lightBox.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="autumn">
+	中秋节flash
+</div>
+
+
+
+
+
+<script src="jquery-1.7.2.min.js" language="javascript"></script>
+<script src="swfobject.js" language="javascript"></script>
+
+	<script>
+
+		function thisMovie(movieName) {
+			if (navigator.appName.indexOf("Microsoft") != -1) {
+				return window[movieName];
+			} else {
+				return document[movieName];
+			}
+		}
+
+
+		function callFlash(v) {
+			thisMovie("autumn").dogame(v);
+		}
+
+		function CheckLogin(){//1为login 0为nologin
+			callFlash(1);
+			return true;
+		}
+		function POP(rank,code,card){//rank为中奖等级 code为编号 card为兑奖码
+			//alert(rank+code+card);
+
+		}
+
+	</script>
+
+<script>
+$(function(){
+
+		var params = {
+			menu: "false",
+			allowFullScreen: "false",
+			allowScriptAccess: "true",
+			wmode: "transparent",
+			base: "."
+		};
+
+		swfobject.embedSWF("20130916.swf", "autumn", 500, 300, "9.0.0", "", "", params);
+})
+
+
+</script>
+</body>
+</html>
