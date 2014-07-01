@@ -326,7 +326,9 @@
       if (this.itemHeightsDirty || !this.container.data('itemHeightsInitialized')) {
         for (; i < activeItemsLength; i++) {
           $item = activeItems.eq(i);
+          console.log($item.html());//update by jay
           $item.data('wookmark-height', $item.outerHeight());
+          //$item.data('wookmark-height', $item.height());
         }
         this.itemHeightsDirty = false;
         this.container.data('itemHeightsInitialized', true);
@@ -389,17 +391,20 @@
       activeItems = this.sortElements(activeItems);
 
       // Prepare arrays to store height of columns and items.
-      while (heights.length < columns) {
-        heights.push(this.outerOffset);
-        this.columns.push([]);
-      }
+/*      while (heights.length < 7) {
 
+      }*/
+      for(var n=0;n<columns;n++){
+        heights.push(this.outerOffset);
+        this.columns.push([]);        
+      }
+//console.log(heights);
       // Loop over items.
       for (; i < length; i++ ) {
         $item = $(activeItems[i]);
 
         // Find the shortest column.
-        shortest = heights[0];
+        shortest = heights[0];//console.log(shortest+'...'+heights);
         shortestIndex = 0;
         for (k = 0; k < columns; k++) {
           if (heights[k] < shortest) {
