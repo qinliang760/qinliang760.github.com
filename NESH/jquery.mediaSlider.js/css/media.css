@@ -1,0 +1,597 @@
+.video,.screenshot,.works,.wallpaper{
+	position: relative;
+	margin: 0 0 50px;
+}
+#video_top_wrap{
+	opacity: 0;
+}
+#video_top{
+	position: absolute;
+	top: 7px;
+	left: 7px;
+}
+.main .title{
+	padding: 0 0 12px;
+	position: relative;
+	margin-bottom: 30px;
+}
+.main .title .fold{
+	width: 37px;
+	height: 37px;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	background: url("http://heroes.nos.netease.com/1/images/media/sprite.png") no-repeat 0 0;
+	text-indent: -999em;
+
+}
+.main .title .fold:hover{
+	background-position: -37px 0;
+}
+.main .title .unfold{
+	background-position: -74px 0;
+}
+.main .title .unfold:hover{
+	background-position: -111px 0;
+}
+.title h2{
+	font-size: 30px;
+	font-weight: bold;
+	color: #bedddd;
+}
+/* .main .title:after{
+	background:#1D3F62; 
+	background-image:linear-gradient(to right, #1D3F62, #3690B3, #1D3F62);
+	background-image: -moz-linear-gradient(to right, #1D3F62, #3690B3, #1D3F62);
+	background-image: -webkit-linear-gradient(right, #1D3F62, #3690B3, #1D3F62);
+	content: "";
+	height: 2px;
+	left: 0;
+	top: 50px;
+	position: absolute;
+	width: 100%;
+} */
+.video .title{
+	margin-bottom: 0;
+}
+.topvideo li{
+	padding: 7px;
+	float: left;
+	height:292px;
+	margin:30px 0 0;
+	width: 471px;
+	position: relative;
+	/* display: none; */
+}
+.topvideo li.left{
+	margin-right: 30px;
+}
+.topvideo li span.borderTop{
+	background:#43286B url("http://heroes.nos.netease.com/1/images/landing/common/border_top.jpg") no-repeat 15px 0;
+	height: 3px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.topvideo li span.borderLt{
+	height: 100%;
+	*height: 336px;
+	width: 3px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background:#3d2c65;
+	background-image:linear-gradient(#442b69, #14324E);
+	background-image:-moz-linear-gradient(#442b69, #14324E);
+	background-image:-webkit-linear-gradient(#442b69, #14324E);
+}
+.topvideo li span.borderRt{
+	height: 100%;
+	*height: 336px;
+	width: 3px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background:#3d2c65;
+	background-image:linear-gradient(#442b69, #14324E);
+	background-image:-moz-linear-gradient(#442b69, #14324E);
+	background-image:-webkit-linear-gradient(#442b69, #14324E);
+}
+.topvideo li span.borderBtm{
+	width: 100%;
+	height: 3px;
+	background:#3d2c65;
+    background-image:linear-gradient(#14324E, #14324E);
+	background-image:-moz-linear-gradient(#14324E, #14324E);
+	background-image:-webkit-linear-gradient(#14324E, #14324E);
+	position: absolute;
+	left: 0;
+	bottom: 0; 
+}
+.topvideo li .mark{
+	width: 471px;
+	height: 265px;
+	background: #000;
+	opacity: 0.4;
+	filter:alpha(opacity=40);
+	position: absolute;
+	left: 7px;
+	top: 7px; 
+	text-align: center;
+	display: none;
+}
+.topvideo li  span.videoPlayIcon{
+	background: url("http://heroes.nos.netease.com/1/images/media/sprite.png") no-repeat -148px 0;
+	display: block;
+	width: 104px;
+	height: 66px;
+	position: absolute;
+	top: 90px;
+	left: 50%;
+	margin-left: -88px;
+}
+.topvideo li span.videoPlayIcon:hover{
+	background-position: -252px 0;
+}
+.topvideo li h3{
+	font-size: 26px;
+	color: #bedddd;
+	position: absolute;
+	left: 12px;
+	bottom: 20px;
+}
+.topvideo li:hover .mark{
+	opacity: 0;
+	filter:alpha(opacity=0);
+}
+.screenshot .imgList img{
+	width: 986px;
+	height: 614px;
+}
+.slider{
+	padding:3px;
+	position: relative;
+	width: 950px;
+	margin: 0 auto;
+	/* margin: 30px 0 0; */
+}
+.slider .download{
+	background-color: #000;
+	padding:4px 4px 0;
+	position: absolute;
+	right: 50px;
+	top: 30px;
+	z-index: 2;
+}
+.slider .download a{
+	font-size: 14px;
+	color: #82e3fb;
+}
+.slider .downloadArea{
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	background-color: #160926;
+}
+.slider .downloadArea p{
+	float: right;
+	font-size: 14px;
+	font-family:"exoWebfont";
+}
+.slider .downloadArea a{
+	font-size: 14px;
+	color: #00F5FD;
+	text-decoration:underline;
+}
+.slider .downloadArea a:hover{
+	color: #fff;
+}
+.slider ul.imgList{
+	padding: 4px;
+	position: relative;
+	height:550px;
+}
+.slider ul.imgList li{
+	position: absolute;
+	left: 4px;
+	top: 4px;
+/* 	display: none; */
+	width: 986px;
+	height: 614px;
+}
+.slider ul.imgList .imgload{
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -16px;
+	margin-top: -16px;
+}
+.slider ul.imgList li a{
+	position: absolute;
+	bottom: 124px;
+/* 	right: 56px; */
+	left: 30px;
+	top: 15px;
+	font-size: 16px;
+	color: #00F5FD;
+	text-decoration:underline;
+	z-index: 5;
+	height: 24px;
+	padding: 2px 5px;
+	border-radius: 5px;
+	background: url(http://heroes.nos.netease.com/1/images/common/op5.png) repeat 0 0;
+}
+.fanarthot_slider ul.imgList li a{
+	bottom: 13px;
+}
+.slider ul.imgList li a:hover{
+	color: #fff;
+}
+.slider ul.imgList li.ds{
+	display: block;
+}
+.slider .btnList{
+	position: absolute;
+/* 	left: 37px;
+bottom: 13px; */
+	top: 15px;
+	width: 9999em;
+}
+.slider .btnList li{
+	width: 180px;
+	height: 96px;
+	margin: 0 10px 0 0;
+	padding: 2px;
+	position: relative;
+	float: left;
+	cursor: pointer;
+}
+.slider .btnList li .btn{
+	display: block;
+	width: 180px;
+	height: 96px;
+}
+.slider .btnList li .btn img{
+
+}
+.slider .btnList li.active .btn{
+	border: 1px solid #395558;
+}
+.slider .btnList li .topLine,.slider .btnList li .btmLine{
+	height: 3px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	display: none;
+}
+.slider .btnList li .topLine{
+    top: -4px;
+}
+.slider .btnList li .btmLine{
+	bottom: -4px;
+}
+.slider .btnList li:hover,.slider .btnList li.active{
+
+}
+.slider .btnList li:hover .topLine,.slider .btnList li:hover .btmLine,.slider .btnList li.active .topLine,.slider .btnList li.active .btmLine{
+    display: block;
+}
+.slider .prev,.slider .next{
+    position: absolute;
+    display: block;
+    width: 66px;
+    height: 104px;
+    background: #000;
+    top: 50%;
+    margin-top: -52px;
+    background: url("http://heroes.nos.netease.com/1/images/media/sprite.png") no-repeat -356px 0;
+    text-indent: -999em;
+}
+.slider .prev{
+	left: 7px;
+}
+.slider .next{
+	right: 7px;
+	background-position: -422px 0;
+}
+.slider .prev:hover{
+	background-position: -554px 0;
+}
+.slider .next:hover{
+	background-position: -488px 0;
+}
+.slider .imgLineL,.slider .imgLineR{
+	display: block;
+	position: absolute;
+	width: 119px;
+	height: 592px;
+	top: 0;
+	background: url(http://heroes.nos.netease.com/1/images/media/media_pic_line.png) no-repeat 0 0;
+}
+.slider .imgLineL{
+	right: 0;
+}
+.slider .imgLineR{
+	left: 0;
+	background-position: -119px 0;
+}
+.slider .imgLight{
+	display: block;
+	position: absolute;
+	width: 285px;
+	height: 176px;
+	left: 50%;
+	top: -3px;
+	margin-left: -150px;
+	background: url(http://heroes.nos.netease.com/1/images/media/pic_light.png) no-repeat 0 0;
+}
+
+.screenshotWrap{
+	position: absolute;
+	width: 945px;
+	height: 115px;
+	overflow: hidden;
+	left: 0;
+	bottom: 0;	
+}
+.screenshot .imgLarge{
+	display: none;
+}
+
+.media_b_bg{
+	position: absolute;
+	left: 7px;
+	width: 986px;
+	height: 115px;
+}
+.media_b_light{
+	display: block;
+	position: absolute;
+	width: 289px;
+	height: 85px;
+	left: 50%;
+	margin-left: -144px;
+	top: -41px;
+	background: url(http://heroes.nos.netease.com/1/images/media/media_light_blue.png);
+}
+
+.fanarthot_slider{
+	position: relative;
+	width: 994px;
+/* 	padding-bottom: 130px; */
+}
+.fanarthot_slider + .closeBtn{
+	top: 7px!important;
+	right: 7px!important;
+}
+.fanarthot_slider .downloadArea{
+	height: 43px;
+	line-height: 43px;
+}
+.fanarthot_slider .downloadArea{
+	width: 908px;
+}
+.fanarthotWrap{
+	width: 994px;
+	position: absolute;
+	bottom: 0;
+	left: 3px;
+	height: 130px;
+}
+.video_slider{
+	position: relative;
+	padding-bottom: 130px;
+	width: 960px;
+	height: 520px;
+}
+.video_slider + .closeBtn{
+	top: 3px!important;
+}
+.videoWrap{
+	width: 960px;
+	background: #000;
+	position: absolute;
+	bottom: 3px;
+	left: 3px;
+	height: 130px;
+}
+.videoWrap .video_title,.fanarthotWrap .video_title{
+	text-align: center;
+	color: #67A1D5;
+	display: block;
+	padding-top: 5px;
+	font-size: 14px;
+}
+.videoWrap a:hover .video_title,.videoWrap .active a .video_title,.fanarthotWrap a:hover .video_title,.fanarthotWrap .active a .video_title{
+	color: #fff;
+}
+.videoWrapSub,.fanarthotWrapSub{
+	height: 124px;
+}
+.videoWrapSub{
+	bottom: 5px;
+}
+.videoBox{
+	width: 960px;
+	height: 520px;
+	position: relative;
+	background: #000;
+}
+
+.works{
+	margin-bottom: 20px;
+}
+.works .worksList{margin-right: -35px;}
+.works .worksList li{
+	padding: 3px;
+	background: #3c2b64;
+	background-image: linear-gradient(#422a67,#152e4b);
+	background-image: -moz-linear-gradient(#422a67,#152e4b);
+	background-image: -webkit-linear-gradient(#422a67,#152e4b);
+	float: left;
+	position: relative;
+	margin: 0 35px 45px 0;
+	display: none;
+}
+.works .worksList li img{
+	width: 100%;
+	height: 100%;
+}
+.works .worksList li div{
+	padding:4px;
+	background: #000;
+	width: 296px;
+	height: 166px;
+}
+.works .worksList li .btn{
+	position: absolute;
+	left: 7px;
+	top: 7px;
+	display: block;
+	width: 296px;
+	height: 166px;
+}
+.works .worksList li .btn span{
+	display: block;
+	width: 63px;
+	height: 40px;
+	background: url("http://heroes.nos.netease.com/1/images/media/sprite.png") no-repeat 0 -37px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.works .worksList li:hover{
+	box-shadow: 0 0 15px #092d52;
+	background: #8468c6;
+	background-image: linear-gradient(#714fa3,#3480c8);
+	background-image: -moz-linear-gradient(#714fa3,#3480c8);
+	background-image: -webkit-linear-gradient(#714fa3,#3480c8);
+}
+.works .worksList li .topBorder{
+	height: 3px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background:#43286B url("http://heroes.nos.netease.com/1/images/landing/common/border_top.jpg") no-repeat  -38px 0 ;
+}
+.works .worksList li:hover .topBorder{
+	background:#714fa3 url("http://heroes.nos.netease.com/1/images/media/borderTopHover.jpg") no-repeat -38px 0;
+}
+.works .worksList li p.titleName{
+	position: absolute;
+	text-align: center;
+	bottom: -24px;
+	width: 100%;
+	font-size: 14px;
+	font-family: exoWebfont;
+	color: #8eb1bc;
+}
+.works .worksList li:hover p.titleName{
+	color:#fff;
+}
+.wallpaper {
+	width: 485px;
+	float: left;
+	margin-right: 30px;
+}
+.wallpaper .wallpaperList .wallListItem{
+	float: left;
+	margin: 0 0 20px;
+}
+.wallpaper .wallpaperList .wallListItem .wallCon{
+	background: #3a2b62;
+	background-image: linear-gradient(#442a69,#152e4b);
+	background-image: -moz-linear-gradient(#442a69,#152e4b);
+	background-image: -webkit-linear-gradient(#442a69,#152e4b);
+	padding: 3px;
+	width: 479px;
+	position: relative;
+}
+.wallpaper .wallpaperList .wallListItem .wallCon .borderTop{
+ 	background: url("http://heroes.nos.netease.com/1/images/landing/common/border_top.jpg") no-repeat scroll 15px 0 #43286B;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.wallpaper .wallpaperList .wallListItem .wallCon p{
+	padding: 4px;
+	background: #000;
+	height: 265px;
+	width: 471px;
+}
+.wallpaper .wallpaperList .wallListItem .wallCon p img{
+	width: 471px;
+	height: 265px;
+}
+.wallpaper .wallpaperList .wallListItem .date{
+    font-family: exoWebfont;
+    font-size: 14px;
+    color: #fff;
+    padding: 22px 0 15px;
+}
+.wallpaper .wallpaperList .wallListItem ul{
+	width: 471px;
+}
+.wallpaper .wallpaperList .wallListItem ul li{
+    float: left;
+    width: 33%;
+
+}
+.wallpaper .wallpaperList .wallListItem ul li.wide{
+	float: none;
+}
+.wallpaper .wallpaperList .wallListItem ul li a{
+	color: #4f93ab;
+	font-size: 15px;
+	line-height: 32px;
+	font-family: exoWebfont;
+}
+.wallpaper .wallpaperList .wallListItem ul li a:hover{
+    color: #00d8ff;
+}
+.material {
+	width: 485px;
+	float: left;
+}
+.material .materialList ul li{
+	color: #4F93AB;
+	font-size: 15px;
+	padding: 10px;
+}
+.material .materialList ul li a.download{
+	color: #00D8FF;
+	width: 35px;
+	height: 22px;
+	display: block;
+	float: right;
+	background: url(http://heroes.nos.netease.com/1/images/common/icon.png) no-repeat -74px -252px;
+}
+.material .materialList ul li a.link { width: 300px; display: block; color: #4F93AB;overflow: hidden;}
+.material .materialList ul li a.link:hover {color: #00ffFF;}
+.material .materialList ul li a.download:hover{
+	background-position: -74px -284px;
+}
+
+
+
+
+.pic_bg{
+	width: 1940px;
+	height: 887px;
+	position: relative;
+	left: 50%;
+	margin-left: -970px;
+	background: url(http://diablo3.nos.netease.com/1/media/media_bg.jpg) no-repeat 0 0;
+}
+.pic_bg .pic{
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	padding-top: 87px;
+}

@@ -1,0 +1,250 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Slider Tutorial</title>
+  <meta name="description" content="How to create a parallax scrolling effect with jQuery, HTML and CSS">
+  <meta name="author" content="Richard Shepherd, Smashing Magazine">
+<link rel="stylesheet" href="css/media.css"/>
+  
+<style>
+*,html,body{
+    margin:0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+</style>
+</head>
+
+<body>
+<div class="slider">
+                                        <span class="media-frame" style="width:966px;height:550px;z-index:3"></span>
+                                        <div class="download">
+
+                                                <a href="http://heroes.nos.netease.com/2/cms/ss/heroes-04full.jpg" target="_blank">下载完整图片</a>
+
+                                        </div>
+
+                                        <ul class="imgList">
+                                            <li>
+                                                <img style="display: none;" class="imgload" src="http://heroes.nos.netease.com/1/images/common/loading.gif" alt="">
+                                                <img width="950" height="534" style="display: inline;" class="imgLarge" src="http://heroes.nos.netease.com/2/cms/ss/heroes-04large.jpg">
+                                            </li>
+
+                                        </ul>
+                                        <div class="media_b_bg">
+
+                                            <div class="screenshotWrap">
+
+                                                <ul class="btnList" id="screenshotList">
+
+                                                    <li class="active" rel="0" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-04large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-04full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-04thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="1" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-12large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-12full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-12thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="2" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-11large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-11full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-11thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="3" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-10large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-10full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-10thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="4" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-06large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-06full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-06thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="5" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-08large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-08full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-08thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="6" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-05large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-05full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-05thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="7" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-02large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-02full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-02thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="8" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-09large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-09full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-09thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="9" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-03large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-03full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-03thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="10" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-07large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-07full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-07thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="11" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-01large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-01full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-01thumb.jpg"></a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <a href="javascript:void(0);" class="prev">prev</a>
+                                        <a href="javascript:void(0);" class="next">next</a>
+                                    </div>
+
+  
+
+  <!-- Our Javascript, starting with jQuery -->
+
+  <ul id="slider_link">
+      <li rel="0"><a href="#">1</a></li>
+      <li rel="1"><a href="#">2</a></li>
+      <li rel="2"><a href="#">3</a></li>
+      <li rel="3"><a href="#">4</a></li>
+      <li rel="4"><a href="#">5</a></li>
+  </ul>
+
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="../base/jquery.easing.1.3.js" language="javascript"></script>
+ <script src="js/jquery.namespace.js"></script>
+  <script src="js/jquery.lightBox.js"></script>
+  <script src="js/jquery.imgpreload.js"></script>
+  <script src="js/jquery.imageScroll.js"></script>
+<script src="js/jquery.mediaSlider.js"></script>  
+<script>
+$(function(){
+    var solt = new JV.Slider('.slider',{
+                sliderListId : 'screenshotList',
+                showIndex:2
+          });   
+
+
+    $("#slider_link li").click(function(){
+        var rel=$(this).attr("rel");
+        $.hos.lightBox($("#popHtml").html(), {
+                model: true,
+                callback: function() {
+                    new JV.Slider('.slider',{
+                                    sliderListId : 'screenshotList',
+                                    showIndex:rel
+                              });
+                }
+        }) 
+        return false;               
+    })
+
+
+           
+})    
+</script>
+<script type="text/html" id="popHtml">
+<div class="slider">
+                                        <span class="media-frame" style="width:966px;height:550px;z-index:3"></span>
+                                        <div class="download">
+
+                                                <a href="http://heroes.nos.netease.com/2/cms/ss/heroes-04full.jpg" target="_blank">下载完整图片</a>
+
+                                        </div>
+
+                                        <ul class="imgList">
+                                            <li>
+                                                <img style="display: none;" class="imgload" src="http://heroes.nos.netease.com/1/images/common/loading.gif" alt="">
+                                                <img width="950" height="534" style="display: inline;" class="imgLarge" src="http://heroes.nos.netease.com/2/cms/ss/heroes-04large.jpg">
+                                            </li>
+
+                                        </ul>
+                                        <div class="media_b_bg">
+
+                                            <div class="screenshotWrap">
+
+                                                <ul class="btnList" id="screenshotList">
+
+                                                    <li class="active" rel="0" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-04large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-04full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-04thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="1" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-12large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-12full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-12thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="2" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-11large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-11full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-11thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="3" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-10large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-10full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-10thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="4" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-06large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-06full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-06thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="5" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-08large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-08full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-08thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="6" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-05large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-05full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-05thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="7" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-02large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-02full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-02thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="8" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-09large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-09full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-09thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="9" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-03large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-03full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-03thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="10" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-07large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-07full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-07thumb.jpg"></a>
+                                                    </li>
+
+                                                    <li rel="11" data-large="http://heroes.nos.netease.com/2/cms/ss/heroes-01large.jpg" data-full="http://heroes.nos.netease.com/2/cms/ss/heroes-01full.jpg">
+                                                        <a class="btn">
+                                                            <img width="180" height="96" src="http://heroes.nos.netease.com/2/cms/ss/heroes-01thumb.jpg"></a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <a href="javascript:void(0);" class="prev">prev</a>
+                                        <a href="javascript:void(0);" class="next">next</a>
+                                    </div>    
+</script>
+</body>
+</html>
