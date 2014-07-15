@@ -1,0 +1,1493 @@
+/* layout */
+body{
+    color: #999;
+    background: #0d1319;
+}
+/* ::selection {
+    background: #fe57a1; color: #fff; text-shadow: none;
+}
+::-moz-selection {
+    background: #fe57a1; color: #fff; text-shadow: none;
+}
+::-webkit-selection {
+    background: #fe57a1; color: #fff; text-shadow: none;
+} */
+a{
+    color: #fff;
+}
+a:hover{
+    color: #fff;
+}
+
+#wrap{
+    /* background:url(http://heroes.nos.netease.com/1/images/common/bg_nologo_2.jpg) no-repeat fixed 50% 0; */
+    min-height: 1000px;
+    overflow: hidden;
+/*     position: relative; */
+}
+.header_bg{
+    height: 262px;
+    width: 1940px;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    margin-left: -970px;
+    z-index: 11;
+    background: url(http://diablo3.nos.netease.com/1/common/header_bg.jpg) no-repeat 0 0;
+}
+#header{
+    width: 1000px;
+    position: relative;
+    padding-top: 205px;
+    margin: 0 auto;
+}
+.container_bg{
+    min-height: 901px;
+    width: 1940px;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    margin-left: -970px;
+    z-index: 10;
+    padding-top: 128px;
+    background: url(http://diablo3.nos.netease.com/1/common/bg.jpg) no-repeat 0 0;
+}
+#container{
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+/*     overflow: hidden; */
+}
+
+
+/* footer */
+
+#footer {
+    /* height: 502px; */
+    margin: 0;
+    padding: 0 0 10px;
+    width: auto;
+    z-index: 0;
+    /* margin-top: -502px; */     
+}
+#footer .logo_bz {
+    display: inline-block;
+    background: url(http://diablo3.nos.netease.com/1/common/blizzard.png) no-repeat 0 0;
+    width: 140px;
+    height: 80px;
+    overflow: hidden;
+    vertical-align: middle;    
+}
+#footer .logo_ne {
+    display: inline-block;
+    background: url(http://heroes.nos.netease.com/1/images/common/logo_ne.png) no-repeat 0 0;
+    width: 105px;
+    height: 33px;
+    overflow: hidden;
+    margin:0 0 0 25px;
+    vertical-align: middle;
+}
+
+#footer .cprt {
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto 8px;
+    padding: 0 0 30px; 
+    border-bottom: 1px solid #282d32;
+}
+
+#footer a {
+    text-decoration: none;
+    color: #515151;
+
+}
+#footer a:hover{
+    color: #fefefe;
+}
+#footer .tips {
+    text-align: center;
+    color: #2a2c2f;
+}
+#footer .cprt .info{
+    width: 625px;
+    display: inline-block;
+    text-align: left;
+    padding: 20px 0 0 16px;
+    color: #515151; 
+    vertical-align: middle;
+    position: relative;
+    *display: inline;
+    *zoom:1;
+}
+#footer .integrity{
+    position: absolute;
+    right: 70px;
+    top: 54px;
+}
+
+
+
+h1{
+    left: -60px;    
+    top: -30px;
+    width: 356px;
+    height: 304px;
+    position: absolute;
+    z-index: 2;
+    background: url(http://diablo3.nos.netease.com/1/common/logo.png) no-repeat 0 0;
+}
+h1 a{
+    display: block;
+    width: 366px;
+    height: 244px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+/* breadcrumbs */
+.ui-breadcrumbs {
+    color: #150603;
+    color: #F44CF3;
+    height: 24px;
+    padding:0 0 10px 0;
+    position: relative;
+    z-index: 11;
+/*     z-index: 11; */
+}
+.ui-breadcrumbs a{
+    display: inline-block;
+    color: #f44cf3;
+    border-bottom: 1px dotted #f44cf3;    
+}
+.ui-breadcrumbs a:hover {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dotted #fff;
+}
+.ui-breadcrumbs a.active {
+    border-bottom: none;
+    color: #fff;
+    cursor: default;
+}
+
+/* nav */
+
+#nav{
+    height: 170px;
+    width: 1244px;
+    left: -122px;
+    position: relative;
+    z-index: 2;
+    background: url(http://diablo3.nos.netease.com/1/common/nav.png) no-repeat 0 0;
+}
+#nav li{
+    float: left;
+    width: 164px;
+    height: 43px;
+    padding-top: 28px;
+    padding-right: 3px;
+}
+
+#nav li a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(http://diablo3.nos.netease.com/1/common/nav.png);
+    background-repeat: no-repeat;
+    opacity: 0;  
+    transition:opacity 0.5s ease 0s;    
+
+}
+#nav li.nav1{
+    padding-left: 121px;
+}
+#nav li.nav1 a{
+    background-position: -121px -28px;
+}
+#nav li.nav2 a{
+    background-position: -288px -28px;
+}
+#nav li.nav3 a{
+    background-position: -455px -28px;
+}
+#nav li.nav4 a{
+    background-position: -622px -28px;
+}
+#nav li.nav5 a{
+    background-position: -789px -28px;
+}
+#nav li.nav6 a{
+    background-position: -956px -28px;
+}
+
+#nav li a:hover,#nav li a.active{
+    opacity: 1;
+}
+#nav li.nav1 a:hover,#nav li.nav1 a.active{
+    background-position: -121px -258px;   
+}
+#nav li.nav2 a:hover,#nav li.nav2 a.active{
+    background-position: -288px -258px;
+}
+#nav li.nav3 a:hover,#nav li.nav3 a.active{
+    background-position: -455px -258px;
+}
+#nav li.nav4 a:hover,#nav li.nav4 a.active{
+    background-position: -622px -258px;
+}
+#nav li.nav5 a:hover,#nav li.nav5 a.active{
+    background-position: -789px -258px;
+}
+#nav li.nav6 a:hover,#nav li.nav6 a.active{
+    background-position: -956px -258px;
+}
+
+
+/* login start */
+#service {
+    position: absolute;
+    width: 1000px;
+    left: 50%;
+    top: 0;
+    margin-left: -500px;
+    z-index: 999;
+}
+.service-bar {
+    -moz-user-select: none;
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    z-index: 75;
+    /* _float: right; */    
+}
+.service-bar .dropdown-menu {
+    background-color: #C5C5C5;
+    border-radius: 2px 0 2px 2px;
+    box-shadow: 0 3px 4px #1B1B1B;
+    color: #000000;
+    display: none;
+    line-height: normal;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    top: 33px;
+    width: 150px;
+}
+.service-bar .dropdown-menu a {
+    border-radius: 2px 2px 2px 2px;
+    color: #000000;
+    display: block;
+    padding: 5px;
+}
+.service-bar .dropdown-menu a:hover {
+    background: none repeat scroll 0 0 #D6D6D6;
+    color: #000000;
+    text-decoration: none;
+}
+.service-cell {
+    background: url("http://nos.netease.com/blz/1/frame/background.png") repeat-x scroll 0 -200px ;
+    color: #8694A1;
+    display: block;
+    float: left;
+    line-height: 32px;
+    padding: 0 0 7px;
+    position: relative;
+}
+.service-cell a {
+    color: #00B6FF;
+    text-decoration: none;
+    font-size: 12px;
+}
+.service-cell a:hover {
+    color: #FFFFFF;
+}
+.service-home {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+.service-home a {
+    background: url("http://nos.netease.com/blz/1/frame/background.png") no-repeat scroll 0 -40px ;
+    border-left: 0 none;
+    display: block;
+    line-height: 33px;
+    padding: 0 0 0 7px;
+    text-indent: -9999px;
+    width: 48px;
+}
+.service-home.service-maintenance a {
+    background-position: 0 -120px;
+}
+.service-home.service-alert a {
+    background-position: 0 -160px;
+}
+.service-home a:hover, .service-home a:focus {
+    background-color: ;
+    background-position: 0 -80px;
+}
+.service-welcome {
+    padding: 0 15px 7px;
+}
+.service-welcome .employee {
+    background: url("..http://hearthstone.nos.netease.com/3/icons/employee.gif") no-repeat scroll center center ;
+    display: inline-block;
+    height: 32px;
+    vertical-align: middle;
+    width: 27px;
+}
+.service-link {
+    border-left: 1px solid #33373B;
+    display: block;
+    font-size: 10px;
+    line-height: 33px;
+    padding: 0 1.5em;
+    text-transform: uppercase;
+}
+.service-link:hover, .service-link:focus {
+    background-color: #343434;
+}
+.service-cell a.active {
+    background: none repeat scroll 0 0 #C5C5C5;
+    color: #000000;
+}
+.service-news a {
+    background: url("http://nos.netease.com/blz/1/frame/background.png") repeat-x scroll -117px -160px ;
+    border-left: 0 none;
+    border-right: 1px solid #33373B;
+    display: block;
+    width: 50px;
+}
+.service-bar .service-news.opened {
+    padding: 0;
+}
+.service-bar .service-news.opened a, .service-bar .service-news.opened a:hover, .service-bar .service-news.opened a:focus {
+    background-color: #D37201;
+    border-right-color: #D37201;
+    height: 40px;
+}
+.service-support-enhanced {
+    background-position: 100% -241px;
+}
+.service-support a.service-link-dropdown {
+    background: url("http://nos.netease.com/blz/1/frame/background.png") repeat-x scroll 100% -240px ;
+    display: block;
+    padding: 0 38px 0 1.5em;
+}
+.service-support a.service-link-dropdown:hover {
+    background-position: 100% -280px;
+}
+.service-support a.active, .service-support a.active:hover, .service-support a.active:focus {
+    background: url("http://nos.netease.com/blz/1/frame/background.png") repeat-x scroll 100% -320px ;
+    color: #FFFFFF;
+}
+.service-explore {
+    background-position: 100% 0;
+    padding: 0 0 7px;
+}
+.service-explore a.dropdown {
+    background: url("http://nos.netease.com/blz/1/frame/background.png") repeat-x scroll 100% -40px ;
+    color: #FFFFFF!important;
+    display: block;
+    line-height: 33px;
+    padding: 0 40px 0 1.5em;
+    text-transform: uppercase;
+}
+.service-explore a.dropdown:hover, .service-explore a.dropdown:focus {
+    background-position: 100% -80px;
+}
+.service-explore a.active, .service-explore a.active:hover, .service-explore a.active:focus {
+    background-position: 100% -120px;
+}
+.service-language a {
+    background: url("http://nos.netease.com/blz/1/frame/map.png") no-repeat scroll 50% 6px ;
+    height: 33px;
+    padding: 0;
+    width: 65px;
+}
+.service-language a:hover {
+    background-position: 50% -40px;
+}
+.no-support-tickets {
+    display: none;
+}
+.open-support-tickets {
+    background: url("http://nos.netease.com/blz/1/frame/background.png") repeat-x scroll -188px -168px ;
+    color: #722600;
+    display: block;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    padding: 1px 1px 4px;
+    position: absolute;
+    right: 11px;
+    text-align: center;
+    top: 8px;
+    width: 17px;
+}
+.service-support a.active .open-support-tickets, .service-support a.active:hover .open-support-tickets, .service-support a.active:focus .open-support-tickets {
+    color: #722600;
+}
+.service-auth .service-link, .service-auth .service-link.active {
+    background: url("http://nos.netease.com/blz/1/frame/auth/security-alert.png") no-repeat scroll 50% 50% ;
+    display: block;
+    height: 33px;
+    padding: 0 8px;
+    width: 20px;
+}
+.service-auth .service-link:hover, .service-auth .service-link:focus {
+    background-color: #343434;
+}
+.service-auth .service-link.active {
+    background-color: #343C46;
+}
+.support-menu {
+    position: absolute;
+    right: 0;
+    text-align: left;
+    top: 33px;
+    width: 295px;
+    z-index: 85;
+}
+.support-primary {
+    background: none repeat scroll 0 0 #343C46;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 1em 13px 12px 15px;
+}
+.support-secondary {
+    display: none;
+}
+.support-caption {
+    color: #E8EBF0;
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 1.333;
+    margin: 0;
+}
+.support-nav {
+    margin: 0;
+    padding: 0;
+}
+.support-nav li {
+    list-style: none outside none;
+}
+.support-nav a.support-category {
+    border-bottom: 3px solid #2A5164;
+    color: #94989F;
+    display: block;
+    margin: 0 0 0.5em;
+    padding: 0 0 0.75em;
+}
+.support-nav a.support-category:hover, .support-nav a.support-category:focus, .support-nav a.support-category:active {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+.explore-menu {
+    background: none repeat scroll 0 0 #343C46;
+    box-shadow: -1px 1px 14px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    right: 7px;
+    text-align: left;
+    top: 33px;
+    width: 439px;
+    z-index: 85;
+}
+.explore-primary {
+    background: none repeat scroll 0 0 #343C46;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 1em 16px;
+}
+.explore-menu .explore-caption {
+    color: #B2BAC7;
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 1.333;
+    margin: 0;
+}
+.explore-nav {
+    margin: 0;
+    padding: 0;
+}
+.explore-nav li {
+    list-style: none outside none;
+}
+.explore-nav {
+    float: left;
+    width: 50%;
+}
+.explore-nav a {
+    border-bottom: 3px solid #2A5164;
+    color: #94989F;
+    display: block;
+    margin: 0 0 0.5em;
+    padding: 0.5em 0 0.75em;
+}
+.explore-nav a:hover, .explore-nav a:focus, .explore-nav a:active {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+.explore-nav a:hover .explore-caption, .explore-nav a:focus .explore-caption, .explore-nav a:active .explore-caption {
+    color: #FFFFFF;
+}
+.explore-links {
+    float: right;
+    width: 40%;
+}
+.explore-links ul {
+    margin: 0;
+    padding: 0;
+}
+.explore-links ul li {
+    list-style: none outside none;
+}
+.explore-links .explore-caption {
+    font-size: 14px;
+    margin: 0 0 0.25em;
+    padding: 0 4px;
+    white-space: normal;
+}
+.explore-links a {
+    border-radius: 2px 2px 2px 2px;
+    color: #94989F;
+    display: block;
+    margin: 0 0 0.1em;
+    padding: 2px 4px;
+}
+.explore-links a:hover, .explore-links a:focus, .explore-links a:active {
+    background: none repeat scroll 0 0 #212832;
+}
+.explore-secondary {
+    background: none repeat scroll 0 0 #232A31;
+    height: 160px;
+    line-height: 1.1;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+}
+.explore-secondary li {
+    float: left;
+    list-style: none outside none;
+    width: 110px;
+}
+.explore-secondary .explore-game-sc2 {
+    width: 109px;
+}
+.explore-secondary .explore-caption {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 4px;
+    text-align: center;
+    white-space: normal;
+}
+.explore-secondary a {
+    color: #94989F;
+    display: block;
+    height: 158px;
+    width: 110px;
+}
+.explore-secondary .explore-game-sc2 a {
+    width: 109px;
+}
+.explore-secondary a:hover .explore-caption {
+    color: #FFFFFF;
+}
+.explore-secondary .explore-game-inner {
+    display: block;
+    padding: 110px 7px 0;
+}
+.explore-secondary .explore-game-inner {
+    display: block;
+    padding: 110px 0 0;
+}
+.explore-secondary span {
+    display: block;
+    font-size: 11px;
+    overflow: hidden;
+    padding-bottom: 4px;
+    white-space: nowrap;
+}
+.explore-game a {
+    background: url("http://nos.netease.com/blz/1/frame/explore-menu_v2.jpg") no-repeat scroll -434px -190px ;
+    height: 160px;
+    position: relative;
+}
+.explore-game a:hover {
+    background: url("http://nos.netease.com/blz/1/frame/explore-menu_v2.jpg") no-repeat scroll -434px -125px ;
+}
+.explore-game-sc2 a {
+    background-position: 0 0;
+}
+.explore-game-wow a {
+    background-position: -109px 0;
+}
+.explore-game-hs a{
+    background-position: -329px 0;
+}
+.explore-game-heroes a{
+    background-position: -439px 0;
+}
+.explore-game-sc2 a:hover {
+    background-position: -550px 0;
+}
+.explore-game-wow a:hover {
+    background-position: -659px 0;
+}
+.explore-game-hs a:hover{
+    background-position: -879px 0;
+}
+.explore-game-heroes a:hover{
+    background-position: -989px 0;
+}
+
+
+/* login end */
+
+
+
+
+#gotop {
+    bottom: 20px;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    right: 10px;
+    z-index: 9;
+    transition:background-position 0.3s ease 0s;
+}
+
+/* style */
+.imgload{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -16px;
+    margin-top: -16px;
+}
+.imgload2{
+    width: 40px;
+    height: 35px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -17px;
+}
+.imgload3{
+    width: 36px;
+    height: 36px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -18px;
+    margin-top: -18px;    
+}
+.alignCenter{
+    text-align: center;
+}
+.font_blue_light{
+    color: #00f5fd;
+}
+.font_14{
+    font-size: 14px;
+}
+.font_bold{
+    font-weight: bold;
+}
+.pt5{
+    padding-top: 5px;
+}
+.pt10{
+    padding-top: 10px;
+}
+.pt15{
+    padding-top: 15px;
+}
+.pr{
+    position: relative;
+}
+
+
+.transitionP{
+    opacity: 0;
+    filter: alpha(opacity=0);    
+    transition:opacity 0.5s ease 0s;
+}
+.transitionP:hover{
+    opacity: 1;
+    filter: alpha(opacity=1);    
+    transition:opacity 0.5s ease 0s;
+}
+.pr{
+    position: relative;
+}
+.light_blue{
+    width: 375px;
+    height: 99px;
+    display: inline-block;
+    background: url(http://heroes.nos.netease.com/1/images/common/light.png) no-repeat 0 0;
+}
+.thumb_circle{
+    width: 321px;
+    height: 165px;
+    display: inline-block;
+    background: url(http://heroes.nos.netease.com/1/images/common/circle.png) no-repeat 0 0;
+}
+.eye_shadow{
+    height: 130px;
+    width: 640px;
+    position: absolute;
+    bottom: 0;
+    background-position: -271px -370px;
+}
+.btn-shadow{
+    height: 47px;
+    line-height: 47px;
+    font-size: 18px;
+    color: #48CCFF;
+    background-color: #1c183d;
+    text-align: center;
+    border:2px solid #30719b;
+    box-shadow: inset 0 0 15px #30719B;
+}
+.btn-shadow a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.jiathis_tip .thumb_op5{
+    position: absolute;
+    top: -112px;
+    left: 0;
+    height: 92px;
+    padding: 10px;
+    border-radius: 6px;
+    display: none;
+    z-index: 10;
+}
+.jiathis_tip{
+    position:relative;
+}
+.jiathis_tip:hover  .thumb_op5{
+    display: block;
+}
+/* ui-slider style */
+.ui-slider .ui-slider-txt div{
+    display: none;
+}
+.ui-slider .ui-slider-txt div.ui-slider-active{
+    display: block;
+}
+.ui-slider .ui-slider-pic li{
+    display: none;
+}
+.ui-slider .ui-slider-pic li.ui-slider-active{
+    display: block;
+}
+
+
+.ui-more-style{
+    position: relative;
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    background: url(http://diablo3.nos.netease.com/1/common/more_bg.png) no-repeat 50% 0;
+}
+.ui-more-style a{
+    color: #969797;
+}
+/* news list */
+.mainNewsList{
+    height: 118px;
+    margin-bottom: 30px;
+}
+.mainNewsList:hover .top{
+  background-position: 0 -225px;
+}
+.mainNewsList:hover .bottom{
+  background-position: 1px -386px;
+}
+.mainNewsList:hover .news{
+    background-image: url(http://heroes.nos.netease.com/1/images/common/news_box_r_hover.png);
+    background-position: -1px 0;
+}
+.mainNewsList:hover .top_long{
+  background-position: 0 -208px;
+}
+.mainNewsList:hover .bottom_long{
+  background-position: 0 -375px;
+}
+.mainNewsList:hover .news_long{
+    background-image: url(http://heroes.nos.netease.com/1/images/common/long_news_r_hover.png);
+}
+.mainNewsList .top{
+    height: 157px;
+    background: url(http://heroes.nos.netease.com/1/images/common/news_box.png) no-repeat 0 0;
+}
+.mainNewsList .bottom{
+    height: 20px;
+    background: url(http://heroes.nos.netease.com/1/images/common/news_box.png) no-repeat 0 -161px;
+}
+.mainNewsList .news{
+    background: url(http://heroes.nos.netease.com/1/images/common/news_box_r.png) repeat-y 0 0;
+}
+.mainNewsList .news div{
+    float: left;
+    margin-top: -125px;
+    padding-left: 30px;
+    position: relative;
+}
+.mainNewsList .news_long div{
+    margin-top: -128px;
+}
+.mainNewsList .top_long{
+    background: url(http://heroes.nos.netease.com/1/images/common/long_news_bg.png) no-repeat 0 0;
+}
+.mainNewsList .bottom_long{
+    height: 20px;
+    background: url(http://heroes.nos.netease.com/1/images/common/long_news_bg.png) no-repeat 0 -167px;
+}
+.mainNewsList .news_long{
+    padding-bottom: 15px;
+    background: url(http://heroes.nos.netease.com/1/images/common/long_news_r.png) repeat-y 0 0;
+}
+.mainNewsList .news_long .homeNewsItem{
+    width:auto;
+    padding-left: 290px;
+    padding-right: 20px;
+}
+.mainNewsList .news_long .homeNewsItem h4{
+    font-size: 20px;
+}
+.mainNewsList .news_long .homeNewsItem p.homeNewsIntro{
+    font-size: 16px;
+    max-height: 64px;
+}
+.homeNewsItem{
+    padding-left: 245px;
+    display: block;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer;
+/*  height: 100px; */
+
+}
+
+.homeNewsItem img{
+    position: absolute;
+    left: 0px;
+    box-shadow: 0 0 20px -6px #000;
+/*     width: 200px;
+height: 100px;   */
+}
+
+.homeNewsItem h4{
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    max-height: 52px;
+    overflow: hidden;
+}
+.homeNewsItem:hover h4{
+    color: #fff;
+}
+.homeNewsItem p.homeNewsIntro{
+    font-size: 14px;
+    /* color: #bdebf3; */
+    /* height: 38px; */
+    max-height: 60px;
+    overflow: hidden;
+    letter-spacing: 1px;
+    color: #999;
+}
+.homeNewsWrap .time{
+    color: #666;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+.homeNewsComment{
+    position: relative;
+    /* bottom:22px; */
+    left: 245px;
+/*  _top:94px; */
+    display: inline-block;
+    font-family: exoWebfont;
+}
+.homeNewsComment a{
+    color: #fff;
+    cursor: pointer;
+}
+.homeNewsComment .time{
+    color: #778382;
+}
+.homeNewsMore a{
+    color: #48ccff;
+    font-size: 18px;
+    display: block;
+    height: 47px;
+    line-height: 47px;
+    text-align: center;
+}
+
+/*paging*/
+
+.paging {
+    height: 32px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.paging .hide {
+    display: none !important;
+}
+
+.paging .prev,.paging .next,.paging .head,.paging .tail,.paging .submit,.paging .num,.paging .selnum,.paging .ellipsis,.paging .page-input,.paging .page-prompt
+    {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.paging .prev,.paging .next,.paging .head,.paging .tail,.paging .submit
+    {
+    background: url("http://hearthstone.nos.netease.com/3/paging.gif?v=3") no-repeat scroll 0 0
+        transparent;
+}
+
+.paging .prev,.paging .next,.paging .submit {
+    background: url("http://heroes.nos.netease.com/1/images/common/pager.jpg") no-repeat scroll 100% -71px;
+    display: inline-block;
+    height: 30px;
+    padding: 0 5px 0 0;
+}
+.paging .prev span,.paging .next span,.paging .submit span{
+    background: url("http://heroes.nos.netease.com/1/images/common/pager.jpg") no-repeat scroll 0 0;
+    color: #FFFFFF;
+    display: block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 9px 0 14px;
+}
+.paging .head,.paging .tail {
+    height: 32px;
+    line-height: 32px;
+    width: 78px;
+}
+
+.paging .prev:hover,.paging .next:hover,.paging .submit:hover {
+    background-position: 100% -106px;
+}
+
+.paging .prev:hover span,.paging .next:hover span,.paging .submit:hover span{
+    background-position: 0 -35px;
+}
+
+.paging .next {
+/*  background-position: -469px -32px; */
+    margin-left: 5px;
+}
+.paging .prev{
+    margin-right: 5px;
+}
+
+.paging .head {
+    background-position: -569px -32px;
+    margin-right: 5px;
+}
+
+.paging .head:hover {
+    background-position: -569px -65px;
+}
+
+.paging .tail {
+    background-position: -649px -32px;
+    margin-left: 5px;
+}
+
+.paging .tail:hover {
+    background-position: -649px -65px;
+}
+
+.paging .submit {
+/*  background-position: -729px -32px; */
+    margin-left: 5px;
+    float: none;
+    display: none;
+}
+
+
+.paging .page-prompt {
+    color: #000;
+    font-size: 12px;
+    margin: 0 6px;
+    display: none;
+}
+
+.paging .page-input {
+    background: #fff;
+    border: 1px solid #D7C090;
+    color: #150603;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin: 6px 0;
+    text-align: center;
+    width: 36px;
+    padding: 1px;
+    display: none;
+}
+
+.paging .num,.paging .current {
+    font-family: Tahoma, Arial, Sans Serif;
+    font-size: 12px;
+    height: 18px;
+    margin: 2px;
+    padding-top: 3px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.paging .num {
+    background: url("http://heroes.nos.netease.com/1/images/common/pager.jpg") no-repeat scroll 100% -71px;
+    display: inline-block;
+    height: 30px;
+    padding: 0 5px 0 0; 
+}
+.paging .num span{
+    background: url("http://heroes.nos.netease.com/1/images/common/pager.jpg") no-repeat scroll 0 0;
+    color: #FFFFFF;
+    display: block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 9px 0 14px;
+}
+
+.paging .num:hover {
+    background-position: 100% -106px;
+}
+.paging .num:hover span{
+    background-position: 0 -35px;
+}
+.paging .current{
+    display: inline-block;
+    height: 30px;
+    color: #fff;
+    padding: 0 5px 0 0;
+    background: url("http://heroes.nos.netease.com/1/images/common/pager.jpg") no-repeat scroll right -106px;   
+}
+.paging .current .selnum {
+    height: 30px;
+    line-height: 30px;  
+    padding: 0 9px 0 14px;
+    display: block;
+    font-size: 14px;    
+    margin: 0;  
+    color: #fff;
+    background: url("http://heroes.nos.netease.com/1/images/common/pager.jpg") no-repeat scroll 0 -35px;  
+}
+
+
+.paging .ellipsis {
+    color: #000;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 2px;
+    text-align: center;
+    width: 12px;
+}
+
+.paging .bdt,.paging .bdl,.paging .bdb,.paging .bdr {
+    background: none repeat scroll 0 0 #05295A;
+    position: absolute;
+}
+
+.paging .num:hover .bdt,.paging .selnum .bdt,.paging .num:hover .bdl,.paging .selnum .bdl,.paging .num:hover .bdb,.paging .selnum .bdb,.paging .num:hover .bdr,.paging .selnum .bdr
+    {
+    background: none repeat scroll 0 0 #C1FFFF;
+    position: absolute;
+}
+
+.paging .bdt {
+    height: 1px;
+    left: 0;
+    top: -1px;
+    width: 100%;
+}
+
+.paging .bdl {
+    height: 100%;
+    left: -1px;
+    top: 0;
+    width: 1px;
+}
+
+.paging .bdb {
+    bottom: -1px;
+    height: 1px;
+    right: 0;
+    width: 100%;
+}
+
+.paging .bdr {
+    bottom: 0;
+    height: 100%;
+    right: -1px;
+    width: 1px;
+}
+
+.paging .rctl,.paging .rctr,.paging .rcbl,.paging .rcbr {
+    background: url("http://hearthstone.nos.netease.com/3/paging.gif?v=3") no-repeat scroll 0 0
+        transparent;
+    height: 3px;
+    position: absolute;
+    width: 3px;
+}
+
+.paging .rctl {
+    background-position: -182px -37px;
+    left: -1px;
+    top: -1px;
+}
+
+.paging .rctr {
+    background-position: -241px -37px;
+    right: -1px;
+    top: -1px;
+}
+
+.paging .rcbl {
+    background-position: -182px -56px;
+    bottom: -1px;
+    left: -1px;
+}
+
+.paging .rcbr {
+    background-position: -241px -56px;
+    bottom: -1px;
+    right: -1px;
+}
+
+.paging .num:hover .rctl,.paging .selnum .rctl {
+    background-position: -148px -37px;
+    left: -1px;
+    top: -1px;
+}
+
+.paging .num:hover .rctr,.paging .selnum .rctr {
+    background-position: -173px -37px;
+    right: -1px;
+    top: -1px;
+}
+
+.paging .num:hover .rcbl,.paging .selnum .rcbl {
+    background-position: -148px -56px;
+    bottom: -1px;
+    left: -1px;
+}
+
+.paging .num:hover .rcbr,.paging .selnum .rcbr {
+    background-position: -173px -56px;
+    bottom: -1px;
+    right: -1px;
+}
+/*paging end*/
+
+
+/* landing */
+.bg_foot { height: 200px; text-align: center; background:#0c0116 url(/images/bg_foot.jpg) 50% -20px no-repeat;}
+.foot_logo { margin: 0 auto; height: 100px; padding-top: 20px; width: 1000px; }
+.foot_cont { color: #8eb1bc; line-height: 20px;}
+
+
+/*-----lightbox 效果-----------*/
+#popBox{
+    /* background-color:#4d4d4d; */
+    position:absolute;
+    z-index:99999;
+    display:none;
+}
+#boxModel{
+    background-color:#000;
+    display:none;
+    position:absolute;
+    z-index:99998;
+    left:0;
+    top:0;
+}
+.hos_lightbox{
+	padding: 3px;
+	z-index: 999;
+	position: relative;
+	background: #01393b;  
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#01393b), to(#282367));
+	background-image:-webkit-linear-gradient(#01393b 0%, #282367 100%);
+	background-image:-moz-linear-gradient(#01393b 0%, #282367 100%);
+	background-image:-o-linear-gradient(#01393b 0%, #282367 100%);
+	background-image:linear-gradient(#01393b 0%, #282367 100%);
+}
+#popBox .closeBtn {
+	display: block;
+	position: absolute;
+	z-index: 99999;
+	text-indent: -999px;
+	overflow: hidden;
+	top: 3px; 
+	right: 3px;
+	height: 43px;
+	width: 55px;
+    opacity: 0.8;
+    transition:opacity 0.5s ease 0s;
+	background:url(http://heroes.nos.netease.com/1/images/landing/lightbox/close.jpg) 0 0 no-repeat;
+}
+#popBox .closeBtn:hover{
+    opacity: 1;
+}
+.lb_join .landing_close {
+	display: block;
+	position: absolute;
+	z-index: 99999;
+	text-indent: -999px;
+	overflow: hidden;
+	top: 0px; 
+	right: 0px;
+	height: 120px;
+	width:120px;
+	background:url(http://heroes.nos.netease.com/1/images/landing/page_4/closeBtn.png) 0 0 no-repeat;
+}
+.hos_lightbox .block_43{ height: 43px; width: 100%; background: #000;}
+.hos_lightbox .lightBox_bg { background: #000; width: 100%; height: 100%; vertical-align: top;}
+.hos_lightbox .ld_boxText {
+	position: absolute;
+	width: 900px;
+	left: 50px;
+	color: #8eb1bc;
+	font-size: 16px;
+	line-height: 26px;
+	z-index: 9;
+	text-align: center;
+}
+
+.popError{
+    position: relative;
+    width: 600px;
+    height: 120px;
+    text-align: center;
+    background:url(http://heroes.nos.netease.com/1/images/signup/error_bg.png) top center no-repeat;
+}
+.popError_Cont{
+    text-align: center;
+    line-height: 64px;
+    height: 64px;
+    padding-top: 10px;
+}
+.popError_Cont span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 20px #66ccff;
+}
+.popError_Cont span.errorIcon{
+    background:url(http://heroes.nos.netease.com/1/images/signup/errorIcon.png) top center no-repeat;
+    width:75px;
+    height: 64px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.popError #errorClose{
+    color: #36a7e1;
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 36px;
+}
+.popError #errorClose:hover{
+    color: #fff;
+}
+
+/*share*/
+.share{
+    margin: 0 auto;
+}
+.share li.sharetip{
+    height: 24px;
+    line-height: 24px;
+    margin-top: -3px;
+}
+.share li{
+    float: left;
+    margin-right: 8px;
+}
+.share li a{
+    transition:background-position 0.3s;
+    width: 24px;
+    height: 22px;
+    display: block;
+    background: url(http://heroes.nos.netease.com/1/images/common/share.png) no-repeat 0 0;
+}
+.share li a:hover{
+    transition:background-position 0.3s;
+}
+.share li a.jiathis_button_tsina{
+    background-position: 0 -4px;
+}
+.share li a.jiathis_button_tqq{
+/*     height: 19px;
+width: 19px; */
+    background-position: -39px -4px;
+}
+.share li a.jiathis_button_weixin{
+/*     width: 26px; */
+    background-position: -117px -4px;
+
+}
+.share li a.jiathis_button_yixin{
+/*     height: 19px;
+width: 19px; */
+    background-position: -77px -4px;
+}
+.share li a.jiathis_button_tieba{
+/*     height: 19px;
+width: 19px; */
+    background-position: -156px -4px;
+}
+
+.share li a.jiathis_button_tsina:hover{
+    background-position: 0 -34px;
+}
+.share li a.jiathis_button_tqq:hover{
+    background-position: -39px -34px;
+}
+.share li a.jiathis_button_weixin:hover{
+    background-position: -117px -34px;
+}
+.share li a.jiathis_button_yixin:hover{
+
+    background-position: -77px -34px;    
+}
+.share li a.jiathis_button_tieba:hover{
+    background-position: -156px -34px;
+}
+.share li.borderR{
+    padding-right: 8px;
+    background: url(http://heroes.nos.netease.com/1/images/common/share_border.gif) no-repeat right 4px;
+}
+
+
+
+/* common style  */
+#headerFlash{
+    position: absolute;
+    top: 13px;
+    left: 373px;
+    width: 780px;
+    height: 220px;
+}
+#nav_flash_wrap{
+    position: absolute;
+    top: 59px;
+}
+#jiathis_weixin_share{
+    color: #000;
+
+}
+#jiathis_weixin_share a{
+    color: #4B8DC8;
+}
+
+
+
+/* frame */
+.media-frame {
+    background-image: url("http://diablo3.nos.netease.com/1/common/border/left-top-corner.png"), url("http://diablo3.nos.netease.com/1/common/border/right-top-corner.png"), url("http://diablo3.nos.netease.com/1/common/border/left-bottom-corner.png"), url("http://diablo3.nos.netease.com/1/common/border/right-bottom-corner.png"), url("http://diablo3.nos.netease.com/1/common/border/top-horizontal-bar.png"), url("http://diablo3.nos.netease.com/1/common/border/bottom-horizontal-bar.png"), url("http://diablo3.nos.netease.com/1/common/border/left-vertical-bar.png"), url("http://diablo3.nos.netease.com/1/common/border/right-vertical-bar.png");
+    background-position: left top, right top, left 1px bottom, right 1px bottom, left 1px, left 1px bottom, left 1px bottom, right 1px top;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat-y, repeat-y;
+    pointer-events: none;
+    position: absolute;
+    height: 120px;
+    left: -2px;
+    pointer-events: inherit;
+    top: -3px;
+    width: 230px; 
+}
+.vignette{
+    box-shadow: 0 0 10px 5px #000000 inset;
+    height: 120px;
+    position: absolute;
+    width: 230px;
+    background: #000;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    transition:all 0.5s ease 0s;
+}
+a:hover .vignette{
+    opacity: 0;
+}
+
+/*btn*/
+.btn_reg_w{
+    display: block;
+    height: 105px;
+    width: 330px;
+    left: 50%;
+    margin-left: 23px;
+    position: absolute;
+    top: 72px;
+    text-align: center;
+    background: url(http://diablo3.nos.netease.com/1/common/btn.png) no-repeat 0 0;
+}
+.btn_reg{
+    display: block;
+    width: 232px;
+    height: 55px;
+    margin: 47px 0 0 48px;
+}
+.btn_reg:hover{
+    background: url(http://diablo3.nos.netease.com/1/common/btn.png) no-repeat -48px -127px;
+}
+.btn_reg span{
+    display: inline-block;
+    width: 155px;
+    height: 55px;
+    background: url(http://diablo3.nos.netease.com/1/common/btn.png) no-repeat -382px 0;
+}
+
+.nav_face{
+    cursor: pointer;
+    width: 60px;
+    height: 90px;
+    bottom: 19px;
+    position: absolute;
+    left: 50%;
+    margin-left: -31px;
+    z-index: 3;
+    background-position: -9999px -9999px;
+}
+.icon{
+    display: inline-block;
+    background-image: url(http://diablo3.nos.netease.com/1/common/icon.png);
+    background-repeat: no-repeat;
+}
+.icon_face{
+    background-position: 0 0;
+}

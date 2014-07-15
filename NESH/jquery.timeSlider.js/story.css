@@ -1,0 +1,128 @@
+#mainNews{
+    padding-top:20px;
+}
+.container_bg_story{
+	min-height: 1083px;
+	background-image: url(http://diablo3.nos.netease.com/1/story/story_bg.jpg);
+}
+
+.timeline-pages{
+    width: 866px;
+    margin: 0 auto;
+    padding: 168px 0 80px 0;
+    position: relative;
+}
+.timeline-page-left,.timeline-page-right{
+    color: #391605;
+    height: 490px;
+    padding: 30px 35px;
+    position: absolute;
+    width: 365px;
+    cursor: pointer;
+
+}
+.timeline-page-left{
+    left: 0;
+}
+.timeline-page-right{
+    right: 0;
+}
+.timeline-page-left span,.timeline-page-right span{
+    display: none;
+    width: 20px;
+    height: 35px;
+    position: absolute;
+    top: 50%;
+    background: url(http://diablo3.nos.netease.com/1/story/arrow.png) no-repeat 0 0;
+}
+.timeline-page-left:hover span,.timeline-page-right:hover span{
+    display: block;
+}
+.timeline-page-left span{
+    left: 0;
+}
+.timeline-page-right span{
+    right: 0;
+    background-position: -30px 0;
+}
+.timeline-scrubber{
+    width: 880px;
+    margin: 0 auto;
+}
+
+.scrubber-container {
+    background: url("http://diablo3.nos.netease.com/1/story/scrubber-container.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    height: 120px;
+    margin-top: -40px;
+    width: 880px;
+    position: relative;
+}
+.scrubber-element {
+    background-image: url("http://diablo3.nos.netease.com/1/story/scrubber-elements.png");
+    background-repeat: no-repeat no-repeat;
+}
+.scrubber-chapter-node-foreground {
+    height: 120px;
+    position: relative;
+    width: 108px;
+    z-index: 1;
+}
+.scrubber-chapter-node {
+    background-position: -2px -240px;
+    float: left;
+    height: 120px;
+    position: relative;
+    width: 108px;
+}
+.scrubber-chapter-anchor {
+    display: block;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+}
+.scrubber-unselected-chapter .scrubber-chapter-anchor {
+    cursor: pointer;
+}
+
+.scrubber-unselected-chapter .scrubber-chapter-node-foreground {
+    background-position: 0 -120px;
+}
+.scrubber-selected-chapter .scrubber-chapter-node-foreground {
+    background-position: -108px -120px;
+}
+.scrubber-page-indicator {
+    height: 120px;
+    position: absolute;
+    top: -27.5px;
+    width: 108px;
+}
+.scrubber-page-indicator-animate {
+    transition: left 0.3s ease 0s, top 0.3s ease 0s;
+}
+.scrubber-page-indicator-page {
+    background-position: 0 0;
+}
+.scrubber-page-indicator-chapter {
+    background-position: -108px 0;
+}
+.scrubber-page-indicator-text {
+    color: #D46A1E;
+    font-size: 0.9em;
+    font-style: italic;
+    height: 24px;
+    left: 17px;
+    position: absolute;
+    text-align: center;
+    top: 21px;
+    width: 70px;
+}
+.scrubber-page-indicator-click-area {
+    cursor: e-resize;
+    display: block;
+    height: 84px;
+    left: 15px;
+    position: absolute;
+    top: 16px;
+    width: 74px;
+    z-index: 2;
+}

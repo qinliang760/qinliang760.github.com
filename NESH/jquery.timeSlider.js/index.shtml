@@ -1,0 +1,155 @@
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+<!--#include virtual="/features/common/head.html" -->
+        <title>故事背景_《暗黑破坏神III》官方网站</title>
+
+<!--#include virtual="/features/common/css.html" -->    
+<link rel="stylesheet" href="/css/story.css" type="text/css" media="all" />
+
+    </head>
+    <body>
+        <div id="wrap"><!-- wrap -->
+
+<!--#include virtual="/features/common/login.html" -->
+<div class="header_bg">
+    <div id="header">
+        <h1><a href="/home/"></a></h1>
+             <ul class="clearFix" id="nav">
+                <li class="nav1"><a href="/home/" hidefocus="true"></a></li>
+                <li class="nav2"><a href="/article/news/" hidefocus="true"></a></li>
+                <li class="nav3"><a href="/features/" hidefocus="true"></a></li>
+                <li class="nav4"><a class="active" href="/story/" hidefocus="true"></a></li>
+                <li class="nav5"><a href="/media/" hidefocus="true"></a></li>
+                <li class="nav6"><a href="/forum/" hidefocus="true"></a></li> 
+            </ul> 
+
+    </div>
+</div>    
+		<div class="container_bg container_bg_story">		
+            <div id="container">
+<div id="timeline-slider">
+    
+               
+<div class="timeline-head">
+第一章-崔斯特姆的黑暗時刻
+</div>
+
+<div class="timeline-pages">
+    <div class="timeline-page-left"><span></span></div>
+<div class="timeline-page-right"><span></span></div>                        
+    <img src="http://diablo3.nos.netease.com/1/story/pages/01-01.jpg" alt="" data-page="1-1"/>
+</div>
+
+                    <div class="timeline-scrubber">
+                        <div id="d3-timeline-scrubber" class="scrubber-container" data-scrubber-alignment="horizontal" data-scrubber-current-chapter-index="4" data-scrubber-current-relative-page-index="1">
+
+
+
+                        <div class="scrubber-element scrubber-chapter-node scrubber-unselected-chapter scrubber-selected-chapter" data-scrubber-chapter-index="0" data-scrubber-first-page="0" data-scrubber-last-page="7" data-scrubber-num-pages="8" style="left: 0px;">
+                            <div class="scrubber-element scrubber-chapter-node-foreground">
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="0" data-scrubber-first-page="0" data-scrubber-last-page="7" data-scrubber-num-pages="8" style="left: 44px; top: 50px;"></div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="scrubber-element scrubber-chapter-node scrubber-unselected-chapter" data-scrubber-chapter-index="1" data-scrubber-first-page="8" data-scrubber-last-page="17" data-scrubber-num-pages="10" style="left: 2.28571px;">
+                            <div class="scrubber-element scrubber-chapter-node-foreground">
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="1" data-scrubber-first-page="8" data-scrubber-last-page="17" data-scrubber-num-pages="10" style="left: 44px; top: 50px;"></div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="scrubber-element scrubber-chapter-node scrubber-unselected-chapter" data-scrubber-chapter-index="2" data-scrubber-first-page="18" data-scrubber-last-page="23" data-scrubber-num-pages="6" style="left: 4.57143px;">
+                            <div class="scrubber-element scrubber-chapter-node-foreground">
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="2" data-scrubber-first-page="18" data-scrubber-last-page="23" data-scrubber-num-pages="6" style="left: 44px; top: 50px;"></div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="scrubber-element scrubber-chapter-node scrubber-unselected-chapter" data-scrubber-chapter-index="3" data-scrubber-first-page="24" data-scrubber-last-page="30" data-scrubber-num-pages="7" style="left: 6.85714px;">
+                            <div class="scrubber-element scrubber-chapter-node-foreground">
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="3" data-scrubber-first-page="24" data-scrubber-last-page="30" data-scrubber-num-pages="7" style="left: 44px; top: 50px;"></div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="scrubber-element scrubber-chapter-node scrubber-unselected-chapter" data-scrubber-chapter-index="4" data-scrubber-first-page="31" data-scrubber-last-page="36" data-scrubber-num-pages="6" style="left: 9.14286px;">
+                            <div class="scrubber-element scrubber-chapter-node-foreground">
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="4" data-scrubber-first-page="31" data-scrubber-last-page="36" data-scrubber-num-pages="6" style="left: 44px; top: 50px;"></div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="scrubber-element scrubber-chapter-node scrubber-unselected-chapter" data-scrubber-chapter-index="5" data-scrubber-first-page="37" data-scrubber-last-page="43" data-scrubber-num-pages="7" style="left: 11.4286px;">
+                            <div class="scrubber-element scrubber-chapter-node-foreground">
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="5" data-scrubber-first-page="37" data-scrubber-last-page="43" data-scrubber-num-pages="7" style="left: 44px; top: 50px;"></div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="scrubber-element scrubber-chapter-node scrubber-unselected-chapter" data-scrubber-chapter-index="6" data-scrubber-first-page="44" data-scrubber-last-page="52" data-scrubber-num-pages="9" style="left: 13.7143px;">
+                            <div class="scrubber-element scrubber-chapter-node-foreground">
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="6" data-scrubber-first-page="44" data-scrubber-last-page="52" data-scrubber-num-pages="9" style="left: 44px; top: 50px;"></div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="scrubber-element scrubber-chapter-node scrubber-final-page scrubber-unselected-chapter" data-scrubber-chapter-index="7" data-scrubber-first-page="52" data-scrubber-last-page="52" data-scrubber-num-pages="1" style="left: 16px;">
+                            <div class="scrubber-element scrubber-chapter-node-foreground">
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="6" data-scrubber-first-page="52" data-scrubber-last-page="52" data-scrubber-num-pages="1" style="left: 44px; top: 50px;"></div>
+                            </div>
+                        </div>
+
+
+                            <div class="scrubber-element scrubber-page-indicator scrubber-page-indicator-animate scrubber-page-indicator-page" style="top: 0px; left: 0">
+                                <div class="scrubber-page-indicator-text">
+                                    <span class="scrubber-current-page">1</span>/53
+                                </div>
+                                <div class="scrubber-page-indicator-click-area"></div>
+                            </div>
+                        </div>
+                    </div>                
+
+
+                </div> <!-- timeline-slider -->
+               
+            </div><!-- container end -->
+
+        </div>    
+        </div><!-- wrap end -->
+        <a hidefocus="true" href="#wrap" id="gotop" class="icon icon_top"></a>
+
+<!--#include virtual="/features/common/footer.html" -->
+<!--#include virtual="/features/common/js.html" -->  
+<script src="/js/jquery.draggable.js"></script> 
+<script src="/js/jquery.droppable.js"></script> 
+<script src="/js/jquery.timeSlider.js"></script> 
+<script src="/js/story.js"></script>        
+<script>
+        $(document).ready(function() {
+            Common.init(); 
+            Story.init();
+        })    
+</script>
+
+<!--#include virtual="/features/common/analytics.html" -->
+ 
+
+    </body>
+</html>
