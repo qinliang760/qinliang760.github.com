@@ -2,33 +2,22 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-<!--#include virtual="/features/common/head.html" -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
         <title>故事背景_《暗黑破坏神III》官方网站</title>
 
-<!--#include virtual="/features/common/css.html" -->    
-<link rel="stylesheet" href="/css/story.css" type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/story.css" type="text/css" media="all" />
 
     </head>
     <body>
-        <div id="wrap"><!-- wrap -->
+        <style>
+        *,html,body{
+            margin:0;
+            padding:0;
+        }
+        </style>
 
-<!--#include virtual="/features/common/login.html" -->
-<div class="header_bg">
-    <div id="header">
-        <h1><a href="/home/"></a></h1>
-             <ul class="clearFix" id="nav">
-                <li class="nav1"><a href="/home/" hidefocus="true"></a></li>
-                <li class="nav2"><a href="/article/news/" hidefocus="true"></a></li>
-                <li class="nav3"><a href="/features/" hidefocus="true"></a></li>
-                <li class="nav4"><a class="active" href="/story/" hidefocus="true"></a></li>
-                <li class="nav5"><a href="/media/" hidefocus="true"></a></li>
-                <li class="nav6"><a href="/forum/" hidefocus="true"></a></li> 
-            </ul> 
-
-    </div>
-</div>    
-		<div class="container_bg container_bg_story">		
-            <div id="container">
 <div id="timeline-slider">
     
                
@@ -37,7 +26,7 @@
 </div>
 
 <div class="timeline-pages">
-    <div class="timeline-page-left"><span></span></div>
+    <div class="timeline-page-left" style="display:none"><span></span></div>
 <div class="timeline-page-right"><span></span></div>                        
     <img src="http://diablo3.nos.netease.com/1/story/pages/01-01.jpg" alt="" data-page="1-1"/>
 </div>
@@ -112,14 +101,14 @@
 
                         <div class="scrubber-element scrubber-chapter-node scrubber-final-page scrubber-unselected-chapter" data-scrubber-chapter-index="7" data-scrubber-first-page="52" data-scrubber-last-page="52" data-scrubber-num-pages="1" style="left: 16px;">
                             <div class="scrubber-element scrubber-chapter-node-foreground">
-                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="6" data-scrubber-first-page="52" data-scrubber-last-page="52" data-scrubber-num-pages="1" style="left: 44px; top: 50px;"></div>
+                                <div class="scrubber-chapter-anchor" data-scrubber-chapter-index="7" data-scrubber-first-page="52" data-scrubber-last-page="52" data-scrubber-num-pages="1" style="left: 44px; top: 50px;"></div>
                             </div>
                         </div>
 
 
                             <div class="scrubber-element scrubber-page-indicator scrubber-page-indicator-animate scrubber-page-indicator-page" style="top: 0px; left: 0">
                                 <div class="scrubber-page-indicator-text">
-                                    <span class="scrubber-current-page">1</span>/53
+                                    <span class="scrubber-current-page"></span>
                                 </div>
                                 <div class="scrubber-page-indicator-click-area"></div>
                             </div>
@@ -129,27 +118,24 @@
 
                 </div> <!-- timeline-slider -->
                
-            </div><!-- container end -->
 
-        </div>    
-        </div><!-- wrap end -->
-        <a hidefocus="true" href="#wrap" id="gotop" class="icon icon_top"></a>
 
-<!--#include virtual="/features/common/footer.html" -->
-<!--#include virtual="/features/common/js.html" -->  
-<script src="/js/jquery.draggable.js"></script> 
-<script src="/js/jquery.droppable.js"></script> 
-<script src="/js/jquery.timeSlider.js"></script> 
-<script src="/js/story.js"></script>        
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script src="../base/jquery.namespace.js" language="javascript"></script>
+<script src="js/underscore.js"></script> 
+<script src="js/jquery.draggable.js"></script> 
+<script src="js/jquery.droppable.js"></script> 
+<script src="js/jquery.timeSlider.js"></script> 
+     
 <script>
         $(document).ready(function() {
-            Common.init(); 
-            Story.init();
+          var slider = new JV.TimeSlider('#timeline-slider',{
+            
+          });
         })    
 </script>
 
-<!--#include virtual="/features/common/analytics.html" -->
- 
+
 
     </body>
 </html>
