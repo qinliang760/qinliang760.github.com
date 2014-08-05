@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>demo</title>
+
+
+  
+<style>
+*,html,body{
+    margin:0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;    
+}
+#canvasArea{
+    display: block;
+    margin:0 auto;
+}
+</style>
+
+</head>
+<body>
+
+
+<canvas id="canvasArea" width="950" height="594"></canvas>
+
+
+
+<script src="../../base/jquery-1.7.2.min.js" language="javascript"></script>
+
+<script>
+$(function(){
+    //canvas加载图片
+    var canvasArea=$("#canvasArea");
+    var myCv=canvasArea[0].getContext("2d");
+
+   
+
+    var pic=new Image();
+    pic.src="http://hearthstone.nos.netease.com/1/news/201407/Naxx_Wing1Cards_HS_Lightbox_CK_950x594a.jpg";
+    if(pic.complete){
+        myCv.drawImage(pic,0,0);
+    }else{
+        pic.onload=function(){
+            myCv.drawImage(pic,0,0);
+        }
+        pic.onerror=function(){
+            alert("图片加载失败");
+        }        
+    }
+
+
+  function resize() {
+    var vp = document.getElementById('canvasArea'),
+        naturalW = vp.width,
+        naturalH = vp.height,
+        aspectRatio = naturalH / naturalW,
+        screenH = $(window).get(0).innerHeight,
+        screenW = $(window).get(0).innerWidth,
+        desiredH = screenW * aspectRatio;
+
+    // The canvas is taller than the viewable area, shorten it and keep the aspect ratio (side margins may appear)
+    if (desiredH > screenH) {
+      vp.style.height = screenH + 'px';
+      vp.style.width = (screenH / aspectRatio).toFixed(2) + 'px';
+    }
+    // Otherwise use all of the available width and set the height to keep the aspect ratio. The canvas will be centered vertically by CSS rules in fanta.css
+    else {
+      vp.style.width = screenW + 'px';
+      vp.style.height = (screenW * aspectRatio).toFixed(2) + 'px';
+    }
+
+  }
+
+  resize();
+  $(window).resize(function(){
+    resize();
+  })
+
+
+
+})
+</script>
+</body>
+</html>

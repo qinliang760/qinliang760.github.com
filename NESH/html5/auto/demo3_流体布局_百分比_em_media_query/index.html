@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>demo</title>
+
+
+  
+<style>
+/*
+@px 相对于显示器屏幕分辨率而言
+@em 相对于当前父级元素设置的大小而言，浏览器的默认字体大小为16px
+@rem相对于根元素html设置的字体大小而言，不受父级元素影响
+
+*/
+html{
+  font-size: 62.5%;/* 10/16=62.5% 相当于设置10px */
+}
+*{
+	box-sizing:border-box;	/*IE7不支持，IE8以上支持 为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制*/
+}
+*,html,body{
+    margin:0;
+    padding: 0;
+}
+.fw{
+	width: 96%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.f1{
+	width: 10%;
+	*width:8%;
+	float: left;
+	display: inline;
+	height: 500px;
+	background: #f00;
+	margin-right: 1%;
+/* 	border: 1px solid #000; */
+	padding: 1%;/*设置为PX时 IE下缩放窗口会挤下去*/
+	
+}
+.f2{
+	width: 30%;
+	float: left;
+	display: inline;
+	height: 500px;
+	background: #0f0;
+	margin-right: 1%;
+}
+.f3{
+	width: 58%;
+	float: left;
+	height: 500px;
+	background: #00f;
+}
+.fw2{
+	width: 96%;
+	margin: 0 auto;
+	overflow: hidden;
+	padding-top: 1%;
+}
+.f4{
+	width: 50%;/* ie7下设置49.9就OK？ */
+	float: left;
+	display: inline;
+	height: 500px;
+	background: #0f0;
+}
+.f5{
+	width: 50%;
+	float: left;
+	display: inline;
+	height: 500px;
+	background: #0ff;
+}
+
+
+
+@media screen and (max-width:500px) {/* ie8以下不支持 */
+	.f1{
+		
+	}
+}
+@media screen and (max-width:800px) {
+	.fw{
+		font-size: 205%;
+	}
+	.f1{
+		width: 37%;
+	}
+	.f2{
+		width: 60%;
+	}	
+}
+@media screen and (min-width:1024px) {
+	.fw{
+		font-size: 105%;
+	}
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="fw">
+	
+	<div class="f1">
+		网易163
+
+	</div>
+
+
+	<div class="f2">
+	为了让布局不会被破坏，我个人认为可以将所计算出来的百分比往低取值，比如上图的右边栏，可以取值22％，这样趋于安全性考虑，另外有关于margin大家可以使用百分比，也可以使用硬性的值px，这两者有其各自的长处，大家可以自己去体会，有关于更多的百分比布局，可以点击这里。
+
+	接着在简单的介绍一下有关于em的使用。em是一人可变的长度值单位，1em的长度就是一个字型的长度。如果当前字体大小的默认值 是12px,那么1em=12px，如果默认设置是16px那么此时1em=16px。使用em好处是，调整文字大小，会按比例调 整。你可以将body中的字体大小设置为62.5%，此时字体大小就是默认16px下的10px，方便计算，值得一提的是，em值和body中设置的基准字体值有关系，大家可以看下面一张对应比，更能
+	</div>
+
+	<div class="f3">
+	为了让布局不会被破坏，我个人认为可以将所计算出来的百分比往低取值，比如上图的右边栏，可以取值22％，这样趋于安全性考虑，另外有关于margin大家可以使用百分比，也可以使用硬性的值px，这两者有其各自的长处，大家可以自己去体会，有关于更多的百分比布局，可以点击这里。
+
+	接着在简单的介绍一下有关于em的使用。em是一人可变的长度值单位，1em的长度就是一个字型的长度。如果当前字体大小的默认值 是12px,那么1em=12px，如果默认设置是16px那么此时1em=16px。使用em好处是，调整文字大小，会按比例调 整。你可以将body中的字体大小设置为62.5%，此时字体大小就是默认16px下的10px，方便计算，值得一提的是，em值和body中设置的基准字体值有关系，大家可以看下面一张对应比，更能
+	</div>
+
+
+</div>
+
+
+<div class="fw2">
+	<div class="f4">
+		为了让布局不会被破坏，我个人认为可以将所计算出来的百分比往低取值，比如上图的右边栏，可以取值22％，这样趋于安全性考虑，另外有关于margin大家可以使用百分比，也可以使用硬性的值px，这两者有其各自的长处，大家可以自己去体会，有关于更多的百分比布局，可以点击这里。
+	</div>
+	<div class="f5">
+		为了让布局不会被破坏，我个人认为可以将所计算出来的百分比往低取值，比如上图的右边栏，可以取值22％，这样趋于安全性考虑，另外有关于margin大家可以使用百分比，也可以使用硬性的值px，这两者有其各自的长处，大家可以自己去体会，有关于更多的百分比布局，可以点击这里。
+	</div>
+</div>
+
+
+
+
+</body>
+</html>

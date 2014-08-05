@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>demo-利用justify让两端对齐</title>
+
+
+  
+<style>
+/*在其自然状态下，"text-align:justify"就不能工作，除非内容足够长并引起一个换行符。只应用于内联inline元素和内联块inline-block元素
+
+IE7下不支持
+
+
+解决inline-block元素之间的间距问题
+在父元素中设置font-size:0,用来兼容chrome，而使用letter-space:-N px来兼容safari:
+
+.finally-solve {
+  letter-spacing: -4px;根据不同字体字号或许需要做一定的调整
+  word-spacing: -4px;
+  font-size: 0;
+}
+.finally-solve li {
+  font-size: 16px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  display:inline-block;
+  *display: inline;
+  *zoom:1;
+}
+*/
+*,html,body{
+	padding: 0;
+	margin: 0;
+}
+.p_w{
+	padding: 50px;
+	text-align: justify;
+	width: 500px;
+	background: #000;
+}
+.p_w p{
+	width: 100px;
+	height: 100px;
+	background: #ccc;
+	display: inline-block;
+	*zoom:1;/*触发ie6和ie7下的haslayout*/
+	*display:inline;
+}
+
+
+/*第一个种方案*/
+.p_w p.p4{
+	width: 100%;
+	height: 0;
+}
+
+/*第二个种方案*/
+.p_w:after{
+	content: "";
+	display: inline-block;
+	width: 100%;
+}
+</style>
+
+</head>
+<body>
+
+<!-- 默认justify顺序排列 -->
+<div class="p_w">
+	<p class="p1">1</p>
+	<p class="p2">1</p>
+	<p class="p3">1</p>
+	<p class="p4"></p>
+</div>
+
+<!-- 多元素，默认justify顺序排列 -->
+<div class="p_w">
+	<p class="p1">1</p>
+	<p class="p2">1</p>
+	<p class="p3">1</p>
+	<p class="p2">1</p>
+	<p class="p3">1</p>	
+	<p class="p3">1</p>	
+	<p class="p4"></p>
+
+</div>
+
+<!-- 添加占位符让其顺序排列 -->
+<div class="p_w">
+	<p class="p1">1</p>
+	<p class="p2">1</p>
+	<p class="p3">1</p>
+	<p class="p2">1</p>
+	<p class="p3">1</p>	
+	<p class="p3">1</p>	
+	<p style="height:0"></p>
+	<p style="height:0"></p>
+	<p class="p4"></p>
+
+</div>
+</body>
+</html>

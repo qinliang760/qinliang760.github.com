@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>demo</title>
+
+
+  
+<style>
+/*
+@px 相对于显示器屏幕分辨率而言
+@em 相对于当前父级元素设置的大小而言，浏览器的默认字体大小为16px
+@rem相对于根元素html设置的字体大小而言，不受父级元素影响
+
+*/
+html{
+  font-size: 62.5%;/* 10/16=62.5% 相当于设置10px */
+}
+body{
+
+}
+
+*,html,body{
+    margin:0;
+    padding: 0;
+}
+.px1{
+	font-size: 12px;
+}
+.px2{
+	font-size:40px;
+}
+.em1{
+	font-size: 1.2em;
+}
+.em2{
+	font-size:4.0em;
+}
+.rem1{
+	font-size: 1.2rem;
+}
+.rem2{
+	font-size:4.0rem;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="px1">
+	网易163
+	<div class="px2">
+		网易163
+	</div>
+</div>
+
+
+<div class="em1">
+	网易163
+	<div class="em2">
+		网易163
+	</div>
+</div>
+
+<div class="rem1">
+	网易163
+	<div class="rem2">
+		网易163
+	</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+##列布局##
+nth-of-type（IE不支持）
+
+     .grid4.col:nth-of-type(4n+1)=四列布局中的第一个（相当于first类名），也就是说等于在“1,5,9”列上添加类名“first”
+    .grid3.col:nth-of-type(3n+1)=三列布局中的第一个（相当于first类名），也就是说等于“1,4,7”列上添加类名“first”
+    .grid2.col:nth-of-type(2n+1)=两列布局中的第一个（相当于first类名），也就是说等于“1,3,5”列上添加类名“first”
+
+
+
+
+##响应式导航菜单在移动端的制作方法与解决方案##
+http://www.w3cplus.com/css3/responsive-mobile-navigation-menumethods-and-solutions.html
+
+##响应式设计的新布局方式——Flexbox##
+display:flex
+不需要修改HTML结构就能实现其同一基线上的任意摆放
+
+http://www.w3cplus.com/css3/responsive-design-of-the-future-with-flexbox.html
+
+
+
+##box-sizingbox-sizing##
+翻转盒模型(width定义变为包含padding border-width,不含margin)
+box-sizing:border-box
+
+
+/* 去掉点击链接和文本框对象的半透明覆盖层(iOS)或者虚框(Android) */
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+
+/* 禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化) */
+-webkit-text-size-adjust:none;
