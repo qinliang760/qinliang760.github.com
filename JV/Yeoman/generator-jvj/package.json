@@ -1,0 +1,50 @@
+{
+  "name": "generator-jvj",
+  "version": "0.1.0",
+  "description": "A jQuery generator for Yeoman",
+  "keywords": [
+    "yeoman-generator",
+    "scaffold",
+    "jquery"
+  ],
+  "homepage": "https://github.com/yeoman/generator-jquery",
+  "bugs": {
+    "url": "https://github.com/yeoman/generator-jquery/issues"
+  },
+  "author": {
+    "name": "Jay"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yeoman/generator-jquery.git"
+  },
+  "dependencies": {
+    "chalk": "~0.4.0",
+    "compare-version": "~0.1.0",
+    "multiline": "^0.3.4",
+    "pkg-name": "~0.1.0",
+    "yeoman-generator": "~0.16.0"
+  },
+  "devDependencies": {
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=1.2.10"
+  },
+  "files": [
+    "app"
+  ],
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "readme": "# jQuery Generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-jquery.svg?branch=master)](https://travis-ci.org/yeoman/generator-jquery)\n\n> Create a jQuery plugin with [Yeoman][], including QUnit unit tests.\n\nThis generator is based of\n[grunt-init-jquery](https://github.com/gruntjs/grunt-init-jquery), authored by the\nmagnificient GruntJS team.\n\nMaintained by [Pascal Hartig](https://github.com/passy).\n\n[Yeoman]: http://yeoman.io/\n\n\n## Installation\n\nInstall this generator by running: `npm install -g generator-jquery`.\n\n\n## Usage\n\nAt the command-line, cd into an empty directory, run this command and follow the prompts.\n\n```\nyo jquery\n```\n\n_Note that this template will generate files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files._\n\n\n## License\n\n[MIT License](http://en.wikipedia.org/wiki/MIT_License)\n",
+  "readmeFilename": "README.md",
+  "_id": "generator-jquery@0.0.10",
+  "_from": "generator-jquery@"
+}

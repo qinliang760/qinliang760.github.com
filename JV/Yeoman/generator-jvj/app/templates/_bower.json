@@ -1,0 +1,8 @@
+{
+  "name": "<%= slugname %>",
+  "version": "<%= props.version %>",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "<%= props.jquery_version ? '~' + props.jquery_version : 'latest' %>"
+  }
+}

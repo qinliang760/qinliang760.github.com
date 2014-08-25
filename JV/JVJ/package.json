@@ -1,0 +1,26 @@
+{
+  "name": "jvj",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qinliang760/qinliang760.github.com/JV/JVJ.git"
+  },  
+  "path":{
+  	"tmpl":["E:/myfile/git_new/qinliang760.github.com/grunt_main/project/html/js.tpl"],
+  	"root":"E:/myfile/git_new/qinliang760.github.com/grunt_main/project/",
+  	"cssRoot":"E:/myfile/git_new/qinliang760.github.com/grunt_main/project/css/",
+  	"jsRoot":"E:/myfile/git_new/qinliang760.github.com/grunt_main/project/js/"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-usemin": "~2.0.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-connect": "*"
+  }
+}

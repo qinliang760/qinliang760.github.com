@@ -1,0 +1,26 @@
+{
+  "name": "<%= slugname %>",
+  "version": "<%= props.version %>",
+  "description": "<%= props.title %>",
+  "keywords": [
+    "jquery-plugin"
+  ],
+  "homepage": "https://github.com/<%= props.github_username %>/<%= slugname %>",
+  "bugs": "<%= props.bugs %>",
+  "author": {
+    "name": "<%= props.author_name %>",
+    "email": "<%= props.author_email %>",
+    "url": "https://github.com/<%= props.github_username %>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= props.github_username %>/<%= slugname %>.git"
+  },
+  "licenses": [
+    {
+      "type": "<%= props.license %>"
+    }
+  ],
+  "devDependencies": {
+  }
+}
