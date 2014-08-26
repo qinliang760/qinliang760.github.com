@@ -1,0 +1,6 @@
+/*
+ * <%= props.name %>
+ *
+ * Copyright (c) <%= currentYear %> <%= props.author_name %>
+ * Licensed under the <%= props.license %> license.
+ */
