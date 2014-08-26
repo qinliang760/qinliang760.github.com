@@ -21,6 +21,12 @@
     "grunt-contrib-watch": "*",
     "grunt-contrib-imagemin": "*",
     "grunt-contrib-jshint": "*",
-    "grunt-contrib-connect": "*"
+    "grunt-contrib-connect": "*",
+    
+    "chalk": "~0.4.0",
+    "compare-version": "~0.1.0",
+    "multiline": "^0.3.4",
+    "pkg-name": "~0.1.0",
+    "yeoman-generator": "~0.16.0"    
   }
 }
