@@ -6,10 +6,10 @@
     "url": "https://github.com/qinliang760/qinliang760.github.com/JV/JVJ.git"
   },  
   "path":{
-  	"tmpl":["E:/myfile/git_new/qinliang760.github.com/grunt_main/project/html/js.tpl"],
-  	"root":"E:/myfile/git_new/qinliang760.github.com/grunt_main/project/",
-  	"cssRoot":"E:/myfile/git_new/qinliang760.github.com/grunt_main/project/css/",
-  	"jsRoot":"E:/myfile/git_new/qinliang760.github.com/grunt_main/project/js/"
+  	"tmpl":["E:/myfile/git_new/qinliang760.github.com/JV/JVJ/jv-plugins"],
+  	"root":"E:/myfile/git_new/qinliang760.github.com/JV/JVJ/jv-plugins",
+  	"cssRoot":"E:/myfile/git_new/qinliang760.github.com/JV/JVJ/jv-plugins",
+  	"jsRoot":"E:/myfile/git_new/qinliang760.github.com/JV/JVJ/jv-plugins"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

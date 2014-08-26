@@ -13,42 +13,74 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		useminPrepare: {//all html
-			html: ["<%= pkg.path.tmpl %>"],
+			html: ["<%= pkg.path.tmpl %>/**/*.html"],
 			options: {
-			      root: "<%= pkg.path.root %>",
-			      dest:"<%= pkg.path.root %>"
+			      root: "<%= pkg.path.root %>/plugins/",
+			      dest:"<%= pkg.path.root %>/plugins/"
 			}			
 		},
 		usemin: {
-			html: ["<%= pkg.path.tmpl %>"]
+			html: ["<%= pkg.path.tmpl %>/**/*.html"]
 		},
 		cssmin: {//all css dir and sub dir
 			minify: {
 		        expand: true,
 		        cwd   : "<%= pkg.path.cssRoot %>",
 		        src   : ['**/*.css', '!*.min.css'],
-		        dest  : "<%= pkg.path.cssRoot %>",
-		        ext   : '.min.css'				
+		        dest  : "<%= pkg.path.cssRoot %>/min"/*,
+		        ext   : '/min/'*/				
 			}
 		},
 		uglify: {//js css dir and sub dir
 	      production : {
 	        src     : ['**/*.js'],
 	        cwd     : "<%= pkg.path.jsRoot %>",
-	        dest    : "<%= pkg.path.jsRoot %>",
-	        expand  : true,
-	        ext     : '.min.js',
+	        dest    : "<%= pkg.path.jsRoot %>/min",
+	        expand  : true/*,
+	        ext     : '.min.js',*/
 	      }
-		}				
+		},
+		connect: {
+			options: {
+				port: 8080,
+				hostname: '127.0.0.1', //默认就是这个值，可配置为本机某个 IP，localhost 或域名
+				livereload: 35729 //声明给 watch 监听的端口
+			},
 
+			server: {
+				options: {
+					open: true,
+					base:"jv-plugins"
+				}
+			}
+		},
+		watch: {
+			livereload: {
+				options: {
+					livereload: '<%=connect.options.livereload%>' //监听前面声明的端口  35729
+				},
+
+				files: [ //下面文件的改变就会实时刷新网页
+					'<%=connect.server.options.base%>/**'//监听主目录下的所有文件
+				]
+			}
+		},
+		jshint: {
+			all: ['jv-plugins/**/*.js']
+		}
 	})
 
  	grunt.loadNpmTasks('grunt-usemin');
  	grunt.loadNpmTasks('grunt-contrib-concat');
  	grunt.loadNpmTasks('grunt-contrib-uglify');
  	grunt.loadNpmTasks('grunt-contrib-cssmin');
+ 	grunt.loadNpmTasks('grunt-contrib-connect'); 	
+ 	grunt.loadNpmTasks('grunt-contrib-watch');
+ 	grunt.loadNpmTasks('grunt-contrib-jshint');
+ 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+ 	grunt.loadNpmTasks('grunt-contrib-htmlmin'); 	 	
 
-  //grunt.registerTask('default', ['useminPrepare','concat', 'uglify', 'cssmin','usemin']);
-  //grunt.registerTask('default', ['cssmin','uglify']);
+  grunt.registerTask('default', ['useminPrepare','concat', 'uglify', 'cssmin','usemin','connect','watch']);
+  //grunt.registerTask('default', ['connect','watch']);
 }
 

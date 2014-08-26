@@ -26,3 +26,24 @@ GRUNT:
     "grunt-contrib-imagemin": "*",	//图片压缩
     "grunt-contrib-jshint": "*",	//JS语法检测
     "grunt-contrib-connect": "*"	//开启一个服务器
+
+
+
+BOWER:
+
+bower支持的各种命令。
+
+    cache:bower缓存管理
+    help:显示Bower命令的帮助信息
+    home:通过浏览器打开一个包的github发布页
+    info:查看包的信息
+    init:创建bower.json文件
+    install:安装包到项目
+    link:在本地bower库建立一个项目链接
+    list:列出项目已安装的包
+    lookup:根据包名查询包的URL
+    prune:删除项目无关的包
+    register:注册一个包
+    search:搜索包
+    update:更新项目的包
+    uninstall:删除项目的包
