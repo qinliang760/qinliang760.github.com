@@ -60,7 +60,16 @@ GRUNT:
 
 假设当前安装目录为：JV/JVJ，安装完后会生成node_modules目录，将用YO生成的generator-jvj生成器放置于该目录下。
 
+可以安装 generator-generator用于自定义生成器 npm install -g generator-generator && yo generator
+
 generator-jvj目录下一定要配置一份package.json文件
+
+依赖组件
+    "chalk": "~0.4.0",
+    "compare-version": "~0.1.0",
+    "multiline": "^0.3.4",
+    "pkg-name": "~0.1.0",
+    "yeoman-generator": "~0.16.0"
 
 
 BOWER:
