@@ -15,8 +15,8 @@ module.exports = function(grunt) {
 		useminPrepare: {//all html
 			html: ["<%= pkg.path.tmpl %>/**/*.html"],
 			options: {
-			      root: "<%= pkg.path.root %>/plugins/",
-			      dest:"<%= pkg.path.root %>/plugins/"
+			      root: "<%= pkg.path.root %>",
+			      dest:"<%= pkg.path.root %>"
 			}			
 		},
 		usemin: {
@@ -27,17 +27,17 @@ module.exports = function(grunt) {
 		        expand: true,
 		        cwd   : "<%= pkg.path.cssRoot %>",
 		        src   : ['**/*.css', '!*.min.css'],
-		        dest  : "<%= pkg.path.cssRoot %>/min"/*,
-		        ext   : '/min/'*/				
+		        dest  : "<%= pkg.path.cssRoot %>",
+		        ext   : '.min.css'				
 			}
 		},
 		uglify: {//js css dir and sub dir
 	      production : {
 	        src     : ['**/*.js'],
 	        cwd     : "<%= pkg.path.jsRoot %>",
-	        dest    : "<%= pkg.path.jsRoot %>/min",
-	        expand  : true/*,
-	        ext     : '.min.js',*/
+	        dest    : "<%= pkg.path.jsRoot %>",
+	        expand  : true,
+	        ext     : '.mn.js',
 	      }
 		},
 		connect: {
@@ -49,12 +49,12 @@ module.exports = function(grunt) {
 
 			server: {
 				options: {
-					open: true,
-					base:"jv-plugins"
+					open: false,
+					base:"."
 				}
 			}
 		},
-		watch: {
+/*		watch: {
 			livereload: {
 				options: {
 					livereload: '<%=connect.options.livereload%>' //监听前面声明的端口  35729
@@ -64,7 +64,18 @@ module.exports = function(grunt) {
 					'<%=connect.server.options.base%>/**'//监听主目录下的所有文件
 				]
 			}
-		},
+		},*/
+		watch: {
+			livereload: {
+				options: {
+					livereload: true
+				},
+
+				files: [ //下面文件的改变就会实时刷新网页
+					'<%=connect.server.options.base%>/**'//监听主目录下的所有文件
+				]
+			}
+		},		
 		jshint: {
 			all: ['jv-plugins/**/*.js']
 		}
@@ -80,7 +91,7 @@ module.exports = function(grunt) {
  	grunt.loadNpmTasks('grunt-contrib-imagemin');
  	grunt.loadNpmTasks('grunt-contrib-htmlmin'); 	 	
 
-  grunt.registerTask('default', ['useminPrepare','concat', 'uglify', 'cssmin','usemin','connect','watch']);
+  grunt.registerTask('default', ['useminPrepare','concat', 'uglify', 'cssmin','usemin','watch']);
   //grunt.registerTask('default', ['connect','watch']);
 }
 
