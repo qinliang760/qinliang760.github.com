@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 	        cwd     : "<%= pkg.path.jsRoot %>",
 	        dest    : "<%= pkg.path.jsRoot %>",
 	        expand  : true,
-	        ext     : '.mn.js',
+	        ext     : '.min.js',
 	      }
 		},
 		connect: {
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-/*		watch: {
+		watch: {
 			livereload: {
 				options: {
 					livereload: '<%=connect.options.livereload%>' //监听前面声明的端口  35729
@@ -64,18 +64,7 @@ module.exports = function(grunt) {
 					'<%=connect.server.options.base%>/**'//监听主目录下的所有文件
 				]
 			}
-		},*/
-		watch: {
-			livereload: {
-				options: {
-					livereload: true
-				},
-
-				files: [ //下面文件的改变就会实时刷新网页
-					'<%=connect.server.options.base%>/**'//监听主目录下的所有文件
-				]
-			}
-		},		
+		},
 		jshint: {
 			all: ['jv-plugins/**/*.js']
 		}
@@ -91,7 +80,7 @@ module.exports = function(grunt) {
  	grunt.loadNpmTasks('grunt-contrib-imagemin');
  	grunt.loadNpmTasks('grunt-contrib-htmlmin'); 	 	
 
-  grunt.registerTask('default', ['useminPrepare','concat', 'uglify', 'cssmin','usemin','watch']);
+  grunt.registerTask('default', ['useminPrepare','concat', 'uglify', 'cssmin','usemin','connect','watch']);
   //grunt.registerTask('default', ['connect','watch']);
 }
 
