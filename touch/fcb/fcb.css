@@ -1,0 +1,57 @@
+body,html{height:100%;}
+    body{margin:0;font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;background:#000;}
+    a, img {
+      -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+    }
+    html, body {
+      -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+      user-select: none;
+    }
+    .g-main{position:relative;width:100%;min-width:320px;max-width:640px;margin:0 auto;min-height:320px;height:100%;overflow:hidden;}
+    .g-content{position:relative;width:100%;height:100%;}
+    .u-videoPlay{position:absolute;left:0;top:0;width:100%;height:50%;}
+    .u-arrow{position:absolute;left:47%;bottom:12%;z-index:999;width:31px;height:30px;background:url(http://wow.nos.netease.com/1/images/touch/fcb/arrow.png) no-repeat;-webkit-animation:down_arrow .5s infinite alternate;-moz-animation:down_arrow .5s infinite alternate}
+    .u-popupPlay{position:absolute;left:0;bottom:0;width:100%;height:50%;}
+    .u-popupWrap{display:none;position:absolute;left:0px;top:0px;width:100%;height:100%;background:url(http://wow.nos.netease.com/1/images/touch/fcb/page_4.png) top center no-repeat;background-size:100% 100%;}
+    .m-screen{position:absolute;left:0px;top:0px;width:100%;height:100%;}
+    .m-screen-1{z-index:99;}
+    .m-screen-2{z-index:98;}
+    .m-screen-3{z-index:97;}
+    .m-bgImg{position:absolute;left:0px;top:0px;width:100%;height:100%;background-size:100% auto;background-color:#000;background-position:top center;background-repeat:no-repeat;}
+    .m-bgImg-1{background-image:url(http://wow.nos.netease.com/1/images/touch/fcb/page_1.jpg);}
+    .m-bgImg-2{background-image:url(http://wow.nos.netease.com/1/images/touch/fcb/page_2.jpg);}
+    .m-bgImg-3{background-image:url(http://wow.nos.netease.com/1/images/touch/fcb/page_3.jpg);}
+    @-moz-keyframes down_arrow {
+      to {
+        bottom: 10%;
+        opacity: .5
+      }
+    }
+    @-webkit-keyframes down_arrow {
+      to {
+        bottom: 10%;
+        opacity: .5
+      }
+    }
+    /* video */
+    #playerHolder {
+      background: #000;
+      max-width: 640px;
+      text-align: center;
+      z-index: 99999;
+      padding-top: 50px;
+    }
+    #video {
+      position: relative;
+      z-index: 99997;
+    }
+    .video_close {
+      background: url("http://hearthstone.nos.netease.com/3/touch/layout/close.png") no-repeat 50% 50%;
+      display: block;
+      height: 30px;
+      position: absolute;
+      right: 3px;
+      top: 3px;
+      width: 30px;
+      z-index: 99998;
+    }

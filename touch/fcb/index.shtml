@@ -1,0 +1,55 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no;" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="apple-mobile-web-app-title" content="魔兽世界官网">
+	<title>同一起点，迎战德拉诺！「魔兽世界」推出限时免费直升90级服务！</title>	
+	<meta name="copyright" content="&copy;2014 暴雪娱乐股份有限公司版权所有 上海网之易网络科技发展有限公司" />
+	<meta name="keywords" content="魔兽世界, WOW，免费角色直升90级，德拉诺之王，同一起点，迎战德拉诺，叮90，FCB，免费直升。" />
+	<meta name="description" content="访问魔兽世界中文官方网站，获取最时事的魔兽世界官方动态，参与丰富的魔兽世界官方活动，查阅最权威丰富的魔兽世界资讯" />
+	<link rel="stylesheet" href="fcb.css">
+	<style media="all and (orientation:landscape)" type="text/css">
+		.m-bgImg{background-size:auto 100%;}
+		.u-popupWrap{background-size:auto 100%;}
+	</style>		
+</head>
+<body>
+<div class="g-main">
+	<div class="g-content" id="content" data-index="1">
+		<section class="m-screen m-screen-1" id="screen_1">
+			<article class="m-bgImg m-bgImg-1">
+				<div class="u-arrow"></div>
+			</article>
+		</section>
+		<section class="m-screen m-screen-2" id="screen_2">
+			<article class="m-bgImg m-bgImg-2">
+				<div class="u-arrow"></div>
+			</article>
+		</section>
+		<section class="m-screen m-screen-3" id="screen_3">
+			<article class="m-bgImg m-bgImg-3">
+				<div class="u-videoPlay" id="s4_play" data-mp4="http://flv.bn.netease.com/videolib3/1410/11/kjGlb9764/SD/kjGlb9764-mobile.mp4"></div>
+				<div class="u-popupPlay" id="j-popupPlay"></div>
+				<div class="u-popupWrap" id="j-popupWrap"></div>
+			</article>
+		</section>
+
+	</div>
+</div>
+
+
+<!-- build:js /js/touch/fcb.min.js -->
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/fastclick.js"></script>
+<script type="text/javascript" src="fcb.js"></script>
+<!-- endbuild -->
+<script type="text/javascript">
+fcb.init();	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!--include virtual="/tmpl/touch/common/meta.html" -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no;" name="viewport" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="apple-mobile-web-app-title" content="炉石传说官网">	
+<!--include virtual="/tmpl/touch/common/meta.html" -->
+	<title>冒险模式大挑战 分享赢好礼_《炉石传说》官方网站</title>	
+	<meta name="copyright" content="&copy;2014 暴雪娱乐股份有限公司版权所有 上海网之易网络科技发展有限公司" />
+	<meta name="keywords" content="炉石传说,炉石传说官网,炉石传说冒险模式,国服,炉石传说下载,炉石传说ipad版,炉石传说naxx,炉石传说充值,魔兽英雄传,炉石传说攻略,炉石传说卡组,暴雪出品" />
+	<meta name="description" content="暴雪首款免费游戏-PC/iOS双平台休闲卡牌大作。全新冒险模式“纳克萨玛斯的诅咒”来袭，5大区域，15位 首领等你来挑战。" />
+	<!--include virtual="/tmpl/touch/common/icon.html" -->
+<link rel="icon" href="http://hearthstone.nos.netease.com/3/common/hs.ico" type="image/x-icon"/>
+<link rel="apple-touch-icon" sizes="57x57" href="http://hearthstone.nos.netease.com/3/touch/layout/57X57.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://hearthstone.nos.netease.com/3/touch/layout/114x114.png" />
+	<!--include virtual="/tmpl/touch/common/icon.html" -->
+
+
+	<!-- build:css /css/touch/naxx.min.css -->
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">		
+	<link rel="stylesheet" href="naxx.css">
+	<!-- endbuild -->
+</head>
+
+
+<body>
+<div class="main">
+	<div class="content" id="content" data-index="1">
+		<section class="screen" id="screen_1">
+			<div class="s1_slogan" data-class="s1_ani_slogan">
+				<img class="s1_up" src="http://hearthstone.nos.netease.com/3/touch/naxx/s1_slogan.png">
+				<img class="s1_cover" src="http://hearthstone.nos.netease.com/3/touch/naxx/s1_slogan.png">
+			</div>
+			<div class="s1_spider" data-class="s1_ani_spider">
+				<img src="http://hearthstone.nos.netease.com/3/touch/naxx/s1_spider.png">
+				<!-- <img class="s1_spider_cover" src="http://hearthstone.nos.netease.com/3/touch/naxx/s1_arrow.png"> -->
+			</div>
+			<img class="common_arrow" src="http://hearthstone.nos.netease.com/3/touch/naxx/common_arrow.png">
+			<a class="s1_playmusic s1_ani_playmusic" data-play="y" href="javascript:;">
+				<img src="http://hearthstone.nos.netease.com/3/touch/naxx/icon_music.png">
+				<audio id="play_music" loop autoplay>
+					<source src="http://hearthstone.nos.netease.com/3/touch/naxx/naxx_music.mp3" type="audio/mpeg">
+				</audio>
+			</a>
+			<!-- <div class="s1_hand" data-class="s1_ani_hand">
+				<img src="http://hearthstone.nos.netease.com/3/touch/naxx/hand.png">
+			</div> -->
+		</section>
+		<section class="screen" id="screen_2">
+			<article><a href="#" class="c_coffee">三大模式重磅来袭</a></article>
+			<div class="s2_box" id="s2_box1" data-class="s2_ani_box">
+				<img class="s2_ground" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_box.png">
+				<img class="s2_line" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_line.png">
+				<img class="s2_cont" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_item1.png">
+			</div>
+			<div class="s2_box" id="s2_box2" data-class="s2_ani_box">
+				<img class="s2_ground" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_box.png">
+				<img class="s2_line" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_line.png">
+				<img class="s2_cont" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_item2.png">
+			</div>
+			<div class="s2_box" id="s2_box3" data-class="s2_ani_box">
+				<img class="s2_ground" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_box.png">
+				<img class="s2_line" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_line.png">
+				<img class="s2_cont" src="http://hearthstone.nos.netease.com/3/touch/naxx/s2_item3.png">
+			</div>
+			<img class="common_arrow" src="http://hearthstone.nos.netease.com/3/touch/naxx/common_arrow.png">
+		</section>
+		<section class="screen" id="screen_3">
+			<article><a href="#" class="c_white">全新卡牌奖励</a></article>
+			<p class="small_slogan small_c_yellow">一路过关斩将 30张全新卡牌<br>是征战纳克萨玛斯的勇士专属的徽章</p>
+			<div class="s3_cardbox" data-class="s3_ani_cardbox">
+				<img class="s3_card1" src="http://hearthstone.nos.netease.com/3/touch/naxx/s3_card1.png">
+				<img class="s3_card2" src="http://hearthstone.nos.netease.com/3/touch/naxx/s3_card2.png">
+				<img class="s3_card3" src="http://hearthstone.nos.netease.com/3/touch/naxx/s3_card3.png">
+				<span class="s3_hidden_show"><img src="http://hearthstone.nos.netease.com/3/touch/naxx/s3_card4.png"></span>
+			</div>
+			<img class="common_arrow" src="http://hearthstone.nos.netease.com/3/touch/naxx/common_arrow.png">
+		</section>
+		<section class="screen" id="screen_4">
+			<article><a href="#" class="c_orange">单人冒险模式</a></article>
+			<p class="small_slogan small_c_coffee">曾经四十名勇士并肩作战<br>而今孤独的英雄只能以一己之力扭转乾坤<br>你准备好了吗？</p>
+			<div class="s4_bg" data-class="s4_ani_bg">
+				<span class="s4_play_bg"></span>
+				<span class="s4_play" id="s4_play" data-mp4="http://flv.bn.netease.com/videolib3/1407/23/lqjTL9231/HD/lqjTL9231-mobile.mp4">
+					<img src="http://hearthstone.nos.netease.com/3/touch/naxx/s4_play_arrow.png">
+				</span>
+			</div>
+			<img class="common_arrow" src="http://hearthstone.nos.netease.com/3/touch/naxx/common_arrow.png">
+		</section>
+		<section class="screen" id="screen_5">
+			<article><a href="#" class="c_white">最经典魔兽副本</a></article>
+			<p class="small_slogan small_c_gray">纳克萨玛斯盛夏来袭   五大区域 十五个经典首领<br>谁能拯救旅馆？</p>
+			<div class="s5_heroes_box" data-class="s5_ani_heroes">
+				<img class="s5_line" src="http://hearthstone.nos.netease.com/3/touch/naxx/s5_line.png">
+				<img class="s5_heroes" id="s5_heroes1" src="http://hearthstone.nos.netease.com/3/touch/naxx/s5_heroes1.png">
+				<img class="s5_heroes" id="s5_heroes2" src="http://hearthstone.nos.netease.com/3/touch/naxx/s5_heroes2.png">
+				<img class="s5_heroes" id="s5_heroes3" src="http://hearthstone.nos.netease.com/3/touch/naxx/s5_heroes3.png">
+				<img class="s5_heroes" id="s5_heroes4" src="http://hearthstone.nos.netease.com/3/touch/naxx/s5_heroes4.png">
+				<img class="s5_heroes" id="s5_heroes5" src="http://hearthstone.nos.netease.com/3/touch/naxx/s5_heroes5.png">
+			</div>
+			<img class="common_arrow" src="http://hearthstone.nos.netease.com/3/touch/naxx/common_arrow.png">
+		</section>
+		<section class="screen" id="screen_6">
+			<article><a href="#" class="c_white">揭开死灵浮空城的秘密</a></article>
+			<p class="small_slogan small_c_gray">分享此活动，截图赢好礼！</p>
+			<div class="s6_box" data-class="s6_ani_box" id="s6_box">
+				<img class="s6_kulou" src="http://hearthstone.nos.netease.com/3/touch/naxx/s6_kulou.png">
+				<img class="s6_eye" id="s6_eye_left" src="http://hearthstone.nos.netease.com/3/touch/naxx/s6_eye_left.png">
+				<img class="s6_eye" id="s6_eye_right" src="http://hearthstone.nos.netease.com/3/touch/naxx/s6_eye_right.png">
+				<img class="s6_slogan" src="http://hearthstone.nos.netease.com/3/touch/naxx/s6_slogan.png">
+			</div>
+			<a href="/" class="s6_enter">
+				<img src="http://hearthstone.nos.netease.com/3/touch/naxx/s6_iphone.png">
+				<span>进入手机版官网</span>
+			</a>
+			<p class="s6_copyright">©2014 暴雪娱乐股份有限公司版权所有<br>由上海网之易网络科技发展有限公司运营</p>
+			<section class="s6_cover" id="s6_cover">
+				<p class="s6_green">--活动时间：</p>
+				<p class="s6_grap">8月5日-8月31日</p>
+				<p class="s6_green">--活动规则：</p>
+				<p class="s6_grap">1.分享活动至微信朋友圈并截图，图片发送到《炉石传说》公众账号。</p>
+				<p class="s6_grap">2.发送截图时请附上联系电话以确保奖励及时发放。如果联系信息缺失，视作放弃参与抽奖。</p>
+				<p class="s6_green">--活动奖励：</p>
+				<p class="s6_grap">《炉石传说》经典围裙、限量版IPad保护壳、限量T恤、战网点数15点、30点等。</p>
+				<p class="s6_green">--奖励发放：</p>
+				<p class="s6_grap">1.每天随机抽取20名幸运玩家。</p>
+				<p class="s6_grap">2.每天具体奖励会在当天的官方微博上公布。</p>
+				<p class="s6_grap">3.虚拟奖励，当天发放。周边实物奖励5个工作日后发放。</p>
+   				<p class="s6_grap">4.获奖名单会在通过炉石公众账号进行公布。</p>
+   				<div id="s6_close"><img src="http://hearthstone.nos.netease.com/3/touch/naxx/s6_close.png"></div>
+   				<img class="s6_share" src="http://hearthstone.nos.netease.com/3/touch/naxx/s6_share.png">
+			</section>
+		</section>
+	</div>
+</div>
+
+
+<!-- build:js /js/touch/naxx.min.js -->
+<script type="text/javascript" src="../js/zepto.js"></script>
+<script type="text/javascript" src="../js/fastclick.js"></script>
+<script type="text/javascript" src="naxx.js"></script>
+<!-- endbuild -->
+<script type="text/javascript">
+	Naxx.init();
+	//Naxx.playVideo($("#s4_play"),$("#content"));
+	//Naxx.ctrlS6_cover();
+	//Naxx.ctrlS3_card_leave();
+	/*$("#content").click(function(){
+		Naxx.setParallax($("#screen_3 div"));
+	})*/
+</script>
+
+</body>
+</html>

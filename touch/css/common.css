@@ -1,0 +1,458 @@
+* {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);/* 去掉点击链接和文本框对象的半透明覆盖层(iOS)或者虚框(Android) */
+    -webkit-box-sizing:border-box;/* 翻转盒模型(width定义变为包含padding border-width,不含margin) */
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box
+}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select {
+    margin:0;
+    padding:0
+}
+body,input,textarea,select,button,table {
+    line-height:18px;
+}
+html,body {
+    min-width:320px;
+    font-size: 12px;
+    font-family:Arial,Verdana,'microsoft yahei',Helvetica,sans-serif;
+    color:#473522;
+    background: #e6d3a8;
+    position: relative;
+    word-break:break-all;
+    word-wrap:break-word;
+    -webkit-text-size-adjust:none;/* 禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化) */
+}
+/*-----clearFix-----*/
+.clearFix:after{
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    content: ".";
+}
+.clearFix{ display: block;*display: inline-block; }
+/*图片视频自适应*/
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align:top
+}
+.video embed,
+.video object,
+.video iframe {
+    width: 100%;
+    height: auto;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+}
+
+a {
+    color:#E22C14;  
+    text-decoration:none;
+    outline:none;
+}
+section {
+    display: block;
+}
+.loading {
+    text-align: center;
+    padding-top: 50px;
+    display: block;
+}
+/* 整体页面样式 */
+.main{
+    width:100%;
+    min-width:320px;
+    margin:0 auto;
+    max-width:640px;
+    min-height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+#wrapper {
+  display: none;
+}
+/* 图片切换样式 */
+.scroll-wrapper {
+    position: relative;
+}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+.swipe-wrap > div .videoPlay {
+    width: 80px;
+    height: 80px;
+    display: block;
+    top: 50%;
+    margin-top: -40px;
+    left: 50%;
+    margin-left: -40px;
+    border-radius: 80px;
+    position: absolute;
+    -webkit-background: url("http://hearthstone.nos.netease.com/3/touch/layout/play-icon.png") rgba(0,0,0,0.5) no-repeat 56% 50%;
+    background: url("http://hearthstone.nos.netease.com/3/touch/layout/play-icon.png") rgba(0,0,0,0.5) no-repeat 56% 50%;
+    -webkit-background-size: 25px 28px;
+    background-size: 25px 28px;
+}
+.swipe-wrap > div img{
+    width: 100%;
+    min-width:320px;
+    max-width:640px;
+    height:auto!important;
+}
+.scrollMask {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0),rgba(0,0,0,0.75)); 
+}
+.banner-num {
+    position:absolute;
+    left:0;
+    bottom:10px;
+    width:100%;
+    height:10px;
+    display:table;
+    text-align:center;
+}
+.banner-num li {
+    display:inline-block;
+    width:7px;
+    height:7px;
+    margin-left:7px;
+    border-radius:6px;
+    background-color:#646464;
+    text-indent:-9999px;
+}
+.banner-num li.on {
+    background-color:#fff;
+}
+/* 二级页面头部菜单 */
+#subpageNav {
+    width: 100%;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    color: #fff;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient:horizontal;
+    -moz-box-orient:horizontal;
+    background: #570c00;
+    position: relative;
+}
+#subpageNav h2 {
+    padding-right: 45px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.backBtn {
+    width: 45px;
+    height: 42px;
+    display: block;
+    background: #891508;
+    margin: 0 1px;
+    background-image: url("http://hearthstone.nos.netease.com/3/touch/layout/back_icon.jpg");
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+    background-position: 50% 50%;
+    border-left: 1px solid #991506;
+    border-right: 1px solid #991506;
+    border-bottom: 1px solid #991506;
+}
+.flex1 {
+    -webkit-box-flex:1;
+    -moz-box-flex:1;
+    height: 42px;
+    display: block;
+    background: #661609;
+    margin-right: 1px;
+    border-left: 1px solid #731a10;
+    border-right: 1px solid #731a10;
+    border-bottom: 1px solid #731a10;
+}
+.home {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    background-image: url("http://hearthstone.nos.netease.com/3/touch/layout/home-icon.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: 24px 24px;
+    background-size: 24px 24px;
+}
+/* 查看更多按钮样式 */
+.moreWrapper {
+    border-top: 1px solid #ffe8bb;
+    margin: 0 10px;
+    padding: 10px 0;
+    display: none;
+}
+.showMore {
+    width: 100%;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    color: #aa9075;
+    text-align: center;
+    margin: 0 auto;
+    background: #e6d1a8;
+    border: 1px solid #ffe8bb;
+    box-shadow: 0 0 1px #7a6028;
+    display: block;
+}
+/*返回顶部按钮和加入手机桌面图标*/
+ .scrolltop, .addDesk { 
+    cursor: pointer;
+    display:none; 
+    position:fixed; 
+    height:38px; 
+    width:38px; 
+    z-index:99; 
+    border-radius:5px; 
+  }
+.scrolltop {
+    right:8px; 
+    bottom: 50px;
+    background:rgba(71, 53, 34, .5) url("http://hearthstone.nos.netease.com/3/touch/layout/gotop.png") 50% 50% no-repeat;
+    -webkit-background-size: 25px 24px; 
+    background-size: 25px 24px;
+}
+.addDesk {
+    right:8px; 
+    bottom: 8px;
+    background:rgba(71, 53, 34, .5) url("http://hearthstone.nos.netease.com/3/touch/layout/adddesk.png") 50% 50% no-repeat;
+    -webkit-background-size: 26px 26px; 
+    background-size: 26px 26px;
+}
+/* 底部 */
+footer {
+    width:100%;
+    min-width:320px;
+    margin:0 auto;
+    max-width:640px;
+    background: #1a1226;
+    padding: 10px 0;
+    color: #753820;
+    text-align: center;
+}
+footer section {
+    background: none;
+    padding: 5px 0;
+}
+footer a {
+    display: inline-block;
+    color: #995938;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+}
+footer a.current {
+  color: #e78d2c;
+}
+footer .bar {
+    display:inline-block;
+    margin:0 15px;
+    font-size: 14px;
+}
+.yixin {
+    padding-left: 22px;
+    background-image:url("http://hearthstone.nos.netease.com/3/touch/layout/yixin-icon.png");
+    background-image:-webkit-cross-fade(url("http://hearthstone.nos.netease.com/3/touch/layout/yixin-icon.png"),10%);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 18px 18px;
+}
+.weichat {
+    padding-left: 24px;
+    background-image:url("http://hearthstone.nos.netease.com/3/touch/layout/weichat-icon.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 18px 18px;
+}
+p.copyright {
+    font-size: 9px;
+    -webkit-transform: scale(0.75)
+}
+
+/*loading样式*/
+.spinner {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  margin-top: 0;
+  margin-bottom: 10px;
+  left: 50%;
+  margin-left: -10px;
+  position: relative;
+}
+ 
+.container1 > div, .container2 > div, .container3 > div {
+  width: 6px;
+  height: 6px;
+  background-color: #473522;
+ 
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner .spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+ 
+.container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+ 
+.container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+ 
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+ 
+.container2 .circle1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+ 
+.container3 .circle1 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+.container1 .circle2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+ 
+.container2 .circle2 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+ 
+.container3 .circle2 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+ 
+.container1 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+ 
+.container2 .circle3 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+ 
+.container3 .circle3 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+ 
+.container1 .circle4 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+ 
+.container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+ 
+.container3 .circle4 {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+
+/* 404等页面的样式 */
+.errors {
+  margin: 0 auto 100px;
+}
+.errorWrapper {
+  width: 180px;
+  height: 180px;
+  display: block;
+  border-radius: 180px;
+  background: #e1c796;
+  margin: 60px auto 0;
+  border: 1px solid #ecddb7;
+  position: relative;
+}
+.errors h2.num {
+  font-size: 60px;
+  line-height: 60px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding-top: 50px;
+}
+.errors p {
+  padding-top: 20px;
+  text-align: center;
+}
+.errors .icon {
+  width: 65px;
+  height: 80px;
+  display: block;
+  top: -25px;
+  left: 65px;
+  position: absolute;
+  background-image:url("http://hearthstone.nos.netease.com/3/touch/layout/sd.gif");
+  -webkit-background-size: 65px 80px;
+  background-size: 65px 80px;
+}
+.errors p.tip {
+  padding-top: 5px;
+}
+.errors .back {
+  padding-top: 20px;
+  border-bottom: 1px dotted #E22C14;
+}
