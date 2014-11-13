@@ -108,34 +108,37 @@ $.ns("JV");
                     c_index=self.index,//当前的索引
                     sectoinL=self.items.length;
                     
-                //sectoinL/4 屏幕的四分之一    
-                if (touch_y - self.startY <= 0) {
+                  
+                if (touch_y - self.startY <= 0) {//向上滑动
 
                     if(c_index ==sectoinL - 1 ){//最后一张
                         self.animated=false;
                         return;
                     } 
-
-                    if(run_y>=self.wH/4){
-
+                    if (c_index >= 1) {//防止快速上下拖动，顶上图片错位
+                        $(".m-section" + c_index).css("-webkit-transform", "translateY(-" + self.wH + "px)");
+                    }
+                    if(run_y>=self.wH/4){//self.wH/4 屏幕的四分之一  
                         self.setScaleSmall(c_index + 1,"up");
                         self.setTranslateSmall(c_index + 2,"up")
 
-                    }else{
 
+                    }else{
                         self.setScaleLarge(c_index + 1,"up");
                         self.setTranslateLarge(c_index+2,"up");
 
                     }
  
-                }else{
+                }else{//向下滑动
                     if(c_index ==0 ){//第一张
                         self.animated=false;
                         return;
                     }   
-
+                    if (c_index < sectoinL - 1) {//防止快速上下拖动，顶上图片错位
+                        $(".m-section" + (c_index + 2)).css("-webkit-transform", "translateY(" + self.wH + "px)");
+                    }
                     if(run_y>=self.wH/4){
-
+                        
                         self.setScaleSmall(c_index + 1,"down");
                         self.setTranslateSmall(c_index,"down");
 
