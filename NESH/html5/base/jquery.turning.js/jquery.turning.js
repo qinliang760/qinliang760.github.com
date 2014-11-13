@@ -32,13 +32,24 @@ $.ns("JV");
         startY:null,
         wH:$(window).height(),
         wW:$(window).width(),
-        speed:200,        
-        setModel:function(){
+        speed:200,
+        animated:false,        
+        setItemsStyle:function(){
+            var self=this;
+            $.each(self.items,function(k,v){
+                if(k!=0){
+                    $(v).css({
+                        "-webkit-transform": "translateY(" + self.wH + "px)",
+                        "-moz-transform": "translateY(" + self.wH + "px)"
+                    })                    
+                }
+            })
 
         },
         init: function() {
             var self=this;
 
+            self.setItemsStyle();
             self.items.bind("touchstart",function(e){
                 var target=e.targetTouches[0];
                 self.startY=target.pageY;
@@ -79,6 +90,7 @@ $.ns("JV");
             })
             
             self.items.bind("touchend",function(e){
+                e.preventDefault();
                 var target=e.changedTouches[0],
                     touch_y=target.pageY,
                     run_y=Math.abs(touch_y-self.startY),
@@ -86,46 +98,84 @@ $.ns("JV");
                     sectoinL=self.items.length;
 
                 //sectoinL/4 屏幕的四分之一    
-                if (touch_y - self.startY <= 0 && run_y>=self.wH/4 && c_index < sectoinL - 1) {
-                    
+                if (touch_y - self.startY <= 0) {
 
-                    $(".m-section" + (c_index + 1)).animate({
-                        "-webkit-transform": "scale(0)"
-                    }, self.speed, function() {
-                        $(this).css({
-                            "-webkit-transform": "scale(1) translateY(-" + self.wH + "px)"
-                        });
-                        self.index++;
-
-                    });
-                    $(".m-section" + (c_index + 2)).animate({
-                        "-webkit-transform": "translateY(0px)"
-                    }, self.speed,function(){
-
-                    }); 
-                }else{
-                    if(c_index >= sectoinL - 1){//最后一张
+                    if(c_index ==sectoinL - 1 ){//最后一张
                         return;
+                    } 
+
+                    if(run_y>=self.wH/4){
+                        $(".m-section" + (c_index + 1)).animate({
+                            "-webkit-transform": "scale(0)"
+                        }, self.speed, function() {
+                            $(this).css({
+                                "-webkit-transform": "scale(1) translateY(-" + self.wH + "px)"
+                            });
+                            self.index++;
+
+                        });
+                        $(".m-section" + (c_index + 2)).animate({
+                            "-webkit-transform": "translateY(0px)"
+                        }, self.speed,function(){
+
+                        });
+                    }else{
+                        $(".m-section" + (c_index + 1)).animate({
+                            "-webkit-transform": "scale(1)"
+                        }, self.speed, function() {
+                            $(this).css({
+                                "-webkit-transform": "scale(1) translateY(0px)"
+                            });
+
+                        });
+                        $(".m-section" + (c_index + 2)).animate({
+                            "-webkit-transform": "translateY(" + self.wH + "px)"
+                        }, self.speed, function() {
+
+                        });
                     }
+ 
+                }else{
                     if(c_index ==0 ){//第一张
                         return;
-                    }                     
-                    $(".m-section" + c_index).animate({
-                        "-webkit-transform": "translateY(0px)"
-                    }, self.speed, function() {
-                        $(this).css({
-                            "-webkit-transform": "scale(1) translateY(0px)"
-                        });
-                        self.index--;
+                    }   
 
-                    });
-                    $(".m-section" + (c_index + 1)).animate({
-                        "-webkit-transform": "scale(0)"
-                    }, self.speed,function(){
-                        $(this).css({
-                            "-webkit-transform": "scale(1) translateY(" + self.wH + "px)"
+                    if(run_y>=self.wH/4){
+                        $(".m-section" + c_index).animate({
+                            "-webkit-transform": "translateY(0px)"
+                        }, self.speed, function() {
+                            $(this).css({
+                                "-webkit-transform": "scale(1) translateY(0px)"
+                            });
+                            self.index--;
+
                         });
-                    }); 
+                        $(".m-section" + (c_index + 1)).animate({
+                            "-webkit-transform": "scale(0)"
+                        }, self.speed, function() {
+                            $(this).css({
+                                "-webkit-transform": "scale(1) translateY(" + self.wH + "px)"
+                            });
+                        });
+                    }else{
+                        $(".m-section" + c_index).animate({
+                            "-webkit-transform": "scale(0px)"
+                        }, self.speed, function() {
+                            $(this).css({
+                                "-webkit-transform": "scale(1) translateY(" + self.wH + "px)"
+                            });
+
+                        });
+                        $(".m-section" + (c_index + 1)).animate({
+                            "-webkit-transform": "scale(1)"
+                        }, self.speed, function() {
+                            $(this).css({
+                                "-webkit-transform": "scale(1) translateY(0px)"
+                            });
+                        });
+
+                    }
+
                 }                    
             })
 
