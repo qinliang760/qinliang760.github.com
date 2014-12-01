@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>demo</title>
+
+
+  
+<style>
+*,html,body{
+    margin:0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;    
+}
+#canvasArea{
+    display: block;
+    margin:0 auto;
+}
+</style>
+
+</head>
+<body>
+
+
+<canvas id="canvasArea" width="950" height="594"></canvas>
+
+
+
+<script src="../../base/jquery-1.7.2.min.js" language="javascript"></script>
+
+<script>
+$(function(){
+  var ctx = document.getElementById('canvasArea').getContext('2d');  
+  
+  var a=0,c=0;
+draw();
+  //window.requestAnimationFrame(draw);
+function draw() {  
+      a++;
+      ctx.beginPath();
+      ctx.moveTo(50,50);
+
+      
+
+      if(a>50){
+        c++;
+        ctx.save();
+        ctx.moveTo(100,50);
+        ctx.lineTo(100,(50+c));
+        ctx.stroke();
+        //ctx.stroke();
+      }else{
+        ctx.lineTo((50+a)%101,50);
+        console.log((50+a)%101);
+      }
+      
+
+      
+      ctx.stroke();
+     
+
+          var b=window.requestAnimationFrame(draw);
+
+     if(a==200){
+        window.mozCancelAnimationFrame(b);
+     }
+ }   
+})
+</script>
+</body>
+</html>
