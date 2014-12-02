@@ -33,51 +33,77 @@ $.ns("JV");
          * @param  {obj} cfg
          */
         
-        setMotion: function() {
-        	var x=y=endX=endY=0;
-        	var self=this/*,isLoadImg=false*/;
+		setMotion: function() {
+			var x = y = endX = endY = 0;
+			var self = this;
+			self.isLoad = false;
+			var last_update = 0;
 
-        	if (window.DeviceMotionEvent){
-	            $(window).bind("devicemotion",function(event){
-	                event.preventDefault();	
-	                var acceleration = event.accelerationIncludingGravity;
-	                x = acceleration.x;
-	                y = acceleration.y;
 
-					if (Math.abs(x - endX) > self.speed || Math.abs(y - endY) > self.speed) {
-/*						if(isLoadImg){
-							return;
-						}
-						isLoadImg=true;*/
-						var randomNum=self.getRandom(self.data.length);
-						var code_name=self.data[randomNum].code.replace(/[\s:]/g, "+");
-						var img="http://hearthstone.nos.netease.com/1/l-cards/cards/"+self.data[randomNum].cardClass+"/"+code_name+".png";						
-						$(".imgBox").html('<p>这是第'+randomNum+'张卡牌，共有'+self.data.length+'张卡牌</p><img id="cardImg" src='+img+'>');	
-						
-						
+			if (window.DeviceMotionEvent) {
+				$(window).bind("devicemotion", function(event) {
+					event.preventDefault();
+
+
+					var acceleration = event.accelerationIncludingGravity;
+					x = acceleration.x;
+					y = acceleration.y;
+					var curTime = new Date().getTime();
+
+					if ((curTime - last_update) > 1000) {//摇的时间大于1秒
+
+						setTimeout(function() {
+							if (Math.abs(x - endX) > self.speed || Math.abs(y - endY) > self.speed) {
+								if (self.isLoad) {
+									return;
+								}
+
+								self.isLoad = true;
+								var randomNum = self.getRandom(self.data.length);
+								var code_name = self.data[randomNum].code.replace(/[\s:]/g, "+");
+								var img = "http://hearthstone.nos.netease.com/1/l-cards/cards/" + self.data[randomNum].cardClass + "/" + code_name + ".png";
+
+
+								$(".imgBox .imgTxt").text('这是第' + randomNum + '张卡牌，共有' + self.data.length + '张卡牌');
+								$(".imgBox .imgArea").html('<img class="imgLoad" src="http://hearthstone.nos.netease.com/3/cards/cards_loading.gif" alt="">');
+
+								self.setImgLoad(img, function() {
+									$(".imgBox .imgArea").html('<img id="cardImg" src=' + img + '>');
+									self.isLoad = false;
+									endX = x;
+									endY = y;
+									last_update = curTime;
+								})
+
+
+							}
+						}, 500);
+
+
 					}
 
 
-					/*$("#cardImg").bind("load",function(){
-						if($("#cardImg")[0].complete){
-							isLoadImg=false;
-							$(".imgTxt").html("卡牌加载完成")
-						}else{
-							isLoadImg=true;
-							$(".imgTxt").html("卡牌加载中")
-						}
-					})*/
-					endX = x;
-                	endY = y;
 
-	                return false;
-	            })        		
-        	}
+				})
+			}
 
-/* window.addEventListener('devicemotion', function () {
- 	alert(1);
- },false)*/
 
+		},
+        setImgLoad:function(img,callback){
+        	var self=this;
+        	var pic=new Image();
+        	pic.src=img;
+		    if(pic.complete){
+		        callback();
+		    }else{
+		        pic.onload=function(){
+		        	callback();
+		        }
+		        pic.onerror=function(){
+		            $(".imgBox .imgArea").html('图片加载失败');
+		            self.isLoad=false;
+		        }        
+		    }       	
         },
         getRandom:function(num){
 			return Math.round(Math.random() * num);
