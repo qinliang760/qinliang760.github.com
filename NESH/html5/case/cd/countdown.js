@@ -1,7 +1,7 @@
 ﻿var RADIUS = 4;// 小球半径
 var MARGIN_LEFT = 60;// 左边距
 var MARGIN_TOP = 30;// 上边距
-var endTime = new Date(2014,7,27,11,0,0);// 时间
+var endTime = new Date(2014,12,02,19,0,0);// 时间
 var curShowTimeSeconds = 0;// 当前是秒数
 
 var balls = [];
@@ -64,7 +64,7 @@ function updateBalls(){
 			balls[i].vy+=balls[i].g;
 		}
 	}
-	log.console(balls.length);
+	//log.console(balls.length);
 }
 
 function addBalls(x,y,num){
@@ -98,7 +98,7 @@ function render(ctx){
 	var hours = parseInt(curShowTimeSeconds/3600);
 	var minutes = parseInt((curShowTimeSeconds%3600)/60);
 	var seconds = parseInt(curShowTimeSeconds%60);
-	
+
 	renderDigit(MARGIN_LEFT,MARGIN_TOP,parseInt(hours/10),ctx);
 	renderDigit(MARGIN_LEFT+15*(RADIUS+1),MARGIN_TOP,parseInt(hours%10),ctx);
 	renderDigit(MARGIN_LEFT+30*(RADIUS+1),MARGIN_TOP,10,ctx);
