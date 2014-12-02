@@ -14,6 +14,8 @@ $.ns("JV");
     JV.scratch = function(Jnode, cfg) {
         var defaults = {
 			srcNode:Jnode,
+            canvas:"#scratch",
+            img:".pic",
             eraser: 0,
             realtime: true,
             size: 10,
@@ -51,7 +53,6 @@ $.ns("JV");
         
  		initializer: function() {
             var self = this;
-            //self = self.getAttrVals();
 
             self.$el = self.srcNode;
             if (self._supportCanvas()) {
@@ -60,65 +61,41 @@ $.ns("JV");
             };
 
             self.enabled = true;
-            self.canvas = $("#cc")[0];
+            self.canvas = $(this.cfg.canvas)[0];
             self.ctx = self.canvas.getContext('2d');
 
-            if (self.$el.css('position') === 'static') {
-                self.$el.css('position', 'relative');
-            }
-            self.$img = $('.pic');
-            if (self.bgOrigin) {
-                self.$img.attr('crossOrigin', '*')
-            };
-            if (self.bgSize) {
-                self.$img.css({
-                    position: 'absolute',
-                    width: self.bgSize.width,
-                    height: self.bgSize.height
-                });
-            } else {
-                self.$img.css({
-                    //position: 'absolute',
-                    //width: '100%'
-                });
-            };
+
+            self.$img = $(this.cfg.img);
+
+            self.setImgLoad(self.$img.attr("src"),function(){
+                self.canvas.width=self.$img.width();
+                self.canvas.height=self.$img.height();
+            })
 
 
-            self.$scratchpad = $(self.canvas).css({
-                position: 'absolute',
-                //width: '100%',
-                //height: '100%'
-            });
-
+            self.$scratchpad=$(self.canvas);
             self.$el.append(self.$img).append(self.$scratchpad);
             self.ctx.beginPath();
             self.ctx.arc(10, 10, 10, 0, Math.PI * 2, true);
             self.ctx.fill();
             self.ctx.stroke();
             self.render();
-            //self._addEvent();
             self._bindEvents();
         },
-        _addEvent: function() {
-            var self = this;
-            self.on('destroy', function() {
-                self.$el.children().remove();
-            })
-            self._onSetBg = function() {
-                self = self.getAttrVals();
-            };
-            self._onSetFg  =function() {
-                self = self.getAttrVals();
-            };
-            self._onSetRealtime = function() {
-                self = self.getAttrVals();
-            };
-            self._onSetSize = function() {
-                self = self.getAttrVals();
-            };
-            self._onSetCursor = function() {
-                self = self.getAttrVals();
-            };
+        setImgLoad:function(img,callback){
+            var self=this;
+            var pic=new Image();
+            pic.src=img;
+            if(pic.complete){
+                callback();
+            }else{
+                pic.onload=function(){
+                    callback();
+                }
+                pic.onerror=function(){
+
+                }        
+            }           
         },
         render: function() {
             var self = this,
@@ -140,7 +117,7 @@ $.ns("JV");
             self.pixels = width * devicePixelRatio * height * devicePixelRatio;
 
             // Default to image hidden in case no bg or color is set.
-            self.$img.hide();
+            //self.$img.hide();
 
             if (self.bg) {
                 //if (self.bg.charAt(0) === '#') {
@@ -187,7 +164,7 @@ $.ns("JV");
         },
         _bindEvents: function() {
             var self = this;
-            self.$scratchpad.on("mousedown", function(event) {
+            self.$scratchpad.on("touchstart", function(event) {
                 if (!self.enabled) {
                     return true;
                 };
@@ -195,13 +172,13 @@ $.ns("JV");
                 self.scratch = true;
                 //self._scratchFunc(event, 'Down');
                 self._scratchDown(event);
-            }).on("mousemove", function(event) {
+            }).on("touchmove", function(event) {
                 event.preventDefault();
                 if (self.scratch) {
                     //self._scratchFunc(event, 'Move');
                     self._scratchMove(event);
                 };
-            }).on("mouseup", function(event) {
+            }).on("touchend", function(event) {
                 event.preventDefault();
                 if (self.scratch) {
                     self.scratch = false;
