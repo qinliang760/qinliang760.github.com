@@ -1,0 +1,170 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移动，盒子相对移动</title>
+
+<style>
+body {margin: 0;padding: 0;}
+
+.fullwidth {
+    position: relative;
+    height: 1440px;
+    overflow-x: hidden;
+}
+
+.J_bgBlock {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1440px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.J_Tips {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 80px;
+    height: 120px;
+    background-color: #39f;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;  
+}
+
+.tips-1 {
+    left: 707px;
+    top: 610px;
+}
+
+.tips-2 {
+    left: 830px;
+    top: 664px;
+}
+
+.tips-3 {
+    left: 929px;
+    top: 670px;
+}
+
+.tips-4 {
+    left: 1106px;
+    top: 646px;
+}
+
+.tips-5 {
+    left: 877px;
+    top: 730px;
+}
+
+.tips-6 {
+    left: 990px;
+    top: 580px;
+}
+
+.tips-7 {
+    left: 988px;
+    top: 738px;
+}
+
+.tips-8 {
+    left: 933px;
+    top: 847px;
+}
+
+.tips-9 {
+    left: 770px;
+    top: 750px;
+}
+
+.tips-10 {
+    left: 1080px;
+    top: 749px;
+}    
+</style>    
+</head>
+<body>
+<div class="fullwidth">
+    <div class="J_bgBlock">
+        <img src="http://sandbox.runjs.cn/uploads/rs/396/x4toiosg/img_02.jpg" alt="">
+        <div class="J_Tips tips-1">1</div>
+        <div class="J_Tips tips-2">2</div>
+        <div class="J_Tips tips-3">3</div>
+        <div class="J_Tips tips-4">4</div>
+        <div class="J_Tips tips-5">5</div>
+        <div class="J_Tips tips-6">6</div>
+        <div class="J_Tips tips-7">7</div>
+        <div class="J_Tips tips-8">8</div>
+        <div class="J_Tips tips-9">9</div>
+        <div class="J_Tips tips-10">10</div>
+    </div>
+</div>
+
+<script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
+<script>
+    $(function(){
+        function MoveYourMouse(){
+            this.ele = $(".J_bgBlock");
+            this.ep = $(this.ele, ".fullwidth");
+            this.vw = $(window).width();
+            this.vh = $(window).height();
+            this.ow = this.ele.width();
+            this.oh = this.ele.height();
+            this.mw = this.ow - this.vw;
+            this.mh = this.oh - this.vh;
+            this.perX = this.mw / this.vw;
+            this.perY = this.mh / this.vh;
+            this.delta=0.2;
+            this.init();
+            this.render();
+            this.elRender();            
+        }
+
+        MoveYourMouse.prototype={
+            init:function(){
+                $(".J_Tips").each(function(k,v){
+
+                    $(v).data("x",parseInt($(v).css("left")));
+                    $(v).data("y",parseInt($(v).css("top")));
+                });
+            },
+            render:function(){
+                var _this = this;
+                $(window).bind("mousemove",function(e){
+                    var mouse = {x: e.clientX, y: e.clientY};
+                    var pos = {left: mouse.x * _this.perX, top: mouse.y * _this.perY};
+                    _this.ele.css({"left": -pos.left, "top": -pos.top});                    
+                })
+         
+            },
+            elRender:function(){
+                var _this = this;
+                $(window).bind("mousemove",function(e){
+                    var mouse = {x: e.clientX, y: e.clientY};
+                    $(".J_Tips").each(function(k,v){
+                        var dis = $(v).offset();
+                        var disx = dis.left - mouse.x;
+                        var disy = dis.top - mouse.y;
+                        var offset = {x: disx * _this.delta, y: disy * _this.delta};
+                        $(v).css({"left": $(v).data("x") + offset.x, "top": $(v).data("y") + offset.y});
+                    })
+                  
+                })
+               
+            }
+        }
+        new MoveYourMouse();
+
+
+    })
+
+</script>
+</body>
+</html>
