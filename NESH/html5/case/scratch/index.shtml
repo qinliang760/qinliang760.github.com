@@ -1,0 +1,62 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <meta content="width=1000,maximum-scale=1.0" name="viewport" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />    
+	<title>device_motion</title>
+<!--     <link rel="stylesheet" href="../../src/css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="../../src/css/style.css" type="text/css" media="all" /> -->
+	
+
+<style>
+/* .demo{
+    max-width: 640px;
+    margin: 0 auto;
+}
+.demo h1{
+    font-weight: bold;
+    font-size: 24px;
+    padding: 50px 0;
+} */
+#cardImg{
+    max-width: 100%;
+}
+#scratchArea{
+    position: relative;
+    height: 1000px;
+}
+canvas{
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 999;
+}
+</style>
+</head>
+<body>
+<div class="demo">
+<div id="scratchArea">
+    <img class="pic" src="http://hearthstone.nos.netease.com/1/l-cards/cards/druid/Moonfire.png" alt="">
+    <canvas id="scratch" width="300" height="400"></canvas>
+
+</div>
+    
+<!--     <h1>刮一刮：出现卡牌</h1> -->
+<div>
+    
+
+
+
+
+    <script type="text/javascript" src="../../../base/touch/zepto.js"></script>
+    <script type="text/javascript" src="../../../base/touch/jquery.namespace.js"></script>    
+    <script type="text/javascript" src="jquery.scratch.js"></script>
+    <script>
+        $(function(){
+            new JV.scratch("#scratchArea");
+        })
+    </script>
+</body>
+</html>

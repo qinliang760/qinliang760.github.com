@@ -44,7 +44,14 @@
     <script type="text/javascript" src="jquery.namespace.js"></script>
     <script type="text/javascript" src="jquery.turning.js"></script>
     <script>
-        new JV.turning(".g-main > section");
+    $(function(){
+        new JV.turning(".g-main > section",{
+            callback:function(index){
+                console.log(index);
+            }
+        });        
+    })
+
     </script>    
   </body>
 </html>
