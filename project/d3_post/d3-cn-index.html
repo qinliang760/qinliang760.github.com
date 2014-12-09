@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>暗黑破坏神III - 凯恩之角</title>
+<meta name="viewport" content="width=1000" />
+<link rel="stylesheet" type="text/css" media="all" href="http://img1.cache.netease.com/game/static/css/blizzard-games-common.css" />
+<style type="text/css">
+html, body { background:url(images/d3-share-bg.jpg) repeat-y center 0 #111113; }
+
+a.scroll-top { width:58px; height:59px; display:blck; position:absolute; right:5px; z-index:2; background:url(images/d3-scrolltop.gif) no-repeat 0 0;}
+a.scroll-top:hover { background:url(images/d3-scrolltop.gif) no-repeat 0 -61px;}
+
+.wrapper { width:100%; height:950px; background:url(images/d3-index-top.jpg) no-repeat center 0; position:relative; z-index:0;}
+.wrapper .border { width:100%; height:17px; background:url(images/section-border.png) repeat-x 0 0; position:absolute; left:0; bottom:-5px; z-index:1;}
+
+/* Header */
+.header { width:1000px; height:100%; margin:0 auto; position:relative; z-index:0;}
+.header .d3-video { width:500px; position:absolute; left:50%; top:40px; margin:0 0 0 -250px;}
+.header .d3-video .d3-video-top { width:500px; height:40px; background:url(images/d3-video-top.png) no-repeat 0 0;}
+.header .d3-video .d3-video-content { height:280px; background:#000;}
+.header .d3-buttons { position:absolute; left:50%; top:420px; margin:0 0 0 -205px;}
+.header .d3-buttons li { width:354px; height:80px; padding:56px 0 0 66px; margin:-30px 0 0;}
+.header .d3-buttons li a { width:273px; height:48px; display:block; }
+.header .d3-buttons li.d3-forum-link { background:url(images/d3-forum-button.png) no-repeat 0 0;}
+.header .d3-buttons li.d3-forum-link a:hover { background:url(images/d3-buttons-hover.jpg) no-repeat 0 0;}
+.header .d3-buttons li.d3-anchor-link { background:url(images/d3-anchor-button.png) no-repeat 0 0;}
+.header .d3-buttons li.d3-anchor-link a:hover { background:url(images/d3-anchor-button-hover.jpg) no-repeat 0 0;}
+
+/* Image Share */
+.d3-share { min-height:700px; background:url(images/d3-share-digest-bg.jpg) no-repeat center 0; padding:75px 0 0;}
+.d3-share .d3-share-digest { width:1000px; margin:0 auto; position:relative; z-index:0;}
+.d3-share .d3-share-digest p,
+.d3-share .d3-share-digest h1 { color:#17202a; font-size:18px; text-align:center; }
+.d3-share .d3-share-digest h1 { font-size:48px; font-weight:bold; margin:10px 0 0;}
+.d3-share .d3-share-content { position:relative; z-index:0; margin:70px 0; padding:20px; background:rgba(0,0,0,0.3); min-height:120px;}
+.d3-share .d3-share-content #tiles { position:relative; }
+.d3-share .d3-share-content li { width:230px; background:#060607; cursor:pointer; transition: all 0.3s ease-out 0s; display:none; }
+.d3-share .d3-share-content li img { vertical-align:top;}
+.d3-share .d3-share-content li span.play-icon { width:48px; height:48px; display:none; background:url(images/view-image-icon.png) no-repeat 0 0; position:absolute; left:50%; margin:-24px 0 0 -24px;}
+.d3-share .d3-share-content li span.player-name { text-align:center; display:block; color:#59afc3; font-size:16px; line-height:22px; padding:15px 0 0; background:url(images/d3-image-border.jpg) no-repeat 0 2px;}
+.d3-share .d3-share-content li span.player-name-hover { background:url(images/d3-image-border-h.jpg) no-repeat 0 2px;}
+.d3-share .d3-share-content li p { margin:10px; color:#7b7f85; line-height:22px; font-size:14px;}
+
+.d3-share-bottom { text-align:center; margin:20px 0 0;}
+.d3-share-bottom #loaderCircle { width:48px; height:48px; position:relative; left:50%; top:0; margin:0 0 0 -23px; }
+.d3-share-bottom a { padding:10px 200px; background:#171614; color:#a78f70; font-size:18px; display:inline-block; border-radius:5px; }
+.d3-share-bottom a:hover { background:#000; color:#fff;}
+
+/* Lightbox */
+#popBox { position: absolute; z-index: 999999; display: none; }
+#popBox a.closeBtn { width: 24px; display: block; height: 24px; position: absolute; top: 0; right: 0; text-indent: -999em; background:url(images/close-icons.jpg) no-repeat 0 0; }
+#popBox a.closeBtn:hover { background:url(images/close-icons.jpg) no-repeat 0 -24px;}
+#popBox img { border:2px solid #353229;}
+#boxModel { background-color: #000; display: none; position: absolute; z-index: 999998; left: 0; top: 0; }
+
+/* Footer */
+.footer { height:150px; padding:50px 0; text-align:center; line-height:24px; color:#7b7f85;}
+.footer .text { padding:5px 0; margin:0 0 5px;}
+.footer a { color:#7b7f85;}
+.footer a:hover { color:#fff;}
+.footer .cRed { color:#ff0000;}
+</style>
+
+<!--[if IE 6]>
+<style type="text/css">
+.header .d3-video .d3-video-top { background: none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/d3-video-top.png", sizingMethod="crop"); }
+.header .d3-buttons li.d3-forum-link { background: none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/d3-forum-button.png", sizingMethod="crop");}
+.d3-share .d3-share-content li span.play-icon { background: none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/view-image-icon.png", sizingMethod="crop");}
+</style>
+<![endif]-->
+
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="header">
+		<div class="d3-video">
+			<div class="d3-video-top"></div>
+			<div class="d3-video-content">
+				<object width="500" height="280" id="FPlayer" data="http://v.163.com/swf/video/NetEaseFlvPlayerV3.swf" type="application/x-shockwave-flash">
+					<param value="transparent" name="wmode">
+					<param value="true" name="allowFullScreen">
+					<param value="always" name="allowscriptaccess">
+					<param value="http://v.163.com/swf/video/NetEaseFlvPlayerV3.swf" allownetworking="all" name="movie">
+					<param value="pltype=7&amp;topicid=0031&amp;vid=V92ASRO93&amp;sid=V6FERU4MT&amp;coverpic=http://vimg1.ws.126.net/image/snapshot/2013/7/9/4/V92ASRO94.jpg&amp;autoplay=false&amp;showend=false&amp;hiddenR=true" name="flashvars">
+				</object>
+			</div>
+		</div>
+		<ul class="d3-buttons">
+			<li class="d3-forum-link"><a href="http://bbs.d.163.com/"></a></li>	
+			<li class="d3-anchor-link"><a href="#top"></a></li>		
+		</ul>
+	</div>
+	<div class="border"></div>	
+</div>
+
+<div class="d3-share" id="top">
+	<div class="d3-share-digest">
+		<p>曾经，我们在这里留下了无数回忆；如今，我们将从这里再次出发。</p>
+		<h1>下一战，为了梦想！</h1>
+	</div>
+	<div class="d3-share-content">
+		<ul id="tiles">
+			<!-- These is where we place content loaded from the Wookmark API -->
+		</ul>
+		<div class="d3-share-bottom">
+			<a href="http://bbs.d.163.com/" class="load-end" target="_blank">梦想，终将绽放...</a>
+			<a href="#" class="load-more">加载更多</a>
+			<div id="loader">
+				<div id="loaderCircle"> <img src="http://wow.nos.netease.com/1/images/wow/xmas2013/loading.gif" alt=""> </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="foot">
+		<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a>　</div>
+		<a href="http://corp.163.com/">About NetEase</a> - 
+		<a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - 
+		<a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - 
+		<a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - 
+		<a href="http://help.163.com/ ">客户服务</a> - 
+		<a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - 
+		<a href="http://emarketing.biz.163.com/">网络营销</a> - 
+		<a href="http://sitemap.163.com/">网站地图</a>
+		<br />网易公司版权所有<br />
+		<span class="cRed">&copy;1997-2014 </span> 
+	</div>
+</div>
+
+<a class="scroll-top" href="#top" target="_self"></a>
+	
+
+<script src="js/jquery-1.7.2.min.js"></script> 
+<script src="js/jquery.imgpreload.js"></script> 
+<script src="js/jquery.lightBox.js"></script> 
+<script src="js/jquery.wookmark.js"></script> 
+<script src="js/page.js"></script> 
+<script type="text/javascript">
+jQuery(function($){
+	
+    Wook.init();
+	
+	$(window).scroll(function(){
+		if($(window).scrollTop() > $(window).height()){
+			$('.scroll-top').show().animate({				
+				'top':$(window).scrollTop() + $(window).height() - 200
+			},100);
+		}else{
+			$('.scroll-top').hide();
+		};
+	});
+
+	$('.load-more').click(function(){
+		Wook.loadData();		
+		return false;
+	});
+
+})
+</script>
+
+</body>
+</html>

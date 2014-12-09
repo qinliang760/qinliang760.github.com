@@ -1,0 +1,69 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>3D卡牌旋转组件-a jv-fe minisite</title>
+	<link rel="stylesheet" href="../reset.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="../base.css" type="text/css" media="all" />
+    <!-- <link rel="stylesheet" href="../common_sc2.css" type="text/css" media="all" /> -->
+    <link rel="stylesheet" href="home_v1.css" type="text/css" media="all" />   
+	
+
+<style>
+
+
+</style>
+</head>
+<body>
+<div id="cardBox">
+    <div class="card1">
+        <div class="front" style="transform: skewY(0deg) scale(1, 1); display: none;"></div>
+        <div class="back" style="transform: skewY(0deg) scale(1, 1); display: block;"></div>
+    </div>
+    <div class="card2">
+        <div class="front" style="transform: skewY(0deg) scale(1, 1); display: none;"></div>
+        <div class="back" style="transform: skewY(0deg) scale(1, 1); display: block;"></div>
+    </div>
+    <div class="card3">
+        <div class="front" style="transform: skewY(0deg) scale(1, 1); display: none;"></div>
+        <div class="back" style="transform: skewY(0deg) scale(1, 1); display: block;"></div>
+    </div>
+    <div class="card4">
+        <div class="front" style="transform: skewY(0deg) scale(1, 1); display: none;"></div>
+        <div class="back" style="transform: skewY(0deg) scale(1, 1); display: block;"></div>
+    </div>
+    <div class="card5">
+        <div class="front" style="transform: skewY(0deg) scale(1, 1); display: none;"></div>
+        <div class="back" style="transform: skewY(0deg) scale(1, 1); display: block;"></div>
+    </div>
+</div>
+
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="jquery-css-transform.js"></script>
+    <script type="text/javascript" src="rotate3Di.js"></script>
+    <script>
+        $(function(){
+            var r=$('#cardBox > div')
+            r.hover(
+                function () {
+                    $(this).find('div').stop().rotate3Di('flip', 250, {direction: 'clockwise', sideChange: rotateChange});
+                },
+                function () {
+                    $(this).find('div').stop().rotate3Di('unflip', 500, {sideChange: rotateChange});
+                }
+            );
+
+            function rotateChange(front){
+                if (front) {
+                    $(this).parent().find('div.front').hide();
+                    $(this).parent().find('div.back').show();
+                    
+                } else {
+                    $(this).parent().find('div.front').show();
+                    $(this).parent().find('div.back').hide();
+                }                
+            }
+        })
+    </script>
+</body>
+</html>

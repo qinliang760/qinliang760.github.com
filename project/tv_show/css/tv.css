@@ -1,0 +1,704 @@
+*,html{
+	padding:0;
+	margin:0;
+}
+ul{
+	list-style: none;
+}
+img{
+	border: none;
+}
+body{
+	font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: #eabea9;
+}
+a{
+	text-decoration: none;
+	color: #d16d3e;
+}
+a:hover{
+	color: #fff;
+}
+.fr{
+	float: right;
+}
+.video_border{
+	border: 1px solid #040000;
+}
+.sprite{
+	display: inline-block;
+	background-image: url(../images/sprite.png);
+	background-repeat: no-repeat;
+}
+.sprite_c{
+	background-position: -241px -236px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+
+}
+.sprite_title{
+	width: 245px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	color:#ee6c30; 
+	background-position: -100px -10px;	
+}
+.btn_c{
+	background: #000;
+	border-radius: 10px;
+	display: inline-block;
+	padding:0 10px;
+}
+.icon_c{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	background: #1b0e08;
+	border-radius: 10px;
+}
+.txt_style{
+	font-size: 14px;
+	color: #eabea9;
+	line-height: 22px;
+}
+.font_orange{
+	color: #ee6c30;
+	font-size: 14px;
+}
+.font_yellow{
+	color: #ffc54b;
+}
+.current{
+	color: #fff;
+}
+#showOne,#showTwo,#showThree,#showFour{
+	display: none;
+}
+
+h1.logo{
+    height: 115px;
+    position: absolute;
+    top: 13px;
+    left: 80px;
+    width: 300px;
+}
+h1.logo a{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+/*-----clearFix-----*/
+.clearFix:after{
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	content: ".";
+}
+.clearFix{ display: block;*display: inline-block; }
+/* Hides from IE 4-6 \*/
+* html .clearFix{ height: 1%; }
+
+/* .clearFix{ display: block; } */ 
+/* End hide from IE 4-6 */
+
+/*nav_top*/
+.nav_top{position: absolute; right: 32px; top: 12px;}
+.nav_top li{float: left;}
+.nav_top li a{width: 89px; height: 30px; line-height: 28px; color: #ffd78b; text-align: center; display: block; background: url(http://hearthstone.nos.netease.com/3/minisite/hearthsteed/top_btn.png) no-repeat 0 0}
+.nav_top li a:hover{background-position: -89px 0; color: #fff; text-decoration: none;}
+
+/*share*/
+.share{position: absolute; right: 18px; top: 52px; width: 250px}
+.share li{
+	float: left;
+	margin-right: 8px;
+}
+.share li a{
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/share.png) no-repeat 0 0;
+    transition: background 0.3s cubic-bezier(0.17, 0.67, 0.88, 1.25) 0s, color 0.2s linear 0s;	
+}
+.share li.sharetip{color: #70a3d3; margin:3px 2px 0 0;}
+.share li a.jiathis_button_tsina{background-position: -100px 0}
+.share li a.jiathis_button_tsina:hover{background-position: -100px -25px}
+.share li a.jiathis_button_tqq{background-position: 0 0}
+.share li a.jiathis_button_tqq:hover{background-position: 0 -25px}
+.share li a.jiathis_button_tieba{background-position: -300px 0}
+.share li a.jiathis_button_tieba:hover{background-position: -300px -25px}
+.share li a.jiathis_button_qzone{background-position: -150px 0}
+.share li a.jiathis_button_qzone:hover{background-position: -150px -25px}
+.share li a.jiathis_button_yixin{background-position: -350px 0}
+.share li a.jiathis_button_yixin:hover{background-position: -350px -25px}
+.share li a.jiathis_button_weixin{background-position: -400px 0}
+.share li a.jiathis_button_weixin:hover{background-position: -400px -25px}
+
+#header{
+	height: 645px;
+	background: url(../images/top.jpg) no-repeat 50% 0;
+}
+#header .header_con{
+	width: 1066px;
+	position: relative;
+	left: 50%;
+	margin-left: -533px;
+}
+#header .top_con{
+	padding-top: 299px;
+/* 	position: relative; */
+}
+.compere{
+	position: absolute;
+	display: block;
+	width: 416px;
+	height: 612px;
+	top: -252px;
+	left: 259px;
+	z-index: 2;
+	background: url(../images/girl.png) no-repeat 0 0;
+}
+#header .video{
+	float: left;
+	display: inline;
+	margin-left: 46px;
+	position: relative;
+}
+#header .video .compere_name{
+	position: absolute;
+	left: 338px;
+	top: -49px;
+	width: 100px;
+	color: #80522d;
+}
+#topVideo{
+	position: relative;
+	z-index: 2;
+}
+#topVideoW{
+	width: 412px;
+	height: 268px;
+	background: #000;
+}
+#topVideo .v_lt,#topVideo .v_lb,#topVideo .v_rt,#topVideo .v_rb{
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/video_bg.png);
+	background-repeat: no-repeat;
+}
+#topVideo .v_lt{
+	top: 0;
+	background-position: -48px -47px;
+}
+#topVideo .v_lb{
+	bottom: 0;
+	background-position: -48px -295px;
+}
+#topVideo .v_rt{
+	top: 0;
+	right: 0;
+	background-position: -441px -48px;
+}
+#topVideo .v_rb{
+	bottom: 0;
+	right: 0;
+	background-position: -439px -295px;
+}
+
+#topVideo img{
+	/* margin-left: -3px; */
+}
+.btn_video{
+    display: block;
+    height: 112px;
+    left: 50%;
+    margin-left: -64px;
+    margin-top: -56px;
+    position: absolute;
+    top: 50%;
+    width: 128px;
+	background: url(../images/btn_video.png) no-repeat 0 0;
+}
+.btn_video_s{
+    display: block;
+    height: 112px;
+    left: 50%;
+    margin-left: -64px;
+    margin-top: -56px;
+    position: absolute;
+    top: 50%;
+    width: 128px;
+	background: url(../images/btn_video.png) no-repeat 0 -145px;
+}
+a:hover .btn_video{
+	background-position: -122px 0;
+}
+a:hover .btn_video_s{
+	background-position: -127px -145px;
+}
+#header .video .video_bg{
+	display: block;
+	position: absolute;
+	width: 604px;
+	height: 366px;
+	left: -48px;
+	top: -46px;
+	background: url(../images/video_bg.png) no-repeat 0 0;
+}
+#header .nav{
+	float: right;
+	width: 470px;
+	padding-top: 30px;
+	position: relative;
+	z-index: 3;
+
+}
+#header .nav p{
+	width: 435px;
+	height: 172px;
+	font-size: 14px;
+	line-height: 22px;
+	color: #fff;
+	padding-left: 26px;
+}
+#header .nav ul{
+	width: 530px;
+	height: 115px;
+	line-height: 115px;
+	margin-left: -53px;
+	/* background: url(../images/nav.png) no-repeat 0 0; */	
+}
+#header .nav li{
+	float: left;
+	width: 107px;
+	text-align: center;
+}
+#header .nav li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/nav.png);
+	background-repeat: no-repeat;
+}
+#header .nav li.nav1{
+	margin-left: 40px;
+}
+#header .nav li.nav2{
+	width: 144px;
+}
+#header .nav li.nav1 a{
+	background-position: -40px 0;	
+}
+#header .nav li.nav2 a{
+	background-position: -147px 0;	
+}
+#header .nav li.nav3 a{
+	background-position: -40px 0;	
+}
+#header .nav li.nav4 a{
+	background-position: -40px 0;	
+}
+#header .nav li.nav1 a:hover,#header .nav li.nav3 a:hover,#header .nav li.nav4 a:hover{
+	background-position: -40px -150px;
+	color: #1d1725;
+	padding-top: 8px;
+}
+#header .nav li.nav1 a.active,#header .nav li.nav3 a.active,#header .nav li.nav4 a.active{
+	background-position: -40px -150px;
+	color: #1d1725;
+	padding-top: 8px;	
+}
+#header .nav li.nav2 a:hover,#header .nav li.nav2 a.active{
+	background-position: -147px -150px;
+	padding-top: 8px;
+}
+#header .nav li a{
+	color: #1d1725;
+	font-weight: bold;
+	font-size: 18px;
+}
+#container{
+
+	position: relative;	
+	background: url(../images/bg.jpg) no-repeat 50% 0;
+}
+#container .container_con{
+	min-height: 400px;
+	width: 1000px;
+	position: relative;
+	left: 50%;
+	margin-left: -500px;
+	z-index: 2;	
+}
+#showOne{
+	padding-top: 45px;
+}
+.show_mx{
+	float: left;
+	display: inline;
+	margin:0 6px 12px;
+	width: 320px;
+	padding:20px 0;
+	border-radius: 10px;
+	background: url(../images/1px.png) repeat 0 0;
+}
+.show_mx h3{
+	width: 270px;
+	height: 23px;
+	display: block;
+	margin: 0 auto 5px;
+	color: #d16d3e;
+	font-weight: bold;
+	font-size: 15px;
+	text-align: center;
+	background-position: -115px -129px;
+}
+.show_mx_intro{
+	position: absolute;
+	right: 28px;
+	top: 50px;
+	width: 267px;
+}
+.show_mx_list{
+	height: 504px;
+}
+.show_mx_con{
+	width: 272px;
+	margin: 0 auto;
+}
+.show_mx_con img{
+	border-radius: 3px;
+}
+.show_mx_con div{
+	width: 115px;
+	float: left;
+}
+.show_mx_con span{
+	display: block;
+	text-align: center;
+	height: 52px;
+	overflow: hidden;
+}
+.show_mx_con span.name{
+	width: 120px;
+	height: 17px;
+	color: #d16d3e;
+	font-size: 14px;
+	line-height: 17px;
+	margin-bottom: 5px;
+	background-position: -197px -194px;
+}
+.show_mx_con .sprite_c{
+	float: left;
+	display: inline;
+	font-size: 16px;
+	font-weight: bold;
+	color: #d16d3e;
+	margin: 30px 5px 0 5px;
+}
+.show_mx_page{
+	width: 935px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background-position: -44px -330px;
+}
+.show_mx_page .prev,.show_mx_page .next,.show_jm_page .prev,.show_jm_page .next{
+	margin: 0 40px;
+}
+#showTwo{
+	padding-top: 58px;
+}
+.show_mn{
+	width: 242px;
+	float: left;
+	margin:0 5px;
+	padding: 14px 0 12px;
+	border-radius: 10px;
+	text-align: center;
+	background: url(../images/1px.png) repeat scroll 0 0;
+}
+.show_mn2{
+	margin-top: -30px;
+}
+.show_mn .name{
+	background-position: -425px -129px;
+    color: #D16D3E;
+    font-size: 15px;
+    font-weight: bold;
+    height: 23px;
+    margin: 20px auto 0;
+    text-align: center;
+    width: 240px;	
+}
+.show_mn img{
+	border-radius: 5px;
+}
+.show_mn_intro {
+	float: left;
+	width: 244px;
+}
+.show_mn_con {
+	float: left;
+	padding-top: 30px;
+}
+
+.show_mn_intro .btn_c{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 8px;
+	border-radius: 15px;
+	padding: 0 15px;
+}
+
+#showThree{
+	padding-top: 64px;
+	color: #c97c57;
+}
+#showThree .sprite_title{
+	display: block;
+	margin: 0 auto;
+}
+.show_jm_intro{
+	float: left;
+	width: 514px;
+	padding: 0 5px 0 20px;
+}
+.show_jm_list{
+	height: 336px;
+}
+.show_jm_con{
+	float: left;
+	width:455px;
+	padding-top: 28px;
+
+}
+.show_jm_con li{
+	float: left;
+	width: 211px;
+	padding: 0 8px;
+	margin-bottom: 8px;
+}
+.show_jm_con li a{
+	display: block;
+	position: relative;
+}
+.show_jm_title{
+	background: #1a0c07;
+
+}
+.show_jm_intro a{
+	display: block;
+	position: relative;
+}
+#show_jm_v{
+	width: 517px;
+	height: 304px;
+	margin-bottom: 8px;
+}
+.show_jm_intro .show_jm_title{
+	height: 38px;
+	line-height: 38px;
+	font-size: 16px;
+	padding: 0 10px;
+	width: 499px;
+}
+.show_jm_con .show_jm_title{
+	height: 36px;
+	line-height: 36px;
+	padding: 0 5px;
+	width: 199px;
+}
+.show_jm_page{
+	width: 385px;
+	height: 21px;
+	line-height: 21px;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	background-position: -228px -403px;
+}
+.show_jm_s{
+	text-align: right;
+	padding: 0 15px 25px 0;
+}
+
+.show_hd_intro{
+	padding: 67px 0 0;
+	float: left;
+}
+.show_hd_intro .sprite_title{
+	padding-bottom: 30px;
+}
+.show_hd_intro ul{
+	padding-left: 30px;
+}
+#showFour p{
+	float: left;
+	width: 203px;
+}
+#showFour .show_hd_1{
+	padding: 27px 0 0 45px;
+}
+#showFour .show_hd_2{
+	padding: 90px 0 0;
+	margin-left: -25px;
+}
+#footer{
+	margin-top: -100px;
+	position: relative;
+}
+.footer_hero{
+	height: 348px;
+	width: 1000px;
+	position: relative;
+	bottom: 0;
+	left: 50%;
+	margin-left: -498px;
+	background: url(../images/hero.png) no-repeat 0 0;
+}
+#footer .footer_bg{
+	height: 301px;
+	background: url(../images/bottom.jpg) no-repeat 50% 0;
+}
+
+
+.select_table_w{
+	width: 850px;
+	padding: 50px 10px 50px 30px;
+	border-radius: 10px;
+	border: 3px solid #884c30;
+	background: #1d0e0a;
+	box-shadow:0 0 30px #955131;
+
+}
+.select_table{
+	width: 415px;
+	float: left;
+	background: #dbe5f1;
+	font-size: 14px;
+	text-align: center;
+	color: #000;
+}
+.select_table,.select_table td{
+	border: 1px solid #000;
+	border-collapse:collapse;
+}
+.select_table tr.tr_head{
+	background: #b6dde8;
+	font-weight: bold;
+}
+/* container */
+#lightbox-anchor { position:absolute; top:10%; left:0; z-index: 9005; width:100% }
+#lightbox-container { width:890px; height:641px; position:relative;*float:left; display:none; margin:0 auto; background-color:#000 }
+#lightbox-container .ui-element { background:url(http://hearthstone.nos.netease.com/3/home/v1/lightbox.png) no-repeat }
+
+/* content holder */
+#lightbox-content { background: #0d0804; z-index:9005; position: relative; }
+#lightbox-content.loading { /* @todo */ }
+
+/* title holder */
+#lightbox-title { position: relative; background: transparent url("http://hearthstone.nos.netease.com/3/home/v1/lightbox-title.jpg"); height: 26px; font: normal 13px/26px "Palatino Linotype","Times",serif; color: #fff; padding-left: 20px; text-transform: uppercase;}
+
+/* close */
+#lightbox-container .lightbox-close { display:block; position:absolute; float:right; right: -9px; top: -7px; width: 45px; height: 46px; background: url(http://hearthstone.nos.netease.com/3/home/v1/lightbox.png) -84px 0 repeat-x; z-index: 9007;}
+#lightbox-container .lightbox-close:hover { background-position: -128px 0;}
+
+/* borders*/
+#lightbox-container .border { position:absolute; float:left; z-index:9006 }
+#lightbox-container #lb-border-top { height:18px; top:-18px; left:0; background: url(http://hearthstone.nos.netease.com/3/home/v1/lightbox-frame.png) 50% 0 repeat-x; padding-right: 12px; }
+#lightbox-container #lb-border-right { width:18px; top:0; right:-18px; background: url(http://hearthstone.nos.netease.com/3/home/v1/lightbox.png) -272px 0 repeat-y; padding-bottom: 9px; }
+#lightbox-container #lb-border-bottom { height:18px; bottom:-18px; left:0; background: url(http://hearthstone.nos.netease.com/3/home/v1/lightbox-frame.png) 50% -19px repeat-x; padding-right: 12px; }
+#lightbox-container #lb-border-left { width:18px; top:0; left:-18px; background: url(http://hearthstone.nos.netease.com/3/home/v1/lightbox.png) -254px 0 repeat-y; padding-bottom: 9px; }
+
+/* corners */
+#lightbox-container .corner { position:absolute; background: url(http://hearthstone.nos.netease.com/3/home/v1/lightbox.png) no-repeat; width: 38px; height: 38px; float:left; z-index: 9007;}
+#lightbox-container .corner-top-left { background-position: -176px 0; top: -18px; left: -16px;}
+#lightbox-container .corner-bottom-left { background-position: -174px -39px; bottom:-18px; left:-18px }
+#lightbox-container .corner-top-right { background-position: -214px 0; top:-18px; right: -18px;}
+#lightbox-container .corner-bottom-right { background-position: -214px -39px; bottom:-18px; right:-18px }
+
+/* paging */
+
+#lightbox-container .control-wrapper { height: 47px; position: relative; width:100%; z-index:9006; background: transparent url("http://hearthstone.nos.netease.com/3/home/v1/lightbox-controls-bg.jpg") no-repeat; }
+#lightbox-container .control-wrapper .lightbox-controls { height: 47px; margin:0 auto; position: relative; }
+#lightbox-container .control-wrapper .lightbox-controls.ui-element { background: none; }
+#lightbox-container .control-wrapper a { display:block; height: 47px; float:left; }
+
+/* paging - previous */
+#lightbox-container .control-wrapper a.previous { width: 37px; background-position: 0 5px; margin-left: 10px;}
+#lightbox-container .control-wrapper a.previous:hover { background-position: 0 -40px; }
+
+/* paging - gallery view */
+#lightbox-container .control-wrapper a.gallery-view { width: 76px; background-position: -84px -8px; }
+#lightbox-container .control-wrapper a.gallery-view:hover { background-position: -84px -58px }
+
+/* paging - next */
+#lightbox-container .control-wrapper a.next { width: 37px; background-position: -46px 5px; float: right; margin-right: 10px;}
+#lightbox-container .control-wrapper a.next:hover { background-position: -46px -40px; }
+
+/* no paging */
+#lightbox-container .control-wrapper.no-paging .lightbox-controls { height: 47px; }
+#lightbox-container .control-wrapper.no-paging a.gallery-view { margin: 0; }
+#lightbox-container .control-wrapper.no-paging a.previous,
+#lightbox-container .control-wrapper.no-paging a.next { display:none }
+
+/* no gallery */
+#lightbox-container .control-wrapper.no-gallery .lightbox-controls.ui-element { background: none; }
+#lightbox-container .control-wrapper.no-gallery a.gallery-view { display: none;}
+
+/* no controls */
+#lightbox-container .control-wrapper.no-gallery.no-paging { height: 47px; }
+
+/* error loading content */
+#lightbox-container .lightbox-error { text-align:center; font-size:16px; background: #000; vertical-align:text-bottom; line-height:550px }
+
+
+.ie6 #lightbox-container .ui-element,
+.ie6 #lightbox-container #lb-border-right,
+.ie6 #lightbox-container #lb-border-left,
+.ie6 #lightbox-container .corner { background-image: url("http://hearthstone.nos.netease.com/3/home/v1/lightbox.gif"); }
+.ie6 #lightbox-container { zoom: 1; }
+
+
+#popBox{
+
+    /* background-color:#4d4d4d; */
+    position:absolute;
+    z-index:999999;
+    display:none;
+}
+
+#boxModel{
+    background-color:#000;
+    display:none;
+    position:absolute;
+    z-index:999998;
+    left:0;
+    top:0;
+}
+#popBox .closeBtn{
+    width: 44px;
+    display: block;
+    height: 46px;
+    position: absolute;
+    top: 48px;
+    right: 12px;
+    text-indent: -999em;
+    background: url("http://hearthstone.nos.netease.com/3/home/v1/lightbox.png") no-repeat -84px 0;
+}
+#popBox .closeBtn:hover{
+    background-position: -128px 0;
+}
+.select_table_w + .closeBtn{
+	top: 5px!important;
+	background: url(../images/sprite.png) no-repeat -298px -231px!important;
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>日历组件-a jv-fe minisite</title>
+	<link rel="stylesheet" href="../reset.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="../base.css" type="text/css" media="all" />
+    <!-- <link rel="stylesheet" href="../common_sc2.css" type="text/css" media="all" /> -->
+    <link rel="stylesheet" href="calendar-detail.css" type="text/css" media="all" />   
+	
+
+<style>
+
+
+</style>
+</head>
+<body>
+<div class="calendar-active f-cb">
+    <div class="w-activity-calendar f-fl">
+        <div class="calendar">
+            <div class="navbtn prev"><b></b></div>
+            <div class="navbtn next"><b></b></div>
+            <div class="title"></div>
+            <div class="dates">
+                <div class="hdr">日</div>
+                <div class="hdr">一</div>
+                <div class="hdr">二</div>
+                <div class="hdr">三</div>
+                <div class="hdr">四</div>
+                <div class="hdr">五</div>
+                <div class="hdr">六</div>
+                <div class="f-cb"><b></b></div>
+                <div class="date" id="w0d0"></div>
+                <div class="date" id="w0d1"></div>
+                <div class="date" id="w0d2"></div>
+                <div class="date" id="w0d3"></div>
+                <div class="date" id="w0d4"></div>
+                <div class="date" id="w0d5"></div>
+                <div class="date" id="w0d6"></div>
+                <div class="f-cb"><b></b></div>
+                <div class="date" id="w1d0"></div>
+                <div class="date" id="w1d1"></div>
+                <div class="date" id="w1d2"></div>
+                <div class="date" id="w1d3"></div>
+                <div class="date" id="w1d4"></div>
+                <div class="date" id="w1d5"></div>
+                <div class="date" id="w1d6"></div>
+                <div class="f-cb"><b></b></div>
+                <div class="date" id="w2d0"></div>
+                <div class="date" id="w2d1"></div>
+                <div class="date" id="w2d2"></div>
+                <div class="date" id="w2d3"></div>
+                <div class="date" id="w2d4"></div>
+                <div class="date" id="w2d5"></div>
+                <div class="date" id="w2d6"></div>
+                <div class="f-cb"><b></b></div>
+                <div class="date" id="w3d0"></div>
+                <div class="date" id="w3d1"></div>
+                <div class="date" id="w3d2"></div>
+                <div class="date" id="w3d3"></div>
+                <div class="date" id="w3d4"></div>
+                <div class="date" id="w3d5"></div>
+                <div class="date" id="w3d6"></div>
+                <div class="f-cb"><b></b></div>
+                <div class="date" id="w4d0"></div>
+                <div class="date" id="w4d1"></div>
+                <div class="date" id="w4d2"></div>
+                <div class="date" id="w4d3"></div>
+                <div class="date" id="w4d4"></div>
+                <div class="date" id="w4d5"></div>
+                <div class="date" id="w4d6"></div>
+                <div class="f-cb"><b></b></div>
+                <div class="date" id="w5d0"></div>
+                <div class="date" id="w5d1"></div>
+                <div class="date" id="w5d2"></div>
+                <div class="date" id="w5d3"></div>
+                <div class="date" id="w5d4"></div>
+                <div class="date" id="w5d5"></div>
+                <div class="date" id="w5d6"></div>
+                <div class="f-cb"><b></b></div>
+            </div>
+        </div>
+        <a class="w-more w-more-1" href="/calendars?dateId=20141209"><span class="icn-ltgreen"></span>查看所有活动</a>
+        </div> <!-- w-active-calendar -->
+
+        </div> <!-- calendar-active-->
+
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="calendar.js"></script>
+    <script>
+        $(function(){
+            ActivityCalendar.init(new Date());
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>3D旋转组件-a jv-fe minisite</title>
+	<link rel="stylesheet" href="../reset.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="../base.css" type="text/css" media="all" />
+    <!-- <link rel="stylesheet" href="../common_sc2.css" type="text/css" media="all" /> -->
+    <link rel="stylesheet" href="unit.css" type="text/css" media="all" />   
+	
+
+<style>
+
+
+</style>
+</head>
+<body>
+<div class="model-viewer">
+    <div id="model-baneling-0-a" class="model drag-baneling can-drag">
+        <div class="loading">
+            <div style="background-image: url(&quot;http://nos.netease.com/sc2/1/style/gameinfo/content/sc2/game/units/zerg/rotate/baneling.png&quot;); background-position: -4240px 0px;" class="viewer"></div>
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../core.js"></script>    
+    <script type="text/javascript" src="model-rotator.js"></script>
+    <script type="text/javascript" src="sc2model-rotator.js"></script>
+    <script>
+        $(function(){
+            var model01 = new SC2ModelRotator('#model-baneling-0-a', {
+                key: 'baneling',
+                frameWidth: 212,
+                frameHeight: 212,
+                sequenceWidth: 6572,
+                totalFrames: 31,
+                velocity: 10,
+                zoom: false,
+                rotate: false
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+.flyout-menu {
+	padding: 0;
+	position: absolute;
+	width: auto;
+	z-index: 75;
+	text-align: left;
+}
+
+.flyout-menu ul {
+	float: left;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+}
+
+.flyout-menu ul li {
+	clear: both;
+	position: relative;
+}
+
+.flyout-menu ul li a {
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.flyout-menu ul li .flyout-menu {
+	display: none;
+	top: -1px;
+	z-index: 80;
+}
+
+.flyout-menu .header {
+	display: block;
+	padding: 5px;
+}
+
+.flyout-menu {
+	background: none repeat scroll 0 0 #005D46;
+	border: 1px solid #17A768;
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 0 10px #000000;
+	opacity: 0.98;
+	padding: 1px;
+}
+
+.flyout-menu ul {
+	width: 200px;
+}
+
+.flyout-menu ul li {
+	margin: 4px;
+}
+
+.flyout-menu ul li a {
+	background-color: #004537;
+	border-radius: 3px 3px 3px 3px;
+	color: #FFFFFF;
+	padding: 4px 8px;
+}
+
+.flyout-menu ul li a.children {
+	background-image: url("../images/race/flyout-arrows.gif");
+	background-position: 98% -115px;
+	background-repeat: no-repeat;
+}
+
+.flyout-menu ul li a.opened,.flyout-menu ul li a:hover {
+	background-color: #00322C;
+	color: #86FBB0;
+}
+
+.flyout-menu ul li .flyout-menu {
+	left: 190px;
+	top: -6px;
+}

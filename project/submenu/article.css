@@ -1,0 +1,1074 @@
+@charset "utf-8";
+
+#wrapper {
+	position: relative;
+	width: 1022px;
+	margin: 0 auto;
+}
+
+.g-header {
+	z-index: 100;
+	position: relative;
+}
+
+.g-cnt-top {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/cnt-bg.png?v=2) no-repeat 0 0;
+	height: 715px;
+	z-index: 0;
+}
+
+.g-cnt-btm {
+	background-color: #000d1f;
+	z-index: 0;
+	width: 1022px;
+}
+
+.g-cnt-grad-bg-1024 {
+	width: 1022px;
+}
+
+.g-cnt {
+	margin: -715px 0 0;
+	float: left;
+	position: relative;
+	zoom: 1;
+	text-align: left;
+	z-index: 0;
+}
+
+.g-cnt .left {
+	width: 682px;
+	zoom: 1;
+	overflow: hidden
+}
+
+.g-cnt .right {
+	width: 330px;
+	padding: 6px 0 0 0;
+	display: inline;
+	margin-left: 10px;
+}
+
+.m-footer {
+	background: #000 url(http://sc2.nos.netease.com/1/style/images/unit/foot-line.jpg) no-repeat 0 40px;
+	width: 914px;
+	padding: 50px 55px 30px;
+}
+/*modules*/
+.m-top {
+	width: 680px;
+	height: 245px;
+	margin-top: 4px;
+	padding-top: 10px;
+}
+/*  widgets  */
+.w-article h2 {
+	text-align: left;
+	color: #fff;
+	font-size: 26px;
+	font-weight: normal;
+	padding: 15px 0 0 40px;
+}
+
+.w-article .source {
+	text-align: left;
+	height: 20px;
+	padding-left: 40px;
+}
+
+.w-article .source a {
+	line-height: 20px;
+	color: #009cde;
+}
+
+.w-article .source a:hover {
+	color: #bfbfbf;
+}
+
+.w-article .source span {
+	color: #009cde;
+}
+
+.w-article .source .time {
+	display: inline-block;
+	padding-left: 5px;
+	line-height: 20px;
+	color: #3d5f78;
+}
+
+.w-article .icn {
+	width: 20px;
+	height: 20px;
+	background: url(http://sc2.nos.netease.com/1/style/images/common-sprite.png?v=1) no-repeat;
+}
+
+.w-article .icn-label {
+	display: inline-block;
+	background-position: -410px -520px;
+	vertical-align: top;
+}
+
+.w-article i {
+	display: block;
+	margin: 0 15px;
+	height: 2px;
+	padding-bottom: 10px;
+	background: url(http://sc2.nos.netease.com/1/style/images/ul2px.gif?v=1) 5px 0 no-repeat;
+}
+
+.w-article .content {
+	padding: 10px 30px 0;
+	text-align: left;
+	color: #67a1d5;
+}
+
+.w-article .content {
+	font-size: 14px;
+	color: #67a1d5;
+}
+
+.w-article .content p,.w-article .content span,.w-article .content div,.w-article .content a {
+	font-size: 14px;
+}
+
+.w-article .content h1 {
+	font-size: inherit;
+}
+
+.w-article .content a {
+	color: #00d683;
+}
+
+.w-article .content a:hover {
+	color: #fff;
+}
+
+.w-article .content p {
+	margin-top: 14px;
+	margin-bottom: 14px
+}
+
+.w-article .content .table-wrapper-outer {
+	margin: 20px auto;
+	width: 100%;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 0 9px #0068A3;
+	box-shadow: 0 0 9px #0068A3;
+	background: #001B44;
+	border: 1px solid #29B0DF;
+}
+
+.w-article .content .table-wrapper-inner {
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 0 9px -2px #04E9FA inset;
+	box-shadow: 0 0 9px -2px #04E9FA inset;
+	background: url("http://sc2.nos.netease.com/1/style/images/article/above_glow.png") 50% 0 no-repeat;
+	padding: 5px;
+}
+
+.w-article .content table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #67a1d5;
+	width: 100%;
+	line-height: 2em;
+}
+
+.w-article .content th,.w-article .content td {
+	padding: 2px 5px;
+}
+
+.w-article .content th {
+	border-bottom: 1px solid #075587;
+	color: #fff;
+	font-weight: bold;
+}
+
+.w-article .content table td.even {
+	
+}
+
+.w-article .content table td.odd {
+	background: #041e48;
+}
+
+.ui-breadcrumb {
+	padding: 6px 0 15px 37px
+}
+
+.ui-breadcrumb li {
+	background: url("http://sc2.nos.netease.com/1/style/images/race/flyout-arrows.gif") no-repeat scroll 0 0 transparent;
+	float: left;
+	margin-right: 5px;
+	padding-right: 25px;
+	background-position: 98% -120px
+}
+
+.ui-breadcrumb li a:hover,.ui-breadcrumb li a.opened {
+	border-color: #FFF;
+	color: #FFF
+}
+
+.ui-breadcrumb li.last a {
+	color: #FFF
+}
+
+.ui-breadcrumb li.last {
+	background: none repeat scroll 0 0 transparent
+}
+
+.ui-breadcrumb li.last a {
+	border: none
+}
+
+.ui-breadcrumb li a {
+	border-bottom: 1px dotted #00765A;
+	color: #00D683
+}
+
+.ui-breadcrumb li.children a {
+	border-bottom: 1px dotted #fff;
+}
+/*override smalleye styles*/
+.w-activities li {
+	margin: 0 20px 0 10px;
+	_margin: 0 18px 0 9px;
+}
+
+.w-search {
+	margin-left: -6px;
+	zoom: 1;
+	_position: relative;
+	_z-index: 9
+}
+
+.w-activity-calendar {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/activity-calendar.gif?v=2) no-repeat 0 0;
+}
+
+.commentLock {
+	width: 630px;
+	margin: 10px 0 0 20px;
+}
+/*article BWC float*/
+.bwcModule {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/bwcmodule-bg.jpg?v=2) no-repeat 0 0;
+	width: 622px;
+	margin: 10px 0 20px 30px;
+	position: relative
+}
+
+.bwcModule_left {
+	padding: 209px 50px 0 31px;
+	float: left;
+	width: 160px
+}
+
+.bwcModule_left ul {
+	width: 150px;
+}
+
+.bwcModule_left ul li {
+	padding: 0
+}
+
+.bwcModule_left ul li a {
+	height: 170px
+}
+
+.bwcModule_left a:hover .mark {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/bwcmodule-bg.png?v=2) no-repeat 0 0;
+}
+
+.bwcModule_right {
+	float: left;
+	width: 344px;
+	padding-top: 35px;
+	background: url(http://sc2.nos.netease.com/1/style/images/article/bwcmodule-title2.png?v=2) no-repeat -20px 60px
+}
+
+.bwcModule_right .bwcModule_join {
+	display: block;
+	width: 344px;
+	margin-bottom: 15px;
+	text-align: right;
+	font-size: 14px;
+	color: #00b959;
+	background: url(http://sc2.nos.netease.com/1/style/images/article/bwcmodule-pic.gif?v=2) no-repeat 120px 6px;
+}
+
+.bwcModule_right .bwcModule_join:hover {
+	color: #fff;
+	background-position: 120px -13px;
+}
+
+.bwcModule_right dl {
+	margin-bottom: 10px
+}
+
+.bwcModule_right dl dt {
+	line-height: 24px;
+	height: 24px;
+	overflow: hidden;
+}
+
+.bwcModule_right dl dt a {
+	font-size: 15px;
+	color: #009cff;
+}
+
+.bwcModule_right dl dt a:hover {
+	color: #fff
+}
+
+.bwcModule_right dl dd {
+	color: #bfbfbf;
+	line-height: 20px;
+	height: 40px;
+	overflow: hidden
+}
+
+.bwcModule_right ul {
+	margin-top: 15px;
+	background: url(http://sc2.nos.netease.com/1/style/images/article/bwcmodule-title.png?v=2) no-repeat 0 0;
+	padding: 10px 0 0 10px
+}
+
+.bwcModule_right ul li {
+	color: #86C3D7;
+	border-bottom: 1px dashed #0a1c2a;
+	background: url(http://sc2.nos.netease.com/1/style/images/article/bwcmodule-listbg.jpg?v=2) no-repeat 0 12px;
+	text-indent: 4px;
+	height: 26px;
+	line-height: 26px
+}
+
+.bwcModule_right ul li a {
+	color: #86C3D7;
+	width: 266px;
+	white-space: nowrap;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.bwcModule_right ul li a:hover {
+	color: #fff
+}
+
+.bwcModule_right ul li span {
+	float: right;
+	color: #1e4965;
+	font-size: 14px;
+	line-height: 23px
+}
+
+.bwcModule_a {
+	position: absolute;
+	width: 300px;
+	height: 70px;
+	display: block;
+}
+/*rate table*/
+.chartStyle {
+	border: 1px solid #198db6;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 0 9px #0068A3 inset;
+	box-shadow: 0 0 9px #0068A3 inset;
+	background: #020e1a;
+	color: #fff;
+}
+
+.chart4 {
+	width: 628px;
+}
+
+.chartStyle .chartTitle {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/above_glow.png) no-repeat center 0;
+	height: 43px;
+	border-top: 1px solid #03253b;
+	border-bottom: 1px solid #03253b;
+	line-height: 43px;
+	text-align: center;
+}
+
+.chartStyle .chartTitle strong {
+	display: inline-block;
+	width: 155px;
+}
+
+.chartStyle ul.chartCol {
+	float: left;
+	width: 107px;
+	margin-right: 183px;
+	display: inline;
+	font-size: 12px;
+	padding: 2px 0;
+}
+
+.chartStyle ul.chartCol span {
+	display: inline-block;
+	width: 81px;
+	height: 22px;
+	margin-right: 6px;
+	vertical-align: top;
+	font-size: 12px;
+}
+
+.chartStyle ul.chartCol strong {
+	height: 22px;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.chartStyle .chart4_1 .next {
+	padding-top: 46px;
+}
+
+.chartStyle .chart4_1 ul.chartSubCol {
+	padding-top: 46px;
+	margin-right: 32px;
+}
+
+.chartStyle .chart4_1 ul.chartLastCol {
+	margin-right: 0;
+	padding-top: 57px;
+}
+
+.chartStyle ul.chartCol li {
+	height: 22px;
+	line-height: 22px;
+	width: 96px;
+	padding: 0 6px;
+}
+
+.chartStyle .chart4_1 {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart4_1.jpg) no-repeat 20px 43px;
+	*background: url(http://sc2.nos.netease.com/1/style/images/article/chart4_1.jpg) no-repeat 46px 43px;
+	height: 141px;
+	padding: 43px 20px 43px 20px;
+}
+
+.chartStyle .chart4_2 {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart4_2.jpg) no-repeat 20px 43px;
+	*background: url(http://sc2.nos.netease.com/1/style/images/article/chart4_2.jpg) no-repeat 46px 43px;
+	height: 84px;
+	padding: 43px 20px 43px 20px;
+}
+
+.chartStyle .chart4_2 .next {
+	padding-top: 33px;
+}
+
+.chartStyle .chart4_2 ul.chartSubCol {
+	margin-right: 32px;
+}
+
+.chartStyle .chart4_2 ul.chartLastCol {
+	margin-right: 0;
+	padding-top: 13px;
+}
+/*16*/
+.chart16 {
+	width: 628px;
+	position: relative;
+	padding-bottom: 110px;
+}
+
+.chart16 .chartTitle strong {
+	width: 120px;
+}
+
+.chartStyle .chart16_1 {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart16.jpg) no-repeat 20px 43px;
+	*background: url(http://sc2.nos.netease.com/1/style/images/article/chart16.jpg) no-repeat 36px 43px;
+	width: 585px;
+	height: 688px;
+	padding: 43px 20px 43px 20px;
+}
+
+.chartStyle .chart16_1 .next {
+	padding-top: 47px;
+}
+
+.chartStyle .chart16_1 .next {
+	padding-top: 47px;
+}
+
+.chartStyle .chart16_1 ul.chartCol {
+	margin-right: 14px;
+}
+
+.chartStyle .chart16_1 ul.chartSubCol {
+	padding-top: 46px;
+}
+
+.chartStyle .chart16_1 ul.chartSubCol .next {
+	padding-top: 138px;
+}
+
+.chartStyle .chart16_1 ul.chartSubCol_1 {
+	padding-top: 138px;
+	margin-right: 7px;
+}
+
+.chartStyle .chart16_1 ul.chartSubCol_1 .next {
+	padding-top: 320px;
+}
+
+.chartStyle .chart16_1 ul.chartSubCol_2 {
+	padding-top: 148px;
+}
+
+.chartStyle .chart16_1 ul.chartSubCol_2 .next {
+	padding-top: 343px;
+}
+
+.chartStyle .chart16_1 ul.chartLastCol {
+	padding-top: 330px;
+	margin-right: 0;
+}
+
+.chartStyle .chart16_2 {
+	position: absolute;
+	width: 250px;
+	right: 0;
+	bottom: 0;
+}
+
+.chartStyle .chart16_2 .chart16_2_con {
+	padding: 25px 20px 25px 10px;
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart3.jpg) no-repeat 10px 25px;
+	*background: url(http://sc2.nos.netease.com/1/style/images/article/chart3.jpg) no-repeat 26px 25px;
+	width: 230px;
+	height: 120px;
+}
+
+.chartStyle .chart16_2 ul.chartCol {
+	margin-right: 14px;
+}
+
+.chartStyle .chart16_2 ul.chartLastCol {
+	margin-right: 0;
+	padding-top: 47px;
+}
+
+.chartStyle .chart16_2 .next {
+	padding-top: 70px;
+}
+
+.chartStyle .chartCol_video {
+	position: relative;
+}
+
+.chartStyle .chartCol_video_list {
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart17.gif) no-repeat 5px 8px;
+	padding-left: 32px;
+}
+
+.chartStyle .chartCol_video_list a {
+	color: #64ec03;
+	text-decoration: none;
+	padding-right: 4px;
+	font-size: 12px
+}
+
+.chartStyle .chartCol_video_list a:hover {
+	color: #fff;
+}
+
+.chartStyle .chartCol_video_down {
+	bottom: -38px;
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart18.gif) no-repeat 5px 8px;
+}
+
+.chart4 ul.chartCol li {
+	width: 120px
+}
+
+.chart4 ul.chartCol span {
+	width: 102px;
+	margin-right: 8px
+}
+
+.chart4 ul.chartCol {
+	margin-right: 132px
+}
+
+.chart4 .chart4_1 ul.chartSubCol {
+	margin-right: 106px
+}
+
+.chart4 .chart4_2 ul.chartSubCol {
+	margin-right: 106px
+}
+
+.chart4 .chartTitle {
+	text-align: left;
+	padding: 0 34px
+}
+
+.chart4 .chartTitle .chart4_two {
+	width: 358px;
+	text-align: center
+}
+
+.chart4 .chartTitle strong {
+	width: auto
+}
+/*chart nav*/
+.chart_nav {
+	width: 621px;
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart_nav.jpg) no-repeat 0 top;
+}
+
+.chart_nav .chart_nav_list {
+	position: relative;
+	height: 46px;
+	padding-top: 1px;
+	text-align: center;
+}
+
+.chart_nav .chart_nav_list li {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart_nav_nor.png) no-repeat 0 top;
+	float: left;
+	width: 74px;
+	height: 46px;
+	line-height: 46px;
+	position: absolute;
+	cursor: pointer;
+	text-shadow: 1px 1px 3px #000;
+}
+
+.chart_nav .chart_nav_con {
+	display: none
+}
+
+.chart_nav .active {
+	display: block
+}
+
+.chart_nav .chart_nav_list .chart_nav_hov {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart_nav_hov.png) no-repeat 0 top;
+	color: #fff;
+}
+
+.chart_nav .chart_nav_list .chart_nav_act {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart_nav_act.png) no-repeat 0 top;
+	_background: url(http://sc2.nos.netease.com/1/style/images/article/chart_nav_nor.png) no-repeat 0 top;
+	z-index: 20;
+	_z-index: 0;
+	color: #fff
+}
+
+.chart_nav .chart_nav_jk {
+	height: 28px;
+	line-height: 28px;
+	padding: 0 100px;
+	margin-bottom: 10px
+}
+
+.chart_nav .chart_nav_jk a {
+	font-size: 12px;
+	width: 100px;
+	display: inline-block;
+	text-align: center
+}
+
+.chart_nav .chart_look {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart_nav_pic.jpg) no-repeat 18px 9px;
+	text-indent: 28px
+}
+/*浮层显示兵种信息*/
+.unitFloat {
+	width: 294;
+	position: absolute;
+	z-index: 9999;
+}
+
+.unitFloat span.bg {
+	background: url(http://sc2.nos.netease.com/1/style/images/gameguide/unitFloatBg.png) no-repeat 0 0;
+	display: block;
+	width: 15px;
+	height: 160px;
+	float: left;
+}
+
+.unitFloat span.rightBg {
+	widht: 15px;
+	background-position: 100% 0;
+}
+
+.unitFloat .con {
+	text-align: left;
+	color: #177fa0;
+	overflow: hidden;
+	zoom: 1;
+	float: left;
+	height: 152px;
+	padding: 8px 6px 0 3px;
+	background: url(http://sc2.nos.netease.com/1/style/images/gameguide/unitFloatXBg.png) repeat-x 0 0;
+}
+
+.unitFloat .con .loadWait {
+	line-height: 160px;
+	font-size: 20px;
+}
+
+.unitFloat .con h3 {
+	border-bottom: 1px solid #a0d7e8;
+	padding: 5px 0;
+	font-size: 14px;
+	color: #0e2134;
+}
+
+.unitFloat .con .intro {
+	padding: 5px 0;
+}
+
+.unitFloat .con .unitCon ul {
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+.unitFloat .con .unitCon ul strong {
+	width: 67px;
+	display: block;
+	float: left;
+}
+
+.unitFloat .con .unitCon ul span {
+	margin-right: 10px;
+	color: #0a2c58;
+}
+
+.unitFloat .con .unitCon ul span img {
+	margin: 0 2px 0 0;
+}
+/*单位*/
+.unitImgBg {
+	background: url("http://sc2.nos.netease.com/1/style/images/portrait-frame.gif") no-repeat 0 -113px;
+	float: left;
+	height: 75px;
+	width: 75px;
+	padding: 3px 7px 4px 6px;
+}
+
+.unitImg {
+	display: block;
+	width: 75px;
+	height: 75px;
+	background: url("http://sc2.nos.netease.com/1/style/images/unit/unit-thumbs-table.gif") no-repeat 0 0;
+	overflow: hidden;
+	zoom: 1;
+	background-color: #000;
+}
+
+.probe {
+	background-position: 0 -25px;
+}
+
+.zealot {
+	background-position: -80px -25px;
+}
+
+.stalker {
+	background-position: -160px -25px;
+}
+
+.sentry {
+	background-position: -240px -25px;
+}
+
+.observer {
+	background-position: -320px -25px;
+}
+
+.immortal {
+	background-position: 0 -111px;
+}
+
+.warp-prism {
+	background-position: -80px -111px;
+}
+
+.colossus {
+	background-position: -160px -111px;
+}
+
+.phoenix {
+	background-position: -240px -111px;
+}
+
+.void-ray {
+	background-position: -320px -111px;
+}
+
+.high-templar {
+	background-position: 0 -197px;
+}
+
+.dark-templar {
+	background-position: -80px -197px;
+}
+
+.archon {
+	background-position: -160px -197px;
+}
+
+.carrier {
+	background-position: -240px -197px;
+}
+
+.mothership {
+	background-position: -320px -197px;
+}
+
+.scv {
+	background-position: 0 -313px;
+}
+
+.marine {
+	background-position: -80px -313px;
+}
+
+.marauder {
+	background-position: -160px -313px;
+}
+
+.reaper {
+	background-position: -240px -313px;
+}
+
+.ghost {
+	background-position: -320px -313px;
+}
+
+.hellion {
+	background-position: 0 -399px;
+}
+
+.siege-tank {
+	background-position: -80px -399px;
+}
+
+.thor {
+	background-position: -160px -399px;
+}
+
+.viking {
+	background-position: -240px -399px;
+}
+
+.medivac {
+	background-position: -320px -399px;
+}
+
+.raven {
+	background-position: 0 -485px;
+}
+
+.banshee {
+	background-position: -80px -485px;
+}
+
+.battlecruiser {
+	background-position: -160px -485px;
+}
+
+.larva {
+	background-position: 0 -601px;
+}
+
+.drone {
+	background-position: -80px -601px;
+}
+
+.overlord {
+	background-position: -160px -601px;
+}
+
+.zergling {
+	background-position: -240px -601px;
+}
+
+.queen {
+	background-position: -320px -601px;
+}
+
+.hydralisk {
+	background-position: 0 -687px;
+}
+
+.baneling {
+	background-position: -80px -687px;
+}
+
+.overseer {
+	background-position: -160px -687px;
+}
+
+.roach {
+	background-position: -240px -687px;
+}
+
+.infestor {
+	background-position: -320px -687px;
+}
+
+.mutalisk {
+	background-position: 0 -773px;
+}
+
+.corruptor {
+	background-position: -80px -773px;
+}
+
+.nydus-worm {
+	background-position: -160px -773px;
+}
+
+.ultralisk {
+	background-position: -240px -773px;
+}
+
+.brood-lord {
+	background-position: -320px -773px;
+}
+
+.commentLock {
+	margin: 10px 0 0;
+	width: 600px;
+}
+/*end*/
+
+/* 八强*/
+.chart8Con {
+	padding: 10px;
+}
+
+.chart8 .chartTitle {
+	padding: 0 0 0 136px;
+}
+
+.chart8 .chartTitle .chart4_two {
+	text-align: left;
+	padding: 0 0 0 98px;
+	width: 102px;
+}
+
+.chart8 .chartTitle .chart4_three {
+	width: 125px;
+}
+
+.chart8Con ul {
+	background: url(http://sc2.nos.netease.com/1/style/images/article/chart8.jpg) no-repeat 0 10px;
+	width: 585px;
+	height: 688px;
+	position: relative;
+}
+
+.chart8Con ul li {
+	position: absolute;
+}
+
+.chart8Con ul li span {
+	display: inline-block;
+	font-size: 12px;
+	height: 22px;
+	vertical-align: top;
+	width: 81px;
+	padding-left: 5px;
+}
+
+.chart8Con ul li strong {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: normal;
+	height: 22px;
+	width: 18px;
+	text-align: center;
+	vertical-align: top;
+}
+
+.chart8Con ul li.race1 {
+	left: 86px;
+	top: 56px;
+}
+
+.chart8Con ul li.race2 {
+	left: 86px;
+	top: 80px;
+}
+
+.chart8Con ul li.race3 {
+	left: 86px;
+	top: 239px;
+}
+
+.chart8Con ul li.race4 {
+	left: 86px;
+	top: 263px;
+}
+
+.chart8Con ul li.race5 {
+	left: 86px;
+	top: 420px;
+}
+
+.chart8Con ul li.race6 {
+	left: 86px;
+	top: 444px;
+}
+
+.chart8Con ul li.race7 {
+	left: 86px;
+	top: 603px;
+}
+
+.chart8Con ul li.race8 {
+	left: 86px;
+	top: 627px;
+}
+
+.chart8Con ul li.race9 {
+	left: 205px;
+	top: 148px;
+}
+
+.chart8Con ul li.race10 {
+	left: 205px;
+	top: 173px;
+}
+
+.chart8Con ul li.race11 {
+	left: 205px;
+	top: 512px;
+}
+
+.chart8Con ul li.race12 {
+	left: 205px;
+	top: 536px;
+}
+
+.chart8Con ul li.race13 {
+	left: 319px;
+	top: 159px;
+}
+
+.chart8Con ul li.race14 {
+	left: 319px;
+	top: 524px;
+}
+
+.chart8Con ul li.race15 {
+	left: 440px;
+	top: 342px;
+}

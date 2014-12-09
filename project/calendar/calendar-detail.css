@@ -1,0 +1,604 @@
+@charset "utf-8";
+/* CSS Document */
+.w-adv .content {
+	width: 316px
+}
+/* CSS Document */
+#wrapper {
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+}
+/*body { background:#000 url(http://nos.netease.com/sc2/1/style/images/unit/bg_top.jpg) center 0 no-repeat; }*/
+.g-header {
+	z-index: 100;
+	position: relative;
+}
+
+.g-cnt-top {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/cnt-bg.png?v=2) no-repeat 0 0;
+	height: 715px;
+}
+
+.g-cnt-btm {
+	background-color: #000d1f;
+	width: 1000px;
+}
+
+.g-cnt-grad-bg-1024 {
+	width: 1022px;
+}
+
+.g-cnt {
+	margin: -715px 0 0;
+	float: left;
+	position: relative;
+	zoom: 1;
+	text-align: left;
+	background: none
+}
+
+.g-cnt .left {
+	width: 652px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.g-cnt .right {
+	width: 316px;
+	padding: 55px 0 0;
+	display: inline;
+	margin-left: 32px;
+}
+
+.m-footer {
+	background: #000 url(http://nos.netease.com/sc2/1/style/images/unit/foot-line.jpg) no-repeat 0 40px;
+	width: 912px;
+	padding: 50px 55px 30px;
+}
+
+.w-activity-calendar .icn-ltgreen {
+	float: left;
+	width: 16px;
+	height: 20px;
+	background: url(http://nos.netease.com/sc2/1/style/images/icon-dir.png?v=1) 0 5px no-repeat;
+	margin-left: 0
+}
+
+.icn-ltgreen {
+	float: left;
+	width: 16px;
+	height: 20px;
+	background: url(http://nos.netease.com/sc2/1/style/images/icon-dir.png?v=1) 0 5px no-repeat;
+	margin-left: 0
+}
+
+.w-more {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	width: 100px;
+	text-align: left;
+	color: #00b959 !important;
+	padding: 0
+}
+
+.w-more:hover {
+	color: #fff;
+}
+
+.w-more:hover .icn-ltgreen {
+	background-position: 0 -22px;
+}
+
+.w-more-1 {
+	position: absolute;
+	top: 220px;
+	left: 180px;
+}
+
+.w-more-2 {
+	position: absolute;
+	top: 22px;
+	left: 170px;
+}
+
+.w-breadcrumb {
+	padding: 21px 0 0 28px;
+	height: 31px;
+}
+
+.w-breadcrumb li {
+	background: url("http://nos.netease.com/sc2/1/style/images/flyout-arrows.gif") no-repeat scroll 98% -120px;
+	float: left;
+	margin-right: 5px;
+	padding-right: 25px;
+}
+
+.w-breadcrumb li a {
+	color: #00D683;
+}
+
+.w-breadcrumb li.opend {
+	background: none;
+}
+
+.w-breadcrumb li.opend a {
+	color: #fff;
+	border-color: #FFF;
+}
+
+.ui-breadcrumb li a {
+	border-bottom: 1px dotted #00765A;
+}
+
+.calendar-active {
+	padding: 34px 5px 0 35px;
+}
+
+.calendar-active .w-activity-calendar {
+	width: 320px;
+	height: 266px;
+	background: url(http://sc2.nos.netease.com/1/style/images/calendar/activity-calendar.gif?v=3) no-repeat;
+	position: relative;
+}
+
+.calendar-active .calendar {
+	position: absolute;
+	left: 22px;
+	top: 55px;
+	width: 282px;
+	height: 113px;
+	z-index: 0;
+}
+
+.calendar-active .calendar .navbtn {
+	position: absolute;
+	width: 15px;
+	height: 16px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.calendar-active .calendar .navbtn.prev {
+	left: 5px;
+	top: 4px;
+}
+
+.calendar-active .calendar .navbtn.next {
+	left: 260px;
+	top: 4px;
+}
+
+.calendar-active .calendar .title {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 282px;
+	height: 24px;
+	line-height: 24px;
+	color: #6e93cd;
+	font-weight: bold;
+	text-align: center;
+}
+
+.calendar-active .calendar .dates {
+	position: absolute;
+	left: 0;
+	top: 25px;
+	width: 282px;
+	height: 113px;
+	cursor: default;
+}
+
+.calendar-active .calendar .dates .hdr {
+	float: left;
+	margin: 0 0 1px 2px;
+	width: 38px;
+	height: 18px;
+	line-height: 18px;
+	color: #3f5f92;
+	text-align: center;
+}
+
+.calendar-active .calendar .dates .date {
+	float: left;
+	margin: 0 0 1px 2px;
+	width: 38px;
+	height: 17px;
+	line-height: 17px;
+	color: #5a8ee0;
+	text-align: center;
+}
+
+.calendar-active .calendar .dates .date {
+	background: url(http://nos.netease.com/sc2/1/style/images/home/activity-calendar.gif) no-repeat -195px -423px;
+}
+
+.calendar-active .calendar .dates .outofrange {
+	color: #1a3054;
+}
+
+.calendar-active .calendar .dates .normal {
+	background-position: -195px -423px;
+}
+
+.calendar-active .calendar .dates .normal-hover {
+	background-position: -117px -423px;
+}
+
+.calendar-active .calendar .dates .has-activity {
+	background-position: -39px -423px;
+	cursor: pointer;
+}
+
+.calendar-active .calendar .dates .has-activity-hover {
+	background-position: -156px -423px;
+}
+
+.calendar-active .calendar .dates .today {
+	background-position: 0px -423px;
+}
+
+.calendar-active .calendar .dates .today-hover {
+	background-position: 0px -423px;
+}
+
+.calendar-active .calendar .dates .today-has-activity {
+	background-position: -78px -423px;
+}
+
+.calendar-active .calendar .dates .f-cb {
+	clear: both;
+}
+
+.calendar-tip {
+	margin: 0 0 0 19px;
+}
+
+.calendar-tip h2 {
+	color: #47c5ff;
+	font-size: 24px;
+	margin: 0 0 10px;
+}
+
+.calendar-tip ol li {
+	color: #fff;
+	width: 265px;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 0 0 0 3px;
+}
+
+.activities-info {
+	margin: 50px 0 0;
+	width: 612px;
+	padding: 17px 7px 0 33px;
+}
+
+.activities-info h2 {
+	font-size: 16px;
+	color: #fff;
+	padding: 0 0 10px;
+}
+
+.activities-info p.header {
+	height: 48px;
+	line-height: 48px;
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/activities-info.png) no-repeat 0 0;
+	color: #086faa;
+}
+
+.activities-info p.header span.status-h {
+	padding: 0 48px 0 8px;
+}
+
+.activities-info p.header span.type-h {
+	padding: 0 39px 0 0;
+}
+
+.activities-info p.header span.name-h {
+	padding: 0 300px 0 0;
+}
+
+.activities-info p.header span.title-h {
+	padding: 0 297px 0 0;
+}
+
+.activities-info p.header span.city-h {
+	padding: 0 28px 0 0;
+}
+
+.activities-info ul li {
+	height: 41px;
+	line-height: 41px;
+	color: #0094ff;
+	border-bottom: 1px solid #00213e;
+	padding: 0 7px;
+}
+
+.activities-info ul li.odd {
+	background-color: #001129;
+}
+
+.activities-info ul li.even {
+	background-color: #000f25;
+}
+
+.activities-info ul li span {
+	display: inline-block;
+}
+
+.activities-info ul li img {
+	padding: 0 2px 0 8px;
+	vertical-align: middle;
+}
+
+.activities-info ul li span.city {
+	margin: 0 8px 0 0;
+}
+
+.activities-info ul li a.active-title {
+	width: 318px;
+}
+
+.status {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/notice-title.gif) no-repeat;
+	height: 18px;
+	width: 65px;
+	line-height: 18px;
+	text-align: center;
+	color: #fff;
+}
+
+.activity-not-start {
+	background-position: 0 -36px;
+}
+
+.activity-hava-over {
+	background-position: 0 -18px;
+}
+
+.activity-on {
+	background-position: 0 0;
+}
+
+.type {
+	color: #00c66a;
+	padding: 0 5px;
+}
+
+.active-title {
+	color: #0094ff;
+	display: inline-block;
+}
+
+.city {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/city.gif) no-repeat center center;
+	width: 44px;
+	height: 21px;
+	line-height: 21px;
+	text-align: center;
+	color: #fff;
+}
+
+.date {
+	color: #5b7486;
+}
+
+.activity-notice-top {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/right-active-top.gif) no-repeat 0 0;
+	height: 129px;
+	margin: -25px 0 0 -3px;
+	width: 319px;
+}
+
+.activity-notice-con {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/right-active.gif) repeat-y 0 0;
+	margin: 0 0 0 -3px;
+	width: 319px;
+}
+
+.activity-notice {
+	margin: -129px 0 -180px;
+	float: left;
+	width: 100%;
+	position: relative;
+	zoom: 1;
+	padding: 0 0 50px;
+}
+
+.activity-notice-btm {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/right-active-btm.gif) no-repeat 0 0;
+	height: 180px;
+	margin: 0 0 35px -3px;
+	width: 319px;
+}
+
+.activity-notice {
+	position: relative;
+}
+
+.activity-notice h3 {
+	text-indent: -999em;
+	height: 50px;
+}
+
+.activity-notice .activity h4 {
+	border-top: 2px solid #002555;
+	height: 25px;
+	background: #00142f;
+	padding: 1px 0 0;
+	margin: 16px 0 5px 29px;
+	width: 268px;
+}
+
+.activity-notice .activity h4 span {
+	display: block;
+	background-color: #001935;
+	padding: 3px 0 0 6px;
+	height: 21px;
+}
+
+.activity-notice dl {
+	width: 268px;
+	margin: 0 0 10px 28px;
+}
+
+.activity-notice dl span {
+	display: inline-block;
+}
+
+.activity-notice dl img {
+	vertical-align: middle;
+}
+
+.activity-notice dl dt span {
+	float: left;
+}
+
+.activity-notice dl dt a {
+	float: left;
+	height: 29px;
+	line-height: 29px;
+	width: 196px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.activity-notice dl dt,.activity-notice dl dd {
+	border-bottom: 1px dashed #0c202c;
+	height: 29px;
+	line-height: 29px;
+}
+
+.activity-notice dl dd .date {
+	padding: 0 106px 0 27px;
+}
+
+.activity-notice .activity h4 span strong {
+	font-weight: normal;
+}
+
+.activity-notice h4 strong {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/notice-title.gif) no-repeat 0 0;
+	width: 65px;
+	height: 18px;
+	height: 16px\9;
+	padding: 0;
+	padding: 2px 0 0\9;
+	text-align: center;
+	color: #fff;
+	display: block;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.over-activity h4 strong {
+	background-position: 0 -18px;
+}
+
+.coming-activity h4 strong {
+	background-position: 0 -36px;
+}
+
+.activity-notice .more {
+	text-align: right;
+	padding: 0 23px 0 0;
+}
+
+.activity-notice .more a {
+	color: #00ff84;
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/icon.gif) no-repeat left center;
+	padding: 0 0 0 12px;
+}
+
+.hot-activity {
+	padding: 25px 0 0 13px;
+	_padding-left: 12px;
+}
+
+.hot-activity h3 {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/icon02.jpg) no-repeat left center;
+	padding: 0 0 0 25px;
+	color: #a3c9e4;
+}
+
+.hot-activity ul {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/hot-activity-bg.jpg) no-repeat 0 0;
+	margin: 10px 0 0;
+	padding: 15px 0 0 15px;
+	width: 315px;
+}
+
+.hot-activity ul li {
+	margin: 0 0 12px;
+}
+
+.activities-info .wrap {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+.activities-info .type1 {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/activity-calendar-icons.gif?v=2) no-repeat;
+}
+
+.activities-info .game {
+	background-position: 0 -203px;
+}
+
+.activities-info .official {
+	background-position: 0 -243px;
+}
+
+.activities-info .exhibition {
+	background-position: 0 -283px;
+}
+
+.activities-info .interflow {
+	background-position: 0 -323px;
+}
+
+.activities-info .activity {
+	background-position: 0 -363px;
+}
+
+.activity-notice .wrap {
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	margin: 6px 0 0;
+}
+
+.activity-notice .type1 {
+	background: url(http://nos.netease.com/sc2/1/style/images/calendar/activity-calendar-icons.gif?v=5) no-repeat;
+}
+
+.activity-notice .game {
+	background-position: 0 -203px;
+}
+
+.activity-notice .official {
+	background-position: 0 -243px;
+}
+
+.activity-notice .exhibition {
+	background-position: -2px -283px;
+}
+
+.activity-notice .interflow {
+	background-position: 0 -323px;
+}
+
+.activity-notice .activity {
+	background-position: -3px -364px;
+}
+
+.w-search {
+	margin-left: -10px;
+	zoom: 1;
+	_position: relative;
+	_z-index: 9
+}
