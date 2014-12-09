@@ -1,0 +1,22 @@
+        inView:function(obj){
+            var w=$(window),
+                wt=w.scrollTop(),
+                wh=w.height(),
+                ot=this.getOffsetTop(obj),
+                objH=obj.height();
+                if ( (wt + wh) > ot) {
+                    return true;
+                }
+                return false;           
+        },
+        inTopView:function(obj){
+            var w=$(window),
+                wt=w.scrollTop(),
+                wh=w.height(),
+                ot=this.getOffsetTop(obj),
+                objH=obj.height();
+                if ( wt > ot) {
+                    return true;
+                }
+                return false; 
+        },
