@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <meta content="width=1000,maximum-scale=1.0" name="viewport" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />    
+	<title>anim_canvas</title>
+<!--     <link rel="stylesheet" href="../../src/css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="../../src/css/style.css" type="text/css" media="all" /> -->
+	
+
+<style>
+body{
+    background: #79a8ae;
+}
+  #header{
+    width: 200px;
+    height: 200px;
+  }
+</style>
+</head>
+<body>
+<div id="header">
+  
+</div>
+
+<canvas id="J_AnimCanvas"></canvas>
+    
+
+
+
+
+    <script type="text/javascript" src="../../../base/touch/zepto.js"></script>
+    <script type="text/javascript" src="../../../base/touch/jquery.namespace.js"></script>    
+    <script type="text/javascript" src="jquery.animCanvas.js"></script>
+    <script>
+        $(function(){
+            new JV.animCanvas("#J_AnimCanvas");
+        })
+    </script>
+</body>
+</html>
