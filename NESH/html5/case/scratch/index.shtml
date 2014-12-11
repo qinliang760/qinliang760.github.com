@@ -11,17 +11,10 @@
 	
 
 <style>
-/* .demo{
-    max-width: 640px;
-    margin: 0 auto;
-}
-.demo h1{
-    font-weight: bold;
-    font-size: 24px;
-    padding: 50px 0;
-} */
-#cardImg{
+
+.pic{
     max-width: 100%;
+    visibility: hidden;
 }
 #scratchArea{
     position: relative;
@@ -55,7 +48,10 @@ canvas{
     <script type="text/javascript" src="jquery.scratch.js"></script>
     <script>
         $(function(){
-            new JV.scratch("#scratchArea");
+            new JV.scratch({
+                canvas:"#scratch",
+                img:".pic"
+            });
         })
     </script>
 </body>

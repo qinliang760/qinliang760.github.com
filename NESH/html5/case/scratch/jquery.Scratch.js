@@ -11,35 +11,18 @@ $.ns("JV");
      * @class scratch
      * @constructor
      */
-    JV.scratch = function(Jnode, cfg) {
+    JV.scratch = function(cfg) {
         var defaults = {
-			srcNode:Jnode,
             canvas:"#scratch",
             img:".pic",
             eraser: 0,
-            realtime: true,
-            size: 10,
-            bg: '#cacaca',
-            bgOrigin: false,
-            bgSize: null,
-            fg: '#6699ff',
-            fgOrigin: false,
-            cursor: 'default',
-            color: "#cccccc"
+            size: 30,
+            fg: '#f00'//color '#f00' or image 'http://hearthstone.nos.netease.com/3/touch/gvg/s6_card_bg.png'
         };
-        this.items = Jnode;//html or $
         this.cfg = $.extend({}, defaults, cfg); //合并defaults和cfg，不修改defaults
-        this.srcNode=$(Jnode);
         this.eraser=this.cfg.eraser;
-        this.realtime=this.cfg.realtime;
         this.size=this.cfg.size;
-        this.bg=this.cfg.bg;
-        this.bgOrigin=this.cfg.bgOrigin;
-        this.bgSize=this.cfg.bgSize;
         this.fg=this.cfg.fg;
-        this.fgOrigin=this.cfg.fgOrigin;
-        this.cursor=this.cfg.cursor;
-        this.color=this.cfg.color;
         this.initializer();
 
     };
@@ -54,32 +37,17 @@ $.ns("JV");
  		initializer: function() {
             var self = this;
 
-            self.$el = self.srcNode;
-            if (self._supportCanvas()) {
-                self.$el.html('Canvas is not supported in this browser.')
-                return true;
-            };
-
-            self.enabled = true;
             self.canvas = $(this.cfg.canvas)[0];
             self.ctx = self.canvas.getContext('2d');
 
-
             self.$img = $(this.cfg.img);
+            self.$scratchpad=$(self.canvas);
 
             self.setImgLoad(self.$img.attr("src"),function(){
                 self.canvas.width=self.$img.width();
                 self.canvas.height=self.$img.height();
+                self.render();                
             })
-
-
-            self.$scratchpad=$(self.canvas);
-            self.$el.append(self.$img).append(self.$scratchpad);
-            self.ctx.beginPath();
-            self.ctx.arc(10, 10, 10, 0, Math.PI * 2, true);
-            self.ctx.fill();
-            self.ctx.stroke();
-            self.render();
             self._bindEvents();
         },
         setImgLoad:function(img,callback){
@@ -99,39 +67,17 @@ $.ns("JV");
         },
         render: function() {
             var self = this,
-                width = Math.ceil(self.$el.width()),//for zepto use width
-                height = Math.ceil(self.$el.height()),//for zepto use height
+                width = Math.ceil(self.$img.width()),//for zepto use width
+                height = Math.ceil(self.$img.height()),//for zepto use height
                 devicePixelRatio = window.devicePixelRatio || 1;//debugger;
 
             // Set number of pixels required for getting scratch percentage.
             self.pixels = width * height;
 
-            // We'll do a hard render for the height here in case
-            // we need to run this at differnt sizes.
-            //self.$scratchpad.attr('width', width).attr('height', height);
-
-            //self.canvas.setAttribute('width', width * devicePixelRatio);
-            //self.canvas.setAttribute('height', height * devicePixelRatio);
-
-            //self.ctx.scale(devicePixelRatio, devicePixelRatio);
-            self.pixels = width * devicePixelRatio * height * devicePixelRatio;
-
-            // Default to image hidden in case no bg or color is set.
-            //self.$img.hide();
-
-            if (self.bg) {
-                //if (self.bg.charAt(0) === '#') {
-                    self.$el.css('backgroundColor', self.bg);
-                /*} else {
-                    self.$el.css('backgroundColor', EMPTY);
-                    self.$img.attr('src', self.bg);
-                }*/
-            }
-
             // Set fg.
             if (self.fg) {
                 if (self.fg.charAt(0) === '#') {
-                	self.$img.show();
+                	self.$img.css("visibility","visible");
                     self.ctx.fillStyle = self.fg;
                     self.ctx.beginPath();
                     self.ctx.rect(0, 0, width, height);
@@ -142,107 +88,84 @@ $.ns("JV");
                     var canvasImage = new Image();
                     canvasImage.onload = function() {
                         self.ctx.drawImage(this, 0, 0, width, height);
-                        self.$img.show();
-                    };
-                    if (self.fgOrigin) {
-                        canvasImage.crossOrigin = "*";
+                        self.$img.css("visibility","visible");
                     };
                     canvasImage.src = self.fg;
                 }
             }
 
-            if (self.cursor && self.cursor !== 'crosshair') {
-                self._setCursor();
-            };
         },
         clear: function() {
             var self = this;
-            self.ctx.clearRect(0, 0, Math.ceil(self.$el.innerWidth()), Math.ceil(self.$el.innerHeight()));
+            self.ctx.clearRect(0, 0, Math.ceil(self.$img.width()), Math.ceil(self.$img.height()));
         },
-        enable: function(enabled) {
-            this.enabled = enabled === true ? true : false;
-        },
+
         _bindEvents: function() {
             var self = this;
             self.$scratchpad.on("touchstart", function(event) {
-                if (!self.enabled) {
-                    return true;
-                };
+
                 self.canvasOffset = self.$scratchpad.offset();
                 self.scratch = true;
-                //self._scratchFunc(event, 'Down');
                 self._scratchDown(event);
             }).on("touchmove", function(event) {
                 event.preventDefault();
                 if (self.scratch) {
-                    //self._scratchFunc(event, 'Move');
                     self._scratchMove(event);
                 };
             }).on("touchend", function(event) {
                 event.preventDefault();
                 if (self.scratch) {
                     self.scratch = false;
-                    //self._scratchFunc(event, 'Up');
                     self._scratchUp(event);
                 }
             })
         },
-        _setCursor: function() {
-            var self = this;
-            self.$el.css('cursor', self.cursor);
-        },
-        _scratchFunc: function(event, type) {
-            var self = this;
-            event.pageX = Math.floor(event.pageX - self.canvasOffset.left);
-            event.pageY = Math.floor(event.pageY - self.canvasOffset.top);
-            self['_scratch' + type](event);
-        },
-        _scratchDown: function(e) {//debugger;
+
+        _scratchDown: function(e) {
             var self = this;
             self.ctx.globalCompositeOperation = 'destination-out';
             this.ctx.lineJoin = 'round';
             self.ctx.lineCap = 'round';
-            self.ctx.strokeStyle = self.color;
-            self.ctx.lineWidth = 40;
 
             //draw single dot in case of a click without a move
             self.ctx.beginPath();
 
-            self.ctx.arc(e.pageX, e.pageY, 10, 0, Math.PI * 2, true);
+            self.ctx.arc(e.targetTouches[0].pageX, e.targetTouches[0].pageY, self.size, 0, Math.PI * 2, true);
             self.ctx.closePath();
             self.ctx.fill();
             //start the path for a drag
-            //self.ctx.beginPath();
-            self.ctx.moveTo(e.pageX, e.pageY);
-            //self.fire('down');
+            self.ctx.beginPath();
+            self.ctx.moveTo(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+
         },
         _scratchMove: function(e) {
             var self = this;
-            self.ctx.lineTo(e.pageX, e.pageY);
+            self.ctx.lineWidth = self.size*2;
+            self.ctx.lineTo(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
             self.ctx.stroke();
-            if (self.realtime) {
-                self._scratchPercent();
-            };
-            //self.fire('move');
+            self._scratchPercent();
         },
         _scratchUp: function(e) {
             var self = this;
             self.ctx.beginPath();
 
-            self.ctx.arc(e.pageX, e.pageY, 10, 0, Math.PI * 2, true);
+            self.ctx.arc(e.changedTouches[0].pageX, e.changedTouches[0].pageY, self.size, 0, Math.PI * 2, true);
             self.ctx.closePath();
             self.ctx.fill();
             //start the path for a drag
-            //self.ctx.beginPath();
+            self.ctx.beginPath();
             self.ctx.moveTo(e.pageX, e.pageY);            
             self.ctx.closePath();
-            //self._scratchPercent();
-            //self.fire('up');
+            self._scratchPercent();
+
         },
-        _scratchPercent: function() {
+        _scratchPercent: function() {//get point
             var self = this;
+            if(self.eraser==100){
+                return;
+            }
             var hits = 0,
-                imageData = self.ctx.getImageData(0, 0, 640, 537);
+                imageData = self.ctx.getImageData(0, 0, self.$img.width(), self.$img.height());
             for (var i = 0, ii = imageData.data.length; i < ii; i = i + 4) {
                 if (imageData.data[i] === 0 && imageData.data[i + 1] === 0 && imageData.data[i + 2] === 0 && imageData.data[i + 3] === 0) {
                     hits++;
@@ -250,14 +173,11 @@ $.ns("JV");
             }
 
             self.eraser= (hits / this.pixels) * 100;
-        },
-        _supportCanvas: function() {
-            return !(document.createElement('canvas')).getContext
-        }/*,
-        init: function() {
-            var self=this;
-            self.setscratch();
-        }*/
+            if(self.eraser>50){
+                self.clear();
+                self.eraser=100;
+            }
+        }
 
   };
 
