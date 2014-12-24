@@ -50,3 +50,23 @@ define(function (require, exports, moudles) {
 ```
 
 https://github.com/breakfriday/seajs-jquery
+
+
+###兼容性的写法
+
+```js
+
+if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(function() {
+        'use strict';
+        return FastClick;
+    });
+} else if (typeof module !== 'undefined' && module.exports) {
+    module.exports = FastClick.attach;
+    module.exports.FastClick = FastClick;
+} else {
+    window.FastClick = FastClick;
+}
+
+```
