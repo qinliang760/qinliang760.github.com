@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>seajs test</title>
+</head>
+<body>
+
+<script src="http://qinliang760.github.io/cdn/js/jquery-1.7.2.min.js"></script>
+<script src="../sea-modules/sea.js"></script>
+<script>
+seajs.config({
+  base: "../sea-modules/",
+  alias: {
+  	//"seajs-debug":"seajs-debug"
+  }
+})
+	seajs.use(['core','../static/xmas'],function(core,xmas){
+		core.init();
+		xmas.init();
+	})
+</script>
+
+</body>
+</html>
