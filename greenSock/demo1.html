@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tween</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background: #f00;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	
+	<button>kill</button>
+	<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+	<script src="http://cdn.bootcss.com/gsap/latest/TimelineMax.min.js"></script>	
+
+	<script>
+		$(function(){
+			var anim=TweenMax.to([$(".box1"),$(".box2")],5,{marginLeft:"200px",delay:0,ease:"Power2.easeOut",onComplete:function(){
+				console.log("动画执行完成")
+			},repeat:2});
+
+			$("button").click(function(){
+				anim.kill();
+			})
+
+			var t=new TimelineMax();
+			var t1=new TimelineMax();
+
+			t.to($(".box3"),2,{marginLeft:"100px"}).to($(".box3"),1,{marginLeft:"90px"}).to($(".box3"),1,{marginLeft:"110px"});
+			//t1.to($(".box4"),1,{opacity:0.5}).to($(".box4"),1,{opacity:1}).repeat(-1);
+			t1.to($(".box4"),1,{"transform":"scale(1.05)"}).to($(".box4"),1,{"transform":"scale(1)"});
+		})
+	</script>
+</body>
+</html>
