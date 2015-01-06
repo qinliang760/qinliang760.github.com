@@ -1,0 +1,1 @@
+http://www.hearthstone.com.cn/touch/minisite/gvg/

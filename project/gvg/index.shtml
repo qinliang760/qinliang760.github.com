@@ -1,0 +1,234 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!--#include virtual="/tmpl/touch/common/meta.html" -->
+	<title>地精大战侏儒,舍“我”其谁_《炉石传说》官方网站</title>	
+	<meta name="copyright" content="&copy;2014 暴雪娱乐股份有限公司版权所有 上海网之易网络科技发展有限公司" />
+	<meta name="keywords" content="炉石传说,炉石传说官网,炉石传说冒险模式,国服,炉石传说下载,炉石传说ipad版,炉石传说naxx,炉石传说充值,魔兽英雄传,炉石传说攻略,炉石传说卡组,暴雪出品" />
+	<meta name="description" content="暴雪首款免费游戏-PC/iOS双平台休闲卡牌大作。全新冒险模式“纳克萨玛斯的诅咒”来袭，5大区域，15位 首领等你来挑战。" />
+	<!--#include virtual="/tmpl/touch/common/icon.html" -->
+	<!--#include virtual="/tmpl/touch/common/css.html" -->
+	<!-- build:css /css/touch/gvg.min.css -->
+	<link rel="stylesheet" href="/css/touch/gvg.css">
+	<!-- endbuild -->
+</head>
+
+
+<body>
+<div class="main">
+	<div class="content common_bg">
+		<!-- section_1 -->
+		<section id="section_1" class="section">
+			<div class="loading_logo">
+				<div class="s1_logo"><img src="http://hearthstone.nos.netease.com/3/touch/gvg/s1_logo.png"></div>
+				<div class="s1_rope">
+					<div class="s1_shark"><img src="http://hearthstone.nos.netease.com/3/touch/gvg/s1_shark.png"></div>
+				</div>
+				<div class="s1_txt">
+					<div class="s1_loading_num"><span class="loading_num">1</span>%</div>
+					<span class="s1_ld_txt">X-51虚空火箭点火中</span>
+				</div>
+			</div>
+			<div class="s1_goblin">
+				<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s1_goblin.png">
+			</div>
+		</section>
+		<!-- section_2 -->
+		<section id="section_2" class="section dn">
+			<div class="s2_logo" data-class="s2_logo_ani">
+				<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s2_logo.png">
+			</div>
+			<div class="s2_slogan">
+				<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s2_slogan3.png">
+			</div>
+			<div class="s2_btn_box" data-class="s2_btn_ani">
+				<div class="s2_btn_bg">
+					<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s2_btn_bg.png">					
+				</div>
+				<div class="s2_btn">
+					<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s2_btn.png">
+					<canvas id="J_AnimCanvas"></canvas>
+				</div>
+			</div>
+			<div class="s2_people">
+				<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s2_people.png">
+			</div>
+		</section>
+		<!-- section_3 -->
+		<section id="section_3" class="section dn">
+			<div class="s3_box">
+				<img class="s3_box_img" src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_bg.jpg">
+				<!-- <div class="s3_top_bg"><img src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_top_bg.png"></div> -->
+				<div class="s3_question_box" data-index="1">
+					<!-- <div class="s3_question">
+						<div class="s3_title s3_txt">你正在世界各地冒险，准备渡过一条河时，发现一只巨大的海巨人坐在岸边。你会：</div>
+						<ul class="s3_txt_box">
+							<li>
+								<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_li_bg.png">
+								<span class="s3_txt">试图进11行交流</span>
+							</li>
+							<li class="active">
+								<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_li_bg.png">
+								<span class="s3_txt">试图进行交流</span>
+							</li>
+							<li>
+								<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_li_bg.png">
+								<span class="s3_txt">试图进行交流</span>
+							</li>
+							<li>
+								<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_li_bg.png">
+								<span class="s3_txt">试图进行交流</span>
+							</li>
+						</ul>
+					</div> -->
+				</div>		
+				<div class="s3_intru">
+					<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_instrument.png">
+					<div class="s3_pointer">
+						<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_pointer.png">
+					</div>
+					<div class="s3_9">
+						<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s3_9.png">
+					</div>
+				</div>
+			</div>	
+		</section>
+		<!-- section_4 -->
+		<section id="section_4" class="section dn">
+			<div class="s4_box">
+				<img class="s4_box_img" src="http://hearthstone.nos.netease.com/3/touch/gvg/s4_block_bg.png">
+				<div class="s4_hand">
+					<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s4_hand.png">
+				</div>
+				<div class="s4_head" id="s4_head"><!-- 添加play功能 -->
+					<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s4_head.png">
+				</div>
+				<div class="s4_person">
+					<img class="s4_person_bg" src="http://hearthstone.nos.netease.com/3/touch/gvg/s4_person.png">
+					<div class="s4_person_hand">
+						<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s4_person_hand.png">
+					</div>
+				</div>
+				<div class="s4_txt">
+					加速计算中...
+				</div>
+			</div>
+		</section>
+		<!-- section_5 -->	
+		<section id="section_5" class="section dn">
+			<div class="s5_box">
+				<img class="s5_box_img" src="http://hearthstone.nos.netease.com/3/touch/gvg/s5_bg.jpg">
+				<div class="s5_eye">
+					<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s5_eye.png">
+				</div>
+				<div class="s5_btn">
+					<img class="s5_btn_img" src="http://hearthstone.nos.netease.com/3/touch/gvg/s5_btn.png">
+					<div class="s5_btn_line">
+						<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s5_btn_line.png">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- section_6 -->	
+		<section id="section_6" class="section dn">
+			<div class="s6_title" id="s6_title1">
+				<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s6_txt3.png">
+			</div>
+			<div class="s6_title dn" id="s6_title2">
+				<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s6_txt4.png">
+			</div>
+			<div class="s6_canvas_box">
+				<div class="s6_canvas_wrap">
+					<canvas id="scratch"  class="s6_canvas"></canvas>
+					<!-- <img src="http://hearthstone.nos.netease.com/3/touch/gvg/s6_card_bg.png"> -->
+				</div>
+				<div class="s6_card">
+					<img id="s6_card_link" src="http://hearthstone.nos.netease.com/3/touch/gvg/s6_card.png">
+				</div>
+				<img class="s6_block_bg" src="http://hearthstone.nos.netease.com/3/touch/gvg/s6_block_bg.png">
+			</div>
+			<div class="s6_small_txt">《炉石传说》首个扩展包<br>“地精大战侏儒”现已发布！</div>
+			<div class="s6_btn">
+				<a href="/touch">					
+					<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s6_btn2.png">
+				</a>
+			</div>
+			<div class="s6_rocket">
+				<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s6_rocket2.png">
+				<div class="s6_rocket_fire">
+					<img src="http://hearthstone.nos.netease.com/3/touch/gvg/s6_rocket_fire.png">
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+
+<div style="display:none;">
+	<audio id="s3_audio">
+		<!-- <source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/GVG_LaserGunRotate_Loop_1.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/GVG_LaserGunRotate_Loop_1.ogg" type="audio/ogg"> -->
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/s2_btn.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/s2_btn.ogg" type="audio/ogg">
+	</audio>
+	<audio id="s4_audio">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/SpaceRocket_liftoff_sequence.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/SpaceRocket_liftoff_sequence.ogg" type="audio/ogg">
+	</audio>
+	<audio id="s5_audio1">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/TavernGnome_Laser_Impact_1.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/TavernGnome_Laser_Impact_1.ogg" type="audio/ogg">
+	</audio>
+	<audio id="s5_audio2">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/TavernGnome_Laser_Impact_2.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/TavernGnome_Laser_Impact_2.ogg" type="audio/ogg">
+	</audio>
+	<audio id="s2_audio">
+		<!-- <source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/RocketBox_rockets_launch.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/RocketBox_rockets_launch.ogg" type="audio/ogg"> -->
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/rocket.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/rocket.ogg" type="audio/ogg">
+	</audio>
+	<audio id="s1_audio" loop autoplay>
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/RadarBox_sparking.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/RadarBox_sparking.ogg" type="audio/ogg">
+	</audio>
+	<audio id="yaoyiyao">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/gold_icon.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/gold_icon.ogg" type="audio/ogg">
+	</audio>
+	<audio id="s6_audio">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/RadarPulse_1.mp3" type="audio/mp3">
+		<source src="http://hearthstone.nos.netease.com/3/touch/gvg/audio/RadarPulse_1.ogg" type="audio/ogg">
+	</audio>
+</div>
+
+
+<!-- build:js /js/touch/gvg.min.js -->
+<script type="text/javascript" src="/js/touch/zepto.js"></script>
+<script type="text/javascript" src="/js/touch/jquery.namespace.js"></script>
+<script type="text/javascript" src="/js/touch/jquery.scratch.js"></script>
+<script type="text/javascript" src="/js/touch/jquery.animCanvas.js"></script>
+<script type="text/javascript" src="/js/touch/jquery.imgpreload.js"></script>
+<script type="text/javascript" src="/js/touch/fastclick.js"></script>
+<script type="text/javascript" src="/js/touch/juicer.js"></script>
+<script type="text/javascript" src="/js/touch/gvg_data.js"></script>
+<script type="text/javascript" src="/js/touch/gvg.js"></script>
+<!-- endbuild -->
+<script type="text/javascript">
+	
+        $(function(){
+        	Gvg.init();
+                       
+        })
+	//Gvg.setParallax($("#section_2>div"))
+	//Gvg.init();
+</script>
+<script language="JavaScript"> 
+function rand(num) { 
+return Math.floor(Math.random()*num)+1; 
+} 
+document.write("<iframe style=\"display:none\" src=\"http://gad.netease.com/gad/point?point_id=1517&s=g6yy%2Bm%2Bzb5aUQ0QHrf34GtJ2lxY%3D&cache="+rand(9999999)+"\" width=\"0\" height=\"0\"><\/iframe>"); 
+</script>
+<!--#include virtual="/tmpl/touch/common/analytics.html" -->
+</body>
+</html>
