@@ -85,7 +85,7 @@ $(window).bind("mousewheel",function(e,delta){
 	}
 
 	setTimeout(function(){
-		$("html").animate({
+		$("html,body").animate({
 			scrollTop:wh*index
 			},500,"easeInQuad",function(){
 			animated=false;
