@@ -57,10 +57,12 @@
 <script src="../base/jquery-1.7.2.min.js" language="javascript"></script>
 <script src="../base/jquery.mousewheel.js" language="javascript"></script>
 <script src="../base/jquery.easing.1.3.js" language="javascript"></script>
-<script src="js/jquery.scrollTo.js" language="javascript"></script>		
 <script>
 $(function(){
 var wh=$(window).height();
+if(wh<600){
+	wh=600;
+}
 $(".section").height(wh);
 
 var animated=false,
@@ -74,7 +76,7 @@ $(window).bind("mousewheel",function(e,delta){
 	}
 	animated=true;
 	var st=$(window).scrollTop();
-	var index=st/wh;
+	//var index=st/wh;
 	
 	if(delta<0 && index<l-1){
 		index++;
