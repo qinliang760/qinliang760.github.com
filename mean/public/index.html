@@ -1,0 +1,80 @@
+<!doctype html>
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="h5Todo">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
+    <title>Node/Angular H5 App</title>
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/h5.css">
+
+
+</head>
+<!-- SET THE CONTROLLER -->
+
+<body ng-controller="mainController">
+
+    <div class="container">
+        <!-- HEADER AND TODO COUNT -->
+        <div class="jumbotron text-center">
+            <h1>I'm a Demo show <span class="label label-info"></span></h1>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h2>模板列表</h2>
+                <ul class="list-group">
+                	<li class="list-group-item" ng-repeat="mlist in mlists">
+                		<a href="/#/public/m/{{mlist.id}}">
+	                		<h4 class="list-group-item-heading">模板ID:{{mlist.id}}</h4>
+	                		<p class="list-group-item-text">模板名:{{mlist.name}}</p>                			
+                		</a>
+
+                	</li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <h2>模板展示</h2>
+                <div ng-view></div>
+            </div>
+            <div class="col-md-3">
+                <h2>模板配置</h2>
+                <ul>
+                    <li><input type="checkbox" id="loop" ng-model="option.loop"><label for="loop">是否循环{{option.loop}}</label></li>
+                    <li><input type="radio" name="dir" id="vv" ng-model="option.dir" value="v"><label for="vv">垂直</label><input type="radio" name="dir" id="hh" ng-model="option.dir" value="h"><label for="hh">水平</label>
+                    <br/>{{option.dir}}</li>
+                </ul>
+            
+				<div>
+					<!-- <a ng-model="mId" href="/preview/#/public/p/1" target="_blank">预览</a> -->
+	                <input type="button" value="预览" ng-click="preview()">
+					<input type="button" value="生成" ng-click="generate()">
+				</div>
+                
+            </div>
+        </div>
+        <div class="text-center text-muted">
+            <p>A demo by <a href="http://scotch.io">Jay</a>.</p>
+            <p>Read the <a href="http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular">tutorial</a>.</p>
+        </div>
+    </div>
+
+    <!-- SPELLS -->
+    <script src="http://cdn.bootcss.com/angular.js/1.4.2/angular.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.4.2/angular-route.min.js"></script>
+    <!-- load angular -->
+    <script src="js/controllers/main.js"></script>
+    <!-- load up our controller -->
+    <script src="js/services/todos.js"></script>
+    <!-- load our todo service -->
+    <script src="js/core.js"></script>
+
+
+    <!-- load our main application -->    
+</body>
+
+</html>

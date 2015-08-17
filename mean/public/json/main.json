@@ -1,0 +1,27 @@
+[{
+	"id":"1",
+	"dir":"v",
+	"name":"基本模板",
+	"loop":false,
+	"effect":"default",
+	"moudel":[
+		{
+			
+		}
+	]
+
+
+},{
+	"id":"2",
+	"dir":"v",
+	"name":"调查问卷模板",
+	"loop":false,
+	"effect":"default",
+	"moudel":[
+		{
+			
+		}
+	]
+
+
+}]

@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="h5Todo">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
+    <title>Node/Angular H5 App</title>
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/h5.css">
+
+
+
+    <!-- load our main application -->
+</head>
+<!-- SET THE CONTROLLER -->
+
+<body ng-controller="previewController">
+   <div ng-view>
+       
+   </div>
+
+    <!-- SPELLS -->
+    <script src="http://cdn.bootcss.com/angular.js/1.4.2/angular.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.4.2/angular-route.min.js"></script>
+    <!-- load angular -->
+    <script src="/js/controllers/main.js"></script>
+    <!-- load up our controller -->
+    <script src="/js/services/todos.js"></script>
+    <!-- load our todo service -->
+    <script src="/js/core.js"></script>
+    <script src="/js/zepto.min.js"></script>
+    <script src="/js/jquery.namespace.js"></script>
+    <script src="/js/zepto.fullpage.js"></script>
+    <script src="/js/conference.js"></script>
+
+    <!-- load our main application -->                
+</body>
+
+</html>
