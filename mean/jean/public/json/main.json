@@ -1,0 +1,49 @@
+[{
+	"id":"1",
+	"name":"基本模板",
+    "option":{
+            "effect": "ScreenCling", 
+            "speed": 200, 
+            "scale": "y", 
+            "rotation": "y" 
+    },
+    "screen":[{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_1.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_2.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_3.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_4.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_5.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_6.jpg"
+    }]
+
+
+},{
+	"id":"2",
+	"name":"调查问卷模板",
+    "option":{
+            "effect": "ScreenTouchGo",
+            "speed": 400, 
+            "scale": "n",
+            "rotation": "y"
+    },
+    "screen":[{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_6.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_2.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_3.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_4.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_5.jpg"
+    },{
+    	"pic":"http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_6.jpg"
+    }]
+
+
+}]

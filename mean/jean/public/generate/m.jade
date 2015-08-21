@@ -1,0 +1,19 @@
+html
+	head
+		include includes/css
+		each item, i in screen
+			style.
+				section#screen_#{i+1}{
+					background-image: url(#{item.pic});
+				}
+			
+	body
+		include tmpl/m1.html
+		include includes/js
+		script.
+			new JV.phoneSlide($("#content"), {
+				"effect":"#{option.effect}",
+				"speed":#{option.speed},
+				"scale":#{option.scale},
+				"rotation":#{option.rotation}
+			});

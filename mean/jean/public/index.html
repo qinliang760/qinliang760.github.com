@@ -1,0 +1,115 @@
+<!doctype html>
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="h5Todo">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
+    <title>Node/Angular H5 App</title>
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+
+</head>
+<!-- SET THE CONTROLLER -->
+
+<body ng-controller="mainController">
+
+    <div class="container">
+        <!-- HEADER AND TODO COUNT -->
+
+<div class="page-header">
+
+        <h1>Jean</h1>
+        <h2><small>Jean's mean is (jade,json)+express+angular+nodejs.This also need localstorage for preview.This is a simple demo.</small></h2>
+
+</div>
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <h2>模板列表</h2>
+                <ul class="list-group list-unstyled">
+                	<li>
+                		<a href="/#/public/m/{{mlist.id}}" class="list-group-item{{mlist.active}}" ng-repeat="mlist in mlists" ng-click="setM(mlist.id)">
+	                		<h4 class="list-group-item-heading">模板ID:{{mlist.id}}</h4>
+	                		<p class="list-group-item-text">模板名:{{mlist.name}}</p>                			
+                		</a>
+
+                	</li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <h2>模板展示</h2>
+                <div><img src="{{mpic}}" style="width:100%" alt=""></div>
+            </div>
+            <div class="col-md-6" ng-show="config">
+                <h2>模板配置</h2>
+                <div class="form-group">
+            <label>效果选择：</label>
+
+          <select class="form-control" ng-model="effectSelect" ng-options="v.e for v in effect">                    
+
+                </div>
+
+
+          </select>
+<div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="option.scale"> 是否有滚动缩放{{option.scale}}
+    </label>
+  </div>
+
+<div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="option.rotation"> 是否开启横屏提示{{option.rotation}}
+    </label>
+  </div>
+
+  <div class="form-group">
+
+            <label>速度：</label>
+    <p><input type="text" class="form-control" ng-model="option.speed" value="{{option.speed}}"></p>
+      
+
+  </div>
+
+  <div class="form-group">
+    <label>每屏图片地址：</label>
+        <p ng-repeat="v in screen">
+            <span>第{{$index+1}}屏</span>
+            <input ng-model="v.pic" type="text" class="form-control" value="{{v.pic}}">
+        </p>
+      
+
+  </div>
+				<div style="padding-top:20px;">
+					<!-- <a ng-model="mId" href="/preview/#/public/p/1" target="_blank">预览</a> -->
+                      <button type="button" class="btn btn-primary btn-lg" ng-click="preview()">模板预览</button>
+                      <button type="button" class="btn btn-danger btn-lg" ng-click="generate()">生成页面</button>
+
+				</div>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="ng-view" ng-hide="true"></div>
+
+    <!-- SPELLS -->
+    <script src="http://cdn.bootcss.com/angular.js/1.4.2/angular.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.4.2/angular-route.min.js"></script>
+    <!-- load angular -->
+    <script src="js/controllers/main.js"></script>
+    <!-- load up our controller -->
+    <script src="js/services/todos.js"></script>
+    <!-- load our todo service -->
+    <script src="js/core.js"></script>
+
+
+    <!-- load our main application -->    
+</body>
+
+</html>
