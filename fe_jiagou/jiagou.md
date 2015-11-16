@@ -95,5 +95,37 @@ Automate and enhance your workflow
 
 The JavaScript Task Runner
 
+
+#其它声音：
+
+RequireJS（按需加载，移动端上可以不打包，善用304缓存，腾讯搞出一个更牛叉的增量更新加载器MT，也可以试试）+Backbone（组织代码与路由管理）+Zepto（轻量DOM操作） + fastclick.js（点击穿透与延迟处理）+Hammer.js（各种触屏事件）+iScroll5.js（滚动条处理）+Animate.css（CSS3动画）+Enquire.js（处理响应式布局）。
+
 #工具
+
+enquirejs
+
+Awesome Media Queries in JavaScript
+
+http://wicky.nillia.ms/enquire.js/
+
+Hammerjs
+
+各种触屏事件
+
+http://hammerjs.github.io/
+
+滚屏
+
+在pc端诞生了 fullPage.js和onepage-scroll这样的库
+
+zepto.fullpage：专注于移动端的 fullPage.js
+
+https://github.com/yanhaijing/zepto.fullpage/blob/master/doc/api.md
+
+
+#JV前端实际情况
+
+angularjs 暂时不需要使用
+
+JS按需加载，有必要
 
