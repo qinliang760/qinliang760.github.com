@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>JEditor</title>
+    <link rel="stylesheet" href="css/edit/jquery-ui.css">
+    <style>
+body {
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    word-break: break-all;
+    word-wrap: break-word;
+}    
+        #resizable{
+            display: inline-block;
+            padding: 2px;
+            background: #fff;
+            margin: 0;
+            overflow: hidden;   
+            position: relative;        
+        }
+        #resizable .text{
+
+        }
+/*         body{
+    cursor: auto!important;
+} */
+        .dh{
+            display: block;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 2;
+        }
+        textarea{
+            display: block;
+    word-break: break-all;
+    word-wrap: break-word;            
+        }
+    </style>
+
+</head>
+
+<body>
+   <div style="width:300px;height:300px;background:#eee;">
+       <div class="drag" style="width:50px;height:50px;background:#f00"></div>
+
+       <div class="drag" id="resizable">
+            <div class="text" contenteditable="true">请输入文字</div>
+            <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+            <div class="dh"></div>
+        </div>
+
+   </div>
+
+
+<p>显示选中文字：<span id="v"></span></p>
+
+<script src="js/edit/jquery-1.7.2.min.js"></script>
+<script src="js/edit/jquery-ui.min.js"></script>
+<script src="js/edit/drag.js"></script>
+<script src="js/edit/jquery-selection.js"></script>
+    <script>
+        $(function(){
+            var isDrag=true;
+            $(".drag").drag({
+                handle:".dh",
+                min:{left:0,top:0},
+                max:{left:250,top:250},
+                ondragstart:function(){
+                    //console.log(arguments)
+                    if(!isDrag){
+                        arguments[1].is=false;
+                        arguments[1].cursor="auto";
+                    }else{
+                        arguments[1].is=true;
+                        //arguments[1].cursor="move";
+                    }
+                    arguments[1].cursor="auto";
+                    
+                },
+                ondragbefore:function(){
+                    if(!isDrag){
+                        arguments[1].is=false;
+                        arguments[1].cursor="auto";
+                    }else{
+                        arguments[1].is=true;
+                        //arguments[1].cursor="move";
+                    }
+                    arguments[1].cursor="auto";
+                },
+                ondrag:function(){
+                    arguments[1].cursor="auto";
+                },
+                ondragend:function(){
+                    arguments[1].cursor="auto";
+                }                
+            });
+
+            $("#resizable").resizable({ handles: "n, e, s, w, ne, se, sw, nw" });
+            $("#resizable").bind("dblclick",function(){console.log(1);
+                isDrag=false;
+                $(this).find(".text").attr("contenteditable","true");
+                $("#resizable .text").focus();
+                $(".dh").css("position","static");
+            })
+            $("#resizable .text").bind("blur",function(){
+                isDrag=true;
+                $(this).find(".text").attr("contenteditable","false");
+                $(".dh").css("position","absolute");
+            })
+            /*$("#resizable").bind("mouseup",function(){
+                $("#v").html($("#resizable .text").selection().val);
+            })*/
+        })
+    </script>
+</body>
+
+</html>
