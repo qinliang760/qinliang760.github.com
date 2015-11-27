@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="configPage">
+
+<head>
+    <meta charset="utf-8">
+    <title ng-bind="$root.page"></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!--#include virtual="/features/common/css.html" -->
+    <link rel="stylesheet" type="text/css" href="/css/list.css">
+    <link rel="stylesheet" type="text/css" href="/css/config.css">
+</head>
+
+<body class="bg_{{$root.nav}}_body">
+    <div class="header-wrap">
+        <!--#include virtual="/features/common/header.html" -->
+        <div class="ui-breadcrumbs">
+            <a href="/home/">首页</a>
+            <span class="arrow">></span>
+            <a href="javascript:;" class="active" ng-bind="$root.page"></a>
+        </div>
+    </div>
+    <div class="container">
+        <div ng-view=""></div>
+    </div>
+    <!--#include virtual="/features/common/footer.html" -->
+    <!--#include virtual="/features/common/js.html" -->
+    <script src="/js/app/config.js" type="text/javascript"></script>
+    <script src="/js/controllers/config.js" type="text/javascript"></script>
+    <script src="/js/directive/directive.js" type="text/javascript"></script>
+    <script src="/js/helper/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/js/helper/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/js/helper/drag.js" type="text/javascript"></script>
+
+</body>
+
+</html>

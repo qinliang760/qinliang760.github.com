@@ -1,0 +1,45 @@
+<div class="g-config">
+    <div class="m-list">
+      <h3>列表</h3>
+      <div ng-repeat="screen in data.screen" ng-click="setScreen($index)">
+          <div class="page" style="width:100px;height:150px;background:url({{screen.bg}}) no-repeat 50% 50%;background-size:100%;margin:10px;scale(0.5)">
+              <p ng-repeat="img in screen.image">
+                  <img width="{{img.width}}" height="{{img.height}}" src="{{img.url}}" alt="">
+              </p>
+              <p ng-repeat="text in screen.text" ng-style="setStyle({{text}})">
+                  {{text.content}}
+              </p>              
+          </div>
+      </div>      
+    </div>
+    
+    <div class="m-stage">
+        <h3>舞台</h3>
+        <div style="width:200px;height:300px;background:url({{data.screen[index].bg}}) no-repeat 50% 50%;background-size:100%;position:relative">
+              <p ng-repeat="img in data.screen[index].image">
+                  <img width="{{img.width}}" height="{{img.height}}" src="{{img.url}}" alt="">
+              </p>
+              <div draggable resizable ng-repeat="text in data.screen[index].text" ng-style="{{text.position}}" ng-click="setText($index)" class="drag resizable" ng-model="text.position">
+
+                  <div class="text" contenteditable="true" ng-model="text.content" ng-bind-html="text.content"></div>
+                  <div class="dh"></div>             
+                  
+              </div>          
+        </div>      
+    </div>
+    
+    <div class="m-config">
+        <h3 class="panel-title">配置</h3>
+        <div>
+            <h2>图片</h2>
+            <p>图片地址：
+                <input type="text" ng-model="data.screen[index].bg">
+                
+            </p>
+            <p><input type="text" ng-model="data.screen[index].text[subIndex].content"></p>
+            <p>left:<input type="text" ng-model="data.screen[index].text[subIndex].position.left"></p>
+            <p>top:<input type="text" ng-model="data.screen[index].text[subIndex].position.top"></p>
+        </div>      
+    </div>
+
+</div>

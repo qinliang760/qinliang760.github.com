@@ -1,0 +1,16 @@
+<div class="g-cont clearFix">
+    <div class="m-model-box" ng-repeat="model in modelJson">
+        <a href="{{model.link}}" target="_blank">
+            <div class="m-model-img-box">
+                <img class="m-model-img" src="{{model.img}}">
+                <div class="m-model-code2">
+                	<img src="{{model.code2}}">
+                </div>
+            </div>
+            <div class="m-model-title">
+                <span>{{model.title}}</span>
+                <div class="w-hidden-model-title">选取</div>
+            </div>
+        </a>
+    </div>
+</div>
