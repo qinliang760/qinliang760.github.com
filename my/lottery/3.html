@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+    html,body,*{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      color: #fff;
+    }
+    .bg{
+      /* width: 1364px; */
+      height: 753px;
+      margin: 50px auto 0;
+      background: url(images/bg.jpg) no-repeat 50% 0;
+    }
+    #pic{
+      width: 271px;
+      height: 336px;
+      /* overflow: hidden; */
+      margin: 0 auto;
+      position: relative;
+      padding: 203px 0 0;
+      left: -10px;
+      transform:rotate(2deg);
+    }
+    #pic .over{
+      position: absolute;
+      width: 271px;
+      height: 336px;
+      top: 89px;
+      background: url(images/over.png) no-repeat 0 0;      
+    }
+    #pic .result{
+      /*width: 271px;
+      height: 336px;
+       overflow: hidden; */
+    }
+    #pic img{
+      display: block;
+      width: 268px;
+      height: 336px;
+      margin: 0 auto;
+      padding: 0 0 0 10px;
+      border: none;
+
+    }
+    .btn_chou{
+      background: url(images/btn.png) no-repeat -12px -9px; 
+      width: 220px;
+      height: 72px;
+      display: block;
+      margin: 0 auto;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      opacity: 0.8;
+      -webkit-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+    }
+    .btn_chou:hover{
+      opacity: 1;
+    }
+    .btn_stop{
+      background-position: -12px -92px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="bg chou">
+  <div id="pic">
+    <span class="over"></span>
+    <p class="result"></p>
+      
+  </div>
+  <a href="javascript:void(0);" id="handle" class="btn_chou" rel="start"></a>
+
+
+</div>
+
+
+<script type="text/javascript" src="http://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.hearthstone.com.cn/js/jquery.imgpreload.js"></script>
+<script type="text/javascript">
+var JV=JV || {};
+(function($){
+    /**
+     * 
+     * @class lottery
+     * @constructor
+     */
+    JV.lottery = function(Jnode, cfg) {
+        var defaults = {
+          type:"3",
+          data:[{"id":1,"number":"JV061","name":"陈明","date":"2007/10/29","weight":1.5},
+{"id":2,"number":"JV076","name":"王成东","date":"2009/5/5","weight":1.5},
+{"id":3,"number":"JV008","name":"吴永毅","date":"2009/5/11","weight":1.5},
+{"id":4,"number":"JV077","name":"李超","date":"2009/5/17","weight":1.5},
+{"id":5,"number":"JV010","name":"牛宇田","date":"2009/5/22","weight":1.5},
+{"id":6,"number":"JV012","name":"张泉","date":"2009/5/27","weight":1.5},
+{"id":7,"number":"JV013","name":"金礼兴","date":"2009/6/8","weight":1.5},
+{"id":8,"number":"JV015","name":"张静芳","date":"2009/6/15","weight":1.5},
+{"id":9,"number":"JV016","name":"王炜","date":"2009/6/22","weight":1.5},
+{"id":10,"number":"JV071","name":"李晓捷","date":"2009/7/7","weight":1.5},
+{"id":11,"number":"JV128","name":"周英东","date":"2009/7/7","weight":1.5},
+{"id":12,"number":"JV129","name":"陈潇","date":"2009/7/7","weight":1.5},
+{"id":13,"number":"JV070","name":"张杰","date":"2009/7/8","weight":1.5},
+{"id":14,"number":"JV072","name":"王朝辉","date":"2009/7/8","weight":1.5},
+{"id":15,"number":"JV075","name":"须建征","date":"2009/7/8","weight":1.5},
+{"id":16,"number":"JV095","name":"张嗣","date":"2009/7/8","weight":1.5},
+{"id":17,"number":"JV130","name":"陈旭琛","date":"2009/7/8","weight":1.5},
+{"id":18,"number":"JV001","name":"李日强","date":"2009/7/10","weight":1.5},
+{"id":19,"number":"JV005","name":"庞晔","date":"2009/7/10","weight":1.5},
+{"id":20,"number":"JV009","name":"王杰","date":"2009/8/4","weight":1.5},
+{"id":21,"number":"JV078","name":"蔡球","date":"2009/8/4","weight":1.5},
+{"id":22,"number":"JV131","name":"张苏","date":"2009/8/4","weight":1.5},
+{"id":23,"number":"JV014","name":"刘恒","date":"2009/9/1","weight":1.5},
+{"id":24,"number":"JV146","name":"王洁","date":"2009/9/21","weight":1.5},
+{"id":25,"number":"JV138","name":"徐江伟","date":"2009/10/25","weight":1.5},
+{"id":26,"number":"JV019","name":"虞凌颖","date":"2010/6/28","weight":1.5},
+{"id":27,"number":"JV020","name":"张品梁","date":"2010/7/16","weight":1.5},
+{"id":28,"number":"JV021","name":"李大鹏","date":"2010/7/26","weight":1.5},
+{"id":29,"number":"JV002","name":"魏恺","date":"2010/9/6","weight":1.5},
+{"id":30,"number":"JV024","name":"王瑞朝","date":"2010/9/17","weight":1.5},
+{"id":31,"number":"JV067","name":"杨诗逸","date":"2010/9/17","weight":1.5},
+{"id":32,"number":"JV073","name":"柏阳","date":"2010/9/17","weight":1.5},
+{"id":33,"number":"JV025","name":"高燕","date":"2010/10/8","weight":1.5},
+{"id":34,"number":"JV132","name":"罗单","date":"2011/1/5","weight":1.5},
+{"id":35,"number":"JV004","name":"芦菊","date":"2011/3/28","weight":1.5},
+{"id":36,"number":"JV034","name":"朱均","date":"2011/9/21","weight":1.5},
+{"id":37,"number":"JV026","name":"曹笑璟","date":"2011/10/12","weight":1.5},
+{"id":38,"number":"JV133","name":"蔡旭国","date":"2012/3/14","weight":1.5},
+{"id":39,"number":"JV028","name":"乐琪","date":"2012/4/17","weight":1.5},
+{"id":40,"number":"JV030","name":"邢欢欢","date":"2012/5/7","weight":1.5},
+{"id":41,"number":"JV031","name":"秦亮","date":"2012/5/10","weight":1.5},
+{"id":42,"number":"JV032","name":"吴昊","date":"2012/5/10","weight":1.5},
+{"id":43,"number":"JV033","name":"郑勤","date":"2012/6/1","weight":1.5},
+{"id":44,"number":"JV080","name":"吴燕英","date":"2012/6/1","weight":1.5},
+{"id":45,"number":"JV036","name":"李明","date":"2012/6/18","weight":1.5},
+{"id":46,"number":"JV081","name":"孙佳","date":"2012/8/1","weight":1.5},
+{"id":47,"number":"JV082","name":"白利强","date":"2012/8/1","weight":1.5},
+{"id":48,"number":"JV037","name":"刘飞","date":"2012/9/3","weight":1.5},
+{"id":49,"number":"JV038","name":"阮江","date":"2012/9/20","weight":1.5},
+{"id":50,"number":"JV039","name":"曾凯","date":"2012/10/9","weight":1.5},
+{"id":51,"number":"JV084","name":"李晓牧","date":"2013/1/15","weight":1.5},
+{"id":52,"number":"JV040","name":"林杬","date":"2013/2/1","weight":1.5},
+{"id":53,"number":"JV003","name":"张栋","date":"2013/5/6","weight":1.5},
+{"id":54,"number":"JV047","name":"胡雯","date":"2013/5/6","weight":1.5},
+{"id":55,"number":"JV048","name":"王珏辉","date":"2013/5/22","weight":1.5},
+{"id":56,"number":"JV054","name":"赵旭堰","date":"2013/5/23","weight":1.5},
+{"id":57,"number":"JV049","name":"祁雨顺","date":"2013/6/3","weight":1.5},
+{"id":58,"number":"JV087","name":"曹玮婕","date":"2013/6/17","weight":1.5},
+{"id":59,"number":"JV043","name":"陈良骏","date":"2013/7/1","weight":1.5},
+{"id":60,"number":"JV044","name":"郑立元","date":"2013/7/1","weight":1.5},
+{"id":61,"number":"JV045","name":"曾苏瑶","date":"2013/7/1","weight":1.5},
+{"id":62,"number":"JV050","name":"王晴","date":"2013/7/1","weight":1.5},
+{"id":63,"number":"JV085","name":"王驰","date":"2013/7/1","weight":1.5},
+{"id":64,"number":"JV052","name":"杨志平","date":"2013/7/22","weight":1.5},
+{"id":65,"number":"JV089","name":"郝彦玲","date":"2013/7/22","weight":1.5},
+{"id":66,"number":"JV053","name":"韩艳","date":"2013/8/1","weight":1.5},
+{"id":67,"number":"JV056","name":"陈诗惠","date":"2013/8/8","weight":1.5},
+{"id":68,"number":"JV057","name":"林明申","date":"2013/8/12","weight":1.5},
+{"id":69,"number":"JV059","name":"徐佳","date":"2013/9/4","weight":1.5},
+{"id":70,"number":"JV060","name":"姚立","date":"2013/9/16","weight":1.5},
+{"id":71,"number":"JV062","name":"吴非","date":"2013/10/24","weight":1.5},
+{"id":72,"number":"JV064","name":"李雨桐","date":"2013/11/13","weight":1.5},
+{"id":73,"number":"JV065","name":"金蕾","date":"2013/11/14","weight":1.5},
+{"id":74,"number":"JV066","name":"周琪华","date":"2013/11/15","weight":1.5},
+{"id":75,"number":"JV063","name":"汪云斌","date":"2013/11/19","weight":1.5},
+{"id":76,"number":"JV091","name":"梁浩圆","date":"2014/1/3","weight":1},
+{"id":77,"number":"JV092","name":"林涛","date":"2014/1/13","weight":1},
+{"id":78,"number":"JV094","name":"张彬","date":"2014/1/20","weight":1},
+{"id":79,"number":"JV096","name":"方冰","date":"2014/2/17","weight":1},
+{"id":80,"number":"JV097","name":"卢飞飞","date":"2014/3/17","weight":1},
+{"id":81,"number":"JV099","name":"余雪梅","date":"2014/4/1","weight":1},
+{"id":82,"number":"JV101","name":"詹早早","date":"2014/4/3","weight":1},
+{"id":83,"number":"JV100","name":"刘伟","date":"2014/4/8","weight":1},
+{"id":84,"number":"JV103","name":"卢斌","date":"2014/4/21","weight":1},
+{"id":85,"number":"JV104","name":"牛伟林","date":"2014/5/5","weight":1},
+{"id":86,"number":"JV106","name":"戎斌","date":"2014/5/19","weight":1},
+{"id":87,"number":"JV109","name":"仇宽诚","date":"2014/6/23","weight":1},
+{"id":88,"number":"JV110","name":"杜生贵","date":"2014/6/23","weight":1},
+{"id":89,"number":"JV111","name":"王翀","date":"2014/7/1","weight":1},
+{"id":90,"number":"JV112","name":"刘云钊","date":"2014/7/1","weight":1},
+{"id":91,"number":"JV108","name":"郑艳文","date":"2014/7/7","weight":1},
+{"id":92,"number":"JV113","name":"顾庆红","date":"2014/7/9","weight":1},
+{"id":93,"number":"JV115","name":"吕磊","date":"2014/8/1","weight":1},
+{"id":94,"number":"JV114","name":"吴益欢","date":"2014/8/11","weight":1},
+{"id":95,"number":"JV117","name":"崔凤萍","date":"2014/9/22","weight":1},
+{"id":96,"number":"JV116","name":"康哲希","date":"2014/10/8","weight":1},
+{"id":97,"number":"JV118","name":"孙健","date":"2014/10/13","weight":1},
+{"id":98,"number":"JV121","name":"沈瑜","date":"2014/10/22","weight":1},
+{"id":99,"number":"JV119","name":"缪倩璐","date":"2014/10/24","weight":1},
+{"id":100,"number":"JV134","name":"庄桢","date":"2014/10/24","weight":1},
+{"id":101,"number":"JV122","name":"钟小琴","date":"2014/12/2","weight":1},
+{"id":102,"number":"JV125","name":"程蔚光","date":"2015/1/26","weight":0.5},
+{"id":103,"number":"JV123","name":"龚虹","date":"2015/2/2","weight":0.5},
+{"id":104,"number":"JV124","name":"李嘉","date":"2015/2/2","weight":0.5},
+{"id":105,"number":"JV135","name":"庄慧倩","date":"2015/3/13","weight":0.5},
+{"id":106,"number":"JV136","name":"覃海萌","date":"2015/4/8","weight":0.5},
+{"id":107,"number":"JV137","name":"郭小菲","date":"2015/4/13","weight":0.5},
+{"id":108,"number":"JV140","name":"郝帅","date":"2015/5/11","weight":0.5},
+{"id":109,"number":"JV141","name":"赵青","date":"2015/6/15","weight":0.5},
+{"id":110,"number":"JV142","name":"孙正","date":"2015/6/24","weight":0.5},
+{"id":111,"number":"JV148","name":"黄丽","date":"2015/8/3","weight":0.5},
+{"id":112,"number":"JV149","name":"季艳燕","date":"2015/8/12","weight":0.5},
+{"id":113,"number":"JV150","name":"柴政","date":"2015/9/1","weight":0.5},
+{"id":114,"number":"JV151","name":"吴凤泉","date":"2015/9/2","weight":0.5},
+{"id":115,"number":"JV152","name":"黄沐","date":"2015/9/21","weight":0.5},
+{"id":116,"number":"JV153","name":"徐鑫","date":"2015/10/12","weight":0.5},
+{"id":117,"number":"JV154","name":"朱秋祺","date":"2015/10/12","weight":0.5},
+{"id":118,"number":"JV155","name":"邓海令","date":"2015/10/13","weight":0.5},
+{"id":119,"number":"JV156","name":"赵海峰","date":"2015/10/27","weight":0.5},
+{"id":120,"number":"","name":"徐开开","date":"按小于1年计算","weight":0.5},
+{"id":121,"number":"","name":"庞大智","date":"","weight":0.5},
+{"id":122,"number":"","name":"卞晓羽","date":"","weight":0.5},
+{"id":123,"number":"","name":"王星","date":"","weight":0.5},
+{"id":124,"number":"","name":"万馨忆","date":"","weight":0.5},
+{"id":125,"number":"","name":"张华","date":"","weight":0.5},
+{"id":126,"number":"","name":"嵇海军","date":"","weight":0.5}]
+        };
+        this.items = Jnode;//html or $        
+        this.cfg = $.extend({}, defaults, cfg); //合并defaults和cfg，不修改defaults
+        this.data=this.cfg.data;
+        this.type=this.cfg.type;
+        this.init();
+
+    };
+  
+  JV.lottery.prototype = {
+        /**
+         * 初始化
+         * @param  {dom} Jnode
+         * @param  {obj} cfg
+         */
+        init: function() {
+            var self=this;
+            this.setHandle(); 
+        },
+        filterData:function(){
+          var self=this,
+              groupArr=[],
+              resultData=[];
+            var re=JSON.parse(localStorage.getItem("resultData"));
+            if(re!=null){
+              resultData=re;
+            }              
+          var groupArr=_.filter(self.data,function(num){
+              var isIn=_.indexOf(resultData, num.id);
+            
+             return isIn==-1 && num.weight==1.5;
+
+          });
+
+          return groupArr;
+        },
+        goRand:function(){
+          var self=this;
+          var l=self.data.length;
+          self.runTimer=setInterval(function(){
+                  var rand=Math.floor(Math.random()*(l-1))
+                  $(".result").html('<img src="images/'+self.data[rand].id+'.jpg" alt="'+self.data[rand].name+'">');
+          },100)
+
+
+        },        
+        setHandle:function(){
+          var self=this,
+              point=[],
+              sum=100,
+              result,
+              rand;
+          var groupArr=self.filterData();
+          $("#handle").click(function(){
+            var val=$(this).attr("rel");
+            $(this).toggleClass("btn_stop");
+            if(val=="start"){
+              self.goRand();
+              $(this).attr("rel","stop");
+
+            }else{
+              $(this).attr("rel","start");
+              clearInterval(self.runTimer);            
+              groupArr=self.filterData();
+          
+              var l=groupArr.length;
+              if(l==0){
+                alert("人都抽完了！");
+                return;
+              }
+              var randGroup=Math.floor(Math.random()*(l-1))
+              var personId=groupArr[randGroup].id;
+
+              var resultData=JSON.parse(localStorage.getItem("resultData"));
+              if(resultData==null){
+                resultData=[];
+              }            
+              resultData.push(personId)
+              localStorage.setItem("resultData",JSON.stringify(resultData));
+              //console.log(personId+"====="+result);
+              $(".result").html('<img src="images/'+groupArr[randGroup].id+'.jpg" alt="'+groupArr[randGroup].name+'">');
+            }
+          })
+        }
+
+
+  };
+
+
+ })(jQuery);
+
+
+$(document).ready(function() {
+        var picArr=[];
+        for (var i=1;i<127;i++){
+          picArr.push('images/'+i+".jpg");
+        }
+ 
+        $.imgpreload(picArr,{
+            all: function(){
+              //$('.start').removeClass('start-load').addClass("start-end");
+              //$(".chou").show();
+              new JV.lottery($("#pic"))
+            }
+        })     
+  
+ })
+</script>
+
+</script>
+</body>
+</html>
