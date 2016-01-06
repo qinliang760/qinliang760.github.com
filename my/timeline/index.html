@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MelonHTML5 - Timeline</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+        <script type="text/javascript" src="timeline.min.js"></script>
+        <script type="text/javascript" src="demo.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <a id="setting_switch"></a>
+            <a id="download" href="http://codecanyon.net/item/melonhtml5-timeline/3884755?ref=MelonHTML5" target="_blank"></a>
+            <div id="settings">
+                <div class="arrow"></div>
+                <div class="row">
+                    <label>Theme:</label>
+                    <select id="theme">
+                        <option value="default">Default</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="white">White</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label>Mode:</label>
+                    <select id="demo_type">
+                        <option value="1">Demo 1: Combination</option>
+                        <option value="2">Demo 2: Blog Post</option>
+                        <option value="3">Demo 3: Single Column (left)</option>
+                        <option value="4">Demo 4: Single Column (right)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+
+            <div id="menu">
+                <div class="active">2016</div>
+            </div>
+            <div id="timeline" class="dynamic"></div>
+            <div id="loadmore" style="display:none;">Load More</div>
+        </div>
+        <div id="footer">
+
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                init_loadmore();
+            });
+        </script>
+    </body>
+</html>
