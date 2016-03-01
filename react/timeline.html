@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+  <!--<script src="es5-shim.min.js"></script>
+  <script src="es5-sham.min.js"></script>-->
+  <script src="react.js"></script>
+<script src="react-dom.js"></script>
+<script src="JSXTransformer.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script src="jquery.mousewheel.js"></script>
+<script src="underscore.js"></script>
+<script src="jquery.mCustomScrollbar.js"></script>
+<script src="jquery.imageScroll.js"></script>
+
+<style>
+
+	#timeline{
+		width: 1000px;
+		margin: 200px auto;
+	}
+	.timeLine{
+		position: relative;
+		width: 999em;
+		height: 5px;
+		background: #000;
+	}
+	.timeLine .odd,.timeLine .even{
+		position: absolute;
+		height: 50px;
+		width: 1px;
+		background: #000;
+	}
+	.timeLine .even{
+		top: 5px;
+	}
+	.timeLine .odd{
+		top: -50px;
+	}	
+	.timeLine .box{
+		position: absolute;
+		cursor: pointer;
+	}
+	.timeLine .box_even{
+		top: 55px;
+	}
+	.timeLine .box_odd{
+		top: -198px;
+	}	
+.slide{
+	list-style: none;
+}		
+.slide li{
+	display: inline-block;
+}
+</style>     
+</head>
+<body>
+
+<div id="timeline">
+
+</div>
+
+<div id="timelineBox"></div>
+<script type="text/jsx">
+var TimeLineData=[
+	{
+		"images":[
+			{
+				"thumb":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg",
+				"title":"现场一",
+				"large":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg"
+			},
+			{
+				"thumb":"http://hearthstone.nos.netease.com/1/sls/shandong/juesai/small/观众互动.JPG",
+				"title":"现场二",
+				"large":"http://hearthstone.nos.netease.com/1/sls/shandong/juesai/small/观众互动.JPG"
+			}
+		],
+		"thumb":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg",
+		"title":"1",
+		"date":"11"
+	},
+	{
+		"images":[
+			{
+				"thumb":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg",
+				"title":"现场3",
+				"large":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg"
+			},
+			{
+				"thumb":"http://hearthstone.nos.netease.com/1/sls/shandong/juesai/small/观众互动.JPG",
+				"title":"现场4",
+				"large":"http://hearthstone.nos.netease.com/1/sls/shandong/juesai/small/观众互动.JPG"
+			}
+		],
+		"thumb":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg",
+		"title":"2",
+		"date":"22"
+	},
+	{
+		"images":[
+			{
+				"thumb":"",
+				"title":"",
+				"large":""
+			}
+		],
+		"thumb":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg",
+		"title":"3",
+		"date":"33"
+	},
+	{
+		"images":[
+			{
+				"thumb":"",
+				"title":"",
+				"large":""
+			}
+		],
+		"thumb":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg",
+		"title":"4",
+		"date":"33"
+	},
+	{
+		"images":[
+			{
+				"thumb":"",
+				"title":"",
+				"large":""
+			}
+		],
+		"thumb":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg",
+		"title":"5",
+		"date":"33"
+	},
+	{
+		"images":[
+			{
+				"thumb":"",
+				"title":"",
+				"large":""
+			}
+		],
+		"thumb":"http://hearthstone.nos.netease.com/1/sls/浙江赛区/杭州/small/822A2236.jpg",
+		"title":"6",
+		"date":"33"
+	}		
+];
+
+var TimeLine=React.createClass({
+	render:function(){
+		return (
+			<TimeRow list={this.props.list}/>
+		);
+		
+	}
+})
+
+var TimeRowBox=React.createClass({
+	render:function(){
+
+		return (
+			<div className={"box box_"+this.props.rowClass} style={this.props.style} rel={this.props.index}>
+			<img src={this.props.list.thumb}/>
+			</div>
+		);
+	}
+})
+var TimeRow=React.createClass({
+	render:function(){
+
+	var rows=[],rowClass,imgWidth=223;	
+    this.props.list.forEach(function(data,index) {
+
+    	index%2==0?rowClass="even":rowClass="odd";
+
+    	rows.push(<span style={{left: 200*index+"px"}} className={rowClass}>{data.title}</span>);
+    	rows.push(<TimeRowBox list={data} index={index} key={data.title} style={{left: 200*index-imgWidth/2+"px"}} rowClass={rowClass}></TimeRowBox>);
+
+    });
+
+		return (
+			<div style={{height:"300px",paddingTop:"200px"}}>
+			<div className="timeLine">
+			{rows}
+			</div>
+			</div>
+		);
+	}
+})
+
+
+//TimeLineBox
+var TimeLineLightBox=React.createClass({
+	getInitialState:function(){
+		return {num:1}
+	},		
+	onChildChanged:function(v){
+		this.setState({num:v});
+	},
+	render:function(){
+		return (
+			<div>
+			<TimeLineLightBoxBar list={this.props.list} num={this.state.num}/>
+			<TimeLineLightBoxImg list={this.props.list} num={this.state.num}/>
+			<TimeLineLightBoxList list={this.props.list} num={this.state.num} callbackParent={this.onChildChanged}/>
+			<TimeLineLightBoxBtn list={this.props.list} num={this.state.num} callbackParent={this.onChildChanged}/>
+			</div>
+		);	
+	}
+})
+var TimeLineLightBoxBar=React.createClass({
+	render:function(){
+		var index=this.props.num-1;
+		return(
+			<span>{this.props.num}{this.props.list[index].title}</span>
+		);
+	}
+})
+
+var TimeLineLightBoxImg=React.createClass({
+	render:function(){
+		var index=this.props.num-1;
+		return(
+			<div>
+				<img src={this.props.list[index].large}/>
+			</div>
+		);
+	}
+})
+
+var TimeLineLightBoxList=React.createClass({
+	handleClick:function(i){
+		console.log(i);
+		this.props.callbackParent(i+1)
+	},
+	render:function(){
+		//var rows=[];
+		
+		return(
+			<ul className="slide">
+				{this.props.list.map(function(data,index) {
+					return (<li onClick={this.handleClick.bind(this,index)} key={index}><a href="javascript:void(0)"><img src={data.thumb}/></a></li>)
+				},this)}
+			</ul>
+		);
+	}
+})
+var TimeLineLightBoxBtn=React.createClass({
+	getInitialState:function(){
+		return {num:this.props.num}
+	},	
+	handlePrevClick:function(){
+		var v=this.state.num;
+		if(v==1){
+			return false;
+		}
+		v--;
+		this.setState({num:v});
+		this.props.callbackParent(v);
+	},
+	handleNextClick:function(){
+		var v=this.state.num;
+		if(v==3){
+			return false;
+		}
+		v++;
+		this.setState({num:v});
+		this.props.callbackParent(v);
+	},	
+	render:function(){
+		return(
+			<div>
+			<a href="javascript:void(0)" onClick={this.handlePrevClick}>上一张</a>
+			<a href="javascript:void(0)" onClick={this.handleNextClick}>下一张</a>
+			</div>
+		);
+	}
+})
+
+//渲染时间轴
+ReactDOM.render(
+  <TimeLine list={TimeLineData} />,
+  document.getElementById('timeline')
+);
+
+
+
+
+$(function(){
+	$("#timeline").mCustomScrollbar({
+		horizontalScroll:true,
+		scrollButtons:{enable:true}
+	});
+
+	$(".box").click(function(){
+		var t=$(this),
+			rel=t.attr("rel");
+
+		var lightBoxData=TimeLineData[rel].images;
+		//渲染弹出层
+		ReactDOM.render(
+		  <TimeLineLightBox list={lightBoxData} />,
+		  document.getElementById('timelineBox')
+		);
+	})
+})
+
+		
+
+</script>
+</body>
+</html>
