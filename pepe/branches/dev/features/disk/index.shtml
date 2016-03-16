@@ -1,0 +1,99 @@
+<!doctype html>
+<html ng-app="disk">
+
+<head>
+    <meta charset="utf-8">
+    <title ng-bind="$root.page"></title>
+    <meta name="viewport" content="width=device-width">
+    <!--#include virtual="/features/common/css.html" -->
+    <link rel="stylesheet" type="text/css" href="/css/disk.css">
+</head>
+
+<body ng-controller="mainController">
+    <div class="header-wrap">
+        <!--#include virtual="/features/common/header.html" -->
+        <div class="ui-breadcrumbs">
+            <a href="/home/">首页</a>
+            <span class="arrow">></span>
+            <a href="javascript:;" class="active" ng-bind="$root.page"></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sub-breadcrumbs">
+            <a href="javascript:;" ng-click="setFile('/')">全部文件</a>
+            <span ng-cloak ng-repeat="navModule in navData">
+                <i class="arrow">></i>
+                <a href="javascript:;" ng-click="setFile(navModule.url)">{{navModule.name}}</a>
+            </span>
+        </div>
+        <div class="g-subNav">
+            <span class="check-icon" ng-click="allHandleId()" ng-class="{'checked':isAllchecked}"></span>
+            <div class="btn-list">
+                <span>已经选中<em ng-bind="num"></em>个文件/文件夹</span>
+                <a href="javascript:;" class="u-button" ng-cloak ng-click="setRemoveFile()" ng-show="isDelete"><i class="icn icn-delete"></i>删除</a>
+                <!-- <a href="javascript:;" class="u-button"><i></i>重命名</a> -->
+            </div>
+            <div class="upload" ng-class="{'disabled':isTips}" ngf-select="uploadFiles($files, 'image')" ngf-multiple="true" ng-disabled="isTips">
+                <a class="upload-pic" href="javascript:;">上传图片</a>
+            </div>
+        </div>
+        <div class="g-picList" ngf-drop="uploadFiles($files, 'image')" ngf-multiple="true">
+            <div class="m-picList-con clearFix">
+                <!--  <div class="file-items">
+                    <div class="file-icon file-box">
+                        <img class="thumb" style="visibility: hidden;">
+                        <span class="checkbox"></span>
+                    </div>
+                    <p class="file-name">星际争霸</p>
+                </div>
+                <div class="file-items">
+                    <div class="file-icon">
+                        <img class="thumb" src="http://hearthstone.nos.netease.com/images/2015/4/14/4d8786d84834273a403f7e795dde7b6e?imageView&thumbnail=90y92" />
+                        <span class="checkbox"></span>
+                    </div>
+                    <p class="file-name">跳跳虎</p>
+                </div> -->
+                <!-- 文件列表 -->
+                <div class="file-items" ng-cloak ng-repeat="fileModule in folderData" ng-class="{'file-items-active':isAllchecked}">
+                    <span class="checkbox" checkedfile ng-click="handleId(fileModule.id, 'folder')"></span>
+                    <div class="file-icon file-box" ng-click="setFile(fileModule.custom_prefix)">
+                    </div>
+                    <p class="file-name">{{fileModule.node_name}}</p>
+                </div>
+                <!-- 图片列表 -->
+                <div class="file-items" ng-cloak ng-repeat="picModule in fileData" ng-class="{'file-items-active':isAllchecked}">
+                    <span class="checkbox" checkedfile ng-click="handleId(picModule.id, 'file')"></span>
+                    <div class="file-icon">
+                        <a href="{{picModule.url}}" target="_blank"><img class="thumb" ng-src="{{picModule.url}}?imageView&thumbnail=90y92"></a>
+                    </div>
+                    <p class="file-name">{{picModule.file_name}}</p>
+                </div>
+                <div class="addFile" ng-click="setAddFileHtml()">
+                    <div class="c-iconfont">Y</div>
+                    <p>添加分类</p>
+                </div>
+            </div>
+            <div class="m-edit-name" ng-cloak ng-show="isEdit">
+                <div class="edit-name-con">
+                    <input class="edit-name-text" type="text" ng-model="getData.node_name" />
+                    <span class="sure" ng-click="setAddFile()"></span>
+                    <span class="cancel" ng-click="setRemoveFileHtml()"></span>
+                </div>
+            </div>
+
+            <div class="upload-mark">上传文件到当前目录下</div>
+        </div>
+        <div class="mark" ng-show="isEdit"></div>
+    </div>
+    <div class="g-tips" ng-cloak ng-show="isTips">
+        <span class="tips-con" ng-bind="tipsText"></span>
+    </div>
+    <!--#include virtual="/features/common/footer.html" -->
+    <!--#include virtual="/features/common/js.html" -->
+    <script src="/js/app/disk.js" type="text/javascript"></script>
+    <script src="/js/controllers/disk.js" type="text/javascript"></script>
+    <script src="/js/directive/disk.js" type="text/javascript"></script>
+    <script src="/js/bower_components/ng-file-upload/ng-file-upload.js" type="text/javascript"></script>
+</body>
+
+</html>

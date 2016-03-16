@@ -1,0 +1,176 @@
+<!doctype html>
+<html ng-app="configPage">
+
+<head>
+    <meta charset="utf-8">
+    <title ng-bind="$root.page"></title>
+    <meta name="viewport" content="width=device-width">
+    <!--#include virtual="/features/common/css.html" -->
+    <link rel="stylesheet" type="text/css" href="/js/bower_components/angular-bootstrap-colorpicker/css/colorpicker.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/css/config.css">
+</head>
+
+<body class="bg_{{$root.nav}}_body" ng-controller="configMainController">
+    <div class="header-wrap">
+        <!--#include virtual="/features/common/header.html" -->
+    </div>
+    <div class="container">
+        <section class="g-config-nav">
+            <div class="g-config-nav-box">
+                <span class="u-config-nav-name">可以添加：</span>
+                <ul class="m-config-nav-left clearFix">
+                    <li ng-click="addText()">
+                        <div class="c-sprite icon1"></div>
+                        <span>文本</span>
+                    </li>
+                    <li ng-click="popupBankShow()">
+                        <div class="c-sprite icon2"></div>
+                        <span>素材库</span>
+                    </li>
+                    <!-- <li ng-click="addImage()">
+                        <div class="c-sprite icon2"></div>
+                        <span>图片</span>
+                    </li> -->
+                    <li ngf-select="uploadFiles($file,'video','new')">
+                        <div class="c-sprite icon3"></div>
+                        <span>视频</span>
+                    </li>
+                    <li ng-hide="true">
+                        <div class="c-sprite icon4"></div>
+                        <span>交互</span>
+                        <i class="u-config-nav-arrow"></i>
+                    </li>
+                </ul>
+                <ul class="m-config-nav-right clearFix">
+                    <li ng-click="saveData('alert')">
+                        <div class="c-iconfont">b</div>
+                        <span>保存</span>
+                    </li>
+                    <li ng-click="getData()">
+                        <div class="c-iconfont">c</div>
+                        <span>预览</span>
+                    </li>
+                    <li ng-click="setPublish()" ng-class="{active:config_publish_show}">
+                        <div class="c-iconfont">d</div>
+                        <span>发布</span>
+                    </li>
+                </ul>
+                <div class="u-tool-music">
+                    <div class="u-tool-music-box">
+                        <div class="u-tool-music-wrap">
+                            <span class="c-iconfont">e</span>
+                            <div class="u-tool-music-name"><span>{{data.global.backgroundMusic.name}}</span></div>
+                            <a class="u-changeMusic" ngf-select="uploadFiles($file,'music','new')" href="javascript:;">添加</a>
+                            <a class="u-changeMusic" ng-click="deleteMusic('music')" href="javascript:;">删除</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 主舞台 -->
+        <div class="g-workbench">
+            <div style="background:#fff;width:384px;height:624px;margin:220px auto 0;position:relative">
+                <!-- 层级和操作 -->
+                <ul class="u-Layer-edit">
+                    <li ng-class="{'disable':currentEdit=='global'}" ng-click="setZindex('max')" title="移到最顶层"><span>移到最顶层</span></li>
+                    <li ng-class="{'disable':currentEdit=='global'}" ng-click="setZindex('+')" title="上移一层"><span>上移一层</span></li>
+                    <li ng-class="{'disable':currentEdit=='global'}" ng-click="setZindex('0')" title="移到最底层"><span>移到最底层</span></li>
+                    <li ng-class="{'disable':currentEdit=='global'}" ng-click="setZindex('-')" title="下移一层"><span>下移一层</span></li>
+                    <!--     <li class="disable"><span>复制</span></li>
+<li class="disable"><span>粘贴</span></li> -->
+                    <li ng-class="{'disable':currentEdit=='global'}" ng-click="setDelete()" title="删除"><span>删除</span></li>
+                </ul>
+                <!-- 层级和操作 -->
+                <div class="m-workbench-box" data-max="999" data-min="99">
+                    <div class="m-workbench-blank" ng-click="setBg($index)"></div>
+                    <div ng-click="setBg($index)" style="width:100%;height:100%;background: {{data.global.background}} url({{data.screen[index].bg}}) no-repeat 0 0;background-size:100% auto; z-index:2; position:absolute;left:0;top:0"></div>
+                    <div style="position:relative; z-index:3;">
+                        <p ng-model="img.styles" draggable resizable ng-repeat="img in data.screen[index].image" ng-click="setImage($index)" class="dragImg drag resizable" ng-class="{'ui-resizable-active':$index==data.screen[index][currentEdit].curIndex && currentEdit=='image'}" style="width:{{img.styles.width*0.6+'px'}};height:{{img.styles.height*0.6+'px'}};top:{{img.styles.top*0.6+'px'}};left:{{img.styles.left*0.6+'px'}};z-index:{{img.styles['z-index']}};">
+                            <span class="dh"></span>
+                            <img ng-src="{{img.url}}" alt="">
+                        </p>
+                        <div draggable resizable ng-repeat="text in data.screen[index].text" ng-click="setText($index)" class="dragText drag resizable" ng-class="{'ui-resizable-active':$index==data.screen[index][currentEdit].curIndex && currentEdit=='text'}" ng-model="text.styles" style="width:{{text.styles.width*0.6+'px'}};height:{{text.styles.height*0.6+'px'}};top:{{text.styles.top*0.6+'px'}};left:{{text.styles.left*0.6+'px'}};font-family:{{text.styles['font-family']}};font-style:{{text.styles['font-style']}};font-size:{{text.styles['font-size']}};font-weight:{{text.styles['font-weight']}};color:{{text.styles.color}};z-index:{{text.styles['z-index']}}">
+                            <div class="text" contenteditable="true" ng-model="text.content" ng-bind-html="text.content"></div>
+                            <div class="dh"></div>
+                        </div>
+                        <p ng-model="video.styles" draggable resizable ng-repeat="video in data.screen[index].video" ng-click="setVideo($index)" class="dragVideo drag resizable" ng-class="{'ui-resizable-active':$index==data.screen[index][currentEdit].curIndex && currentEdit=='video'}" style="width:{{video.styles.width*0.6+'px'}};height:{{video.styles.height*0.6+'px'}};top:{{video.styles.top*0.6+'px'}};left:{{video.styles.left*0.6+'px'}};z-index:{{video.styles['z-index']}}">
+                            <span class="dh"></span>
+                            <img ng-src="{{video.params.poster}}" alt="">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 左侧预览页-->
+        <!--#include virtual="/features/views/config_preview.html" -->
+        <!-- <configpreview></configpreview> -->
+        <!-- 右侧预览页-->
+        <!--#include virtual="/features/views/config_opera.html" -->
+        <!-- <configoperating></configoperating> -->
+        <!-- 发布页 -->
+        <!--#include virtual="/features/views/config_publish.html" -->
+        <!-- <publish></publish> -->
+        <div class="publish_cover" ng-show="config_publish_show"></div>
+    </div>
+    <!-- 弹层 -->
+    <popupmodel></popupmodel>
+    <!--#include virtual="/features/views/popupbank.html" -->
+    <!-- <popupbank></popupbank> -->
+    <script type="text/html" id="J_animationTemplate">
+        <div class="m-opera-box">
+            <div class="m-opera-txt-h4 c-padBottom10">进场</div>
+            <div class="m-opera-ani-argument" title="时间范围0s-10s">
+                <span class="m-opera-ani-argument-title">速度</span>
+                <div ui-slider min="0" max="10" step="0.1" ng-model="data.screen[index][currentEdit][subIndex].styles.animation['animation-duration']" use-decimals></div><span class="fr padL5">s</span>
+                <input type="text" ng-required="true" ng-model="data.screen[index][currentEdit][subIndex].styles.animation['animation-duration']" animation-time />
+            </div>
+            <div class="m-opera-ani-argument" title="时间范围0s-10s">
+                <span class="m-opera-ani-argument-title">延迟</span>
+                <div ui-slider min="0" max="10" step="0.1" ng-model="data.screen[index][currentEdit][subIndex].styles.animation['animation-delay']" use-decimals></div><span class="fr padL5">s</span>
+                <input type="text" ng-model="data.screen[index][currentEdit][subIndex].styles.animation['animation-delay']" animation-time />
+            </div>
+            <ul class="m-effect clearFix">
+                <li ng-mouseenter="setAnimate($index)" ng-repeat="ef in effect" ng-model="effect" ng-click="setEffect(ef.v,currentEdit,ef.init)">
+                    <a href="javascript:void(0);" ng-class="{active:ef.v==data.screen[index][currentEdit][subIndex].effect.name}">
+                        <div ng-class="showRun[$index]" class="animate"></div>
+                    </a>
+                    <p>{{ef.name}}</p>
+                </li>
+            </ul>
+        </div>
+    </script>
+    <!--#include virtual="/features/common/js.html" -->
+    <script src="/js/bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js" type="text/javascript"></script>
+    <script src="/js/bower_components/ng-file-upload/ng-file-upload.js" type="text/javascript"></script>
+    <script src="/js/helper/angular-ui-slider.js"></script>
+    <script src="/js/app/config.js" type="text/javascript"></script>
+    <script src="/js/controllers/config.js" type="text/javascript"></script>
+    <script src="/js/directive/config.js" type="text/javascript"></script>
+    <script src="/js/helper/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/js/helper/drag.js" type="text/javascript"></script>
+    <script src="/js/helper/jquery.mousewheel.js" type="text/javascript"></script>
+    <script src="/js/helper/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+    <!--<script src="/js/helper/jquery.ajaxfileupload.js" type="text/javascript"></script>-->
+    <!-- 生成HTML -->
+    <script src="/js/helper/underscore.js"></script>
+    <script src="/js/helper/jquery.namespace.js"></script>
+    <script src="/js/helper/juicer.js"></script>
+    <script src="/js/helper/jquery.phoneSlidev2.js"></script>
+    <script src="/js/touch.js"></script>
+    <script type='text/javascript'>
+    $(function(argument) {
+        // 滚动配置
+        $(".pic-list").mCustomScrollbar();
+        $(".g-preview-box").mCustomScrollbar();
+        $(".m-preview-box").click(function(event) {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+        $(".g-operating-box").mCustomScrollbar();
+        $(".g-publish-box").mCustomScrollbar();
+    })
+    </script>
+</body>
+
+</html>

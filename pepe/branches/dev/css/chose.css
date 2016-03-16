@@ -1,0 +1,656 @@
+@charset "utf-8";
+
+/* CSS Document */
+.dn {
+	display: none !important;
+}
+img {
+	vertical-align: top;
+}
+.line {
+	width: 8px;
+	background: #000;
+	border-left: 1px solid #b54d45;
+	border-right: 1px solid #365d80;
+	position: absolute;
+	left: 50%;
+	margin-left: -5px;
+	z-index: 1;
+}
+.circle {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: #000;
+	position: absolute;
+	left: 50%;
+	margin-left: -13px;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	z-index: 2;
+}
+.s_circle_top {
+	top: 30%;
+	margin-top: -1px;
+	border:none;
+}
+.s_circle_bottom {
+	bottom: 5%;
+	margin-top: -1px;
+	border:none;
+}
+.question_line {
+	top: 0;
+	left: 50%;
+	margin-left: -5px;
+	position: absolute;
+	height: 100%;
+	z-index: 2;
+}
+html, body {
+	height: 100%;
+}
+.main {
+	height: 100%;
+	overflow: hidden;
+	max-width: 640px;
+	width: 100%;
+	font-size: 20px;
+	position: relative;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+}
+.content {
+	height: 700%;
+	width: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	-webkit-transition: top 0.4s ease 0.3s;
+	transition: top 0.4s ease 0.3s;
+}
+section {
+	width: 100%;
+	display: block;
+	height: 14.286%;
+	overflow: hidden;
+	position: relative;
+	background: url(http://hearthstone.nos.netease.com/3/touch/cnvsus/bg_icon.png) repeat, url(http://hearthstone.nos.netease.com/3/touch/cnvsus/bg.jpg) repeat-y;
+	background-size: auto auto, 100% auto;
+}
+section#screen_7 {
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	background:none;
+}
+@-webkit-keyframes fadeOut {
+	to {
+		opacity: 0;
+	}
+}
+@keyframes fadeOut {
+	to {
+		opacity: 0;
+	}
+}
+@-webkit-keyframes seal {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(3);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+	}
+}
+@keyframes seal {
+	0% {
+		opacity: 0;
+		transform: scale(3);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@-webkit-keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+/* common */
+.question_box {
+	z-index: 99;
+	position: absolute;
+	bottom: 58%;
+	width: 100%;
+	left: 0;
+	height: 40%;
+}
+.question_box .q_head {
+	width: 28%;
+	left: 10%;
+	bottom: 0px;
+	position: absolute;
+	z-index: 1;
+	height: 0px;
+	padding-top: 28%;
+	background: url(http://hearthstone.nos.netease.com/3/touch/cnvsus/head2.png) 0 0 no-repeat;
+	background-size: 100% 300%;
+	-webkit-animation: run 4s steps(2) infinite;
+	animation: run 4s steps(2) infinite;
+}
+@keyframes run {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200%;
+  }
+}
+@-webkit-keyframes run {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200%;
+  }
+}
+.question_box .question_dtl {
+	padding-bottom: 12%;
+	left: 17%;
+	position: absolute;
+	z-index: 9;
+	bottom: 0px;
+	width: 80%;
+	-webkit-transition: all 0.4s ease 0.7s;
+	transition: all 0.4s ease 0.7s;
+	opacity: 0;
+	-webkit-transform-origin: 10% 80%;
+	transform-origin: 10% 80%;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+.question_box .question_dtl.show {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.question_box .question_dtl img {
+	width: 100%;
+	vertical-align: top;
+	position: relative;
+	z-index: 1;
+}
+.question_box .question_dtl p {
+	z-index: 10;
+	font-size: 1.6em;
+	line-height: 1.2;
+	width: 84%;
+	left: 16%;
+	position: absolute;
+	top: 12%;
+	font-weight: bold;
+}
+.page_arrow {
+	position: absolute;
+	width: 6.4%;
+	bottom: 3%;
+	left: 50%;
+	margin-left: -3.2%;
+	z-index: 9;
+	opacity: 0;
+	-webkit-animation: arrow 1.5s 1s ease infinite;
+	animation: arrow 1.5s 1s ease infinite;
+}
+@keyframes arrow {
+	to {
+		bottom: 6%;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes arrow {
+	to {
+		bottom: 6%;
+		opacity: 1;
+	}
+}
+#weixin_img {
+	display: none;
+}
+
+/* screen_1 */
+.s1_play_box {
+	position: absolute;
+	top: 50%;
+	margin-top: -15%;
+	width: 30%;
+	padding-top: 30%;
+	height: 0px;
+	left: 35%;
+	z-index: 9;
+}
+.s1_play_box .s1_play {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 9;
+	-webkit-animation: play 2s 1s ease infinite;
+	animation: play 2s 1s ease infinite;
+}
+@keyframes play {
+	0% {
+		transform: rotateZ(0deg);
+		opacity: 1;
+	}
+	20% {
+		transform: rotateZ(-10deg);
+		opacity: .8;
+	}
+	30% {
+		transform: rotateZ(10deg);
+		opacity: 1;
+	}
+	40% {
+		transform: rotateZ(-10deg);
+		opacity: .8;
+	}
+	50% {
+		transform: rotateZ(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: rotateZ(0deg);
+		opacity: 1;
+	}
+}
+@-webkit-keyframes play {
+	0% {
+		-webkit-transform: rotateZ(0deg);
+		opacity: 1;
+	}
+	20% {
+		-webkit-transform: rotateZ(-10deg);
+		opacity: .8;
+	}
+	30% {
+		-webkit-transform: rotateZ(10deg);
+		opacity: 1;
+	}
+	40% {
+		-webkit-transform: rotateZ(-10deg);
+		opacity: .8;
+	}
+	50% {
+		-webkit-transform: rotateZ(0deg);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: rotateZ(0deg);
+		opacity: 1;
+	}
+}
+.s1_play_box .s1_play img {
+	vertical-align: top;
+	width: 100%;
+}
+.s1_play_box .s1_play_bg {
+	position: absolute;
+	width: 110%;
+	background: #000;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	height: 110%;
+	top: -5%;
+	left: -5%;
+	z-index: 1;
+	border-radius: 50%;
+}
+.s1_line {
+	top: 50%;
+	margin-top: 16.3%;
+	left: 50%;
+	margin-left: -5px;
+	position: absolute;
+	height: 50%;
+	z-index: 10;
+}
+.c_dialog {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	z-index: 99;
+}
+.c_dialog_s1 {
+	bottom: 60%;
+}
+.c_dialog img {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	vertical-align: top;
+}
+.c_dialog .s1_p {
+	font-size: 1.6em;
+	line-height: 1.2;
+	color: #000;
+	font-weight: bold;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 22%;
+	left: 0;
+	z-index: 2;
+}
+.c_dialog .s1_p span {
+	font-size: 1.5em;
+	padding-right: .5em;
+}
+
+/* select_box */
+.select_wrap {
+	position: absolute;
+	top: 48%;
+	left: 0px;
+	width: 100%;
+	z-index: 2;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+}
+.select_wrap .select_box {
+	width: 40%;
+	position: absolute;
+	top: 0;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+	-webkit-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+    -webkit-transform:rotateX(-90deg);
+    transform:rotateX(-90deg);
+}
+.select_wrap.show .select_left {
+	-webkit-animation:select_show .7s 1s ease both;
+    animation:select_show .7s 1s ease both;
+}
+.select_wrap.show .select_right {
+	-webkit-animation:select_show .7s 1.5s ease both;
+    animation:select_show .7s 1.5s ease both;
+}
+@keyframes select_show {
+	0% {
+    	transform:rotateX(-90deg);
+	}
+	40% {
+		transform: rotateX(30deg);
+	}
+	60% {
+		transform: rotateX(-20deg);
+	}
+	70% {
+		transform: rotateX(20deg);
+	}
+	80% {
+		transform: rotateX(-10deg);
+	}
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+@-webkit-keyframes select_show {
+	0% {
+    	-webkit-transform:rotateX(-90deg);
+	}
+	40% {
+		-webkit-transform: rotateX(30deg);
+	}
+	60% {
+		-webkit-transform: rotateX(-20deg);
+	}
+	70% {
+		-webkit-transform: rotateX(20deg);
+	}
+	80% {
+		-webkit-transform: rotateX(-10deg);
+	}
+	100% {
+		-webkit-transform: rotateX(0deg);
+	}
+}
+.select_wrap .select_box.active {
+	box-shadow: 0px 0px 10px #eccd3f, 0px 0px 10px #eccd3f, 0px 0px 10px #eccd3f;
+}
+.select_wrap .select_box .select_box_bg {
+	width: 100%;
+	vertical-align: top;
+	z-index: 1;
+	position: relative;
+}
+.select_wrap .select_box .select_cont {
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9;
+	position: absolute;
+	/*-webkit-animation:border_show 1.2s 1.5s ease infinite alternate;
+    animation:border_show 1.2s 1.5s ease infinite alternate;*/
+}
+@keyframes border_show {
+	to {
+		box-shadow: 0 0 15px #000;
+	}
+}
+@-webkit-keyframes border_show {
+	to {
+		box-shadow: 0 0 15px #000;
+	}
+}
+.select_wrap .select_left {
+	left: 5%;
+}
+.select_wrap .select_right {
+	left: 55%;
+}
+
+/*last_screen*/
+.logo {
+	width: 60%;
+	margin: 20px auto;
+	position: relative;
+	z-index: 9;
+	opacity: 0;
+	-webkit-transform: scale(3);
+	transform: scale(3);
+	-webkit-transition: all 0.4s ease 1s;
+	transition: all 0.4s ease 1s;
+}
+#screen_7.show .logo {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+.line.s7_line {
+	height: 55%;
+	top: 0;
+	z-index: 3;
+}
+.c_dialog_s7 {
+	bottom: 38%;
+	-webkit-transition: all 0.4s ease 1.4s;
+	transition: all 0.4s ease 1.4s;
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+#screen_7.show .c_dialog_s7 {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.c_dialog .s7_p {
+	font-size: 1.4em;
+	line-height: 1.2;
+	color: #000;
+	font-weight: bold;
+	position: absolute;
+	width: 90%;
+	text-align: center;
+	top: 16%;
+	left: 5%;
+	z-index: 2;
+}
+.c_dialog .s7_p span {
+	font-size: 1.6em;
+}
+.s7_circle {
+	top: 55%;
+	margin-top: -1px;
+}
+.s7_select_wrap {
+	top: 65%;
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	z-index: 99;
+}
+.s7_select_wrap .s7_select_box {
+	width: 44%;
+	position: absolute;
+	top: 0;
+	background-image: url(http://hearthstone.nos.netease.com/3/touch/cnvsus/country_btn.png);
+	background-repeat: no-repeat;
+	background-size: 200% 200%;
+}
+.s7_select_wrap .s7_select_box img {
+	width: 100%;
+}
+.s7_select_wrap .s7_select_cn {
+	left: 3%;
+	background-position: 0 0;
+}
+.s7_select_wrap .s7_select_us {
+	left: 53%;
+	background-position: 100% 0;
+}
+.s7_select_wrap .s7_select_cn.active {
+	background-position: 0 100%;
+}
+.s7_select_wrap .s7_select_us.active {
+	background-position: 100% 100%;
+}
+#last_screen {
+	-webkit-transition: all 1s ease .4s;
+	transition: all 1s ease .4s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	width: 100%;
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	background: url(http://hearthstone.nos.netease.com/3/touch/cnvsus/bg_icon.png) repeat, url(http://hearthstone.nos.netease.com/3/touch/cnvsus/bg.jpg) repeat-y;
+	background-size: auto auto, 100% auto;
+}
+#last_screen.cn {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+#last_screen.us {
+	-webkit-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+/*share*/
+.share_box {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	z-index: 999;
+	width: 100%;
+}
+.share_box {
+	-webkit-transition: all 1s ease .4s;
+	transition: all 1s ease .4s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.share_box_cn {
+	background: #a4231d url(http://hearthstone.nos.netease.com/3/touch/cnvsus/bg_icon.png) repeat;
+	-webkit-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+.share_box_us {
+	background: #1d62a4 url(http://hearthstone.nos.netease.com/3/touch/cnvsus/bg_icon.png) repeat;
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.share_box.share_show {
+	-webkit-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+.share_box .share_guide, .share_box .share_zhang {
+	width: 100%;
+}
+.share_box .share_guide img, .share_box .share_zhang img {
+	width: 100%;
+}
+.share_box .share_zhang {
+	top: 35%;
+	position: absolute;
+	left: 0;
+	z-index: 2;
+}
+.share_show .share_zhang {
+	-webkit-animation: zhang .4s 1.6s ease both;
+	animation: zhang .4s 1.6s ease both;
+}
+@keyframes zhang {
+	0% {
+		opacity: 0;
+		transform: scale(3);
+	}
+	50% {
+		opacity: .5;
+		transform: scale(2);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@-webkit-keyframes zhang {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(3);
+	}
+	50% {
+		opacity: .5;
+		-webkit-transform: scale(2);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+	}
+}
+@media only screen and (min-width:640px) {
+}
+@media only screen and (min-width:480px) and (max-width:639px) {
+	.main {
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width:479px) {
+	.main {
+		font-size: 10px;
+	}
+}
+@media only screen and (max-width:479px) and (max-height:450px) {
+}
+@media only screen and (min-width:480px) and (max-width:639px) and (min-height:600px) {
+}

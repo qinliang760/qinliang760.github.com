@@ -1,0 +1,194 @@
+{
+    "status": "success",
+    "msg": [
+        {
+            "id": 1,
+            "parent_id": 0,
+            "cn_name": "《暗黑破坏神®III》",
+            "name": "diablo3",
+            "prefix": "/blz/3/1/diablo3"
+        },
+        {
+            "id": 2,
+            "parent_id": 0,
+            "cn_name": "《魔兽世界®》",
+            "name": "wow",
+            "prefix": "/blz/3/1/wow"
+        },
+        {
+            "id": 3,
+            "parent_id": 0,
+            "cn_name": "《风暴英雄™》",
+            "name": "heroes",
+            "prefix": "/blz/3/1/heroes"
+        },
+        {
+            "id": 5,
+            "parent_id": 1,
+            "cn_name": "KV",
+            "name": "KV",
+            "prefix": "/blz/3/1/diablo3/KV"
+        },
+        {
+            "id": 6,
+            "parent_id": 1,
+            "cn_name": "LOGO",
+            "name": "LOGO",
+            "prefix": "/blz/3/1/diablo3/LOGO"
+        },
+        {
+            "id": 7,
+            "parent_id": 1,
+            "cn_name": "UI",
+            "name": "UI",
+            "prefix": "/blz/3/1/diablo3/UI"
+        },
+        {
+            "id": 8,
+            "parent_id": 1,
+            "cn_name": "背景",
+            "name": "bg",
+            "prefix": "/blz/3/1/diablo3/bg"
+        },
+        {
+            "id": 9,
+            "parent_id": 1,
+            "cn_name": "角色",
+            "name": "role",
+            "prefix": "/blz/3/1/diablo3/role"
+        },
+        {
+            "id": 10,
+            "parent_id": 1,
+            "cn_name": "小元素",
+            "name": "element",
+            "prefix": "/blz/3/1/diablo3/element"
+        },
+        {
+            "id": 11,
+            "parent_id": 2,
+            "cn_name": "KV",
+            "name": "KV",
+            "prefix": "/blz/3/1/wow/KV"
+        },
+        {
+            "id": 12,
+            "parent_id": 2,
+            "cn_name": "LOGO",
+            "name": "LOGO",
+            "prefix": "/blz/3/1/wow/LOGO"
+        },
+        {
+            "id": 13,
+            "parent_id": 2,
+            "cn_name": "UI",
+            "name": "UI",
+            "prefix": "/blz/3/1/wow/UI"
+        },
+        {
+            "id": 14,
+            "parent_id": 2,
+            "cn_name": "背景",
+            "name": "bg",
+            "prefix": "/blz/3/1/wow/bg"
+        },
+        {
+            "id": 15,
+            "parent_id": 2,
+            "cn_name": "小元素",
+            "name": "element",
+            "prefix": "/blz/3/1/wow/element"
+        },
+        {
+            "id": 16,
+            "parent_id": 3,
+            "cn_name": "KV",
+            "name": "KV",
+            "prefix": "/blz/3/1/heroes/KV"
+        },
+        {
+            "id": 17,
+            "parent_id": 3,
+            "cn_name": "LOGO",
+            "name": "LOGO",
+            "prefix": "/blz/3/1/heroes/LOGO"
+        },
+        {
+            "id": 18,
+            "parent_id": 3,
+            "cn_name": "UI",
+            "name": "UI",
+            "prefix": "/blz/3/1/heroes/UI"
+        },
+        {
+            "id": 19,
+            "parent_id": 3,
+            "cn_name": "bg",
+            "name": "bg",
+            "prefix": "/blz/3/1/heroes/bg"
+        },
+        {
+            "id": 20,
+            "parent_id": 3,
+            "cn_name": "角色",
+            "name": "role",
+            "prefix": "/blz/3/1/heroes/role"
+        },
+        {
+            "id": 21,
+            "parent_id": 3,
+            "cn_name": "小元素",
+            "name": "element",
+            "prefix": "/blz/3/1/heroes/element"
+        },
+        {
+            "id": 22,
+            "parent_id": 29,
+            "cn_name": "blz_logo",
+            "name": "blz_logo",
+            "prefix": "/blz/3/1/heroes/blz_logo"
+        },
+        {
+            "id": 23,
+            "parent_id": 29,
+            "cn_name": "event_logo",
+            "name": "event_logo",
+            "prefix": "/blz/3/1/heroes/event_logo"
+        },
+        {
+            "id": 24,
+            "parent_id": 29,
+            "cn_name": "corps_logo",
+            "name": "corps_logo",
+            "prefix": "/blz/3/1/heroes/corps_logo"
+        },
+        {
+            "id": 25,
+            "parent_id": 0,
+            "cn_name": "《守望先锋™》",
+            "name": "ow",
+            "prefix": "/blz/3/1/ow"
+        },
+        {
+            "id": 26,
+            "parent_id": 0,
+            "cn_name": "《星际争霸®II》",
+            "name": "sc2",
+            "prefix": "/blz/3/1/sc2"
+        },
+        {
+            "id": 27,
+            "parent_id": 0,
+            "cn_name": "《炉石传说®》",
+            "name": "hearthstone",
+            "prefix": "/blz/3/1/hearthstone"
+        },
+        {
+            "id": 29,
+            "parent_id": 0,
+            "cn_name": "电 竞",
+            "name": "comprehensive",
+            "prefix": "/blz/3/1/comprehensive"
+        }
+    ]
+}

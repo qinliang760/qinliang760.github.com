@@ -1,0 +1,98 @@
+<!doctype html>
+<html ng-app="homePage">
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width">
+    <!--#include virtual="/features/common/css.html" -->
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+</head>
+
+<body ng-controller="mainController">
+    <div class="header-wrap">
+        <!--#include virtual="/features/common/header.html" -->
+    </div>
+    <div class="container">
+        <div class="g-cont">
+            <div class="kv_main">
+                <div id="kv_show" class="kv_show">
+                    <div class="home_kv first">
+                        <img src="/images/banner1.jpg">
+                    </div>
+                    <div class="home_kv">
+                        <img src="/images/banner2.jpg">
+                    </div>
+                    <div class="home_kv">
+                        <img src="/images/banner3.jpg">
+                    </div>
+                    <div class="home_kv">
+                        <img src="/images/banner4.jpg">
+                    </div>
+                </div>
+                <ul id="kv_num" class="kv_num"></ul>
+            </div>
+            <div class="m-home-login-box">
+                <a href="{{homeLoginIn?homeLoginIn:rewriteLoginUrl}}" class="m-home-login">开始创作</a>
+                <div class="m-home-brower-hint">
+                    <i class="icon_chrome"></i>
+                    <article>为了获得更好的体验，<br>建议使用谷歌浏览器。<br><a href="http://www.baidu.com/s?wd=Chrome" target="_blank">点击下载</a></article>
+                </div>
+            </div>
+        </div>
+        <div class="g-dtl-box">
+            <ul class="g-dtl clearFix">
+                <li>
+                    <div class="home_sprite m-dtl-icon-1"></div>
+                    <div class="m-dtl-p">
+                        <h4>定制暴雪专属风格</h4>
+                        <span>长期维护的专题素材库</span>
+                    </div>
+                </li>
+                <li class="w22">
+                    <div class="home_sprite m-dtl-icon-2"></div>
+                    <div class="m-dtl-p">
+                        <h4>免费使用</h4>
+                        <span>不用烦恼商用收费</span>
+                    </div>
+                </li>
+                <li class="w30">
+                    <div class="home_sprite m-dtl-icon-3"></div>
+                    <div class="m-dtl-p">
+                        <h4>简单上手，一键发布</h4>
+                        <span>不受第三方限制，随时随地发布</span>
+                    </div>
+                </li>
+                <li class="w22">
+                    <div class="home_sprite m-dtl-icon-4"></div>
+                    <div class="m-dtl-p">
+                        <h4>跟踪数据</h4>
+                        <span>记录转发量、打开量</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="g-edition-update">
+                <div class="u-edition-update-img"></div>
+                <div class="m-edition-update-cont">
+                    <h3>更新公告</h3>
+                    <ul class="m-edition-update-ul">
+                        <li><span>素材库更新13张背景图片</span></li>
+                        <li><span>新加3套模板</span></li>
+                        <li><span>新加5个场景过渡动画</span></li>
+                    </ul>
+                </div>
+            </div>
+        <!--#include virtual="/features/common/footer.html" -->
+        </div>
+    </div>
+    <!--#include virtual="/features/common/js.html" -->
+    <script src="/js/app/home.js" type="text/javascript"></script>
+    <script src="/js/controllers/home.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function () {
+        Home.init();
+    })
+    </script>
+</body>
+
+</html>

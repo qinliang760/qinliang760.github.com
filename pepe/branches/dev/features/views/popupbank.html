@@ -1,0 +1,59 @@
+
+<div class="popupbank g-popupbank" ng-class="{show:popupbank}">
+    <div class="close"><a href="javascript:;" class="close-btn" ng-click="removePop()">关闭</a></div>
+    <div class="game-list" ng-init="popupbankNavIndex = 0">
+        <ul>
+            <li class="icons-{{popupbankItem.name}}" ng-repeat="popupbankItem in popupbankJson.gameType">
+                <a ng-class="{active:$index == popupbankNavIndex}" ng-click="getPopupBankImgJson(popupbankItem.nav[0].prefix,$index,0)" href="javascript:;"><i></i>{{popupbankItem.cn_name}}</a>
+            </li>
+            <!-- <li><a href="javascript:;">外品牌</a></li>
+            <li><a href="javascript:;">节 日</a></li>
+            <li><a href="javascript:;">我的图库</a></li> -->
+            <li><a href="javascript:;">待开发</a></li>
+            <li><a href="javascript:;">待开发</a></li>
+            <li><a href="javascript:;">待开发</a></li>
+        </ul>
+    </div>
+    <div class="popupbank-con">
+        <div class="class-list">
+            <ul class="clearFix">
+                <li ng-repeat="item in popupbankJson.nav"><a ng-click="getPopupBankImgJson(item.prefix,$index,item.name)" href="javascript:;" ng-class="{active:popupbankJson.index == $index}">{{item.cn_name}}</a></li>
+                <!-- <li><a href="javascript:;" class="active">KV</a></li>
+                <li><a href="javascript:;">LOGO</a></li>
+                <li><a href="javascript:;">背景</a></li>
+                <li><a href="javascript:;">UI</a></li>
+                <li><a href="javascript:;">角色</a></li>
+                <li><a href="javascript:;">小元素</a></li> -->
+            </ul>
+        </div>
+        <div class="pic-list-box">
+            <div class="pic-list clearFix" data-aa="{{popupbankJson.gameType[0].nav[0].name}}">
+                <div class="m-model-box" ng-repeat="item in popupbankItemJson">
+                    <a href="javascript:;">
+                        <div class="m-model-img-box">
+                            <img class="m-model-img" ng-src="{{item.thumbnail_url}}">
+                            <div class="m-model-code2">
+                                <span class="original-pic">查看原图</span>
+                            </div>
+                            <div class="w-hidden-model-pic" ng-click="addImage(item.thumbnail_url,popupbankNavType)">选取</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- <div class="m-model-box ng-scope">
+                    <a target="_blank" href="#">
+                        <div class="m-model-img-box">
+                            <img class="m-model-img" src="/features/img/demo_1.jpg">
+                            <div class="m-model-code2">
+                                <span class="original-pic">查看原图</span>
+                            </div>
+                            <div class="w-hidden-model-pic">选取</div>
+                        </div>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="popupbank-bottom">
+        <a href="javascript:;" class="upload-pic" ngf-select="uploadFiles($file,'image','new')">上传图片</a>上传图片不能超过1M
+    </div>
+</div>

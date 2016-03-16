@@ -1,0 +1,245 @@
+<section class="g-operating">
+    <div class="g-operating-box" id="g-operating-box">
+    <!-- 模拟点击上传 -->
+    <!-- <form action="/storage/put" method="post" name="form_updateImg" id="form_updateImg" enctype="multipart/form-data">
+        <input type="file" name="file" id="input_updateImg" onchange="angular.element(this).scope().updateImg()"  class="input_updateImg"/>
+    </form> -->
+        <!-- 全局设置区域 opera-global -->
+        <div class="g-opera-txt-wrap" ng-show="currentEdit=='global'">
+            <h3 class="c-border-bottom">全局设置</h3>
+            <div class="g-operating-main">
+                <div class="m-opera-box c-border-bottom c-border-top">
+                    <div class="m-opera-txt-h4">当前场景背景图片<span>(640px*1050px为佳)</span></div>
+                    <div class="m-opera-img-box">
+                        <img ng-src='{{data.screen[index].bg||"http://hearthstone.nos.netease.com/3/common/px1.gif"}}' alt="Description">
+                    </div>
+                    <div class="m-opera-img-btn"><span class="btn_half c-gradiet-color btn_half_left_border" ngf-select="uploadFiles($file,'global')">添加/更换图片</span><span ng-click="resetStatus('global')" class="btn_half c-gradiet-color">删除背景</span></div>
+                </div>
+                <div class="m-opera-box c-border-bottom c-border-top">
+                    <div style="padding-bottom:10px;">
+                        <!-- <div class="m-opera-txt-h4">背景色</div> -->
+                        <span class="m-opera-txt-title">全局背景色</span>
+                        <input class="u-opera-txt-input u-opera-txt-input-short" type="text" ng-model="data.global.background" />
+                        <button class="u-color-btn" style="background:{{data.global.background}}" colorpicker ng-model="data.global.background" type="button"></button>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span class="m-opera-txt-title">专题名称</span>
+                        <input class="u-opera-txt-input u-opera-txt-input-long" placeholder="请输入专题名称" type="text" ng-model="publish_data.title" />
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span class="m-opera-txt-title">翻页动画</span>
+                        <select class="c-txt-select m-opera-txt-select1" ng-model="data.global.option.effect" ng-options="n.v as n.name for n in pageSlideAnimate"></select>
+                    </div>
+                    <div style="padding-bottom:10px;">
+                        <span class="m-opera-txt-title">翻页速度</span>
+                        <select class="c-txt-select m-opera-txt-select1" data-aaa="{{data.global.option.speed}}" ng-model="data.global.option.speed" ng-options="n.v as n.name for n in pageSlideAnimateSpeed"></select>
+                    </div>
+                    <div class="pr">
+                        <span class="m-opera-txt-title">微信分享提示</span>
+                        <div class="c-opera-choice m-opera-txt-choice" ng-class="{check:data.global.option['shareHint']}" ng-click="setShare()"><span class="c-opera-choice-icon"></span></div>
+                    </div>
+                </div>
+                <div class="m-opera-box c-border-top">
+                    <div class="m-opera-txt-h4">翻页图标</div>
+                    <div class="c-opera-linkinput"><span class="c-iconfont">Z</span>
+                        <input class="m-opera-txt-input" placeholder="请输入链接地址" type="text" ng-model="data.global.arrow" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 文本编辑区域 opera-txt -->
+        <div class="g-opera-txt-wrap padT50" ng-show="currentEdit=='text'">
+            <!-- <h3 class="c-border-bottom">文本设置</h3> -->
+            <div class="g-opera-tab" ng-init="text_tab = true">
+                <h5 class="left" ng-class="{active:text_tab}" ng-click="text_tab = true"><span>文字</span></h5>
+                <h5 class="right" ng-class="{active:!text_tab}" ng-click="text_tab = false"><span>动画</span></h5>
+            </div>
+            <div class="g-operating-main" ng-class="{dn:!text_tab}">
+                <div class="m-opera-box c-border-bottom">
+                    <!-- <div class="m-opera-txt-h4">文本式样</div> -->
+                    <textarea class="m-opera-txt-textarea c-txt-textarea" placeholder="随时随地，无缝连接" ng-model="data.screen[index].text[subIndex].content"></textarea>
+                    <div class="m-opera-txt-selectbox clearFix">
+                        <select class="c-txt-select m-opera-txt-select1" ng-model="font_family_default" ng-options="n.v for n in font_family" ng-change="change('font-family','font_family_default')"></select>
+                        <select class="c-txt-select m-opera-txt-select2" ng-model="font_size_default" ng-options="n.v for n in font_size" ng-change="change('font-size','font_size_default')"></select>
+                    </div>
+                    <ul class="m-opera-txt-type">
+                        <li><span><button style="background-color:{{data.screen[index].text[subIndex].styles.color}}" colorpicker="inputColor" ng-model="data.screen[index].text[subIndex].styles.color" type="button" class="u-opera-txt-color"></button></span></li>
+                        <li ng-click="setBold(data.screen[index].text[subIndex].styles['font-weight']);" ng-class="{active:data.screen[index].text[subIndex].styles['font-weight']=='bold'}"><span class="u-opera-txt-bold">B</span></li>
+                        <li ng-click="setItalic(data.screen[index].text[subIndex].styles['font-style']);" ng-class="{active:data.screen[index].text[subIndex].styles['font-style']=='italic'}"><span class="u-opera-txt-italic">I</span></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div class="m-opera-txt-p">
+                        <span class="m-opera-txt-title">位置</span>
+                        <span class="padR30">X  <input type="text" ng-model="data.screen[index].text[subIndex].styles.left">px</span>
+                        Y  <input type="text" ng-model="data.screen[index].text[subIndex].styles.top">px
+                    </div>
+                </div>
+                <div class="m-opera-box c-border-bottom c-border-top">
+                    <div class="m-opera-txt-h4">添加链接</div>
+                    <div class="c-opera-linkinput"><span class="c-iconfont">Z</span>
+                        <input class="m-opera-txt-input" placeholder="请输入链接地址" type="text" ng-model="data.screen[index].text[subIndex].link" />
+                    </div>
+                </div>
+                <div class="m-opera-box c-border-top">
+                    <div class="m-opera-txt-h4" ng-model="data.screen[index].text[subIndex].pop" ng-switch="data.screen[index].text[subIndex].pop.type">添加弹层
+                        <div class="c-opera-choice m-opera-txt-choice" ng-class="{check:data.screen[index].text[subIndex].pop}" ng-click="setPop('text')"><span class="c-opera-choice-icon"></span></div>
+                        <div class="m-opera-txt-choice-box" ng-show="data.screen[index].text[subIndex].pop.type">
+                            <ul class="m-opera-txt-popradio clearFix">
+                                <li>
+                                    <input name="txtPop" id="txtPop1" checked type="radio" ng-model="data.screen[index].text[subIndex].pop.type" value="text" />
+                                    <label for="txtPop1">文字</label>
+                                </li>
+                                <li>
+                                    <input name="txtPop" id="txtPop2" type="radio" ng-model="data.screen[index].text[subIndex].pop.type" value="image" />
+                                    <label for="txtPop2">图片</label>
+                                </li>
+                                <li class="fr">
+                                    <input name="commonPopClose" id="commonPopClose" type="checkbox" ng-model="data.screen[index].text[subIndex].pop.hasClose"/>
+                                    <label for="commonPopClose">有关闭按钮</label>
+                                </li>
+                                <!-- <li>
+                                    <input name="txtPop" id="txtPop3" type="radio" ng-model="data.screen[index].text[subIndex].pop.type" value="video" />
+                                    <label for="txtPop3">视频</label>
+                                </li> -->
+                            </ul>
+                            <div class="m-opera-txt-popcont" ng-switch-when="text">
+                                <textarea class="m-opera-txt-poptextarea c-txt-textarea" placeholder="请输入弹层上的描述文案" ng-model="data.screen[index].text[subIndex].pop.content"></textarea>
+                            </div>
+                            <div class="c-opera-linkinput" ng-switch-when="image">
+                                <span class="c-iconfont">Z</span>
+                                <input class="m-opera-txt-input" placeholder="请输入弹层图片地址" type="text" ng-model="data.screen[index].text[subIndex].pop.content" />
+                            </div>
+                            <!-- <div class="c-opera-linkinput" ng-switch-when="video">
+                                <span class="c-iconfont">Z</span>
+                                <input class="m-opera-txt-input" placeholder="请输入视频地址MP4格式" type="text" ng-model="data.screen[index].video[subIndex].pop.content" />
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 动画模块 -->
+            <div class="g-operating-main"  ng-class="{dn:text_tab}">
+                <animation-template></animation-template>
+            </div>
+        </div>
+        <!-- 图片编辑区域 opera-img -->
+        <div class="g-opera-img-wrap padT50" ng-show="currentEdit=='image'">
+            <!-- <h3 class="c-border-bottom">图片设置</h3> -->
+            <div class="g-opera-tab" ng-init="img_tab = true">
+                <h5 class="left" ng-class="{active:img_tab}" ng-click="img_tab = true"><span>图片</span></h5>
+                <h5 class="right" ng-class="{active:!img_tab}" ng-click="img_tab = false"><span>动画</span></h5>
+            </div>
+            <div class="g-operating-main" ng-class="{dn:!img_tab}">
+                <div class="m-opera-box c-border-bottom">
+                    <div class="m-opera-img-box">
+                        <img ng-src="{{data.screen[index].image[subIndex].url}}">
+                    </div>
+                    <div class="m-opera-img-btn c-gradiet-color" ngf-select="uploadFiles($file,'image')">添加/更换图片</div>
+                    <div class="m-opera-txt-p">
+                        <span class="m-opera-txt-title">位置</span>
+                        <span class="padR30">X  <input type="text" ng-model="data.screen[index].image[subIndex].styles.left">px</span>
+                        Y  <input type="text" ng-model="data.screen[index].image[subIndex].styles.top">px
+                    </div>
+                </div>
+                <div class="m-opera-box c-border-bottom c-border-top">
+                    <div class="m-opera-txt-h4">添加链接</div>
+                    <div class="c-opera-linkinput"><span class="c-iconfont">Z</span>
+                        <input class="m-opera-txt-input" placeholder="请输入链接地址" type="text" ng-model="data.screen[index].image[subIndex].link" />
+                    </div>
+                </div>
+                <div class="m-opera-box c-border-top">
+                    <div class="m-opera-txt-h4" ng-model="data.screen[index].image[subIndex].pop" ng-switch="data.screen[index].image[subIndex].pop.type">添加弹层
+                        <div class="c-opera-choice m-opera-txt-choice" ng-class="{check:data.screen[index].image[subIndex].pop}" ng-click="setPop('image')"><span class="c-opera-choice-icon"></span></div>
+                        <div class="m-opera-txt-choice-box" ng-show="data.screen[index].image[subIndex].pop.type">
+                            <ul class="m-opera-txt-popradio clearFix">
+                                <li>
+                                    <input name="imgPop" id="imgPop1" checked type="radio" ng-model="data.screen[index].image[subIndex].pop.type" value="text" />
+                                    <label for="imgPop1">文字</label>
+                                </li>
+                                <li>
+                                    <input name="imgPop" id="imgPop2" type="radio" ng-model="data.screen[index].image[subIndex].pop.type" value="image" />
+                                    <label for="imgPop2">图片</label>
+                                </li>
+                                <li class="fr">
+                                    <input name="commonPopClose" id="commonPopClose" type="checkbox" ng-model="data.screen[index].image[subIndex].pop.hasClose"/>
+                                    <label for="commonPopClose">有关闭按钮</label>
+                                </li>
+                                <!-- <li>
+                                    <input name="imgPop" id="imgPop3" type="radio" ng-model="data.screen[index].image[subIndex].pop.type" value="video" />
+                                    <label for="imgPop3">视频</label>
+                                </li> -->
+                            </ul>
+                            <div class="m-opera-txt-popcont" ng-switch-when="text">
+                                <textarea class="m-opera-txt-poptextarea c-txt-textarea" placeholder="请输入弹层上的描述文案" ng-model="data.screen[index].image[subIndex].pop.content"></textarea>
+                            </div>
+                            <div class="c-opera-linkinput" ng-switch-when="image">
+                                <span class="c-iconfont">Z</span>
+                                <input class="m-opera-txt-input" placeholder="请输入弹层图片地址" type="text" ng-model="data.screen[index].image[subIndex].pop.content" />
+                            </div>
+                            <!-- <div class="c-opera-linkinput" ng-switch-when="video">
+                                <span class="c-iconfont">Z</span>
+                                <input class="m-opera-txt-input" placeholder="请输入视频地址MP4格式" type="text" ng-model="data.screen[index].video[subIndex].pop.content" />
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="g-operating-main"  ng-class="{dn:img_tab}">
+                <animation-template></animation-template>
+                <!-- <div class="m-opera-box">
+                    <div class="m-opera-txt-h4 c-padBottom10">进场</div>
+                    <div class="m-opera-ani-argument">
+                        <span class="m-opera-ani-argument-title" data-aaa="{{data.screen[index][currentEdit][subIndex].styles['animation']}}">速度</span>
+                        <div ui-slider min="0" max="10" step="0.1" ng-model="data.screen[index][currentEdit][subIndex].styles.animation['animation-duration']" use-decimals></div>
+                        <input type="text" ng-model="data.screen[index][currentEdit][subIndex].styles.animation['animation-duration']" animation-time disabled="disabled" />
+                    </div>
+                    <div class="m-opera-ani-argument">
+                        <span class="m-opera-ani-argument-title">延迟</span>
+                        <div ui-slider min="0" max="10" step="0.1" ng-model="data.screen[index][currentEdit][subIndex].styles.animation['animation-delay']" use-decimals></div>
+                        <input type="text" ng-model="data.screen[index][currentEdit][subIndex].styles.animation['animation-delay']" animation-time disabled="disabled" />
+                    </div>
+                    <ul class="m-effect clearFix">
+                        <li ng-mouseenter="setAnimate($index)" ng-repeat="ef in effect" ng-model="effect" ng-click="setEffect(ef.v,currentEdit,ef.init)">
+                            <a href="javascript:void(0);" ng-class="{active:ef.v==data.screen[index][currentEdit][subIndex].effect.name}">
+                                <div ng-class="showRun[$index]" class="animate"></div>
+                            </a>
+                            <p>{{ef.name}}</p>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <!-- 视频编辑区域 opera-img -->
+        <div class="g-opera-img-wrap padT50" ng-show="currentEdit=='video'">
+            <!-- <h3 class="c-border-bottom">视频设置</h3> -->
+            <div class="g-opera-tab" ng-init="video_tab = true">
+                <h5 class="left" ng-class="{active:video_tab}" ng-click="video_tab = true"><span>视频</span></h5>
+                <h5 class="right" ng-class="{active:!video_tab}" ng-click="video_tab = false"><span>动画</span></h5>
+            </div>
+            <div class="g-operating-main" ng-class="{dn:!video_tab}">
+                <div class="m-opera-box c-border-bottom c-border-top">
+                    <div class="m-opera-img-box">
+                        <img ng-src="{{data.screen[index].video[subIndex].params.poster}}">
+                    </div>
+                    <div class="m-opera-img-btn c-gradiet-color" ngf-select="uploadFiles($file,'video')">更换视频或按钮图片</div>
+                    <div class="m-opera-txt-p">
+                        <span class="m-opera-txt-title">位置</span>
+                        <span class="padR30">X  <input type="text" ng-model="data.screen[index].video[subIndex].styles.left">px</span>
+                        Y  <input type="text" ng-model="data.screen[index].video[subIndex].styles.top">px
+                    </div>
+                </div>
+                <div class="m-opera-box c-border-top">
+                    <div class="m-opera-txt-h4">视频地址</div>
+                    <div class="c-opera-linkinput"><span class="c-iconfont">Z</span>
+                        <input class="m-opera-txt-input" placeholder="请输入链接地址" type="text" ng-model="data.screen[index].video[subIndex].url" />
+                    </div>
+                </div>
+            </div>
+            <!-- 动画模块 -->
+            <div class="g-operating-main"  ng-class="{dn:video_tab}">
+                <animation-template></animation-template>
+            </div>
+        </div>
+    </div>
+</section>

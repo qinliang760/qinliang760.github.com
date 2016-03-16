@@ -1,0 +1,46 @@
+<div class="g-publish" ng-class="{show:config_publish_show}">
+    <div class="g-publish-box" ng-init="publish_success=false">
+        <div class="u-publish-close" ng-click="config_publish_show=false"></div>
+        <div class="g-publish-main">
+            <div class="g-publish-box-config" ng-show="!publish_success">
+                <h4 class="m-publish-h4">添加专题名称：</h4>
+                <div class="c-input-txt-box">
+                    <input type="text" name="#" placeholder="请输入名称" class="c-input-txt" ng-model="publish_data.title"/>
+                </div>
+                <h4 class="m-publish-h4">添加专题描述（SEO）：</h4>
+                <div class="c-input-txt-box">
+                    <input type="text" name="#" placeholder="请输入名称" class="c-input-txt"  ng-model="publish_data.description"/>
+                </div>
+                <h4 class="m-publish-h4">添加关键词（请用逗号隔开）：</h4>
+                <div class="c-input-txt-box">
+                    <input type="text" name="#" placeholder="请输入名称" class="c-input-txt"  ng-model="publish_data.keywords"/>
+                </div>
+                <h4 class="m-publish-h4">添加推广图：<span class="c-hint-txt">(建议jpg格式400*400px)</span></h4>
+                <div class="m-publish-imgbox">
+                    <img ng-src="{{publish_data.share_pic}}">
+                </div>
+                <a class="m-publish-btn-updateimg c-gradiet-color" href="javascript:;" ngf-select="uploadFiles($file,'share','new')">添加/更换图片</a>
+<!--                 <div class="c-opera-linkinput"><span class="c-iconfont">Z</span>
+    <input type="text" placeholder="请输入链接地址" class="m-opera-txt-input">
+</div> -->
+                <h4 class="m-publish-h4">添加推广文案：</h4>
+                <textarea placeholder="随时随地，无缝连接" class="m-opera-txt-textarea c-txt-textarea" ng-model="publish_data.share_text"></textarea>
+                <div class="m-publish-h4">重新生成新的链接地址
+                    <div class="c-opera-choice m-opera-txt-choice" ng-class="{check:publishNewUrl==1}" ng-click="setPublishNewUrl()"><span class="c-opera-choice-icon"></span></div>
+                </div>
+                <a href="javascript:;" class="m-publish-btn-submit" ng-click="publish_submit()">去发布</a>
+            </div>
+            <div class="g-publish-box-success" ng-show="publish_success">
+                <h3 class="m-publish-success-h3">恭喜你，发布成功！</h3>
+                <div class="m-publish-success-2code">
+                    <p>你可以扫一下二维码分享给好友</p>
+                    <img ng-src="{{publish_code2}}" />
+                </div>
+                <div class="m-publish-success-link">
+                    <a href="{{publish_url}}" target="_blank"><span class="m-publish-success-copy">打开地址</span></a><span>{{publish_url}}</span>
+                </div>
+                <a href="javascript:;" class="m-publish-btn-submit"  ng-click="config_publish_show=false">完 成</a>
+            </div>
+        </div>
+    </div>
+</div>

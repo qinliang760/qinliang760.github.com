@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>预览页</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <!-- build:css /css/preview_iframe.min.css -->
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <!-- endbuild -->
+    <style type="text/css">
+    html,body {
+        overflow: hidden;
+    }
+    #appContainer {
+        position: relative;
+        max-width: 640px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="appContainer"></div>
+    <!-- build:js /js/preview_iframe.min.js -->
+    <!-- // <script src="/js/jquery-1.7.2.min.js"></script> -->
+    <script src="/js/helper/zepto.js"></script>
+    <!-- // <script src="/js/helper/jquery.2.2.1.js"></script> -->
+    <!-- // <script src="/js/helper/zepto.1.1.6.js"></script> -->
+    <script src="/js/helper/underscore.js"></script>
+    <script src="/js/helper/jquery.namespace.js"></script>
+    <script src="/js/helper/fastclick.js"></script>
+    <script src="/js/helper/juicer.js"></script>
+    <script src="/js/helper/jquery.phoneSlidev2.js"></script>
+    <!-- <script src="/js/helper/jquery.mousewheel.js"></script> -->
+    <script src="/js/touch.js"></script>
+    <!-- endbuild -->
+    <script>
+    // console.log(parent.dataJson)
+    // $("body").mousewheel(function(event){
+    //     console.log(event)
+    //     event.preventDefault();
+    // })
+    // $("body").mousewheel(function(event){
+    //     console.log("eee");
+    //     parent.body.preventDefault();
+    // })
+    var hash = window.location.hash.substring(1);
+    //console.log(hash)
+    if (hash) {
+        $.getJSON('/app/preview', {
+            key: hash
+        }, function(data) {
+            var msg = data.msg;
+            if (data.status == "error") {
+                console.log(msg.content_json);
+                alert("页面失效，请重新预览。")
+            } else {
+                dataJson = msg.content_json;
+                //拉取数据
+                var app = new JV.touch(1, {
+                    data: JSON.parse(msg.content_json)
+                });
+                app.setPackage();
+            }
+        })
+    } else {
+        $("html,body").css({
+            height: '1050px',
+            width: '640px'
+        });
+        //$("#appContainer").addClass('appContainer_main');
+        document.body.onmousewheel = function(event) {
+            event = event || window.event;
+            event.preventDefault();
+        };
+        document.body.addEventListener("DOMMouseScroll", function(event) {
+            event = event || window.event;
+            event.preventDefault();
+        });
+        //拉取数据
+        var app = new JV.touch(1, {
+            data: JSON.parse(parent.dataJson)
+        });
+        app.setPackage();
+    }
+    </script>
+</body>
+
+</html>

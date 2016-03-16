@@ -1,0 +1,45 @@
+<div class="g-cont clearFix">
+    <!-- <div class="m-model-box" ng-repeat="model in historyJson">
+        <a href="/config/#/{{model._id.$id}}" target="_blank">
+            <div class="m-model-img-box">
+                <img class="m-model-img" ng-src="{{model.preview_img}}">
+                <div class="m-model-code2">
+                	<img src="{{model.publish_data.code2}}">
+                </div>
+            </div>
+            <div class="m-model-title">
+                <span>{{model.publish_data.title}}</span>
+                <div class="w-hidden-model-title">选取</div>
+            </div>
+        </a>
+    </div> -->
+    <div class="m-model-list">
+        <ul class="m-history-head clearFix">
+            <li class="u-w13">缩略图</li>
+            <li class="u-w13">标题名称</li>
+            <li class="u-w10">阅读量</li>
+            <li class="u-w10">分享转发量</li>
+            <li class="u-w13">发布时间</li>
+            <li class="u-w13">作者</li>
+            <li class="u-w10">在线状态</li>
+            <!-- <li class="u-w8">编辑</li> -->
+            <li class="u-w9">复制</li>
+            <li class="u-w9">查看</li>
+        </ul>
+        <ul class="m-history-box clearFix" ng-class="{even:$even}" ng-repeat="model in historyJson">
+            <div class="m-history-vcode2">
+                <img ng-src="{{model.publish_data.code2}}">
+            </div>
+            <li class="u-w13 m-history-box-img"><img ng-src="{{model.preview_img}}"></li>
+            <li class="u-w13">{{model.publish_data.title}}</li>
+            <li class="u-w10">{{model.view_count}}</li>
+            <li class="u-w10">{{model.share_count}}</li>
+            <li class="u-w13">{{model.update_time}}</li>
+            <li class="u-w13">{{model.creator}}</li>
+            <li class="u-w10">{{model.line}}</li>
+            <!-- <li class="u-w8"><a href="/config/#/{{model._id.$id}}">编辑</a></li> -->
+            <li class="u-w9"><a href="javascript:;" ng-click="CopyTmpl(model._id.$id)">复制</a></li>
+            <li class="u-w9"><a href="/preview/{{model.preview_key}}" target="_blank">预览</a></li>
+        </ul>
+    </div>
+</div>

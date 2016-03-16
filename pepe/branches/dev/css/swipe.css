@@ -1,0 +1,332 @@
+.fullPage-wp {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+}
+.fullPage-wp:after {
+	display: block;
+	content: ' ';
+	height: 0;
+	clear: both
+}
+.fullPage-wp.anim {
+	-webkit-transition: all 500ms ease-out 0s;
+	transition: all 500ms ease-out 0s
+}
+.fullPage-page {
+	display: block;
+	overflow: hidden
+}
+.fullPage-dir-h {
+	float: left
+}
+body, html {
+	height: 100%;
+	line-height: normal
+}
+html {
+	font-size: 62.5%
+}
+body {
+	font-size: 1.2rem
+}
+.wp {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #150526
+}
+.page {
+	text-align: center;
+	max-width: 640px;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	position: relative
+}
+.page1 {
+	background-size: 100% auto
+}
+.page2 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/1.jpg) no-repeat 50% 50%;
+	background-size: 100% auto;
+	z-index: 2
+}
+.page3 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/2.jpg) no-repeat 50% 50%;
+	background-size: 100% auto
+}
+.page4 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/3.jpg) no-repeat 50% 50%;
+	background-size: 100% auto
+}
+.page5 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/4.jpg) no-repeat 50% 50%;
+	background-size: 100% auto
+}
+.page6 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/5.jpg) no-repeat 50% 50%;
+	background-size: 100% auto
+}
+.page2 .loading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #150526;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% auto
+}
+.wp-page-wp,.wp-page2-wp, .wp-page4-wp {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 25%
+}
+.page-sub,.page2-sub, .page4-sub {
+	text-align: center;
+	max-width: 640px;
+	width: 100%;
+	margin: 0 auto;
+	background-size: 100% auto !important
+}
+.page2-sub.star1 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/star1.png) no-repeat -20px 0
+}
+.page2-sub.star2 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/star2.png) no-repeat -20px 0
+}
+.page2-sub.star3 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/star3.png) no-repeat -20px 0
+}
+.page2-sub.star4 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/star4.png) no-repeat -20px 0
+}
+.page2-sub.star5 {
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/star5.png) no-repeat -20px 0
+}
+.u-loading {
+	color: #8eb1bc;
+	text-align: center;
+	font-size: 3rem;
+	padding-top: 5rem
+}
+.u-logo {
+	opacity: 0;
+	padding-top: 30%
+}
+.wp-page4-wp {
+	top: 30%;
+	color: #8eb1bc;
+	font-size: 1.2rem
+}
+.wp-page4-wp .text {
+	padding: 0 2rem;
+	text-align: left
+}
+.wp-page4-wp .team {
+	padding: 3px;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	background-image: linear-gradient(#422f67, #102f4b);
+	background-image: -moz-linear-gradient(#422f67, #102f4b);
+	background-image: -webkit-linear-gradient(#422f67, #102f4b)
+}
+.wp-page4-wp h3, .wp-page4-wp h4 {
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 700;
+	padding: .5rem 2rem;
+	text-align: left;
+	text-shadow: 0 0 18px #12e3f4
+}
+.wp-page4-wp h3 {
+	padding-bottom: 0
+}
+.w-focus {
+	position: absolute;
+	bottom: 4%;
+	width: 100%;
+	text-align: center
+}
+.w-focus li {
+	display: inline-block;
+	vertical-align: middle;
+	width: 18px;
+	height: 15px;
+	opacity: .5;
+	-webkit-transition: opacity .5s ease;
+	-o-transition: opacit .5s ease;
+	transition: opacity .5s ease;
+	background: url(http://heroes.nos.netease.com/1/images/touch/minisite/conference/dot.png) no-repeat -56px -8px
+}
+.w-focus li.active {
+	width: 42px;
+	height: 25px;
+	opacity: 1;
+	background-position: -4px -3px
+}
+.w-focus2 {
+	bottom: 2%
+}
+.btn_gradient {
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	font-weight: 700;
+	padding: 3px;
+	background: #8033cb;
+	background: linear-gradient(180deg, #0867b0 0, #8033cb 100%)
+}
+.btn_gradient span {
+	background: #2f0e66;
+	background: linear-gradient(180deg, #031d4f 0, #2f0e66 100%);
+	display: block;
+	height: 100%;
+	padding: .5rem 3rem
+}
+.btn_share {
+	position: absolute;
+	bottom: 5%;
+	width: 100%;
+	text-align: center
+}
+.s1_playmusic {
+	width: 8%;
+	display: block;
+	position: absolute;
+	top: 4%;
+	right: 5%;
+	z-index: 3
+}
+.s1_playmusic img {
+	vertical-align: top;
+	width: 100%
+}
+.s1_ani_playmusic img {
+	-webkit-animation: one_playmusic 1.5s 1s linear infinite;
+	-moz-animation: one_playmusic 1.5s 1s linear infinite
+}
+@-moz-keyframes one_playmusic {
+	0% {
+		-moz-transform: rotateZ(0deg)
+	}
+	50% {
+		-moz-transform: rotateZ(180deg)
+	}
+	100% {
+		-moz-transform: rotateZ(360deg)
+	}
+}
+@-webkit-keyframes one_playmusic {
+	0% {
+		-webkit-transform: rotateZ(0deg)
+	}
+	50% {
+		-webkit-transform: rotateZ(180deg)
+	}
+	100% {
+		-webkit-transform: rotateZ(360deg)
+	}
+}
+.common_arrow {
+	width: 10%;
+	position: absolute;
+	left: 45%;
+	bottom: 10%;
+	opacity: 1;
+	-webkit-animation: arrow 1s 0s ease infinite alternate;
+	animation: arrow 1s 0s ease infinite alternate
+}
+.common_arrow_l {
+	width: 7%;
+	position: absolute;
+	top: 45%;
+	left: 5%;
+	opacity: 1;
+	display: none;
+	-webkit-animation: arrow_l 1s 0s ease infinite alternate;
+	animation: arrow 1s 0s arrow_l infinite alternate
+}
+.common_arrow_r {
+	width: 7%;
+	position: absolute;
+	top: 45%;
+	right: 5%;
+	opacity: 1;
+	-webkit-animation: arrow_r 1s 0s ease infinite alternate;
+	animation: arrow_r 1s 0s ease infinite alternate
+}
+@-webkit-keyframes arrow {
+	to {
+		bottom: 6%;
+		opacity: 0
+	}
+}
+@keyframes arrow {
+	to {
+		bottom: 6%;
+		opacity: 0
+	}
+}
+@-webkit-keyframes arrow_l {
+	to {
+		left: 10%;
+		opacity: 0
+	}
+}
+@keyframes arrow_l {
+	to {
+		left: 10%;
+		opacity: 0
+	}
+}
+@-webkit-keyframes arrow_r {
+	to {
+		right: 10%;
+		opacity: 0
+	}
+}
+@keyframes arrow_r {
+	to {
+		right: 10%;
+		opacity: 0
+	}
+}
+@media only screen and (max-height:600px) {
+	.wp-page2-wp {
+		top: 20%
+	}
+}
+@media only screen and (max-height:567px) {
+	.wp-page2-wp {
+		top: 15%
+	}
+	.w-focus {
+		bottom: 2%
+	}
+	.wp-page4-wp {
+		top: 25%
+	}
+	.w-focus2 {
+		bottom: 0
+	}
+}
+@media only screen and (max-height:450px) {
+	.w-focus {
+		bottom: 0
+	}
+	.wp-page4-wp {
+		top: 20%
+	}
+	.w-focus2 {
+		bottom: 0
+	}
+}
+@media only screen and (min-width:375px) and (min-height:450px) {
+	html {
+		font-size: 80%
+	}
+}

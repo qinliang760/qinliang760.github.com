@@ -1,0 +1,124 @@
+
+
+.wrap {
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	height: 100%;
+}
+
+.g-phone-box {
+	width: 276px;
+	height: 606px;
+	position: absolute;
+	left: 50%;
+	margin-left: -350px;
+	z-index: 2;
+	top: 100px;
+	background: url(/features/img/preview_phone.png) 0 0 repeat;
+}
+.m-phone-title {
+	color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    padding-top: 64px;
+    text-align: center;
+    width: 262px;
+    height: 101px;
+}
+.m-phone {
+	height: 427px;
+	width: 260px;
+	position: relative;
+	left: 1px;
+	background: #1e2937;
+}
+
+.pre-iframe {
+    border: 0 none;
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-kerning: inherit;
+    font-language-override: inherit;
+    font-size: 100%;
+    font-size-adjust: inherit;
+    font-stretch: inherit;
+    font-style: inherit;
+    font-synthesis: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    height: 1050px;
+    top: 0px;
+    left: 50%;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    -webkit-transform: scale(0.406) translateX(-50%);
+    -webkit-transform-origin: left top 0;
+    transform: scale(0.406) translateX(-50%);
+    transform-origin: left top 0;
+    vertical-align: baseline;
+    width: 640px;
+}
+.m-arrow {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	left: 300px;
+	cursor: pointer;
+	background: url(/features/img/preview_arrow.png) 0 0 repeat;
+}
+.arrow_up {
+	top: 200px;
+}
+.arrow_down {
+	top: 300px;
+	-webkit-transform:rotateZ(-180deg);
+	transform:rotateZ(-180deg);
+}
+.g-cont-box {
+	background: #e0e8f0;
+	width: 330px;
+	left: 50%;
+	margin-left: 45px;
+	height: 100%;
+	top: 0px;
+	z-index: 1;
+	position: absolute;
+}
+.m-h5-title {
+	text-align: center;
+	line-height: 50px;
+	padding-top: 160px;
+	font-size: 18px;
+	color: #1e2937;
+}
+.m-cont-img {
+	width: 170px;
+	height: 170px;
+	margin: 0 auto 140px auto;
+}
+.m-cont-img img {
+	width: 100%;
+	vertical-align: top;
+	height: 100%;
+}
+.m-create-a {
+	background: #098cc8;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    height: 67px;
+    line-height: 67px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    width: 230px;
+    margin: 0 auto;
+}
+.m-create-a:hover{
+	background: #21b0f1;
+}

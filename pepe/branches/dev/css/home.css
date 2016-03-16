@@ -1,0 +1,241 @@
+
+
+
+.header-wrap {
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	left: 0px;
+	width: 100%;
+}
+.container{
+	position: relative;
+	z-index: 1;
+}
+
+
+.g-cont {
+	position: relative;
+}
+
+.kv_main,.kv_show {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	overflow: hidden;
+	height: 720px;
+}
+.home_kv {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -960px;
+	width: 1920px;
+	height: 720px;
+	z-index: 1;
+}
+.home_kv.first {
+	z-index: 2;
+}
+.home_kv a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.home_kv img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.kv_main .kv_num {
+    bottom: 10px;
+    height: 40px;
+    left: 50%;
+    margin-left: -250px;
+    position: absolute;
+    text-align: center;
+    width: 500px;
+    z-index: 998;
+}
+
+.kv_main .kv_num li {
+    cursor: pointer;
+    display: inline-block;
+    height: 12px;
+    margin: 0 6px;
+    width: 12px;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 6px;
+    -webkit-transition:all 0.3s ease 0s;
+    transition:all 0.3s ease 0s;
+}
+.kv_main .kv_num li.active {
+	width: 46px;
+	background-color: #21b0f1;
+}
+.m-home-login-box {
+	width: 275px;
+	height: 544px;
+	background: url(/features/img/home_phone.png) top center no-repeat;
+	position:absolute;
+	top: 120px;
+	left: 50%;
+	margin-left: 250px;
+	z-index: 99;
+}
+.m-home-login {
+	height: 67px;
+	width: 230px;
+	position: absolute;
+	top: 300px;
+	left: 22px;
+	z-index: 2;
+	border-radius: 5px;
+	font-size: 28px;
+	color: #fff;
+	text-align: center;
+	line-height: 67px;
+	font-weight: bold;
+	background: #098cc8;
+	display: block;
+	transition:all 0.3s ease 0s;
+}
+.m-home-login:hover {
+	background: #21b0f1;
+}
+.m-home-brower-hint {
+	width: 230px;
+	padding-left: 70px;
+	position: absolute;
+	top: 385px;
+	left: 22px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 20px;
+	height: 80px;
+	border-radius: 5px;
+	background: #0d101f;
+	background: rgba(13,16,31,.5);
+}
+.m-home-brower-hint .icon_chrome {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 80px;
+	width: 70px;
+	background: url(/images/icon_chrome.png) 18px 17px no-repeat;
+	display: block;
+}
+.m-home-brower-hint article {
+	padding: 9px 0 0 7px;
+}
+.m-home-brower-hint a {
+	color: #feb429;
+}
+.m-home-brower-hint a:hover {
+	text-decoration: underline;
+}
+
+.g-dtl-box {
+	background: url(/features/img/home_bg.jpg) top center no-repeat;
+}
+.home_sprite {
+	background-image: url(/features/img/home_sprite.png);
+	background-repeat: no-repeat;
+}
+.g-dtl {
+	padding: 20px 0 100px;
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1400px;
+	min-width: 1200px;
+}
+.g-dtl li{
+	width: 25%;
+	float: left;
+}
+.g-dtl li.w22{
+	width: 22%;
+}
+.g-dtl li.w30{
+	width: 30%;
+}
+.g-dtl li.last {
+	margin-right: 0px;
+}
+.g-dtl li .home_sprite {
+	height: 170px;
+	width: 120px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.m-dtl-p {
+	display: inline-block;
+	vertical-align: middle;
+}
+.m-dtl-p h4 {
+	font-size: 20px;
+	line-height: 40px;
+	color: #fff;
+}
+.m-dtl-p span {
+	font-size: 14px;
+	line-height: 30px;
+	color: #0480b2;
+}
+.m-dtl-icon-1 {
+	background-position: 0 20px;
+}
+.m-dtl-icon-2 {
+	background-position: -325px 20px;
+}
+.m-dtl-icon-3 {
+	background-position: -605px 20px;
+}
+.m-dtl-icon-4 {
+	background-position: -950px 20px;
+}
+
+.g-edition-update {
+	height: 290px;
+	width: 100%;
+	background:#084475;
+	position: relative;
+	margin-bottom: 90px;
+}
+.u-edition-update-img {
+	background: url(/images/home_update_img.png) top center no-repeat;
+	width: 646px;
+	height: 390px;
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	margin-left: -640px;
+	z-index: 1;
+}
+.m-edition-update-cont {
+	left: 50%;
+	position: absolute;
+	top: 50px;
+	margin-left: 90px;
+	z-index: 2;
+	width: 500px;
+}
+.m-edition-update-cont h3 {
+	color: #21b0f1;
+	line-height: 60px;
+	font-size: 40px;
+	padding-bottom: 5px;
+}
+.m-edition-update-ul {
+	width: 100%;
+}
+.m-edition-update-ul li {
+	font-size: 20px;
+	line-height: 36px;
+	color: #21b0f1;
+	list-style: inside none disc;
+}
+.m-edition-update-ul li span {
+	color: #fff;
+}

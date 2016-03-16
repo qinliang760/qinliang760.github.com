@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="listPage">
+
+<head>
+    <meta charset="utf-8">
+    <title ng-bind="$root.page"></title>
+    <meta name="viewport" content="width=device-width">
+    <!--#include virtual="/features/common/css.html" -->
+    <link rel="stylesheet" type="text/css" href="/css/list.css">
+</head>
+
+<body class="bg_{{$root.nav}}_body" ng-controller="mainController">
+    <div class="header-wrap">
+        <!--#include virtual="/features/common/header.html" -->
+        <div class="ui-breadcrumbs">
+            <a href="/home/">首页</a>
+            <span class="arrow">></span>
+            <a href="javascript:;" class="active" ng-bind="$root.page"></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="g-addmodel">
+            <a class="btn-addmodel" href="/config/#/new" target="_blank"><i class="c-iconfont">Y</i><span>新建专题</span></a>
+        </div>
+        <div ng-view=""></div>
+    </div>
+    <!--#include virtual="/features/common/footer.html" -->
+    <!--#include virtual="/features/common/js.html" -->
+    <script src="/js/app/list.js" type="text/javascript"></script>
+    <script src="/js/controllers/list.js" type="text/javascript"></script>
+</body>
+
+</html>

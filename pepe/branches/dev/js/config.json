@@ -1,0 +1,162 @@
+{
+            "css": [
+                "animate.css",
+                "swipe.css"
+            ],
+            "global": {
+                "arrow": "http://jv-fe.github.io/JV/JVJ/demo/phone_slide/src/img/arrow.png",
+                "background": "#eee",
+                "height": "1048",
+                "option": {
+                    "effect": "ScreenCling",
+                    "speed": 200,
+                    "scale": true,
+                    "rotation": true
+                },
+                "width": "640"
+            },
+            "id": "3",
+            "js": [
+                "underscore.js",
+                "jquery.imgpreload.js"
+            ],
+            "name": "带左右滑动的模板",
+            "screen": [{
+                "bg": "http://img6.cache.netease.com/3g/hdppt/rls_9352/images/d02d9c22957242edaf1de2d2f35a3593.jpg",
+                "children": [{
+                    "description": "文字内容",
+                    "image": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "title": "文字内容"
+                }],
+                "image": [{
+                    "effect": "fadeInRight",                    
+                    "link": "http://h5.blz.netease.com",
+                    "pop": {
+                        "content": "http://img3.cache.netease.com/3g/hdppt/rls_9352/images/f218629b736a2db90239a02ea60831f5.jpg",
+                        "type": "image"
+                    },
+                    "styles": {
+                        "left": "70",
+                        "top": "388",
+                        "height": "224",
+                        "width": "398",
+                        "z-index": "0",
+                        "position":"absolute"
+                    },
+                    "url": "http://img3.cache.netease.com/3g/hdppt/rls_9352/images/f218629b736a2db90239a02ea60831f5.jpg"
+                    
+                }]               
+            }, {
+                "bg": "http://img6.cache.netease.com/3g/hdppt/rls_9352/images/01b514ffe58e7f44dbb8edb11537da1b.jpg",
+                "image": [{
+                    "effect": "",
+                    "height": "",
+                    "link": "",
+                    "pop": {
+                        "content": "",
+                        "type": "image"
+                    },
+                    "styles": {
+                        "left": "0",
+                        "top": "31",
+                        "z-index": "0"
+                    },
+                    "url": "http://img1.cache.netease.com/3g/hdppt/rls_9352/images/53c14fd87732f83054b3cead463aa738.png",
+                    "width": ""
+                },{
+                    "effect": "",
+                    "height": "",
+                    "link": "",
+                    "pop": {
+                        "content": "",
+                        "type": "image"
+                    },
+                    "styles": {
+                        "left": "2",
+                        "top": "384",
+                        "z-index": "0"
+                    },
+                    "url": "http://img1.cache.netease.com/3g/hdppt/rls_9352/images/c3dac59c10c705a90b4a16ae88fbbd28.png",
+                    "width": ""
+                }],
+                "text": [{
+                    "content": "指挥官们，你们在战役中扮演英雄大主教阿塔尼<br/>斯，通过联合不同星灵阵营来阻止埃蒙的毁灭计<br/>划。为了艾尔！",
+                    "effect": "flyl",
+                    "styles": {
+                        "color": "#fff",
+                        "font-family": "Helvetica",
+                        "font-size": "12px",
+                        "font-weight": "bold",
+                        "left": "39",
+                        "top": "482",
+                        "z-index": "0",
+                        "width":"300"
+                    },
+                    "link": "http://",
+                    "pop": {
+                        "content": "333",
+                        "type": "image"
+                    }
+                }]                
+            }, {
+                "bg": "http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_3.jpg",
+                "image": [{
+                    "effect": "",
+                    "height": "",
+                    "link": "",
+                    "pop": {
+                        "content": "",
+                        "type": "image"
+                    },
+                    "styles": {
+                        "left": "",
+                        "top": "",
+                        "z-index": ""
+                    },
+                    "url": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "width": ""
+                }]
+            }, {
+                "bg": "http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_4.jpg",
+                "image": [{
+                    "effect": "",
+                    "height": "",
+                    "link": "",
+                    "pop": {
+                        "content": "",
+                        "type": "image"
+                    },
+                    "styles": {
+                        "left": "",
+                        "top": "",
+                        "z-index": ""
+                    },
+                    "url": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "width": ""
+                }]
+            }, {
+                "bg": "http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_5.jpg",
+                "image": [{
+                    "effect": "",
+                    "height": "",
+                    "link": "",
+                    "pop": {
+                        "content": "",
+                        "type": "image"
+                    },
+                    "styles": {
+                        "left": "",
+                        "top": "",
+                        "z-index": ""
+                    },
+                    "url": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "width": ""
+                }]
+            }, {
+                "bg": "http://heroes.nos.netease.com/1/images/touch/minisite/cross-promotion/s_6.jpg",
+                "image": [
+
+                ]
+            }],
+            "type": "swipe"
+        }

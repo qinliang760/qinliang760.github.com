@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>预览页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <!-- build:css /css/preview.min.css -->
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/preview.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+    <!-- <div class="main" id="appContainer"></div> -->
+    <div class="wrap">
+        <div class="g-phone-box">
+            <div class="m-phone-title">炉石手机版上线</div>
+            <div class="m-phone" id="m-phone"></div>
+            <div class="arrow_up m-arrow"></div>
+            <div class="arrow_down m-arrow"></div>
+        </div>
+        <div class="g-cont-box">
+            <div class="m-h5-title">手机预览效果更赞</div>
+            <div class="m-cont-img"><img id="m-cont-imgUrl" src=""></div>
+            <a href="javascript:;" class="m-create-a">开始创作</a>
+        </div>
+    </div>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script>
+    var options = JSON.parse(localStorage.getItem("options"));
+    var key = location.href.split("/preview/")[1];
+    var dataJson = "";
+    var url2code = "http://" + location.host + "/features/views/preview_iframe.html#" + key;
+    //二维码
+    $.post("/generate/qr", {
+            url: url2code,
+            size: 200
+        }, function(data) {
+            //console.log(data)
+            if (data.status == "success") {
+                $("#m-cont-imgUrl").attr("src", data.msg);
+            }
+        }, "json")
+        //console.log(key);
+    if (key != "loading") { //loading是new新页面时候的停留
+        $.getJSON('/app/preview', {
+            key: key
+        }, function(data) {
+            var msg = data.msg;
+            if (data.status == "error") {
+                console.log(msg.content_json);
+                alert("页面已失效，请重新点击预览。")
+            } else {
+                if (msg.is_creator) {
+                    $('.m-create-a').attr("href", "/config/#/" + msg.id)
+                } else {
+                    $('.m-create-a').click(function(event) {
+                        $.post('/app/copy', {
+                            id: msg.id
+                        }, function(data) {
+                            console.log(data)
+                            if (data.status == "success") {
+                                console.log(data.data.insert_id)
+                                location.href = "/config/#/" + data.data.insert_id;
+                            }
+                        }, "json")
+                    });
+                }
+                dataJson = msg.content_json;
+                console.log(JSON.parse(dataJson))
+                $("#m-phone").append('<iframe id="pre-iframe" class="pre-iframe" src="/features/views/preview_iframe.html"></iframe>')
+                    //拉取数据
+                    // var app = new JV.touch(1, {
+                    //     data: JSON.parse(msg.content_json)
+                    // });
+                    // app.setPackage();
+            }
+        })
+    }
+    </script>
+</body>
+
+</html>

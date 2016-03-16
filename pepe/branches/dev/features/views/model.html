@@ -1,0 +1,41 @@
+<div class="g-cont clearFix">
+    <div class="m-model-box" ng-repeat="model in modelJson">
+        <div class="m-model-img-box">
+            <img class="m-model-img" ng-src="{{model.preview_img}}">
+            <div class="m-model-code2">
+                <img ng-src="{{model.publish_data.code2}}">
+            </div>
+        </div>
+        <div class="m-model-title-box">
+            <div class="m-model-title">{{model.publish_data.title || "未命名专题"}}</div>
+            <div class="m-model-dtl"><span class="m-model-time">{{model.update_time}}</span><span class="m-model-read"><span class="c-iconfont">i</span>{{model.view_count}}</span></div>
+        </div>
+        <div class="m-model-cover">
+            <a href="/preview/{{model.preview_key}}" class="m-model-cover-btn" target="_blank">预 览</a>
+            <!-- <a href="#" class="m-model-cover-btn2"><span class="c-iconfont">f</span>编辑</a> -->
+            <a href="javascript:;" ng-click="CopyTmpl(model._id.$id)" class="m-model-cover-btn2"><span class="c-iconfont">g</span>复制</a>
+            <div class="m-model-cover-line">转发量<span>{{model.share_count}}</span><span  ng-show="model.is_publish" class="m-model-cover-code2"><img ng-src="{{model.publish_data.code2}}"></span></div>
+        </div>
+    </div>
+
+    <div class="m-model-box" ng-repeat="model in mymodelJson">
+        <div class="m-model-img-box">
+            <img class="m-model-img" ng-src="{{model.preview_img}}">
+            <div class="m-model-code2">
+                <img ng-src="{{model.publish_data.code2}}">
+            </div>
+        </div>
+        <div class="m-model-title-box">
+            <div class="m-model-title">{{model.publish_data.title || "未命名专题"}}</div>
+            <div class="m-model-dtl"><span class="m-model-time">{{model.update_time}}</span><span class="m-model-read"><span class="c-iconfont">i</span>{{model.view_count}}</span></div>
+        </div>
+        <div class="m-model-cover">
+            <a href="/config/#/{{model._id.$id}}" class="m-model-cover-btn" target="_blank">编 辑</a>
+            <!-- <a href="#" class="m-model-cover-btn2"><span class="c-iconfont">f</span>编辑</a> -->
+            <a href="javascript:;" ng-click="CopyTmpl(model._id.$id)" class="m-model-cover-btn2"><span class="c-iconfont">g</span>复制</a>
+            <a href="javascript:;" ng-show="model.is_publish" ng-click="offLine(model._id.$id,model.line)" class="m-model-cover-btn2"><span class="c-iconfont">h</span>{{model.line=="已上线"? "下线":"上线"}}</a>
+            <a href="/config/#/{{model._id.$id}}"  ng-hide="model.is_publish" class="m-model-cover-btn2"><span class="c-iconfont">j</span>发布</a>
+            <div class="m-model-cover-line">转发量<span>{{model.share_count}}</span><span  ng-show="model.is_publish" class="m-model-cover-code2"><img ng-src="{{model.publish_data.code2}}"></span></div>
+        </div>
+    </div>
+</div>

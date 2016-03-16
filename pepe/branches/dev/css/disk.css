@@ -1,0 +1,349 @@
+i,
+em {
+    font-style: normal;
+}
+
+.container {
+    margin: 50px auto;
+    max-width: 1450px;
+    position: relative;
+    width: 90%;
+}
+
+.g-picList {
+    position: relative;
+}
+
+.g-picList li {
+    background: url(http://s1.pan.bdstatic.com/box-static/disk-system-cdn/widget/pageModule/list/img/gridIcon_7165cae.png) no-repeat 0 0;
+}
+
+.g-subNav {
+    background: #e3e3e3;
+    height: 41px;
+    border: 1px solid #d2d2d2;
+    color: #888;
+    position: relative;
+}
+
+.g-subNav .check-icon {
+    background: url(http://s1.pan.bdstatic.com/box-static/disk-system-cdn/widget/system/uiService/list/img/list-view_4e60b0c.png) no-repeat -9px -12px;
+    cursor: default;
+    height: 14px;
+    left: 11px;
+    position: absolute;
+    top: 14px;
+    width: 14px;
+}
+
+.g-subNav .check-icon.checked {
+    background-position: -41px -12px;
+}
+
+.g-subNav .btn-list {
+    position: absolute;
+    left: 36px;
+    top: 6px;
+    line-height: 28px;
+}
+
+.g-subNav .btn-list .u-button {
+    color: #666;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 5px;
+    padding: 0 15px;
+    background: #f5f5f5;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+}
+
+.upload {
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 1;
+}
+
+.upload-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 41px;
+    width: 153px;
+    opacity: 0;
+}
+
+.upload-pic {
+    background: #098cc8 url(/images/popup/icons.png) no-repeat 14px 6px;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    height: 41px;
+    line-height: 41px;
+    padding-left: 50px;
+    text-align: left;
+    text-shadow: none;
+    transition: all 0.3s ease 0s;
+    width: 153px;
+}
+
+.upload.disabled .upload-pic{
+    background-color: #999;
+    cursor: default;
+}
+
+.upload.disabled .upload-pic:hover{
+    background-color: #999;
+}
+
+.upload-pic:hover {
+    background-color: #21b0f1;
+}
+
+.sub-breadcrumbs {
+    background: #fff;
+    line-height: 30px;
+    padding-left: 11px;
+}
+
+.sub-breadcrumbs a {
+    color: #3180dd;
+}
+
+.u-button .icn {
+    display: inline-block;
+    height: 24px;
+    margin-right: 4px;
+    vertical-align: middle;
+    width: 20px;
+    background: url(http://s1.pan.bdstatic.com/box-static/disk-system-cdn/images/sys-icon_9b5f22d.png) no-repeat 0 0;
+}
+
+.icn.icn-delete {
+    background-position: -210px -2px;
+}
+
+.u-button:hover .icn.icn-delete {
+    background-position: -270px -2px;
+}
+
+.u-button:hover {
+    color: #000;
+}
+
+.m-picList-con {
+    background: #fff;
+    padding: 10px 0;
+}
+
+.file-items {
+    float: left;
+    height: 122px;
+    margin: 4px 3px 0 0;
+    text-align: center;
+    width: 142px;
+    position: relative;
+}
+
+.file-items .file-icon {
+    background-repeat: no-repeat;
+    height: 92px;
+    border: 2px solid #fff;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 90px;
+    cursor: pointer;
+}
+
+.file-box {
+    background: url(http://s1.pan.bdstatic.com/box-static/disk-system-cdn/widget/pageModule/list/img/gridIcon_7165cae.png) no-repeat 13px -77px;
+}
+
+.file-items:hover .file-icon,
+.file-items.file-items-active .file-icon {
+    border-color: #3180dd;
+}
+
+.file-items .thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.file-items:hover .checkbox {
+    display: block;
+    z-index: 1;
+}
+
+.file-items.file-items-active .checkbox {
+    display: block;
+    background-position: -30px -36px;
+}
+
+
+.file-items .checkbox {
+    background: url(http://s1.pan.bdstatic.com/box-static/disk-system-cdn/widget/pageModule/list/img/checkbox_aea6cfd.png) no-repeat 6px -36px;
+    height: 30px;
+    right: 20px;
+    position: absolute;
+    top: -6px;
+    width: 30px;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+}
+
+.file-items .file-name {
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    color: #000;
+    font-size: 12px;
+}
+
+.addFile {
+    float: left;
+    height: 122px;
+    margin: 4px 3px 0 0;
+    text-align: center;
+    width: 142px;
+}
+
+.addFile p {
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    color: #000;
+    font-size: 12px;
+}
+
+.addFile .c-iconfont {
+    height: 92px;
+    line-height: 92px;
+    width: 90px;
+    font-size: 40px;
+    margin: 0 auto;
+    border: 2px solid #bdbdbd;
+    color: #bdbdbd;
+    cursor: pointer;
+}
+
+.addFile:hover .c-iconfont {
+    border-color: #3180dd;
+    color: #3180dd;
+}
+
+.m-edit-name {
+    left: 0;
+    top: 0;
+    padding-top: 96px;
+    position: absolute;
+    width: 141px;
+    z-index: 3;
+    margin-left: 10px;
+}
+
+.mark {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.m-edit-name .edit-name-text {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #d2d2d2;
+    height: 21px;
+    margin: 6px 0;
+    padding: 2px 3px;
+    vertical-align: middle;
+    width: 75px;
+    color: #000;
+}
+
+.m-edit-name .sure {
+    background: url(http://s1.pan.bdstatic.com/box-static/disk-system-cdn/widget/system/fileService/createNewDir/img/btn_icon_17d92fd.gif) repeat 0 -512px;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    margin: 8px 5px;
+    vertical-align: middle;
+    width: 22px;
+}
+
+.edit-name-con {
+    background: #fff;
+}
+
+.m-edit-name .cancel {
+    background: url("http://s1.pan.bdstatic.com/box-static/disk-system-cdn/widget/system/fileService/createNewDir/img/btn_icon_17d92fd.gif") repeat -27px -512px;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    margin: 8px 0 8px 2px;
+    vertical-align: middle;
+    width: 22px;
+}
+
+.g-tips{
+    position: absolute;
+    left: 0;
+    top: 128px;
+    width: 100%;
+    text-align: center;
+}
+
+.g-tips .tips-con{
+    padding: 0 20px;
+    background: #f9edbe;
+    text-align: center;
+    color: #000;
+    border-radius: 2px;
+    border: 1px solid #fbda91;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/*.g-tips .tips-con:after{
+    content: "";
+    background: red;
+    display: block;
+    position: absolute;
+    background: url(/images/loading.gif);
+    width: 16px;
+    height: 16px;
+}*/
+
+.dragover .upload-mark{
+    display: block;
+}
+
+.upload-mark{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 150px;
+    font-size: 40px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 3px dashed rgb(204, 204, 204);
+    text-align: center;
+    z-index: 3;
+    color: #098cc8;
+    display: none;
+}

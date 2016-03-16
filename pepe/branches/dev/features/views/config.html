@@ -1,0 +1,117 @@
+<div class="g-config">
+    <div class="m-list">
+        <h3>列表</h3>
+        <div ng-repeat="screen in data.screen" ng-click="setScreen($index)">
+            <div class="page" style="width:100px;height:150px;background:url({{screen.bg}}) no-repeat 50% 50%;background-size:100%;margin:10px;scale(0.5)">
+                <p ng-repeat="img in screen.image">
+                    <img width="{{img.width}}" height="{{img.height}}" src="{{img.url}}" alt="">
+                </p>
+                <p ng-repeat="text in screen.text" ng-style="text.styles" style="position:absolute;width:100%">
+                    {{text.content}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="m-stage">
+        <h3>舞台</h3>
+        <div style="width:200px;height:300px;background:url({{data.screen[index].bg}}) no-repeat 50% 50%;background-size:100%;position:relative">
+            <p ng-model="img.styles" draggable resizable ng-repeat="img in data.screen[index].image" style="width:{{img.width}}px;height:{{img.height}}px" ng-click="setImage($index)" class="dragImg drag resizable">
+                <span class="dh"></span>
+                <img width="{{img.width}}" height="{{img.height}}" src="{{img.url}}" alt="">
+            </p>
+            <div draggable resizable ng-repeat="text in data.screen[index].text" ng-style="text.styles" ng-click="setText($index)" class="dragText drag resizable" ng-model="text.styles">
+                <div class="text" contenteditable="true" ng-model="text.content" ng-bind-html="text.content"></div>
+                <div class="dh"></div>
+            </div>
+        </div>
+    </div>
+    <div class="m-config">
+        <h3 class="panel-title">配置</h3>
+        <div>
+            <div ng-show="currentEdit=='image'">
+            <h2>图片</h2>
+            <p>图片地址：
+                <input type="text" ng-model="data.screen[index].bg">
+            </p>
+            <p>left:
+                <input type="text" ng-model="data.screen[index].image[subIndex].styles.left">
+            </p>
+            <p>top:
+                <input type="text" ng-model="data.screen[index].image[subIndex].styles.top">
+            </p>
+            <p>link:
+                <input ng-model="data.screen[index].image[subIndex].link" type="text">
+            </p>
+            <p>效果：</p>
+            <ul class="m-effect">
+                <li ng-repeat="ef in effect" ng-model="effect" ng-click="setEffect(ef.v,'image')" ng-class="{active:ef.v==data.screen[index].image[subIndex].effect}">{{ef.v}}</li>
+            </ul>
+            <div ng-init="data.screen[index].image[subIndex].pop" ng-model="data.screen[index].image[subIndex].pop" ng-switch="data.screen[index].image[subIndex].pop.type">
+                <p>添加弹层：</p>
+                <input type="radio" ng-model="data.screen[index].image[subIndex].pop.type" value="text">文字
+                <br/>
+                <input type="radio" ng-model="data.screen[index].image[subIndex].pop.type" value="image">图片
+                <br/>
+                <input type="radio" ng-model="data.screen[index].image[subIndex].pop.type" value="video">视频
+                <br/>
+                <div ng-switch-when="text">text</div>
+                <div ng-switch-when="image">image</div>
+                <div ng-switch-when="video">video</div>
+            </div>
+            <p>
+                <input ng-click="getData()" type="button" value="预览">
+                <input ng-click="setPublish()" type="button" value="发布">
+            </p>
+            </div>
+
+            <div ng-show="currentEdit=='text'">
+            <p>left:
+                <input type="text" ng-model="data.screen[index].text[subIndex].styles.left">
+            </p>
+            <p>top:
+                <input type="text" ng-model="data.screen[index].text[subIndex].styles.top">
+            </p>
+            <p>link:
+                <input ng-model="data.screen[index].text[subIndex].link" type="text">
+            </p>
+            <p>
+                <input type="text" ng-model="data.screen[index].text[subIndex].content">
+            </p>
+
+            <p>color:
+                <input colorpicker ng-model="data.screen[index].text[subIndex].styles.color" type="text">
+            </p>
+            <p>字体:
+                <select ng-model="font_family_default" ng-options="n.v for n in font_family" ng-change="change('font-family','font_family_default')"></select>
+            </p>
+            <p>大小:
+                <select ng-model="font_size_default" ng-options="n.v for n in font_size" ng-change="change('font-size','font_size_default')"></select>
+            </p>
+            <p>
+                <input type="button" ng-value="data.screen[index].text[subIndex].styles['font-weight']" style="padding:0 5px;" ng-model="data.screen[index].text[subIndex].styles['font-weight']" ng-click="setBold(data.screen[index].text[subIndex].styles['font-weight']);">
+            </p>
+            <p>效果：</p>
+            <ul class="m-effect">
+                <li ng-repeat="ef in effect" ng-model="effect" ng-click="setEffect(ef.v,'text')" ng-class="{active:ef.v==data.screen[index].text[subIndex].effect}">{{ef.v}}</li>
+            </ul>
+            <div ng-init="data.screen[index].text[subIndex].pop" ng-model="data.screen[index].text[subIndex].pop" ng-switch="data.screen[index].text[subIndex].pop.type">
+                <p>添加弹层：</p>
+                <input type="radio" ng-model="data.screen[index].text[subIndex].pop.type" value="text">文字
+                <br/>
+                <input type="radio" ng-model="data.screen[index].text[subIndex].pop.type" value="image">图片
+                <br/>
+                <input type="radio" ng-model="data.screen[index].text[subIndex].pop.type" value="video">视频
+                <br/>
+                <div ng-switch-when="text">text</div>
+                <div ng-switch-when="image">image</div>
+                <div ng-switch-when="video">video</div>
+            </div>
+            <p>
+                <input ng-click="getData()" type="button" value="预览">
+                <input ng-click="setPublish()" type="button" value="发布">
+            </p>
+          </div>
+
+        </div>
+    </div>
+</div>

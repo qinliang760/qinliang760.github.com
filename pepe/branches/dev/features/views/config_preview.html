@@ -1,0 +1,25 @@
+<div class="g-preview">
+    <a class="m-preview-box-more" href="javascript:;" ng-click="addScreen()">
+        <span class="c-iconfont">Y</span>新加一页
+    </a>
+    <div class="g-preview-box" sortable ng-model="data" ng-init="preview_index = 0">
+        <div ng-class="{'m-preview-box': true, 'active':preview_index==$index}" ng-repeat="screen in data.screen" data-index="{{$index}}">
+            <div class="m-preview-box-remove" ng-hide="$index==0" ng-click="deleteScreen($index)"><span class="c-iconfont">Y</span></div>
+            <div class="m-preview-box-copy" title="复制页面" ng-click="copyScreen($index)"><span class="c-iconfont">a</span></div>
+            <div class="m-preview-box-index">{{$index+1}}</div>
+            <div class="m-preview-box-imgbox" ng-click="setScreen($index)" style="background: {{data.global.background}} url({{screen.bg}}) no-repeat 0 0; background-size:100%;">
+                <!-- <img class="m-preview-box-img" ng-src="{{screen.bg}}"> -->
+                <div style="width:100%;transform: scale(0.225, 0.225);transform-origin: left top 0;position:absolute;top:0;left:0">
+                    <p ng-repeat="img in screen.image">
+                        <img ng-src="{{img.url}}" alt="" style="width:{{img.styles.width+'px'}};height:{{img.styles.height+'px'}};top:{{img.styles.top+'px'}};left:{{img.styles.left+'px'}};position:absolute">
+                    </p>
+                    <p ng-repeat="text in screen.text" style="width:{{text.styles.width+'px'}};height:{{text.styles.height+'px'}};top:{{text.styles.top+'px'}};left:{{text.styles.left+'px'}};position:absolute" ng-bind-html="text.content">
+                    </p>
+                    <p ng-repeat="video in screen.video">
+                        <img ng-src="{{video.params.poster}}" alt="" style="width:{{video.styles.width+'px'}};height:{{video.styles.height+'px'}};top:{{video.styles.top+'px'}};left:{{video.styles.left+'px'}};position:absolute">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

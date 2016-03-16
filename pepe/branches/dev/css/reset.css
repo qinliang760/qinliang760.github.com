@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+YUI 3.5.1 (build 22)
+Copyright 2012 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html {
+    color:#000;
+    background:#FFF
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin:0;
+    padding:0
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0
+}
+fieldset, img {
+    border:0
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style:normal;
+    font-weight:normal
+}
+ol, ul {
+    list-style:none
+}
+caption, th {
+    text-align:left
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size:100%;
+    font-weight:normal
+}
+q:before, q:after {
+    content:''
+}
+abbr, acronym {
+    border:0;
+    font-variant:normal
+}
+sup {
+    vertical-align:text-top
+}
+sub {
+    vertical-align:text-bottom
+}
+input, textarea, select {
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit
+}
+input, textarea, select {
+*font-size:100%
+}
+legend {
+    color:#000
+}
+
+/*add by ql*/
+input{
+    background:none;
+    border:none;
+}
+button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border:none;
+    padding:0;  
+}
+* {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);/* 去掉点击链接和文本框对象的半透明覆盖层(iOS)或者虚框(Android) */
+    -webkit-box-sizing:border-box;/* 翻转盒模型(width定义变为包含padding border-width,不含margin) */
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box
+}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select {
+    margin:0;
+    padding:0
+}
+body,input,textarea,select,button,table {
+    /* line-height:18px; */
+}
+html,body {
+    min-width:320px;
+    font-size: 100%;
+    font-family:Arial,Verdana,'microsoft yahei',Helvetica,sans-serif;
+    position: relative;
+    line-height: 1.42857;
+    word-break:break-all;
+    word-wrap:break-word;
+    -webkit-text-size-adjust:none;/* 禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化) */
+}
+/*-----clearFix-----*/
+.clearFix:after{
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    content: ".";
+}
+.clearFix{ display: block;*display: inline-block; }
+/*图片视频自适应*/
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align:top
+}
+.video embed,
+.video object,
+.video iframe {
+    width: 100%;
+    height: auto;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+}
+
+a { 
+    text-decoration:none;
+    outline:none;
+}
+section {
+    display: block;
+}

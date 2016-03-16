@@ -1,0 +1,127 @@
+{
+    "css": [
+        "animate.css",
+        "swipe.css"
+    ],
+    "global": {
+        "arrow": "",
+        "backgroundcolor": "",
+        "backgroundimage": "",
+        "backgroundmusic": "",
+        "height": "",
+        "option": {
+            "effect": "ScreenCling",
+            "rotation": "y",
+            "scale": "y",
+            "speed": 200
+        },
+        "width": ""
+    },
+    "id": "3",
+    "js": [
+        "juicer.js",
+        "underscore.js",
+        "jquery.imgpreload.js",
+        "zepto.fullpage.js",
+        "swipe.js"
+    ],
+    "name": "带左右滑动的模板",
+    "screen": [
+        {
+            "bg": "http://hearthstone.nos.netease.com/3/touch/cnvsus/question/q2_cn.png",
+            "children": [
+                {
+                    "description": "文字内容",
+                    "image": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "title": "文字内容"
+                },
+                {
+                    "description": "文字内容",
+                    "image": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "title": "文字内容"
+                }
+            ],
+            "image": [
+                {
+                    "effect": "",
+                    "height": "",
+                    "link": "",
+                    "pop": {
+                        "content": "",
+                        "type": "image"
+                    },
+                    "position": {
+                        "left": "",
+                        "top": "",
+                        "z-index": ""
+                    },
+                    "url": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "width": ""
+                }
+            ],
+            "text": [
+                {
+                    "content": "i am text",
+                    "effect": "",
+                    "font": {
+                        "color": "#000",
+                        "font-family": "Microsoft YaHei",
+                        "font-size": "12px",
+                        "font-weight": "bold"
+                    },
+                    "link": "",
+                    "pop": {
+                        "content": "",
+                        "type": "image"
+                    },
+                    "position": {
+                        "left": "",
+                        "top": "",
+                        "z-index": ""
+                    }
+                }
+            ],
+            "video": [
+                {
+                    "effect": "",
+                    "height": "",
+                    "params": {
+                        "autoplay": "",
+                        "controls": "controls",
+                        "loop": "",
+                        "poster": ""
+                    },
+                    "position": {
+                        "left": "",
+                        "top": "",
+                        "z-index": ""
+                    },
+                    "url": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "width": ""
+                }
+            ]
+        },
+        {
+            "bg": "http://hearthstone.nos.netease.com/3/touch/cnvsus/question/q2_cn.png",
+            "image": [
+                {
+                    "effect": "",
+                    "height": "",
+                    "link": "",
+                    "pop": {
+                        "content": "",
+                        "type": "image"
+                    },
+                    "position": {
+                        "left": "",
+                        "top": "",
+                        "z-index": ""
+                    },
+                    "url": "http://blz.nos.netease.com/1/frame/cprt/icon20120516.png",
+                    "width": ""
+                }
+            ]
+        }
+    ],
+    "type": "swipe"
+}
