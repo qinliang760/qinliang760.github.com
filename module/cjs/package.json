@@ -1,0 +1,6 @@
+{
+  "browser": {
+    "b": "./b.js",
+    "touch": "./a.js"
+  }
+}

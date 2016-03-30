@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/jquery/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="/static/css/jquery/jquery.lightBox.css">
+  <link rel="stylesheet" href="/static/css/jquery/jquery.popSlider.css">    
+
+
+
+<style>
+	.w-timeline{
+		width: 1000px;
+		margin: 200px auto;
+	}
+#timeline .control a {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 64px;
+    height: 69px;
+    margin-top: -34px;
+    margin-right: 1rem;
+    margin-left: 1rem;    
+}
+#timeline .control a.prev {
+    left: 0;
+    background: url(http://overwatch.nos.netease.com/1/images/heroes/detail/arrow-left.2HQ0H.png);
+    background-size: cover;
+}
+#timeline .control a.next {
+    right: 0;
+    background: url(http://overwatch.nos.netease.com/1/images/heroes/detail/arrow-right.1hVyK.png);
+    background-size: cover;
+}	
+	.timeLineWrap{
+		height:300px;
+		padding-top:200px
+	}
+	.timeLine{
+		position: relative;
+		/* width: 999em; */
+		height: 5px;
+		background: #000;
+	}
+	.timeLine .odd,.timeLine .even{
+		position: absolute;
+		height: 50px;
+		width: 1px;
+		background: #000;
+	}
+	.timeLine .even{
+		top: 5px;
+	}
+	.timeLine .odd{
+		top: -50px;
+	}	
+	.timeLine .box{
+		position: absolute;
+		cursor: pointer;
+	}
+	.timeLine .box_even{
+		top: 55px;
+	}
+	.timeLine .box_odd{
+		top: -198px;
+	}	
+.slide{
+	list-style: none;
+}		
+.slide li{
+	display: inline-block;
+}
+.mCSB_horizontal.mCustomScrollBox > .mCSB_scrollTools{
+	visibility: hidden;
+}
+
+</style>     
+</head>
+<body>
+
+<div class="title-tipso">
+asdfasdfasdfs
+</div>
+
+
+<div id="timelineBox"></div>
+<script src="bundle.js"></script>
+
+</body>
+</html>
