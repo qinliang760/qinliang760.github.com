@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="https://d281jof1t1i5a5.cloudfront.net/img/favicon-bb6200267bbdea6fdc9eb498a88722007dad6eb3b3c6437440025c66cb055fefdd1fbedf3886bd069fc3547c79fa8afee4795a278a644f6cfe10a7b1144f48bb.ico">
+    <title>死神 - 英雄 - 《鬥陣特攻》</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="TODO default?">
+    <meta property="og:image" content="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/icon-portrait.png">
+    <meta property="og:image" content="https://d281jof1t1i5a5.cloudfront.net/img/logos/og-overwatch-3dcd807afe88b1a453e6cfc493ea73b3f687a12e68750d489685878ec481a925708d05c8547f1aaaac600889c418f5ec6f673362ad8b161b27df0fa58d52ef09.jpg">
+    <!--TODO get og blizzard logo cdn url?-->
+    <!--meta(property="og:image", content=assetPath('img/logos/og-blizzard.jpg'))-->
+    <meta property="og:title" content="死神 - 《鬥陣特攻》">
+    <meta property="og:description" content="死神是名無情的殺手，只要他一現身，死亡如影隨形。">
+    <link rel="stylesheet" href="https://d281jof1t1i5a5.cloudfront.net/blizzard-ce7062f8d926e946efef06364a5e58448cbe1812f4f54f23190198cde3e13f8556aec0bbb2dd10d81a1ec9b9e021f0cf833f91e7162f64306756b71a89a79652.css" type="text/css">
+    <link rel="stylesheet" href="https://d281jof1t1i5a5.cloudfront.net/app-2a929e6161e7a6b5d8b6b963b378b80cfef225a0a75bd23cad2c0bdb244bd839e8a0d82b4abbcfc582f33b834e85dad9f9e6307f8bcce2039609309d856a9f34.css" type="text/css">
+    <style>
+    .hero-detail-background {
+        background-image: url(https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/background-story.jpg);
+        background-color: rgb(19, 3, 7);
+    }
+    </style>
+    <script>
+    // expose `res.locals.clientVars` to client-side JS
+    var clientVars = {
+        "language": "zh",
+        "urlLocale": "zh-tw",
+        "locale": "zh_TW",
+        "loggedIn": false,
+        "region": "ap"
+    };
+
+    // put it all under the `blizzard` namespace
+    window.blizzard = window.blizzard || {};
+    Object.keys(clientVars).forEach(function(key) {
+        window.blizzard[key] = clientVars[key];
+    });
+    </script>
+</head>
+
+<body itemscope="itemscope" itemtype="http://schema.org/WebPage" class="hero-detail-page zh-tw">
+    <script>
+    var dataLayer = dataLayer || [];
+    dataLayer.push({
+        "locale": "zh-TW",
+        "region": "ap",
+        "project": "overwatch",
+        "authenticated": "0",
+        "localeRegion": "tw"
+    });
+    </script>
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TT34VR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TT34VR');
+    </script>
+    <script>
+    ! function(i, d, e, n) {
+        i[e] = i[e] || {}, i[e][n] || (i[e][n] = function(i, e, n) {
+            if (void 0 !== i) {
+                e = void 0 === e ? 0 : e, n = void 0 === n ? 0 : n;
+                var a = d.createElement("iframe");
+                a.width = e, a.height = n, a.hidden = !0, a.src = i, d.body.appendChild(a)
+            }
+        })
+    }(window, document, "analytics", "appendFrame");
+    </script>
+    <div class="navbars">
+        <div id="nav-client-header" class="nav-client mobileEnabled compact">
+            <!--[if !IE|(gt IE 8)]> <!-->
+            <div class="nav-mobile-menubar">
+                <div class="nav-hamburger-menu-icon"></div>
+                <div class="nav-mobile-menu-title"></div>
+                <div class="nav-global-menu-icon"></div>
+                <div class="nav-notification-icon"><a rel="navbar" class="dropdown-toggle needsclick nav-item"><i class="needsclick nav-icon-bell"></i></a>
+                    <div class="nav-notification-dropdown dropdown-menu">
+                        <div class="arrow top"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-mobile-menu-wrap right">
+                <div class="menu-relative-wrap">
+                    <div class="menu-header global-menu">
+                        <div class="nav-remove-icon-wrap">
+                            <div class="nav-remove-icon"></div>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div id="user-account" class="nav-box"><a href="/login" class="nav-btn nav-btn-block nav-login-btn nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In"><span>登入</span></a></div>
+                        <div id="general-menu" class="nav-box">
+                            <ul class="menu-list global-menu-main">
+                                <li class="menu-list-item"><a href="https://tw.battle.net/shop/" class=" nav-item" id="nav-client-shop" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Shop"><i class="nav-icon-24-blue nav-icon-shopping-cart"></i><span>商店</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/support/" class=" nav-item" id="nav-client-support" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Support"><i class="nav-icon-24-blue nav-icon-question-circle"></i><span>客服支援</span></a></li>
+                                <li class="menu-list-item"><a href="https://tw.battle.net/account/" class=" nav-item" id="nav-client-account-settings" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings"><i class="nav-icon-24-blue nav-icon-character-cog"></i><span>帳號設定</span></a></li>
+                            </ul>
+                        </div>
+                        <div id="games-menu" class="nav-box"><span id="games-menu-title">遊戲</span>
+                            <ul class="menu-list global-menu-games">
+                                <li class="menu-list-item"><a href="http://tw.battle.net/wow/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - World of Warcraft"><i class=" nav-icon-wow"></i><span>《魔獸世界®》</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/d3/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Diablo III"><i class=" nav-icon-d3"></i><span>《暗黑破壞神®III》</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/sc2/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - StarCraft II"><i class=" nav-icon-sc2"></i><span>《星海爭霸®II》</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/hearthstone/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Hearthstone"><i class=" nav-icon-hearthstone"></i><span>《爐石戰記®》</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/heroes/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Heroes of the Storm"><i class=" nav-icon-heroes"></i><span>《暴雪英霸™》</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/overwatch/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Overwatch"><i class=" nav-icon-overwatch"></i><span>《鬥陣特攻™》</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-mobile-menu-wrap left">
+                <div class="menu-relative-wrap"></div>
+            </div>
+            <div id="nav-blackout" style="display:none"></div>
+            <!--<![endif]-->
+            <div id="nav-client-bar">
+                <div style="max-width: 100%" class="grid-container nav-header-content">
+                    <ul id="nav-client-main-menu" class="nav-list nav-left">
+                        <li>
+                            <a href="http://tw.battle.net/" class="nav-home nav-item" id="nav-client-home" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Battle.net Icon"></a>
+                        </li>
+                        <li>
+                            <div class="dropdown games"><a id="nav-client-games" data-toggle="dropdown" class="dropdown-toggle nav-link needsclick ">遊戲<b class="caret"></b></a>
+                                <div class="dropdown-menu">
+                                    <ul role="menu" class="nav-product-card-container games-menu">
+                                        <li><a href="http://tw.battle.net/wow/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - World of Warcraft"><i class=" nav-icon-wow"></i><span>《魔獸世界®》</span></a></li>
+                                        <li><a href="http://tw.battle.net/d3/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Diablo III"><i class=" nav-icon-d3"></i><span>《暗黑破壞神®III》</span></a></li>
+                                        <li><a href="http://tw.battle.net/sc2/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - StarCraft II"><i class=" nav-icon-sc2"></i><span>《星海爭霸®II》</span></a></li>
+                                        <li><a href="http://tw.battle.net/hearthstone/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Hearthstone"><i class=" nav-icon-hearthstone"></i><span>《爐石戰記®》</span></a></li>
+                                        <li><a href="http://tw.battle.net/heroes/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Heroes of the Storm"><i class=" nav-icon-heroes"></i><span>《暴雪英霸™》</span></a></li>
+                                        <li><a href="http://tw.battle.net/overwatch/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Overwatch"><i class=" nav-icon-overwatch"></i><span>《鬥陣特攻™》</span></a></li>
+                                    </ul>
+                                    <div class="dropdown-well dropdown-section download-btn"><a href="http://tw.battle.net/games/classic" class="nav-a nav-item-box nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Classic Games"><i class="nav-icon-24-blue nav-icon-mouse"></i><span>經典遊戲</span></a></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="https://tw.battle.net/shop/" class="nav-link needsclick nav-item" id="nav-client-shop" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Shop"><span>商店</span></a></li>
+                    </ul>
+                    <ul id="nav-client-account-menu" class="nav-list nav-right">
+                        <li>
+                            <div id="username">
+                                <div class="dropdown pull-right"><a id="nav-client-account" data-toggle="dropdown" rel="navbar" class="nav-link username username--loggedout needsclick dropdown-toggle capitalize"><span>你的帳號</span><b class="caret"></b></a>
+                                    <div class="dropdown-menu">
+                                        <div class="arrow top"></div>
+                                        <div class="user-profile">
+                                            <div class="dropdown-section">
+                                                <div class="nav-box"><a href="/login" class="nav-btn nav-btn-block nav-login-btn nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In"><span>登入</span></a></div>
+                                            </div>
+                                            <div class="dropdown-section">
+                                                <ul class="nav-list">
+                                                    <li><a href="https://tw.battle.net/account/" class="nav-a nav-item-box nav-item" id="nav-client-account-settings" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings"><i class="nav-icon-24-blue nav-icon-character-cog"></i><span>帳號設定</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="http://tw.battle.net/support/" class="nav-link needsclick nav-item" id="nav-client-support-link" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Support"><span>客服支援</span></a></li>
+                        <li>
+                            <div class="nav-notification-icon"><a rel="navbar" class="dropdown-toggle needsclick nav-item"><i class="needsclick nav-icon-bell"></i></a>
+                                <div class="nav-notification-dropdown dropdown-menu">
+                                    <div class="arrow top"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-notification-responsive-container">
+                <div class="nav-notification-dropdown dropdown-menu">
+                    <div class="arrow top"></div>
+                </div>
+            </div>
+        </div>
+        <nav role="main">
+            <div class="nav-left m-mobile">
+                <div slide-menu-open="mobile" class="nav-btn m-burger"><span></span><span></span><span></span></div>
+                <a href="/zh-tw/" data-analytics="overwatch-nav" data-analytics-placement="home" class="nav-logo"></a>
+                <div class="nav-btn m-bnet"></div>
+            </div>
+            <ul class="nav-menu nav-left">
+                <li><a href="/zh-tw/game/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="game">遊戲</a></li>
+                <li><a href="/zh-tw/heroes/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="heroes">英雄</a></li>
+                <li><a href="/zh-tw/media/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="media">媒體</a></li>
+                <li><a href="/zh-tw/blog/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="news">最新消息</a></li>
+                <li><a href="/zh-tw/community/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="community">社群</a></li>
+            </ul>
+            <div class="nav-right nav-actions"><a href="/zh-tw/buy/" data-analytics="overwatch-buy" data-analytics-placement="Top" class="nav-btn m-orange">預購</a></div>
+            <div class="nav-border"></div>
+        </nav>
+    </div>
+    <nav role="mobile" slide-menu="mobile" class="slide-menu">
+        <div class="close">&times;</div>
+        <div class="inner">
+            <div class="content">
+                <a close href="/zh-tw/" data-analytics="overwatch-nav" data-analytics-placement="home" class="nav-logo m-icon"></a>
+                <ul class="nav-menu">
+                    <li><a href="/zh-tw/game/" close class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="game">遊戲</a></li>
+                    <li><a href="/zh-tw/heroes/" close class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="heroes">英雄</a></li>
+                    <li><a href="/zh-tw/media/" close class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="media">媒體</a></li>
+                    <li><a href="/zh-tw/blog/" close class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="news">最新消息</a></li>
+                    <li><a href="/zh-tw/community/" close class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="community">社群</a></li>
+                </ul><a href="/zh-tw/buy/" data-analytics="overwatch-buy" data-analytics-placement="Top" class="nav-btn m-orange m-center">預購</a></div>
+        </div>
+    </nav>
+    <section id="abilities" class="show-for-lg">
+        <div class="ability-showcase">
+            <video muted="muted" preload="none" class="ability-showcase-video">
+                <source type="video/webm" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/intro-video.webm" />
+                <source type="video/mp4" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/intro-video.mp4" />
+            </video>
+            <video muted="muted" poster="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-hellfire-shotguns/thumb-ability.jpg" preload="none" class="ability-showcase-video">
+                <source type="video/webm" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-hellfire-shotguns/video-ability.webm" />
+                <source type="video/mp4" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-hellfire-shotguns/video-ability.mp4" />
+            </video>
+            <video muted="muted" poster="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-wraith-form/thumb-ability.jpg" preload="none" class="ability-showcase-video">
+                <source type="video/webm" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-wraith-form/video-ability.webm" />
+                <source type="video/mp4" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-wraith-form/video-ability.mp4" />
+            </video>
+            <video muted="muted" poster="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-shadow-step/thumb-ability.jpg" preload="none" class="ability-showcase-video">
+                <source type="video/webm" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-shadow-step/video-ability.webm" />
+                <source type="video/mp4" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-shadow-step/video-ability.mp4" />
+            </video>
+            <video muted="muted" poster="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-death-blossom/thumb-ability.jpg" preload="none" class="ability-showcase-video">
+                <source type="video/webm" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-death-blossom/video-ability.webm" />
+                <source type="video/mp4" src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-death-blossom/video-ability.mp4" />
+            </video>
+            <div class="page-wrapper">
+                <div class="row">
+                    <div class="xs-12-12">
+                        <div class="ability-showcase-controls">
+                            <h1 class="hero-name">死神</h1>
+                            <h4 class="ability-name"></h4>
+                            <ul class="ability-button-list">
+                                <li>
+                                    <div data-ability-name="&nbsp;" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg>
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/icon-right-menu.png" class="hero-ability-icon m-hoverable center_element" /></div>
+                                </li>
+                                <li>
+                                    <div data-ability-name="獄焰散彈槍" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg>
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-hellfire-shotguns/icon-ability.png" class="hero-ability-icon m-hoverable center_element" /></div>
+                                </li>
+                                <li>
+                                    <div data-ability-name="亡靈形態" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg>
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-wraith-form/icon-ability.png" class="hero-ability-icon m-hoverable center_element" /></div>
+                                </li>
+                                <li>
+                                    <div data-ability-name="幽影傳送" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg>
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-shadow-step/icon-ability.png" class="hero-ability-icon m-hoverable center_element" /></div>
+                                </li>
+                                <li>
+                                    <div data-ability-name="死亡綻放" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg>
+                                        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"></circle>
+                                        </svg><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-death-blossom/icon-ability.png" class="hero-ability-icon m-hoverable center_element" /></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="details" class="hero-detail section-divider m-wings m-top-only outter">
+        <div class="hero-detail-background"></div>
+        <div class="hero-detail-video video-background-wrapper is-active">
+            <div class="video-background-vid m-right-align m-blend">
+                <video autoplay loop muted>
+                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/idle-video.webm" type="video/webm">
+                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/idle-video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="row hide-for-lg m-nav-pad hero-portrat-mobile bg-petals">
+                <div class="column sm-12 content-box">
+                    <h1 class="hero-name">死神</h1><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/full-portrait.png" class="hero-image"></div>
+            </div>
+            <div class="row hero-detail-tabs">
+                <div id="tabs" class="column sm-12 lg-6 no-gutters">
+                    <ul id="details-tabs" data-tabs="" role="tablist" class="tabs">
+                        <li role="presentation" class="tabs-title is-active"><a href="#overview" aria-selected="true" class="h4">概要</a></li>
+                        <li role="presentation" class="tabs-title"><a href="#story" data-story-bg="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/background-story-mobile.jpg" data-story-bg-color="rgb(19, 3, 7)" class="h4">故事</a></li>
+                    </ul>
+                    <div data-tabs-content="details-tabs" class="tabs-content">
+                        <section id="overview" class="tabs-panel is-active">
+                            <div class="hero-detail-wrapper">
+                                <div class="row">
+                                    <div class="column sm-12 md-6 hero-detail-role">
+                                        <h3 class="h4 hero-detail-title">角色</h3>
+                                        <h4 class="h2 hero-detail-role-name">攻擊</h4>
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-detail-role-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-types-sprite-8abf7a1479adad551fd7c6282616089b925c9f6e1bafe50bd15820d193626a5826b9595a1de3627b2a8d46f77812dcd52b3555fd9164b9de4d8bd1b4db3a8fd3.svg#offense"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="column sm-12 md-6">
+                                        <div class="hero-detail-difficulty">
+                                            <h3 class="h4 hero-detail-title">難度</h3><span class="star"></span><span class="star m-empty"></span><span class="star m-empty"></span></div>
+                                    </div>
+                                </div>
+                                <p class="hero-detail-description">擁有獄焰散彈槍、化為不受任何傷害的無形暗影與幽影傳送的能力，死神是這世上最可怕的殺手之一。</p>
+                            </div>
+                            <hr class="tab-separator">
+                            <div class="hero-detail-wrapper m-same-pad">
+                                <h3 class="h4 hero-detail-title">技能</h3>
+                                <div class="hero-detail-abilities"></div>
+                                <div class="hero-ability">
+                                    <div class="hero-ability-icon-container">
+                                        <div class="hero-ability-icon-bg m-small"><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-hellfire-shotguns/icon-ability.png" class="hero-ability-icon m-weapon"></div>
+                                    </div>
+                                    <div class="hero-ability-descriptor">
+                                        <h4 class="h5">獄焰散彈槍</h4>
+                                        <p>死神運用雙手的散彈槍來撕裂敵人的身軀。</p>
+                                    </div>
+                                    <video controls preload="none" poster="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-hellfire-shotguns/thumb-ability.jpg" class="hero-ability-video">
+                                        <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-hellfire-shotguns/video-ability.webm" type="video/webm">
+                                        <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-hellfire-shotguns/video-ability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="hero-ability">
+                                    <div class="hero-ability-icon-container">
+                                        <div class="hero-ability-icon-bg m-small"><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-wraith-form/icon-ability.png" class="hero-ability-icon"></div>
+                                    </div>
+                                    <div class="hero-ability-descriptor">
+                                        <h4 class="h5">亡靈形態</h4>
+                                        <p>死神暫時化為無形暗影。在這個狀態下，不會受到任何傷害，而且可以穿過敵人，但是也無法以武器攻擊或是使用其他技能。</p>
+                                    </div>
+                                    <video controls preload="none" poster="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-wraith-form/thumb-ability.jpg" class="hero-ability-video">
+                                        <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-wraith-form/video-ability.webm" type="video/webm">
+                                        <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-wraith-form/video-ability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="hero-ability">
+                                    <div class="hero-ability-icon-container">
+                                        <div class="hero-ability-icon-bg m-small"><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-shadow-step/icon-ability.png" class="hero-ability-icon"></div>
+                                    </div>
+                                    <div class="hero-ability-descriptor">
+                                        <h4 class="h5">幽影傳送</h4>
+                                        <p>在指定位置之後，死神會消失然後出現在該處。</p>
+                                    </div>
+                                    <video controls preload="none" poster="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-shadow-step/thumb-ability.jpg" class="hero-ability-video">
+                                        <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-shadow-step/video-ability.webm" type="video/webm">
+                                        <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-shadow-step/video-ability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="hero-ability">
+                                    <div class="hero-ability-icon-container">
+                                        <div class="hero-ability-icon-bg m-small"><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-death-blossom/icon-ability.png" class="hero-ability-icon"></div>
+                                    </div>
+                                    <div class="hero-ability-descriptor">
+                                        <h4 class="h5">死亡綻放</h4>
+                                        <p>死神的身形變得模糊，以驚人的速度射出獄焰散彈槍的每一發子彈，對周圍所有敵人造成可怕的傷害。</p>
+                                    </div>
+                                    <video controls preload="none" poster="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-death-blossom/thumb-ability.jpg" class="hero-ability-video">
+                                        <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-death-blossom/video-ability.webm" type="video/webm">
+                                        <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/ability-death-blossom/video-ability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="story" class="tabs-panel">
+                            <div class="hero-detail-wrapper m-no-pad-bot">
+                                <h3 class="h4 hero-detail-title">生平</h3>
+                                <ul class="hero-bio">
+                                    <li class="name">
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-bio-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-bio-sprite-751fbcc2a9d624d2be9aedd92e373c340c5a9613ef609655d1504fb616b72d358a4b8088b252e84d5509615140f004d6332431a104ad2ed2883c0f35222b594e.svg#namecard"></use>
+                                        </svg><span class="hero-bio-copy">本名：不明, 年齡：不明</span></li>
+                                    <li class="occupation">
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-bio-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-bio-sprite-751fbcc2a9d624d2be9aedd92e373c340c5a9613ef609655d1504fb616b72d358a4b8088b252e84d5509615140f004d6332431a104ad2ed2883c0f35222b594e.svg#luggage"></use>
+                                        </svg><span class="hero-bio-copy">職業：傭兵</span></li>
+                                    <li class="base">
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-bio-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-bio-sprite-751fbcc2a9d624d2be9aedd92e373c340c5a9613ef609655d1504fb616b72d358a4b8088b252e84d5509615140f004d6332431a104ad2ed2883c0f35222b594e.svg#world"></use>
+                                        </svg><span class="hero-bio-copy">活動區域：不明</span></li>
+                                    <li class="affiliation">
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-bio-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-bio-sprite-751fbcc2a9d624d2be9aedd92e373c340c5a9613ef609655d1504fb616b72d358a4b8088b252e84d5509615140f004d6332431a104ad2ed2883c0f35222b594e.svg#shield"></use>
+                                        </svg><span class="hero-bio-copy">所屬組織：不明</span></li>
+                                </ul>
+                            </div>
+                            <div class="hero-detail-wrapper">
+                                <p class="h4 hero-detail-title">「死亡如影隨形。」</p>
+                                <div class="hero-bio-backstory pad-sm">
+                                    <p>關於這個黑袍恐怖份子的傳聞並不多，只知道大家都叫他死神。他的真實身分和目的也相當神秘，唯一可以確認的是，只要他一現身，死亡如影隨形。</p>
+                                    <p>死神是個難以預測的傭兵，也是個無情的殺手。他是世界上多起恐怖攻擊的主使者，而且在這數十年內他也參與了許多武裝衝突，但他似乎不效忠任何組織，也看不出任何理由。</p>
+                                    <p>僥倖活下來的人都喃喃說著，他們看見一道黑色鬼影毫髮無傷的穿梭在地獄一般的戰場上。少數有辦法從戰場回收的屍體都呈現一片慘白，空洞軀殼內的生命力完全被抽乾，細胞的結構也產生了嚴重崩解跡象。因此死神可能是基因轉化實驗失敗的副產品，使他的細胞在超高速敗壞的同時進行超高速再生。</p>
+                                    <p>有些試圖想追蹤死神蹤跡的人似乎在他的出現記錄中看出了一些端倪。他們認為死神是系統性的在獵殺前捍衛者的探員。</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="media" class="outter u-white-background section-divider m-wings m-bottom-only hero-media">
+        <div class="inner">
+            <div class="row">
+                <ul media-gallery="hero" class="media-gallery">
+                    <li media="reaper-preview" class="media-item">
+                        <div class="media-border">
+                            <a href="https://www.youtube.com/watch?v=XuKqPiVD1aQ" target="_blank" style="background-image: url(https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/reaper-preview.jpg)" title="死神操作預覽" class="media-content m-video_youtube" data-analytics="youtube-video" data-analytics-placement="reaper-preview" data-yt-id="XuKqPiVD1aQ"></a>
+                        </div>
+                    </li>
+                    <li media="reaper-gameplay" class="media-item">
+                        <div class="media-border">
+                            <a href="https://www.youtube.com/watch?v=h0SMEutaVak" target="_blank" style="background-image: url(https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/reaper-gameplay.jpg)" title="技能概要：死神" class="media-content m-video_youtube" data-analytics="youtube-video" data-analytics-placement="reaper-gameplay" data-yt-id="h0SMEutaVak"></a>
+                        </div>
+                    </li>
+                    <li media="reaper-screenshot-002" class="media-item">
+                        <div class="media-border">
+                            <a href="https://d1u1mce87gyfbn.cloudfront.net/media/screenshot/reaper-screenshot-002.jpg" target="_blank" style="background-image: url(https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/reaper-screenshot-002.jpg)" title="死神" class="media-content m-img"></a>
+                        </div>
+                    </li>
+                    <li media="reaper-screenshot-004" class="media-item">
+                        <div class="media-border">
+                            <a href="https://d1u1mce87gyfbn.cloudfront.net/media/screenshot/reaper-screenshot-004.jpg" target="_blank" style="background-image: url(https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/reaper-screenshot-004.jpg)" title="死神" class="media-content m-img"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="selectHeroes" class="outter">
+        <div class="inner">
+            <nav class="hero-select-navigation column row">
+                <h1 class="nav-title">請選擇一名英雄</h1>
+                <div class="hero-type-container">
+                    <h3 class="hero-select-title"><span class="heading-line"></span><span class="text">攻擊</span><span class="heading-line"></span></h3>
+                    <ul class="js-hero-portrait-group u-align-center">
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/soldier-76/" data-hero-id="soldier-76" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/soldier-76/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">士兵76</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/reaper/" data-hero-id="reaper" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">死神</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/pharah/" data-hero-id="pharah" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/pharah/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">法拉</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/genji/" data-hero-id="genji" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/genji/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">源氏</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/tracer/" data-hero-id="tracer" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/tracer/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">閃光</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/mccree/" data-hero-id="mccree" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/mccree/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">麥卡利</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hero-type-container">
+                    <h3 class="hero-select-title"><span class="heading-line"></span><span class="text">防禦</span><span class="heading-line"></span></h3>
+                    <ul class="js-hero-portrait-group u-align-center">
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/hanzo/" data-hero-id="hanzo" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/hanzo/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">半藏</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/bastion/" data-hero-id="bastion" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/bastion/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">壁壘機兵</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/widowmaker/" data-hero-id="widowmaker" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/widowmaker/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">奪命女</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/mei/" data-hero-id="mei" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/mei/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">小美</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/torbjorn/" data-hero-id="torbjorn" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/torbjorn/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">托比昂</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/junkrat/" data-hero-id="junkrat" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/junkrat/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">炸彈鼠</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hero-type-container">
+                    <h3 class="hero-select-title"><span class="heading-line"></span><span class="text">肉盾</span><span class="heading-line"></span></h3>
+                    <ul class="js-hero-portrait-group u-align-center">
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/dva/" data-hero-id="dva" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/dva/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">D.Va</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/roadhog/" data-hero-id="roadhog" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">攔路豬</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/zarya/" data-hero-id="zarya" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/zarya/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">札莉雅</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/winston/" data-hero-id="winston" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/winston/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">溫斯頓</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/reinhardt/" data-hero-id="reinhardt" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/reinhardt/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">萊因哈特</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hero-type-container">
+                    <h3 class="hero-select-title"><span class="heading-line"></span><span class="text">輔助</span><span class="heading-line"></span></h3>
+                    <ul class="js-hero-portrait-group u-align-center">
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/mercy/" data-hero-id="mercy" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/mercy/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">慈悲</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/zenyatta/" data-hero-id="zenyatta" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/zenyatta/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">禪亞塔</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/lucio/" data-hero-id="lucio" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/lucio/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">路西歐</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/symmetra/" data-hero-id="symmetra" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image:url(&quot;https://d1u1mce87gyfbn.cloudfront.net/hero/symmetra/icon-portrait.png&quot;)" class="image"></div>
+                                </div><span class="label">辛梅塔</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section id="footer" class="overwatch-footer section-divider m-top-only m-inset m-line u-align-center u-invert">
+        <section class="content-box">
+            <div class="row column"><a href="/zh-tw/buy/" data-analytics="overwatch-buy" data-analytics-placement="Bottom" class="footer-prepurchase button m-lg">預購</a>
+                <p class="footer-career"><a href="http://tw.blizzard.com/company/careers/directory.html" data-analytics="action-link" data-analytics-placement="Blizzard Careers || Bottom - Career Opportunities" class="link primary">工作機會</a></p>
+            </div>
+        </section>
+        <hr class="footer-rule">
+        <section class="content-box m-tinyPad">
+            <div class="row column">
+                <h4 class="u-bigNoodleToo u-italics u-invert">加入社群網路</h4>
+                <div class="social-container">
+                    <a href="https://www.facebook.com/OverwatchZHTW" data-analytics="sns-refer" data-analytics-placement="facebook" class="social-icon-facebook"></a>
+                    <div class="social-icon-spacer"></div>
+                    <a href="https://www.twitter.com/OverwatchZHTW" data-analytics="sns-refer" data-analytics-placement="twitter" class="social-icon-twitter"></a>
+                    <div class="social-icon-spacer"></div>
+                    <a href="https://www.youtube.com/OverwatchZHTW" data-analytics="sns-refer" data-analytics-placement="youtube" class="social-icon-youtube"></a>
+                </div>
+            </div>
+        </section>
+        <hr class="footer-rule">
+    </section>
+    <div class="bootstrap-footer">
+        <div class="footer row">
+            <div class="desktop-footer-container">
+                <div class="middle-container">
+                    <div class="footer-section clearfix top">
+                        <div class="pull-left">
+                            <ul class="support-feedback">
+                                <li> <a id="btn-support" href="http://tw.battle.net/support/" data-analytics="global-nav" data-analytics-placement="Footer - Support" class="pull-left">客服支援<i class="footer-icon footer-icon-question-circle pull-left"></i></a></li>
+                                <li><a id="btn-feedback" href="http://tw.battle.net/feedback" data-analytics="global-nav" data-analytics-placement="Footer - Feedback" class="pull-left">建議<i class="footer-icon footer-icon-edit pull-left"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pull-right">
+                            <div class="dropup"><a id="region-language-dropdown" data-toggle="dropdown">台灣 - 繁體中文<i class="footer-icon footer-icon-globe"></i><i class="footer-icon footer-icon-caret-down"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <div class="region-language-selector desktop clearfix">
+                                            <ul class="region-ul menu-column col-sm-6">
+                                                <div class="menu-title">區域</div>
+                                                <li><a data-target="us" href="javascript:;" class="select-region">美國</a></li>
+                                                <li><a data-target="eu" href="javascript:;" class="select-region">歐洲</a></li>
+                                                <li><a data-target="kr" href="javascript:;" class="select-region">韓國</a></li>
+                                                <li class="active current"><a data-target="tw" href="javascript:;" class="select-region">台灣</a></li>
+                                                <li><a data-target="cn" href="javascript:;" class="select-region">中國大陸</a></li>
+                                                <li><a data-target="sea" href="javascript:;" class="select-region">東南亞</a></li>
+                                            </ul>
+                                            <ul class="language-ul menu-column col-sm-6">
+                                                <div data-region="us" class="region-languages">
+                                                    <div class="menu-title">語言</div>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="en_US" href="//playoverwatch.com/en-us/heroes/reaper/" class="select-language">English (US)</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="es_MX" href="//playoverwatch.com/es-mx/heroes/reaper/" class="select-language">Español (AL)</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="pt_BR" href="//playoverwatch.com/pt-br/heroes/reaper/" class="select-language">Português (AL)</a></li>
+                                                </div>
+                                                <div data-region="eu" class="region-languages">
+                                                    <div class="menu-title">語言</div>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="de_DE" href="//playoverwatch.com/de-de/heroes/reaper/" class="select-language">Deutsch</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="en_GB" href="//playoverwatch.com/en-gb/heroes/reaper/" class="select-language">English (EU)</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="es_ES" href="//playoverwatch.com/es-es/heroes/reaper/" class="select-language">Español (EU)</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="fr_FR" href="//playoverwatch.com/fr-fr/heroes/reaper/" class="select-language">Français</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="it_IT" href="//playoverwatch.com/it-it/heroes/reaper/" class="select-language">Italiano</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="pl_PL" href="//playoverwatch.com/pl-pl/heroes/reaper/" class="select-language">Polski</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="ru_RU" href="//playoverwatch.com/ru-ru/heroes/reaper/" class="select-language">Русский</a></li>
+                                                </div>
+                                                <div data-region="kr" class="region-languages">
+                                                    <div class="menu-title">語言</div>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="kr" data-language="ko_KR" href="//playoverwatch.com/ko-kr/heroes/reaper/" class="select-language">한국어</a></li>
+                                                </div>
+                                                <div data-region="tw" class="region-languages active">
+                                                    <div class="menu-title">語言</div>
+                                                    <li class="active current">
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="tw" data-language="zh_TW" href="//playoverwatch.com/zh-tw/heroes/reaper/" class="select-language">繁體中文</a></li>
+                                                </div>
+                                                <div data-region="cn" class="region-languages">
+                                                    <div class="menu-title">語言</div>
+                                                    <li><a data-target="cn" data-language="zh_CN" href="//gold.163.com" class="select-language">简体中文</a></li>
+                                                </div>
+                                                <div data-region="sea" class="region-languages">
+                                                    <div class="menu-title">語言</div>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="sea" data-language="en_US" href="//playoverwatch.com/en-us/heroes/reaper/" class="select-language">English (US)</a></li>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <div class="dropdown-section clearfix"><a href="javascript:;" class="btn btn-primary change-button">變更</a></div>
+                                    </li>
+                                    <div class="arrow-down"></div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-section clearfix bottom">
+                        <div class="links-section pull-left">
+                            <a href="http://tw.blizzard.com/" data-analytics="global-nav" data-analytics-placement="Footer - Blizzard Logo">
+                                <div class="blizzard-logo"></div>
+                            </a>
+                        </div>
+                        <div class="pull-left company-info">
+                            <div class="footer-links pull-left">
+                                <ul>
+                                    <li><a href="http://jobs.blizzard.com/" data-analytics="global-nav" data-analytics-placement="Footer - Careers">工作機會</a></li>
+                                    <li><a href="http://tw.blizzard.com/company/about/" data-analytics="global-nav" data-analytics-placement="Footer - About">關於</a></li>
+                                    <li><a href="http://tw.blizzard.com/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">隱私</a></li>
+                                    <li><a href="http://tw.blizzard.com/company/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">條款</a></li>
+                                    <li><a href="//dev.battle.net" data-analytics="global-nav" data-analytics-placement="Footer - API">API</a></li>
+                                </ul>
+                            </div>
+                            <div class="copyright pull-left">©2016 美商暴雪娛樂股份有限公司（Blizzard Entertainment, Inc.）版權所有。</div>
+                        </div>
+                        <div class="ratings">
+                            <div class="rating-wrapper clearfix">
+                                <a href="http://www.gamerating.org.tw/gsgi_way.php"><img src="https://bnetus-a.akamaihd.net/api/legal/static/images/legal/ratings/csrr/counsel15.12rD5.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-footer-container">
+                <div class="footer-section clearfix">
+                    <ul class="support-feedback">
+                        <li> <a id="btn-support" href="http://tw.battle.net/support/" data-analytics="global-nav" data-analytics-placement="Footer - Support" class="pull-left">客服支援<i class="footer-icon footer-icon-question-circle pull-left"></i></a></li>
+                        <li><a id="btn-feedback" href="http://tw.battle.net/feedback" data-analytics="global-nav" data-analytics-placement="Footer - Feedback" class="pull-left">建議<i class="footer-icon footer-icon-edit pull-left"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section clearfix">
+                    <div data-toggle="collapsible" class="region-collapsible-container">台灣 - 繁體中文<i class="footer-icon footer-icon-globe"></i><i class="footer-icon footer-icon-caret-down"></i>
+                        <ul class="region-language-collapsible hidden">
+                            <li>
+                                <div class="region-language-selector clearfix">
+                                    <ul class="region-ul menu-column col-sm-6">
+                                        <div class="menu-title">區域</div>
+                                        <li><a data-target="us" href="javascript:;" class="select-region">美國</a></li>
+                                        <li><a data-target="eu" href="javascript:;" class="select-region">歐洲</a></li>
+                                        <li><a data-target="kr" href="javascript:;" class="select-region">韓國</a></li>
+                                        <li class="active current"><a data-target="tw" href="javascript:;" class="select-region">台灣</a></li>
+                                        <li><a data-target="cn" href="javascript:;" class="select-region">中國大陸</a></li>
+                                        <li><a data-target="sea" href="javascript:;" class="select-region">東南亞</a></li>
+                                    </ul>
+                                    <ul class="language-ul menu-column col-sm-6">
+                                        <div data-region="us" class="region-languages">
+                                            <div class="menu-title">語言</div>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="en_US" href="//playoverwatch.com/en-us/heroes/reaper/" class="select-language">English (US)</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="es_MX" href="//playoverwatch.com/es-mx/heroes/reaper/" class="select-language">Español (AL)</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="pt_BR" href="//playoverwatch.com/pt-br/heroes/reaper/" class="select-language">Português (AL)</a></li>
+                                        </div>
+                                        <div data-region="eu" class="region-languages">
+                                            <div class="menu-title">語言</div>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="de_DE" href="//playoverwatch.com/de-de/heroes/reaper/" class="select-language">Deutsch</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="en_GB" href="//playoverwatch.com/en-gb/heroes/reaper/" class="select-language">English (EU)</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="es_ES" href="//playoverwatch.com/es-es/heroes/reaper/" class="select-language">Español (EU)</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="fr_FR" href="//playoverwatch.com/fr-fr/heroes/reaper/" class="select-language">Français</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="it_IT" href="//playoverwatch.com/it-it/heroes/reaper/" class="select-language">Italiano</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="pl_PL" href="//playoverwatch.com/pl-pl/heroes/reaper/" class="select-language">Polski</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="ru_RU" href="//playoverwatch.com/ru-ru/heroes/reaper/" class="select-language">Русский</a></li>
+                                        </div>
+                                        <div data-region="kr" class="region-languages">
+                                            <div class="menu-title">語言</div>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="kr" data-language="ko_KR" href="//playoverwatch.com/ko-kr/heroes/reaper/" class="select-language">한국어</a></li>
+                                        </div>
+                                        <div data-region="tw" class="region-languages active">
+                                            <div class="menu-title">語言</div>
+                                            <li class="active current">
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="tw" data-language="zh_TW" href="//playoverwatch.com/zh-tw/heroes/reaper/" class="select-language">繁體中文</a></li>
+                                        </div>
+                                        <div data-region="cn" class="region-languages">
+                                            <div class="menu-title">語言</div>
+                                            <li><a data-target="cn" data-language="zh_CN" href="//gold.163.com" class="select-language">简体中文</a></li>
+                                        </div>
+                                        <div data-region="sea" class="region-languages">
+                                            <div class="menu-title">語言</div>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="sea" data-language="en_US" href="//playoverwatch.com/en-us/heroes/reaper/" class="select-language">English (US)</a></li>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-section clearfix"><a href="javascript:;" class="btn btn-primary change-button mobile">變更</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section clearfix">
+                    <div class="blizzard-logo">
+                        <a href="http://tw.blizzard.com/"></a>
+                    </div>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="http://jobs.blizzard.com/" data-analytics="global-nav" data-analytics-placement="Footer - Careers">工作機會</a></li>
+                            <li><a href="http://tw.blizzard.com/company/about/" data-analytics="global-nav" data-analytics-placement="Footer - About">關於</a></li>
+                            <li><a href="http://tw.blizzard.com/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">隱私</a></li>
+                            <li><a href="http://tw.blizzard.com/company/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">條款</a></li>
+                            <li><a href="//dev.battle.net" data-analytics="global-nav" data-analytics-placement="Footer - API">API</a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright">©2016 美商暴雪娛樂股份有限公司（Blizzard Entertainment, Inc.）版權所有。</div>
+                    <div class="ratings">
+                        <div class="rating-wrapper clearfix">
+                            <a href="http://www.gamerating.org.tw/gsgi_way.php"><img src="https://bnetus-a.akamaihd.net/api/legal/static/images/legal/ratings/csrr/counsel15.12rD5.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div promo="dragons-animated-short" promo-start="1463356800" promo-end="1463875200" class="promo zh-tw">
+        <div class="body">
+            <div class="all-copy">
+                <h2 class="subtitle">動畫短片</h2>
+                <h1 class="title">雙龍</h1><a data-yt-id="pAyMDW2we1s" href="https://www.youtube.com/watch?v=pAyMDW2we1s" close data-analytics="overlay-select" data-analytics-placement="Watch Now" class="promo-video-link btn">立即觀賞</a></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    ! function(root) {
+        root.messages = {
+            "wallpaper": {
+                "urlWide": {
+                    "title": "寬螢幕",
+                    "dimensions": "(2560 x 1440)"
+                },
+                "urlStandard": {
+                    "title": "標準",
+                    "dimensions": "(2048 x 1536)"
+                },
+                "urlTablet": {
+                    "title": "平板裝置",
+                    "dimensions": "(2048 x 2048)"
+                },
+                "urlMobile": {
+                    "title": "手機",
+                    "dimensions": "(1080 x 1920)"
+                },
+                "urlFacebook": {
+                    "title": "Facebook",
+                    "dimensions": "(851 x 315)"
+                },
+                "urlTwitter": {
+                    "title": "Twitter",
+                    "dimensions": "(1500 x 500)"
+                }
+            },
+            "img": {
+                "hanzo": "https://d281jof1t1i5a5.cloudfront.net/img/hanzo-sm-114f060a6cc9cc1597a8ef3707fa827be79e1d9bc96847d20fd01f810faad9d4b30f99a91505ad1512e7c7f5d1749595bed6ab8ed836441db9caee21352b760a.png"
+            }
+        }
+    }(this)
+    </script>
+    <script type="text/javascript" src="https://d281jof1t1i5a5.cloudfront.net/vendor-d5f4f7d3f5357760f9e32326b01706c4270ba87336269e7d7eb501ccfcf103bd16915cdb0072a1cc02f75bdbed19a308bd7a9935a1590b1039e310e8d861d3e4.js"></script>
+    <script type="text/javascript" src="https://d281jof1t1i5a5.cloudfront.net/blizzard-bf31259f6cdb11961d35c2e8cb57ddb6912151dff4c072eff22c271e48a01b69b6d29d8377d622ca1108c47970f792f9db52aa5d9ff5ee20c5aa286cf454b8c2.js"></script>
+    <script type="text/javascript" src="https://d281jof1t1i5a5.cloudfront.net/app-d77fb439d36752089a162366efff502a405f9ac8d3861db9ce4f1014dbf3ba947d7587e065acca5716144b654cae80d6e9ccc12ef4b6e39aafb4ae62dc8c0135.js"></script>
+    <script type="text/javascript">
+    ! function(root) {
+        root.svg4everybody({
+            polyfill: true
+        });
+    }(this)
+    </script>
+    <script>
+    (function init() {
+        app.hero_details.init();
+    })();
+
+    ! function() {
+        var medias = [{
+            "id": "reaper-preview",
+            "name": "死神操作預覽",
+            "category": "videos",
+            "tags": ["reaper"],
+            "thumbnail": "https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/reaper-preview.jpg",
+            "content": {
+                "type": "VIDEO_YOUTUBE",
+                "videoYouTube": {
+                    "youtubeId": "XuKqPiVD1aQ"
+                }
+            },
+            "medium": {
+                "href": "https://us.api.battle.net/data/overwatch/media/reaper-preview?namespace=prod"
+            }
+        }, {
+            "id": "reaper-gameplay",
+            "name": "技能概要：死神",
+            "category": "videos",
+            "tags": ["reaper"],
+            "thumbnail": "https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/reaper-gameplay.jpg",
+            "content": {
+                "type": "VIDEO_YOUTUBE",
+                "videoYouTube": {
+                    "youtubeId": "h0SMEutaVak"
+                }
+            },
+            "medium": {
+                "href": "https://us.api.battle.net/data/overwatch/media/reaper-gameplay?namespace=prod"
+            }
+        }, {
+            "id": "reaper-screenshot-002",
+            "name": "死神",
+            "category": "screenshots",
+            "tags": ["reaper"],
+            "thumbnail": "https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/reaper-screenshot-002.jpg",
+            "content": {
+                "type": "IMG",
+                "image": {
+                    "url": "https://d1u1mce87gyfbn.cloudfront.net/media/screenshot/reaper-screenshot-002.jpg"
+                }
+            },
+            "medium": {
+                "href": "https://us.api.battle.net/data/overwatch/media/reaper-screenshot-002?namespace=prod"
+            }
+        }, {
+            "id": "reaper-screenshot-004",
+            "name": "死神",
+            "category": "screenshots",
+            "tags": ["reaper"],
+            "thumbnail": "https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/reaper-screenshot-004.jpg",
+            "content": {
+                "type": "IMG",
+                "image": {
+                    "url": "https://d1u1mce87gyfbn.cloudfront.net/media/screenshot/reaper-screenshot-004.jpg"
+                }
+            },
+            "medium": {
+                "href": "https://us.api.battle.net/data/overwatch/media/reaper-screenshot-004?namespace=prod"
+            }
+        }];
+        var gallery = overwatch.gallery.get('hero');
+        _.each(medias, function(media, key) {
+            gallery.add({
+                data: media,
+                id: media.id
+            });
+        });
+    }();
+    </script>
+</body>

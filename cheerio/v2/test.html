@@ -1,0 +1,818 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>英雄</title><title>&#x6B7B;&#x795E; - &#x82F1;&#x96C4; - &#x300A;&#x9B25;&#x9663;&#x7279;&#x653B;&#x300B;</title><link rel="icon" type="image/x-icon" href="./css/img/favicon.css"><link rel="stylesheet" href="./css/blizzard.css" type="text/css"><link rel="stylesheet" href="./css/app.css" type="text/css"><style>
+    .hero-detail-background {
+        background-image: url(https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/background-story.jpg);
+        background-color: rgb(19, 3, 7);
+    }
+    </style><script>
+    // expose `res.locals.clientVars` to client-side JS
+    var clientVars = {
+        "language": "zh",
+        "urlLocale": "zh-tw",
+        "locale": "zh_TW",
+        "loggedIn": false,
+        "region": "ap"
+    };
+
+    // put it all under the `blizzard` namespace
+    window.blizzard = window.blizzard || {};
+    Object.keys(clientVars).forEach(function(key) {
+        window.blizzard[key] = clientVars[key];
+    });
+    </script></head><body><div class="navbars">
+        <div id="nav-client-header" class="nav-client mobileEnabled compact">
+            <!--[if !IE|(gt IE 8)]> <!-->
+            <div class="nav-mobile-menubar">
+                <div class="nav-hamburger-menu-icon"></div>
+                <div class="nav-mobile-menu-title"></div>
+                <div class="nav-global-menu-icon"></div>
+                <div class="nav-notification-icon"><a rel="navbar" class="dropdown-toggle needsclick nav-item"><i class="needsclick nav-icon-bell"></i></a>
+                    <div class="nav-notification-dropdown dropdown-menu">
+                        <div class="arrow top"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-mobile-menu-wrap right">
+                <div class="menu-relative-wrap">
+                    <div class="menu-header global-menu">
+                        <div class="nav-remove-icon-wrap">
+                            <div class="nav-remove-icon"></div>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div id="user-account" class="nav-box"><a href="/login" class="nav-btn nav-btn-block nav-login-btn nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In"><span>&#x767B;&#x5165;</span></a></div>
+                        <div id="general-menu" class="nav-box">
+                            <ul class="menu-list global-menu-main">
+                                <li class="menu-list-item"><a href="https://tw.battle.net/shop/" class=" nav-item" id="nav-client-shop" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Shop"><i class="nav-icon-24-blue nav-icon-shopping-cart"></i><span>&#x5546;&#x5E97;</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/support/" class=" nav-item" id="nav-client-support" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Support"><i class="nav-icon-24-blue nav-icon-question-circle"></i><span>&#x5BA2;&#x670D;&#x652F;&#x63F4;</span></a></li>
+                                <li class="menu-list-item"><a href="https://tw.battle.net/account/" class=" nav-item" id="nav-client-account-settings" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings"><i class="nav-icon-24-blue nav-icon-character-cog"></i><span>&#x5E33;&#x865F;&#x8A2D;&#x5B9A;</span></a></li>
+                            </ul>
+                        </div>
+                        <div id="games-menu" class="nav-box"><span id="games-menu-title">&#x904A;&#x6232;</span>
+                            <ul class="menu-list global-menu-games">
+                                <li class="menu-list-item"><a href="http://tw.battle.net/wow/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - World of Warcraft"><i class=" nav-icon-wow"></i><span>&#x300A;&#x9B54;&#x7378;&#x4E16;&#x754C;&#xAE;&#x300B;</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/d3/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Diablo III"><i class=" nav-icon-d3"></i><span>&#x300A;&#x6697;&#x9ED1;&#x7834;&#x58DE;&#x795E;&#xAE;III&#x300B;</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/sc2/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - StarCraft II"><i class=" nav-icon-sc2"></i><span>&#x300A;&#x661F;&#x6D77;&#x722D;&#x9738;&#xAE;II&#x300B;</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/hearthstone/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Hearthstone"><i class=" nav-icon-hearthstone"></i><span>&#x300A;&#x7210;&#x77F3;&#x6230;&#x8A18;&#xAE;&#x300B;</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/heroes/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Heroes of the Storm"><i class=" nav-icon-heroes"></i><span>&#x300A;&#x66B4;&#x96EA;&#x82F1;&#x9738;&#x2122;&#x300B;</span></a></li>
+                                <li class="menu-list-item"><a href="http://tw.battle.net/overwatch/" class="game-icon nav-item" id="nav-client-news" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Overwatch"><i class=" nav-icon-overwatch"></i><span>&#x300A;&#x9B25;&#x9663;&#x7279;&#x653B;&#x2122;&#x300B;</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-mobile-menu-wrap left">
+                <div class="menu-relative-wrap"></div>
+            </div>
+            <div id="nav-blackout" style="display:none"></div>
+            <!--<![endif]-->
+            <div id="nav-client-bar">
+                <div style="max-width: 100%" class="grid-container nav-header-content">
+                    <ul id="nav-client-main-menu" class="nav-list nav-left">
+                        <li>
+                            <a href="http://tw.battle.net/" class="nav-home nav-item" id="nav-client-home" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Battle.net Icon"></a>
+                        </li>
+                        <li>
+                            <div class="dropdown games"><a id="nav-client-games" data-toggle="dropdown" class="dropdown-toggle nav-link needsclick ">&#x904A;&#x6232;<b class="caret"></b></a>
+                                <div class="dropdown-menu">
+                                    <ul role="menu" class="nav-product-card-container games-menu">
+                                        <li><a href="http://tw.battle.net/wow/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - World of Warcraft"><i class=" nav-icon-wow"></i><span>&#x300A;&#x9B54;&#x7378;&#x4E16;&#x754C;&#xAE;&#x300B;</span></a></li>
+                                        <li><a href="http://tw.battle.net/d3/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Diablo III"><i class=" nav-icon-d3"></i><span>&#x300A;&#x6697;&#x9ED1;&#x7834;&#x58DE;&#x795E;&#xAE;III&#x300B;</span></a></li>
+                                        <li><a href="http://tw.battle.net/sc2/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - StarCraft II"><i class=" nav-icon-sc2"></i><span>&#x300A;&#x661F;&#x6D77;&#x722D;&#x9738;&#xAE;II&#x300B;</span></a></li>
+                                        <li><a href="http://tw.battle.net/hearthstone/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Hearthstone"><i class=" nav-icon-hearthstone"></i><span>&#x300A;&#x7210;&#x77F3;&#x6230;&#x8A18;&#xAE;&#x300B;</span></a></li>
+                                        <li><a href="http://tw.battle.net/heroes/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Heroes of the Storm"><i class=" nav-icon-heroes"></i><span>&#x300A;&#x66B4;&#x96EA;&#x82F1;&#x9738;&#x2122;&#x300B;</span></a></li>
+                                        <li><a href="http://tw.battle.net/overwatch/" class="game-icon nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Overwatch"><i class=" nav-icon-overwatch"></i><span>&#x300A;&#x9B25;&#x9663;&#x7279;&#x653B;&#x2122;&#x300B;</span></a></li>
+                                    </ul>
+                                    <div class="dropdown-well dropdown-section download-btn"><a href="http://tw.battle.net/games/classic" class="nav-a nav-item-box nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Games - Classic Games"><i class="nav-icon-24-blue nav-icon-mouse"></i><span>&#x7D93;&#x5178;&#x904A;&#x6232;</span></a></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="https://tw.battle.net/shop/" class="nav-link needsclick nav-item" id="nav-client-shop" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Shop"><span>&#x5546;&#x5E97;</span></a></li>
+                    </ul>
+                    <ul id="nav-client-account-menu" class="nav-list nav-right">
+                        <li>
+                            <div id="username">
+                                <div class="dropdown pull-right"><a id="nav-client-account" data-toggle="dropdown" rel="navbar" class="nav-link username username--loggedout needsclick dropdown-toggle capitalize"><span>&#x4F60;&#x7684;&#x5E33;&#x865F;</span><b class="caret"></b></a>
+                                    <div class="dropdown-menu">
+                                        <div class="arrow top"></div>
+                                        <div class="user-profile">
+                                            <div class="dropdown-section">
+                                                <div class="nav-box"><a href="/login" class="nav-btn nav-btn-block nav-login-btn nav-item" id="" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In"><span>&#x767B;&#x5165;</span></a></div>
+                                            </div>
+                                            <div class="dropdown-section">
+                                                <ul class="nav-list">
+                                                    <li><a href="https://tw.battle.net/account/" class="nav-a nav-item-box nav-item" id="nav-client-account-settings" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings"><i class="nav-icon-24-blue nav-icon-character-cog"></i><span>&#x5E33;&#x865F;&#x8A2D;&#x5B9A;</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="http://tw.battle.net/support/" class="nav-link needsclick nav-item" id="nav-client-support-link" title="" rel="" data-analytics="global-nav" data-analytics-placement="Nav - Support"><span>&#x5BA2;&#x670D;&#x652F;&#x63F4;</span></a></li>
+                        <li>
+                            <div class="nav-notification-icon"><a rel="navbar" class="dropdown-toggle needsclick nav-item"><i class="needsclick nav-icon-bell"></i></a>
+                                <div class="nav-notification-dropdown dropdown-menu">
+                                    <div class="arrow top"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-notification-responsive-container">
+                <div class="nav-notification-dropdown dropdown-menu">
+                    <div class="arrow top"></div>
+                </div>
+            </div>
+        </div>
+        <nav role="main">
+            <div class="nav-left m-mobile">
+                <div slide-menu-open="mobile" class="nav-btn m-burger"><span></span><span></span><span></span></div>
+                <a href="/zh-tw/" data-analytics="overwatch-nav" data-analytics-placement="home" class="nav-logo"></a>
+                <div class="nav-btn m-bnet"></div>
+            </div>
+            <ul class="nav-menu nav-left">
+                <li><a href="/zh-tw/game/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="game">&#x904A;&#x6232;</a></li>
+                <li><a href="/zh-tw/heroes/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="heroes">&#x82F1;&#x96C4;</a></li>
+                <li><a href="/zh-tw/media/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="media">&#x5A92;&#x9AD4;</a></li>
+                <li><a href="/zh-tw/blog/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="news">&#x6700;&#x65B0;&#x6D88;&#x606F;</a></li>
+                <li><a href="/zh-tw/community/" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="community">&#x793E;&#x7FA4;</a></li>
+            </ul>
+            <div class="nav-right nav-actions"><a href="/zh-tw/buy/" data-analytics="overwatch-buy" data-analytics-placement="Top" class="nav-btn m-orange">&#x9810;&#x8CFC;</a></div>
+            <div class="nav-border"></div>
+        </nav>
+    </div><nav role="mobile" slide-menu="mobile" class="slide-menu">
+        <div class="close">&#xD7;</div>
+        <div class="inner">
+            <div class="content">
+                <a close="" href="/zh-tw/" data-analytics="overwatch-nav" data-analytics-placement="home" class="nav-logo m-icon"></a>
+                <ul class="nav-menu">
+                    <li><a href="/zh-tw/game/" close="" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="game">&#x904A;&#x6232;</a></li>
+                    <li><a href="/zh-tw/heroes/" close="" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="heroes">&#x82F1;&#x96C4;</a></li>
+                    <li><a href="/zh-tw/media/" close="" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="media">&#x5A92;&#x9AD4;</a></li>
+                    <li><a href="/zh-tw/blog/" close="" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="news">&#x6700;&#x65B0;&#x6D88;&#x606F;</a></li>
+                    <li><a href="/zh-tw/community/" close="" class="nav-btn" data-analytics="overwatch-nav" data-analytics-placement="community">&#x793E;&#x7FA4;</a></li>
+                </ul><a href="/zh-tw/buy/" data-analytics="overwatch-buy" data-analytics-placement="Top" class="nav-btn m-orange m-center">&#x9810;&#x8CFC;</a></div>
+        </div>
+    </nav><section id="abilities" class="show-for-lg">
+        <div class="ability-showcase">
+            <video muted="muted" preload="none" class="ability-showcase-video">
+                
+                <source type="video/mp4" src="./video/hero/reaper/intro-video.mp4">
+            </video>
+            <video muted="muted" poster="./images/hero/reaper/ability-hellfire-shotguns/thumb-ability.jpg" preload="none" class="ability-showcase-video">
+                
+                <source type="video/mp4" src="./video/hero/reaper/ability-hellfire-shotguns/video-ability.mp4">
+            </video>
+            <video muted="muted" poster="./images/hero/reaper/ability-wraith-form/thumb-ability.jpg" preload="none" class="ability-showcase-video">
+                
+                <source type="video/mp4" src="./video/hero/reaper/ability-wraith-form/video-ability.mp4">
+            </video>
+            <video muted="muted" poster="./images/hero/reaper/ability-shadow-step/thumb-ability.jpg" preload="none" class="ability-showcase-video">
+                
+                <source type="video/mp4" src="./video/hero/reaper/ability-shadow-step/video-ability.mp4">
+            </video>
+            <video muted="muted" poster="./images/hero/reaper/ability-death-blossom/thumb-ability.jpg" preload="none" class="ability-showcase-video">
+                
+                <source type="video/mp4" src="./video/hero/reaper/ability-death-blossom/video-ability.mp4">
+            </video>
+            <div class="page-wrapper">
+                <div class="row">
+                    <div class="xs-12-12">
+                        <div class="ability-showcase-controls">
+                            <h1 class="hero-name">&#x6B7B;&#x795E;</h1>
+                            <h4 class="ability-name"></h4>
+                            <ul class="ability-button-list">
+                                <li>
+                                    <div data-ability-name="&#xA0;" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg>
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg><img src="./images/hero/reaper/icon-right-menu.png" class="hero-ability-icon m-hoverable center_element"></div>
+                                </li>
+                                <li>
+                                    <div data-ability-name="&#x7344;&#x7130;&#x6563;&#x5F48;&#x69CD;" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg>
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg><img src="./images/hero/reaper/ability-hellfire-shotguns/icon-ability.png" class="hero-ability-icon m-hoverable center_element"></div>
+                                </li>
+                                <li>
+                                    <div data-ability-name="&#x4EA1;&#x9748;&#x5F62;&#x614B;" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg>
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg><img src="./images/hero/reaper/ability-wraith-form/icon-ability.png" class="hero-ability-icon m-hoverable center_element"></div>
+                                </li>
+                                <li>
+                                    <div data-ability-name="&#x5E7D;&#x5F71;&#x50B3;&#x9001;" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg>
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg><img src="./images/hero/reaper/ability-shadow-step/icon-ability.png" class="hero-ability-icon m-hoverable center_element"></div>
+                                </li>
+                                <li>
+                                    <div data-ability-name="&#x6B7B;&#x4EA1;&#x7DBB;&#x653E;" class="ability-showcase-button center center_element u-align-center">
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="button-bg-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg>
+                                        <svg viewbox="0 0 100 100" preserveaspectratio="xMidYMid meet" class="progress-svg">
+                                            <circle cx="50" cy="50" r="50"/>
+                                        </svg><img src="./images/hero/reaper/ability-death-blossom/icon-ability.png" class="hero-ability-icon m-hoverable center_element"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><section id="details" class="hero-detail section-divider m-wings m-top-only outter">
+        <div class="hero-detail-background"></div>
+        <div class="hero-detail-video video-background-wrapper is-active">
+            <div class="video-background-vid m-right-align m-blend">
+                <video autoplay loop muted>
+                    
+                    <source src="./video/hero/reaper/idle-video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="row hide-for-lg m-nav-pad hero-portrat-mobile bg-petals">
+                <div class="column sm-12 content-box">
+                    <h1 class="hero-name">&#x6B7B;&#x795E;</h1><img src="./images/hero/reaper/full-portrait.png" class="hero-image"></div>
+            </div>
+            <div class="row hero-detail-tabs">
+                <div id="tabs" class="column sm-12 lg-6 no-gutters">
+                    <ul id="details-tabs" data-tabs="" role="tablist" class="tabs">
+                        <li role="presentation" class="tabs-title is-active"><a href="#overview" aria-selected="true" class="h4">&#x6982;&#x8981;</a></li>
+                        <li role="presentation" class="tabs-title"><a href="#story" data-story-bg="https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/background-story-mobile.jpg" data-story-bg-color="rgb(19, 3, 7)" class="h4">&#x6545;&#x4E8B;</a></li>
+                    </ul>
+                    <div data-tabs-content="details-tabs" class="tabs-content">
+                        <section id="overview" class="tabs-panel is-active">
+                            <div class="hero-detail-wrapper">
+                                <div class="row">
+                                    <div class="column sm-12 md-6 hero-detail-role">
+                                        <h3 class="h4 hero-detail-title">&#x89D2;&#x8272;</h3>
+                                        <h4 class="h2 hero-detail-role-name">&#x653B;&#x64CA;</h4>
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-detail-role-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-types-sprite-8abf7a1479adad551fd7c6282616089b925c9f6e1bafe50bd15820d193626a5826b9595a1de3627b2a8d46f77812dcd52b3555fd9164b9de4d8bd1b4db3a8fd3.svg#offense"/>
+                                        </svg>
+                                    </div>
+                                    <div class="column sm-12 md-6">
+                                        <div class="hero-detail-difficulty">
+                                            <h3 class="h4 hero-detail-title">&#x96E3;&#x5EA6;</h3><span class="star"></span><span class="star m-empty"></span><span class="star m-empty"></span></div>
+                                    </div>
+                                </div>
+                                <p class="hero-detail-description">&#x64C1;&#x6709;&#x7344;&#x7130;&#x6563;&#x5F48;&#x69CD;&#x3001;&#x5316;&#x70BA;&#x4E0D;&#x53D7;&#x4EFB;&#x4F55;&#x50B7;&#x5BB3;&#x7684;&#x7121;&#x5F62;&#x6697;&#x5F71;&#x8207;&#x5E7D;&#x5F71;&#x50B3;&#x9001;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x6B7B;&#x795E;&#x662F;&#x9019;&#x4E16;&#x4E0A;&#x6700;&#x53EF;&#x6015;&#x7684;&#x6BBA;&#x624B;&#x4E4B;&#x4E00;&#x3002;</p>
+                            </div>
+                            <hr class="tab-separator">
+                            <div class="hero-detail-wrapper m-same-pad">
+                                <h3 class="h4 hero-detail-title">&#x6280;&#x80FD;</h3>
+                                <div class="hero-detail-abilities"></div>
+                                <div class="hero-ability">
+                                    <div class="hero-ability-icon-container">
+                                        <div class="hero-ability-icon-bg m-small"><img src="./images/hero/reaper/ability-hellfire-shotguns/icon-ability.png" class="hero-ability-icon m-weapon"></div>
+                                    </div>
+                                    <div class="hero-ability-descriptor">
+                                        <h4 class="h5">&#x7344;&#x7130;&#x6563;&#x5F48;&#x69CD;</h4>
+                                        <p>&#x6B7B;&#x795E;&#x904B;&#x7528;&#x96D9;&#x624B;&#x7684;&#x6563;&#x5F48;&#x69CD;&#x4F86;&#x6495;&#x88C2;&#x6575;&#x4EBA;&#x7684;&#x8EAB;&#x8EC0;&#x3002;</p>
+                                    </div>
+                                    <video controls preload="none" poster="./images/hero/reaper/ability-hellfire-shotguns/thumb-ability.jpg" class="hero-ability-video">
+                                        
+                                        <source src="./video/hero/reaper/ability-hellfire-shotguns/video-ability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="hero-ability">
+                                    <div class="hero-ability-icon-container">
+                                        <div class="hero-ability-icon-bg m-small"><img src="./images/hero/reaper/ability-wraith-form/icon-ability.png" class="hero-ability-icon"></div>
+                                    </div>
+                                    <div class="hero-ability-descriptor">
+                                        <h4 class="h5">&#x4EA1;&#x9748;&#x5F62;&#x614B;</h4>
+                                        <p>&#x6B7B;&#x795E;&#x66AB;&#x6642;&#x5316;&#x70BA;&#x7121;&#x5F62;&#x6697;&#x5F71;&#x3002;&#x5728;&#x9019;&#x500B;&#x72C0;&#x614B;&#x4E0B;&#xFF0C;&#x4E0D;&#x6703;&#x53D7;&#x5230;&#x4EFB;&#x4F55;&#x50B7;&#x5BB3;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x7A7F;&#x904E;&#x6575;&#x4EBA;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x7121;&#x6CD5;&#x4EE5;&#x6B66;&#x5668;&#x653B;&#x64CA;&#x6216;&#x662F;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x6280;&#x80FD;&#x3002;</p>
+                                    </div>
+                                    <video controls preload="none" poster="./images/hero/reaper/ability-wraith-form/thumb-ability.jpg" class="hero-ability-video">
+                                        
+                                        <source src="./video/hero/reaper/ability-wraith-form/video-ability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="hero-ability">
+                                    <div class="hero-ability-icon-container">
+                                        <div class="hero-ability-icon-bg m-small"><img src="./images/hero/reaper/ability-shadow-step/icon-ability.png" class="hero-ability-icon"></div>
+                                    </div>
+                                    <div class="hero-ability-descriptor">
+                                        <h4 class="h5">&#x5E7D;&#x5F71;&#x50B3;&#x9001;</h4>
+                                        <p>&#x5728;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x4E4B;&#x5F8C;&#xFF0C;&#x6B7B;&#x795E;&#x6703;&#x6D88;&#x5931;&#x7136;&#x5F8C;&#x51FA;&#x73FE;&#x5728;&#x8A72;&#x8655;&#x3002;</p>
+                                    </div>
+                                    <video controls preload="none" poster="./images/hero/reaper/ability-shadow-step/thumb-ability.jpg" class="hero-ability-video">
+                                        
+                                        <source src="./video/hero/reaper/ability-shadow-step/video-ability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="hero-ability">
+                                    <div class="hero-ability-icon-container">
+                                        <div class="hero-ability-icon-bg m-small"><img src="./images/hero/reaper/ability-death-blossom/icon-ability.png" class="hero-ability-icon"></div>
+                                    </div>
+                                    <div class="hero-ability-descriptor">
+                                        <h4 class="h5">&#x6B7B;&#x4EA1;&#x7DBB;&#x653E;</h4>
+                                        <p>&#x6B7B;&#x795E;&#x7684;&#x8EAB;&#x5F62;&#x8B8A;&#x5F97;&#x6A21;&#x7CCA;&#xFF0C;&#x4EE5;&#x9A5A;&#x4EBA;&#x7684;&#x901F;&#x5EA6;&#x5C04;&#x51FA;&#x7344;&#x7130;&#x6563;&#x5F48;&#x69CD;&#x7684;&#x6BCF;&#x4E00;&#x767C;&#x5B50;&#x5F48;&#xFF0C;&#x5C0D;&#x5468;&#x570D;&#x6240;&#x6709;&#x6575;&#x4EBA;&#x9020;&#x6210;&#x53EF;&#x6015;&#x7684;&#x50B7;&#x5BB3;&#x3002;</p>
+                                    </div>
+                                    <video controls preload="none" poster="./images/hero/reaper/ability-death-blossom/thumb-ability.jpg" class="hero-ability-video">
+                                        
+                                        <source src="./video/hero/reaper/ability-death-blossom/video-ability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="story" class="tabs-panel">
+                            <div class="hero-detail-wrapper m-no-pad-bot">
+                                <h3 class="h4 hero-detail-title">&#x751F;&#x5E73;</h3>
+                                <ul class="hero-bio">
+                                    <li class="name">
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-bio-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-bio-sprite-751fbcc2a9d624d2be9aedd92e373c340c5a9613ef609655d1504fb616b72d358a4b8088b252e84d5509615140f004d6332431a104ad2ed2883c0f35222b594e.svg#namecard"/>
+                                        </svg><span class="hero-bio-copy">&#x672C;&#x540D;&#xFF1A;&#x4E0D;&#x660E;, &#x5E74;&#x9F61;&#xFF1A;&#x4E0D;&#x660E;</span></li>
+                                    <li class="occupation">
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-bio-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-bio-sprite-751fbcc2a9d624d2be9aedd92e373c340c5a9613ef609655d1504fb616b72d358a4b8088b252e84d5509615140f004d6332431a104ad2ed2883c0f35222b594e.svg#luggage"/>
+                                        </svg><span class="hero-bio-copy">&#x8077;&#x696D;&#xFF1A;&#x50AD;&#x5175;</span></li>
+                                    <li class="base">
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-bio-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-bio-sprite-751fbcc2a9d624d2be9aedd92e373c340c5a9613ef609655d1504fb616b72d358a4b8088b252e84d5509615140f004d6332431a104ad2ed2883c0f35222b594e.svg#world"/>
+                                        </svg><span class="hero-bio-copy">&#x6D3B;&#x52D5;&#x5340;&#x57DF;&#xFF1A;&#x4E0D;&#x660E;</span></li>
+                                    <li class="affiliation">
+                                        <svg viewbox="0 0 32 32" role="presentation" class="icon hero-bio-icon">
+                                            <use xlink:href="https://d281jof1t1i5a5.cloudfront.net/svg/hero/hero-bio-sprite-751fbcc2a9d624d2be9aedd92e373c340c5a9613ef609655d1504fb616b72d358a4b8088b252e84d5509615140f004d6332431a104ad2ed2883c0f35222b594e.svg#shield"/>
+                                        </svg><span class="hero-bio-copy">&#x6240;&#x5C6C;&#x7D44;&#x7E54;&#xFF1A;&#x4E0D;&#x660E;</span></li>
+                                </ul>
+                            </div>
+                            <div class="hero-detail-wrapper">
+                                <p class="h4 hero-detail-title">&#x300C;&#x6B7B;&#x4EA1;&#x5982;&#x5F71;&#x96A8;&#x5F62;&#x3002;&#x300D;</p>
+                                <div class="hero-bio-backstory pad-sm">
+                                    <p>&#x95DC;&#x65BC;&#x9019;&#x500B;&#x9ED1;&#x888D;&#x6050;&#x6016;&#x4EFD;&#x5B50;&#x7684;&#x50B3;&#x805E;&#x4E26;&#x4E0D;&#x591A;&#xFF0C;&#x53EA;&#x77E5;&#x9053;&#x5927;&#x5BB6;&#x90FD;&#x53EB;&#x4ED6;&#x6B7B;&#x795E;&#x3002;&#x4ED6;&#x7684;&#x771F;&#x5BE6;&#x8EAB;&#x5206;&#x548C;&#x76EE;&#x7684;&#x4E5F;&#x76F8;&#x7576;&#x795E;&#x79D8;&#xFF0C;&#x552F;&#x4E00;&#x53EF;&#x4EE5;&#x78BA;&#x8A8D;&#x7684;&#x662F;&#xFF0C;&#x53EA;&#x8981;&#x4ED6;&#x4E00;&#x73FE;&#x8EAB;&#xFF0C;&#x6B7B;&#x4EA1;&#x5982;&#x5F71;&#x96A8;&#x5F62;&#x3002;</p>
+                                    <p>&#x6B7B;&#x795E;&#x662F;&#x500B;&#x96E3;&#x4EE5;&#x9810;&#x6E2C;&#x7684;&#x50AD;&#x5175;&#xFF0C;&#x4E5F;&#x662F;&#x500B;&#x7121;&#x60C5;&#x7684;&#x6BBA;&#x624B;&#x3002;&#x4ED6;&#x662F;&#x4E16;&#x754C;&#x4E0A;&#x591A;&#x8D77;&#x6050;&#x6016;&#x653B;&#x64CA;&#x7684;&#x4E3B;&#x4F7F;&#x8005;&#xFF0C;&#x800C;&#x4E14;&#x5728;&#x9019;&#x6578;&#x5341;&#x5E74;&#x5167;&#x4ED6;&#x4E5F;&#x53C3;&#x8207;&#x4E86;&#x8A31;&#x591A;&#x6B66;&#x88DD;&#x885D;&#x7A81;&#xFF0C;&#x4F46;&#x4ED6;&#x4F3C;&#x4E4E;&#x4E0D;&#x6548;&#x5FE0;&#x4EFB;&#x4F55;&#x7D44;&#x7E54;&#xFF0C;&#x4E5F;&#x770B;&#x4E0D;&#x51FA;&#x4EFB;&#x4F55;&#x7406;&#x7531;&#x3002;</p>
+                                    <p>&#x50E5;&#x5016;&#x6D3B;&#x4E0B;&#x4F86;&#x7684;&#x4EBA;&#x90FD;&#x5583;&#x5583;&#x8AAA;&#x8457;&#xFF0C;&#x4ED6;&#x5011;&#x770B;&#x898B;&#x4E00;&#x9053;&#x9ED1;&#x8272;&#x9B3C;&#x5F71;&#x6BEB;&#x9AEE;&#x7121;&#x50B7;&#x7684;&#x7A7F;&#x68AD;&#x5728;&#x5730;&#x7344;&#x4E00;&#x822C;&#x7684;&#x6230;&#x5834;&#x4E0A;&#x3002;&#x5C11;&#x6578;&#x6709;&#x8FA6;&#x6CD5;&#x5F9E;&#x6230;&#x5834;&#x56DE;&#x6536;&#x7684;&#x5C4D;&#x9AD4;&#x90FD;&#x5448;&#x73FE;&#x4E00;&#x7247;&#x6158;&#x767D;&#xFF0C;&#x7A7A;&#x6D1E;&#x8EC0;&#x6BBC;&#x5167;&#x7684;&#x751F;&#x547D;&#x529B;&#x5B8C;&#x5168;&#x88AB;&#x62BD;&#x4E7E;&#xFF0C;&#x7D30;&#x80DE;&#x7684;&#x7D50;&#x69CB;&#x4E5F;&#x7522;&#x751F;&#x4E86;&#x56B4;&#x91CD;&#x5D29;&#x89E3;&#x8DE1;&#x8C61;&#x3002;&#x56E0;&#x6B64;&#x6B7B;&#x795E;&#x53EF;&#x80FD;&#x662F;&#x57FA;&#x56E0;&#x8F49;&#x5316;&#x5BE6;&#x9A57;&#x5931;&#x6557;&#x7684;&#x526F;&#x7522;&#x54C1;&#xFF0C;&#x4F7F;&#x4ED6;&#x7684;&#x7D30;&#x80DE;&#x5728;&#x8D85;&#x9AD8;&#x901F;&#x6557;&#x58DE;&#x7684;&#x540C;&#x6642;&#x9032;&#x884C;&#x8D85;&#x9AD8;&#x901F;&#x518D;&#x751F;&#x3002;</p>
+                                    <p>&#x6709;&#x4E9B;&#x8A66;&#x5716;&#x60F3;&#x8FFD;&#x8E64;&#x6B7B;&#x795E;&#x8E64;&#x8DE1;&#x7684;&#x4EBA;&#x4F3C;&#x4E4E;&#x5728;&#x4ED6;&#x7684;&#x51FA;&#x73FE;&#x8A18;&#x9304;&#x4E2D;&#x770B;&#x51FA;&#x4E86;&#x4E00;&#x4E9B;&#x7AEF;&#x502A;&#x3002;&#x4ED6;&#x5011;&#x8A8D;&#x70BA;&#x6B7B;&#x795E;&#x662F;&#x7CFB;&#x7D71;&#x6027;&#x7684;&#x5728;&#x7375;&#x6BBA;&#x524D;&#x634D;&#x885B;&#x8005;&#x7684;&#x63A2;&#x54E1;&#x3002;</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><section id="media" class="outter u-white-background section-divider m-wings m-bottom-only hero-media">
+        <div class="inner">
+            <div class="row">
+                <ul media-gallery="hero" class="media-gallery">
+                    <li media="reaper-preview" class="media-item">
+                        <div class="media-border">
+                            <a href="https://www.youtube.com/watch?v=XuKqPiVD1aQ" target="_blank" style="background-image: url(./images/media/thumbnail/reaper-preview.jpg);" title="&#x6B7B;&#x795E;&#x64CD;&#x4F5C;&#x9810;&#x89BD;" class="media-content m-video_youtube" data-analytics="youtube-video" data-analytics-placement="reaper-preview" data-yt-id="XuKqPiVD1aQ"></a>
+                        </div>
+                    </li>
+                    <li media="reaper-gameplay" class="media-item">
+                        <div class="media-border">
+                            <a href="https://www.youtube.com/watch?v=h0SMEutaVak" target="_blank" style="background-image: url(./images/media/thumbnail/reaper-gameplay.jpg);" title="&#x6280;&#x80FD;&#x6982;&#x8981;&#xFF1A;&#x6B7B;&#x795E;" class="media-content m-video_youtube" data-analytics="youtube-video" data-analytics-placement="reaper-gameplay" data-yt-id="h0SMEutaVak"></a>
+                        </div>
+                    </li>
+                    <li media="reaper-screenshot-002" class="media-item">
+                        <div class="media-border">
+                            <a href="https://d1u1mce87gyfbn.cloudfront.net/media/screenshot/reaper-screenshot-002.jpg" target="_blank" style="background-image: url(./images/media/thumbnail/reaper-screenshot-002.jpg);" title="&#x6B7B;&#x795E;" class="media-content m-img"></a>
+                        </div>
+                    </li>
+                    <li media="reaper-screenshot-004" class="media-item">
+                        <div class="media-border">
+                            <a href="https://d1u1mce87gyfbn.cloudfront.net/media/screenshot/reaper-screenshot-004.jpg" target="_blank" style="background-image: url(./images/media/thumbnail/reaper-screenshot-004.jpg);" title="&#x6B7B;&#x795E;" class="media-content m-img"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section><section id="selectHeroes" class="outter">
+        <div class="inner">
+            <nav class="hero-select-navigation column row">
+                <h1 class="nav-title">&#x8ACB;&#x9078;&#x64C7;&#x4E00;&#x540D;&#x82F1;&#x96C4;</h1>
+                <div class="hero-type-container">
+                    <h3 class="hero-select-title"><span class="heading-line"></span><span class="text">&#x653B;&#x64CA;</span><span class="heading-line"></span></h3>
+                    <ul class="js-hero-portrait-group u-align-center">
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/soldier-76/" data-hero-id="soldier-76" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/soldier-76/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x58EB;&#x5175;76</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/reaper/" data-hero-id="reaper" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/reaper/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x6B7B;&#x795E;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/pharah/" data-hero-id="pharah" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/pharah/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x6CD5;&#x62C9;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/genji/" data-hero-id="genji" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/genji/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x6E90;&#x6C0F;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/tracer/" data-hero-id="tracer" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/tracer/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x9583;&#x5149;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/mccree/" data-hero-id="mccree" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/mccree/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x9EA5;&#x5361;&#x5229;</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hero-type-container">
+                    <h3 class="hero-select-title"><span class="heading-line"></span><span class="text">&#x9632;&#x79A6;</span><span class="heading-line"></span></h3>
+                    <ul class="js-hero-portrait-group u-align-center">
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/hanzo/" data-hero-id="hanzo" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/hanzo/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x534A;&#x85CF;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/bastion/" data-hero-id="bastion" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/bastion/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x58C1;&#x58D8;&#x6A5F;&#x5175;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/widowmaker/" data-hero-id="widowmaker" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/widowmaker/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x596A;&#x547D;&#x5973;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/mei/" data-hero-id="mei" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/mei/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x5C0F;&#x7F8E;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/torbjorn/" data-hero-id="torbjorn" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/torbjorn/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x6258;&#x6BD4;&#x6602;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/junkrat/" data-hero-id="junkrat" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/junkrat/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x70B8;&#x5F48;&#x9F20;</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hero-type-container">
+                    <h3 class="hero-select-title"><span class="heading-line"></span><span class="text">&#x8089;&#x76FE;</span><span class="heading-line"></span></h3>
+                    <ul class="js-hero-portrait-group u-align-center">
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/dva/" data-hero-id="dva" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/dva/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">D.Va</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/roadhog/" data-hero-id="roadhog" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/roadhog/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x6514;&#x8DEF;&#x8C6C;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/zarya/" data-hero-id="zarya" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/zarya/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x672D;&#x8389;&#x96C5;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/winston/" data-hero-id="winston" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/winston/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x6EAB;&#x65AF;&#x9813;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/reinhardt/" data-hero-id="reinhardt" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/reinhardt/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x840A;&#x56E0;&#x54C8;&#x7279;</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hero-type-container">
+                    <h3 class="hero-select-title"><span class="heading-line"></span><span class="text">&#x8F14;&#x52A9;</span><span class="heading-line"></span></h3>
+                    <ul class="js-hero-portrait-group u-align-center">
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/mercy/" data-hero-id="mercy" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/mercy/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x6148;&#x60B2;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/zenyatta/" data-hero-id="zenyatta" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/zenyatta/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x79AA;&#x4E9E;&#x5854;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/lucio/" data-hero-id="lucio" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/lucio/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x8DEF;&#x897F;&#x6B50;</span></a>
+                        </li>
+                        <li class="hero-item">
+                            <a href="/zh-tw/heroes/symmetra/" data-hero-id="symmetra" data-analytics="hero-selection" data-analytics-placement="Hero Page" class="hero-portrait m-color-inverted">
+                                <div class="wrap">
+                                    <div style="background-image: url(./images/hero/symmetra/icon-portrait.png);" class="image"></div>
+                                </div><span class="label">&#x8F9B;&#x6885;&#x5854;</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section><section id="footer" class="overwatch-footer section-divider m-top-only m-inset m-line u-align-center u-invert">
+        <section class="content-box">
+            <div class="row column"><a href="/zh-tw/buy/" data-analytics="overwatch-buy" data-analytics-placement="Bottom" class="footer-prepurchase button m-lg">&#x9810;&#x8CFC;</a>
+                <p class="footer-career"><a href="http://tw.blizzard.com/company/careers/directory.html" data-analytics="action-link" data-analytics-placement="Blizzard Careers || Bottom - Career Opportunities" class="link primary">&#x5DE5;&#x4F5C;&#x6A5F;&#x6703;</a></p>
+            </div>
+        </section>
+        <hr class="footer-rule">
+        <section class="content-box m-tinyPad">
+            <div class="row column">
+                <h4 class="u-bigNoodleToo u-italics u-invert">&#x52A0;&#x5165;&#x793E;&#x7FA4;&#x7DB2;&#x8DEF;</h4>
+                <div class="social-container">
+                    <a href="https://www.facebook.com/OverwatchZHTW" data-analytics="sns-refer" data-analytics-placement="facebook" class="social-icon-facebook"></a>
+                    <div class="social-icon-spacer"></div>
+                    <a href="https://www.twitter.com/OverwatchZHTW" data-analytics="sns-refer" data-analytics-placement="twitter" class="social-icon-twitter"></a>
+                    <div class="social-icon-spacer"></div>
+                    <a href="https://www.youtube.com/OverwatchZHTW" data-analytics="sns-refer" data-analytics-placement="youtube" class="social-icon-youtube"></a>
+                </div>
+            </div>
+        </section>
+        <hr class="footer-rule">
+    </section><div class="bootstrap-footer">
+        <div class="footer row">
+            <div class="desktop-footer-container">
+                <div class="middle-container">
+                    <div class="footer-section clearfix top">
+                        <div class="pull-left">
+                            <ul class="support-feedback">
+                                <li> <a id="btn-support" href="http://tw.battle.net/support/" data-analytics="global-nav" data-analytics-placement="Footer - Support" class="pull-left">&#x5BA2;&#x670D;&#x652F;&#x63F4;<i class="footer-icon footer-icon-question-circle pull-left"></i></a></li>
+                                <li><a id="btn-feedback" href="http://tw.battle.net/feedback" data-analytics="global-nav" data-analytics-placement="Footer - Feedback" class="pull-left">&#x5EFA;&#x8B70;<i class="footer-icon footer-icon-edit pull-left"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pull-right">
+                            <div class="dropup"><a id="region-language-dropdown" data-toggle="dropdown">&#x53F0;&#x7063; - &#x7E41;&#x9AD4;&#x4E2D;&#x6587;<i class="footer-icon footer-icon-globe"></i><i class="footer-icon footer-icon-caret-down"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <div class="region-language-selector desktop clearfix">
+                                            <ul class="region-ul menu-column col-sm-6">
+                                                <div class="menu-title">&#x5340;&#x57DF;</div>
+                                                <li><a data-target="us" href="javascript:;" class="select-region">&#x7F8E;&#x570B;</a></li>
+                                                <li><a data-target="eu" href="javascript:;" class="select-region">&#x6B50;&#x6D32;</a></li>
+                                                <li><a data-target="kr" href="javascript:;" class="select-region">&#x97D3;&#x570B;</a></li>
+                                                <li class="active current"><a data-target="tw" href="javascript:;" class="select-region">&#x53F0;&#x7063;</a></li>
+                                                <li><a data-target="cn" href="javascript:;" class="select-region">&#x4E2D;&#x570B;&#x5927;&#x9678;</a></li>
+                                                <li><a data-target="sea" href="javascript:;" class="select-region">&#x6771;&#x5357;&#x4E9E;</a></li>
+                                            </ul>
+                                            <ul class="language-ul menu-column col-sm-6">
+                                                <div data-region="us" class="region-languages">
+                                                    <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="en_US" href="//playoverwatch.com/en-us/heroes/reaper/" class="select-language">English (US)</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="es_MX" href="//playoverwatch.com/es-mx/heroes/reaper/" class="select-language">Espa&#xF1;ol (AL)</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="pt_BR" href="//playoverwatch.com/pt-br/heroes/reaper/" class="select-language">Portugu&#xEA;s (AL)</a></li>
+                                                </div>
+                                                <div data-region="eu" class="region-languages">
+                                                    <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="de_DE" href="//playoverwatch.com/de-de/heroes/reaper/" class="select-language">Deutsch</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="en_GB" href="//playoverwatch.com/en-gb/heroes/reaper/" class="select-language">English (EU)</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="es_ES" href="//playoverwatch.com/es-es/heroes/reaper/" class="select-language">Espa&#xF1;ol (EU)</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="fr_FR" href="//playoverwatch.com/fr-fr/heroes/reaper/" class="select-language">Fran&#xE7;ais</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="it_IT" href="//playoverwatch.com/it-it/heroes/reaper/" class="select-language">Italiano</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="pl_PL" href="//playoverwatch.com/pl-pl/heroes/reaper/" class="select-language">Polski</a></li>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="ru_RU" href="//playoverwatch.com/ru-ru/heroes/reaper/" class="select-language">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+                                                </div>
+                                                <div data-region="kr" class="region-languages">
+                                                    <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="kr" data-language="ko_KR" href="//playoverwatch.com/ko-kr/heroes/reaper/" class="select-language">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+                                                </div>
+                                                <div data-region="tw" class="region-languages active">
+                                                    <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                                    <li class="active current">
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="tw" data-language="zh_TW" href="//playoverwatch.com/zh-tw/heroes/reaper/" class="select-language">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+                                                </div>
+                                                <div data-region="cn" class="region-languages">
+                                                    <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                                    <li><a data-target="cn" data-language="zh_CN" href="//gold.163.com" class="select-language">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+                                                </div>
+                                                <div data-region="sea" class="region-languages">
+                                                    <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                                    <li>
+                                                        <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="sea" data-language="en_US" href="//playoverwatch.com/en-us/heroes/reaper/" class="select-language">English (US)</a></li>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <div class="dropdown-section clearfix"><a href="javascript:;" class="btn btn-primary change-button">&#x8B8A;&#x66F4;</a></div>
+                                    </li>
+                                    <div class="arrow-down"></div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-section clearfix bottom">
+                        <div class="links-section pull-left">
+                            <a href="http://tw.blizzard.com/" data-analytics="global-nav" data-analytics-placement="Footer - Blizzard Logo">
+                                <div class="blizzard-logo"></div>
+                            </a>
+                        </div>
+                        <div class="pull-left company-info">
+                            <div class="footer-links pull-left">
+                                <ul>
+                                    <li><a href="http://jobs.blizzard.com/" data-analytics="global-nav" data-analytics-placement="Footer - Careers">&#x5DE5;&#x4F5C;&#x6A5F;&#x6703;</a></li>
+                                    <li><a href="http://tw.blizzard.com/company/about/" data-analytics="global-nav" data-analytics-placement="Footer - About">&#x95DC;&#x65BC;</a></li>
+                                    <li><a href="http://tw.blizzard.com/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">&#x96B1;&#x79C1;</a></li>
+                                    <li><a href="http://tw.blizzard.com/company/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">&#x689D;&#x6B3E;</a></li>
+                                    <li><a href="//dev.battle.net" data-analytics="global-nav" data-analytics-placement="Footer - API">API</a></li>
+                                </ul>
+                            </div>
+                            <div class="copyright pull-left">&#xA9;2016 &#x7F8E;&#x5546;&#x66B4;&#x96EA;&#x5A1B;&#x6A02;&#x80A1;&#x4EFD;&#x6709;&#x9650;&#x516C;&#x53F8;&#xFF08;Blizzard Entertainment, Inc.&#xFF09;&#x7248;&#x6B0A;&#x6240;&#x6709;&#x3002;</div>
+                        </div>
+                        <div class="ratings">
+                            <div class="rating-wrapper clearfix">
+                                <a href="http://www.gamerating.org.tw/gsgi_way.php"><img src="https://bnetus-a.akamaihd.net/api/legal/static/images/legal/ratings/csrr/counsel15.12rD5.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-footer-container">
+                <div class="footer-section clearfix">
+                    <ul class="support-feedback">
+                        <li> <a id="btn-support" href="http://tw.battle.net/support/" data-analytics="global-nav" data-analytics-placement="Footer - Support" class="pull-left">&#x5BA2;&#x670D;&#x652F;&#x63F4;<i class="footer-icon footer-icon-question-circle pull-left"></i></a></li>
+                        <li><a id="btn-feedback" href="http://tw.battle.net/feedback" data-analytics="global-nav" data-analytics-placement="Footer - Feedback" class="pull-left">&#x5EFA;&#x8B70;<i class="footer-icon footer-icon-edit pull-left"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section clearfix">
+                    <div data-toggle="collapsible" class="region-collapsible-container">&#x53F0;&#x7063; - &#x7E41;&#x9AD4;&#x4E2D;&#x6587;<i class="footer-icon footer-icon-globe"></i><i class="footer-icon footer-icon-caret-down"></i>
+                        <ul class="region-language-collapsible hidden">
+                            <li>
+                                <div class="region-language-selector clearfix">
+                                    <ul class="region-ul menu-column col-sm-6">
+                                        <div class="menu-title">&#x5340;&#x57DF;</div>
+                                        <li><a data-target="us" href="javascript:;" class="select-region">&#x7F8E;&#x570B;</a></li>
+                                        <li><a data-target="eu" href="javascript:;" class="select-region">&#x6B50;&#x6D32;</a></li>
+                                        <li><a data-target="kr" href="javascript:;" class="select-region">&#x97D3;&#x570B;</a></li>
+                                        <li class="active current"><a data-target="tw" href="javascript:;" class="select-region">&#x53F0;&#x7063;</a></li>
+                                        <li><a data-target="cn" href="javascript:;" class="select-region">&#x4E2D;&#x570B;&#x5927;&#x9678;</a></li>
+                                        <li><a data-target="sea" href="javascript:;" class="select-region">&#x6771;&#x5357;&#x4E9E;</a></li>
+                                    </ul>
+                                    <ul class="language-ul menu-column col-sm-6">
+                                        <div data-region="us" class="region-languages">
+                                            <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="en_US" href="//playoverwatch.com/en-us/heroes/reaper/" class="select-language">English (US)</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="es_MX" href="//playoverwatch.com/es-mx/heroes/reaper/" class="select-language">Espa&#xF1;ol (AL)</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="us" data-language="pt_BR" href="//playoverwatch.com/pt-br/heroes/reaper/" class="select-language">Portugu&#xEA;s (AL)</a></li>
+                                        </div>
+                                        <div data-region="eu" class="region-languages">
+                                            <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="de_DE" href="//playoverwatch.com/de-de/heroes/reaper/" class="select-language">Deutsch</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="en_GB" href="//playoverwatch.com/en-gb/heroes/reaper/" class="select-language">English (EU)</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="es_ES" href="//playoverwatch.com/es-es/heroes/reaper/" class="select-language">Espa&#xF1;ol (EU)</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="fr_FR" href="//playoverwatch.com/fr-fr/heroes/reaper/" class="select-language">Fran&#xE7;ais</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="it_IT" href="//playoverwatch.com/it-it/heroes/reaper/" class="select-language">Italiano</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="pl_PL" href="//playoverwatch.com/pl-pl/heroes/reaper/" class="select-language">Polski</a></li>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="eu" data-language="ru_RU" href="//playoverwatch.com/ru-ru/heroes/reaper/" class="select-language">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+                                        </div>
+                                        <div data-region="kr" class="region-languages">
+                                            <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="kr" data-language="ko_KR" href="//playoverwatch.com/ko-kr/heroes/reaper/" class="select-language">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+                                        </div>
+                                        <div data-region="tw" class="region-languages active">
+                                            <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                            <li class="active current">
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="tw" data-language="zh_TW" href="//playoverwatch.com/zh-tw/heroes/reaper/" class="select-language">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+                                        </div>
+                                        <div data-region="cn" class="region-languages">
+                                            <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                            <li><a data-target="cn" data-language="zh_CN" href="//gold.163.com" class="select-language">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+                                        </div>
+                                        <div data-region="sea" class="region-languages">
+                                            <div class="menu-title">&#x8A9E;&#x8A00;</div>
+                                            <li>
+                                                <!-- take a language key such as "en_US" and turn it into a locale formatted like "en-us"--><a data-target="sea" data-language="en_US" href="//playoverwatch.com/en-us/heroes/reaper/" class="select-language">English (US)</a></li>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-section clearfix"><a href="javascript:;" class="btn btn-primary change-button mobile">&#x8B8A;&#x66F4;</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section clearfix">
+                    <div class="blizzard-logo">
+                        <a href="http://tw.blizzard.com/"></a>
+                    </div>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="http://jobs.blizzard.com/" data-analytics="global-nav" data-analytics-placement="Footer - Careers">&#x5DE5;&#x4F5C;&#x6A5F;&#x6703;</a></li>
+                            <li><a href="http://tw.blizzard.com/company/about/" data-analytics="global-nav" data-analytics-placement="Footer - About">&#x95DC;&#x65BC;</a></li>
+                            <li><a href="http://tw.blizzard.com/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">&#x96B1;&#x79C1;</a></li>
+                            <li><a href="http://tw.blizzard.com/company/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">&#x689D;&#x6B3E;</a></li>
+                            <li><a href="//dev.battle.net" data-analytics="global-nav" data-analytics-placement="Footer - API">API</a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright">&#xA9;2016 &#x7F8E;&#x5546;&#x66B4;&#x96EA;&#x5A1B;&#x6A02;&#x80A1;&#x4EFD;&#x6709;&#x9650;&#x516C;&#x53F8;&#xFF08;Blizzard Entertainment, Inc.&#xFF09;&#x7248;&#x6B0A;&#x6240;&#x6709;&#x3002;</div>
+                    <div class="ratings">
+                        <div class="rating-wrapper clearfix">
+                            <a href="http://www.gamerating.org.tw/gsgi_way.php"><img src="https://bnetus-a.akamaihd.net/api/legal/static/images/legal/ratings/csrr/counsel15.12rD5.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><script type="text/javascript">
+    ! function(root) {
+        root.messages = {
+            "wallpaper": {
+                "urlWide": {
+                    "title": "寬螢幕",
+                    "dimensions": "(2560 x 1440)"
+                },
+                "urlStandard": {
+                    "title": "標準",
+                    "dimensions": "(2048 x 1536)"
+                },
+                "urlTablet": {
+                    "title": "平板裝置",
+                    "dimensions": "(2048 x 2048)"
+                },
+                "urlMobile": {
+                    "title": "手機",
+                    "dimensions": "(1080 x 1920)"
+                },
+                "urlFacebook": {
+                    "title": "Facebook",
+                    "dimensions": "(851 x 315)"
+                },
+                "urlTwitter": {
+                    "title": "Twitter",
+                    "dimensions": "(1500 x 500)"
+                }
+            },
+            "img": {
+                "hanzo": "https://d281jof1t1i5a5.cloudfront.net/img/hanzo-sm-114f060a6cc9cc1597a8ef3707fa827be79e1d9bc96847d20fd01f810faad9d4b30f99a91505ad1512e7c7f5d1749595bed6ab8ed836441db9caee21352b760a.png"
+            }
+        }
+    }(this)
+    </script><script type="text/javascript" src="./js/vendor.js"></script><script type="text/javascript" src="./js/blizzard.js"></script><script type="text/javascript" src="./js/app.js"></script><script type="text/javascript">
+    ! function(root) {
+        root.svg4everybody({
+            polyfill: true
+        });
+    }(this)
+    </script><script>$(function(){app.hero_details.init();})</script></body>
