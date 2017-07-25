@@ -102,6 +102,12 @@
 <script src="js/common.js" language="javascript"></script>		
 <script>
 $(function(){
+	 var rule = /(Android|iPod|iTouch|iPhone|BlackBerry|SymbianOS|SymbOS|Windows Phone OS|WAP|pod)/ig;
+ if (rule.test(navigator.userAgent)) { //是否有手机端
+    location.href = "/touch";
+ } else {
+    location.href = "/home";
+ }
 	$("#focusBox").focusSlider({auto:false});
 })
 </script>
